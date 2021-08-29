@@ -1,5 +1,17 @@
 # okayama-univ-fes-2021
 
+## Commit Message
+
+| Prefix | 使うシチュエーション |
+| :--- | :--- |
+| Add: | 機能やファイルなどの追加 |
+| Clean: | コードの改善・リファクタリング |
+| Change: | 仕様変更 |
+| Upgrade: | バージョンアップ |
+| Disable: | 機能の無効化（コメントアウト等） |
+| Fix: | バグ修正 |
+| Hotfix: | クリティカルなバグ修正 |
+
 ## Build Setup
 
 ```bash
