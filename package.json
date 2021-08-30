@@ -11,7 +11,7 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "core-js": "^3.16.3",
+    "core-js": "^3.16.4",
     "nuxt": "^2.15.8",
     "nuxt-webfontloader": "^1.1.0"
   },
