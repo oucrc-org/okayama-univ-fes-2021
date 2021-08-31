@@ -11,7 +11,6 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "core-js": "^3.16.4",
     "nuxt": "^2.15.8",
     "nuxt-microcms-module": "^1.0.1",
