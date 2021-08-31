@@ -13,6 +13,7 @@
   "dependencies": {
     "core-js": "^3.16.4",
     "nuxt": "^2.15.8",
+    "nuxt-microcms-module": "^1.0.1",
     "nuxt-webfontloader": "^1.1.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-slick": "^1.1.16"
