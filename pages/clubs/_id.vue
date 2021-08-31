@@ -4,21 +4,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Context } from '@nuxt/types'
 
 export default {
-  async asyncData ({ params, $microcms }) {
-    return await $microcms.get({
+  async asyncData (context: Context) {
+    const { app, params } = context
+    const response = await app.$microcms.get({
       endpoint: `clubs/${params.id}`
-    }).then((response) => {
-      return {
-        club: response
-      }
     })
+    return {
+      club: response
+    }
   },
   data () {
     return {
-      club: process.env.BASE_URL
+      club: []
     }
   }
 }

@@ -1,7 +1,5 @@
 <template>
   <div>
-    <Navigation />
-
     <img class="h-screen w-screen object-cover" src="@/assets/img/hero.jpg" alt="岡山大学祭">
     <div class="container max-w-screen-xl mt-24 mx-auto relative">
       <Header title="今年の学祭について" colors="bg-themeColor text-white" />
@@ -111,24 +109,19 @@
         </div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import CenterTitle from '@/components/CenterTitle.vue'
-import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
-import Navigation from '@/components/Navigation.vue'
 import VerticalTitle from '@/components/VerticalTitle.vue'
 
 export default Vue.extend({
   components: {
     CenterTitle,
-    Footer,
     Header,
-    Navigation,
     VerticalTitle
   },
   data () {
