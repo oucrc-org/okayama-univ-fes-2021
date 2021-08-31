@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "PORT=3333 nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -11,8 +11,10 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.16.4",
     "nuxt": "^2.15.8",
+    "nuxt-microcms-module": "^1.0.1",
     "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {

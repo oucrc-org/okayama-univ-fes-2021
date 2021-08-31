@@ -46,13 +46,15 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-microcms-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://www.npmjs.com/package/nuxt-webfontloader
     'nuxt-webfontloader'
+    // 'nuxt-microcms-module'
   ],
 
   // Google Font
@@ -63,5 +65,15 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+  env: {
+    baseUrl: process.env.BASE_URL
+  },
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all'
+  }
 }
