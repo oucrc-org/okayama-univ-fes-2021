@@ -1,13 +1,7 @@
 <template>
   <div>
-    <div
-      class="bg-themeColor fixed cursor-pointer rounded-l-full drop-shadow top-3 right-0 h-12 w-20 z-50"
-      @click="isOpen = !isOpen"
-    >
-      <span class="line line_01 navbar top-4" :class="{'navbar_transform_1': isOpen}" />
-      <span class="line line_02 navbar top-6" :class="{'navbar_transform_2': isOpen}" />
-      <span class="line line_03 navbar top-8" :class="{'navbar_transform_3': isOpen}" />
-    </div>
+    <Navigation />
+
     <img class="h-screen w-screen object-cover" src="@/assets/img/hero.jpg" alt="岡山大学祭">
     <div class="container max-w-screen-xl mt-24 mx-auto relative">
       <Header title="今年の学祭について" colors="bg-themeColor text-white" />
@@ -126,6 +120,7 @@ import Vue from 'vue'
 import CenterTitle from '@/components/CenterTitle.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import Navigation from '@/components/Navigation.vue'
 import VerticalTitle from '@/components/VerticalTitle.vue'
 
 export default Vue.extend({
@@ -133,11 +128,11 @@ export default Vue.extend({
     CenterTitle,
     Footer,
     Header,
+    Navigation,
     VerticalTitle
   },
   data () {
     return {
-      isOpen: false,
       swiperOption: {
         breakpoints: {
           768: {
@@ -197,22 +192,6 @@ export default Vue.extend({
 </script>
 
 <style>
-.navbar {
-  @apply absolute bg-white left-6 h-0.5 w-5 transition duration-300 ease-in-out
-}
-
-.navbar_transform_1 {
-  @apply transform translate-y-2 rotate-45
-}
-
-.navbar_transform_2 {
-  @apply hidden
-}
-
-.navbar_transform_3 {
-  @apply transform -translate-y-2 -rotate-45
-}
-
 .swiper-pagination {
   @apply mt-4 text-center static w-full
 }
