@@ -33,31 +33,33 @@
       <Header title="スタンプラリー企画" colors="bg-themeColor text-white" />
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-4 sm:mt-14 mx-auto px-10">
-        <swiper :options="swiperOption">
-          <swiper-slide v-for="i of 2" :key="i">
-            <div
-              class="text-center text-xl sm:text-2xl border-b-3 font-bold tracking-widest mt-8 mx-auto pb-2 relative z-10 border-themeColor text-themeColor"
-            >
-              10/30（土） ピックアップ
-            </div>
-            <table class="w-full text-center mt-1">
-              <tr v-for="n of 6" :key="n" class="border-b-2 border-gray-400">
-                <td
-                  class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pr-1 sm:pr-5 py-2.5"
-                  :class="{'text-accentColor': n === 2}"
-                >
-                  13:00〜14:00
-                </td>
-                <td
-                  class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pl-1 sm:pl-5 py-2.5"
-                  :class="{'text-accentColor': n === 2}"
-                >
-                  写真部 学祭展覧会
-                </td>
-              </tr>
-            </table>
-          </swiper-slide>
-        </swiper>
+        <client-only>
+          <swiper :options="swiperOption">
+            <swiper-slide v-for="i of 2" :key="i">
+              <div
+                class="text-center text-xl sm:text-2xl border-b-3 font-bold tracking-widest mt-8 mx-auto pb-2 relative z-10 border-themeColor text-themeColor"
+              >
+                10/30（土） ピックアップ
+              </div>
+              <table class="w-full text-center mt-1">
+                <tr v-for="n of 6" :key="n" class="border-b-2 border-gray-400">
+                  <td
+                    class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pr-1 sm:pr-5 py-2.5"
+                    :class="{'text-accentColor': n === 2}"
+                  >
+                    13:00〜14:00
+                  </td>
+                  <td
+                    class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pl-1 sm:pl-5 py-2.5"
+                    :class="{'text-accentColor': n === 2}"
+                  >
+                    写真部 学祭展覧会
+                  </td>
+                </tr>
+              </table>
+            </swiper-slide>
+          </swiper>
+        </client-only>
         <div slot="pagination" class="swiper-pagination" />
 
         <div class="grid grid-cols-2 gap-4 sm:mt-20">
@@ -81,27 +83,29 @@
       <div class="container max-w-screen-xl pt-16 mx-auto relative">
         <Header title="イベント参加団体" colors="bg-white text-themeColor" />
         <VerticalTitle class="mt-16" text="CLUBS" colors="text-themeLight" />
-        <slick :options="slickOptions" class="slick mt-14">
-          <div v-for="m of 15" :key="m" class="px-1">
-            <a href="#">
-              <img src="@/assets/img/uraja_logo.png" alt="uraja">
-            </a>
-          </div>
-        </slick>
-        <slick :options="slickOptions" class="slick">
-          <div v-for="m of 15" :key="m" class="px-1 transform translate-x-1/2">
-            <a href="#">
-              <img src="@/assets/img/campus_nuts_logo.png" alt="campus_nuts">
-            </a>
-          </div>
-        </slick>
-        <slick :options="slickOptions" class="slick">
-          <div v-for="m of 15" :key="m" class="px-1">
-            <a href="#">
-              <img src="@/assets/img/uraja_logo.png" alt="uraja">
-            </a>
-          </div>
-        </slick>
+        <client-only>
+          <slick :options="slickOptions" class="slick mt-14">
+            <div v-for="m of 15" :key="m" class="px-1">
+              <a href="#">
+                <img src="@/assets/img/uraja_logo.png" alt="uraja">
+              </a>
+            </div>
+          </slick>
+          <slick :options="slickOptions" class="slick">
+            <div v-for="m of 15" :key="m" class="px-1 transform translate-x-1/2">
+              <a href="#">
+                <img src="@/assets/img/campus_nuts_logo.png" alt="campus_nuts">
+              </a>
+            </div>
+          </slick>
+          <slick :options="slickOptions" class="slick">
+            <div v-for="m of 15" :key="m" class="px-1">
+              <a href="#">
+                <img src="@/assets/img/uraja_logo.png" alt="uraja">
+              </a>
+            </div>
+          </slick>
+        </client-only>
         <div class="text-center pb-3 mt-12">
           <a href="#" class="border-b-2 pb-2 sm:text-lg text-white">
             団体の紹介ページはこちら >
