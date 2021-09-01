@@ -67,15 +67,26 @@ export default {
     // 'nuxt-microcms-module'
   ],
 
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+
+  // @nuxtjs/pwa Configuration: https://github.com/nuxt-community/pwa-module
+  manifest: {
+    name: '岡山大学祭2021',
+    lang: 'ja',
+    short_name: '岡大祭2021',
+    title: '岡山大学祭2021',
+    description: '【校友会主催】岡山大学祭2021の公式HPです',
+    theme_color: '#0071C5',
+    background_color: '#0071C5'
+  },
+
   // Google Font
   webfontloader: {
     google: {
       families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900']
     }
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
 
   microcms: {
     options: {
