@@ -33,7 +33,7 @@
       <Header title="スタンプラリー企画" colors="bg-themeColor text-white" />
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-4 sm:mt-14 mx-auto px-10">
-        <no-ssr>
+        <client-only placeholder="Client Only">
           <swiper :options="swiperOption">
             <swiper-slide v-for="i of 2" :key="i">
               <div
@@ -59,8 +59,8 @@
               </table>
             </swiper-slide>
           </swiper>
-          <div slot="pagination" class="swiper-pagination" />
-        </no-ssr>
+        </client-only>
+        <div slot="pagination" class="swiper-pagination" />
 
         <div class="grid grid-cols-2 gap-4 sm:mt-20">
           <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
@@ -83,7 +83,7 @@
       <div class="container max-w-screen-xl pt-16 mx-auto relative">
         <Header title="イベント参加団体" colors="bg-white text-themeColor" />
         <VerticalTitle class="mt-16" text="CLUBS" colors="text-themeLight" />
-        <no-ssr>
+        <client-only placeholder="Client Only">
           <slick :options="slickOptions" class="slick mt-14">
             <div v-for="m of 15" :key="m" class="px-1">
               <a href="#">
@@ -105,7 +105,7 @@
               </a>
             </div>
           </slick>
-        </no-ssr>
+        </client-only>
         <div class="text-center pb-3 mt-12">
           <a href="#" class="border-b-2 pb-2 sm:text-lg text-white">
             団体の紹介ページはこちら >
