@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "core-js": "^3.16.4",
+    "jquery": "^3.6.0",
     "nuxt": "^2.15.8",
     "nuxt-microcms-module": "^1.0.1",
     "nuxt-webfontloader": "^1.1.0",
+    "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
     "vue-slick": "^1.1.16"
   },
@@ -25,6 +27,7 @@
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@nuxtjs/vercel-builder": "^0.21.3",
     "eslint": "^7.32.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.17.0",

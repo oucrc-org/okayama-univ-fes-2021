@@ -37,8 +37,14 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/vue-awesome-swiper', ssr: false },
-    { src: '@/plugins/vue-slick', ssr: false }
+    {
+      src: '@/plugins/vue-awesome-swiper',
+      ssr: false
+    },
+    {
+      src: '@/plugins/vue-slick',
+      ssr: false
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -69,6 +75,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
