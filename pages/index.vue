@@ -118,8 +118,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CenterTitle from '~/components/pages/index/CenterTitle.vue'
-import Header from '~/components/templates/Header.vue'
+import CenterTitle from '~/components/templates/CenterTitle.vue'
+import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 
 export default Vue.extend({
