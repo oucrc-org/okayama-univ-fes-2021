@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -57,11 +59,25 @@ export default {
     {
       src: '@/plugins/vue-slick',
       ssr: false
+    },
+    {
+      src: '@/plugins/composition',
+      ssr: false
+    },
+    {
+      src: '@/plugins/vuex-persistedstate',
+      ssr: false
+    },
+    {
+      src: '@/plugins/auth.ts',
+      ssr: false
     }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
+  target: 'server',
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -77,7 +93,9 @@ export default {
   modules: [
     // https://www.npmjs.com/package/nuxt-webfontloader
     'nuxt-webfontloader',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/firebase'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -111,5 +129,21 @@ export default {
       apiKey: process.env.API_KEY
     },
     mode: process.env.NODE_ENV === 'production' ? 'server' : 'all'
+  },
+
+  firebase: {
+    config: {
+      apiKey: process.env.FIREBASE_APIKEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.FIREBASE_APP_ID,
+      measurementId: process.env.FIREBASE_MEASUREMENT_ID
+    },
+    services: {
+      auth: true,
+      firestore: true
+    }
   }
 }
