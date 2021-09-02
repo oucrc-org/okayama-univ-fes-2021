@@ -27,6 +27,11 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico'
       }
+    ],
+    script: [
+      {
+        src: 'js/waveCanvas.js'
+      }
     ]
   },
 

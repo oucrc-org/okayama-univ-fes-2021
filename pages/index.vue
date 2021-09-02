@@ -173,15 +173,6 @@ export default Vue.extend({
       }
     }
   },
-  head () {
-    return {
-      script: [
-        {
-          src: 'js/waveCanvas.js'
-        }
-      ]
-    }
-  },
   mounted () {
     init()
   }
