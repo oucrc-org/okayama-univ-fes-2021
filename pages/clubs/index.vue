@@ -19,7 +19,7 @@
             <img
               :src="typeof club.cover === 'undefined' ? alternativeCoverImage : club.cover.url"
               :alt="`${club.name}部のカバー画像`"
-              class="rounded-2xl object-cover w-full h-28 sm:h-36 md:h-44 lg:h-52 xl:h-64 2xl:h-72"
+              class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
             >
             <div class="m-2 lg:text-lg xl:text-xl">
               {{ club.name }}
