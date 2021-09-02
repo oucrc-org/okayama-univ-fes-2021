@@ -1,7 +1,6 @@
-import { ClubData } from '~/assets/js/type/club/club-data'
 import { IImage } from '~/assets/js/type/IImage'
 
-export default class Club implements ClubData {
+export interface ClubData {
   cover?: IImage
   icon?: IImage
   name?: String
@@ -18,17 +17,4 @@ export default class Club implements ClubData {
   instagram_url?: String
   // eslint-disable-next-line camelcase
   line_url?: String
-
-  get coverUrl () {
-    return this.cover ? this.cover.url : null
-  }
-
-  public hasSNSUrl (): boolean {
-    return !(
-      this.twitter_url == null &&
-      this.facebook_url == null &&
-      this.instagram_url == null &&
-      this.line_url == null
-    )
-  }
 }

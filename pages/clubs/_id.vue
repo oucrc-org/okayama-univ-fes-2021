@@ -2,7 +2,7 @@
   <div class="container max-w-screen-xl mt-24 mx-auto relative">
     <div>
       <Header :title="club.name" colors="bg-themeColor text-white" />
-      <img :src="club.cover.url" alt="">
+      <img :src="coverUrl" alt="">
     </div>
     <!--  -->
     <Headline title="何をしている部活なの？" colors="border-themeColor text-themeColor" />
@@ -12,10 +12,12 @@
     <!-- -->
     <Headline title="活動紹介映像" colors="border-themeColor text-themeColor" />
     <div>
-      <iframe :src="watchToEmbed(club.youtubeUrl)" />
+      <iframe :src="watchToEmbed(club.youtube_url)" />
     </div>
     <!-- -->
-    <Headline title="公式SNS" colors="border-themeColor text-themeColor" />
+    <div v-if="hasSNSUrl">
+      <Headline title="公式SNS" colors="border-themeColor text-themeColor" />
+    </div>
   </div>
 </template>
 
@@ -25,25 +27,38 @@ import Header from '~/components/layouts/Header.vue'
 import HTMLLeader from '~/components/templates/HTMLLeader.vue'
 import Headline from '~/components/templates/Headline.vue'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
+import { ClubData } from '~/assets/js/type/club/club-data'
 import Club from '~/assets/js/type/club/club'
 
 export default {
   components: { Headline, HTMLLeader, Header },
   async asyncData (context: Context) {
     const { app, params } = context
-    const response = await app.$microcms.get({
+    const response: ClubData = await app.$microcms.get({
       endpoint: `clubs/${params.id}`
     })
     return {
-      club: new Club(response)
+      club: response
     }
   },
-  data () {
+  data (): {
+    club: ClubData
+    } {
     return {
-      club: {
-        type: Club,
-        default: Club
-      }
+      club: new Club()
+    }
+  },
+  computed: {
+    hasSNSUrl () : boolean {
+      return !(
+        this.club.twitter_url == null &&
+        this.club.facebook_url == null &&
+        this.club.instagram_url == null &&
+        this.club.line_url == null
+      )
+    },
+    coverUrl () {
+      return this.club.cover ? this.club.cover.url : null
     }
   },
   methods: {
