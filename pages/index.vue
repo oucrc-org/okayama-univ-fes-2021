@@ -246,6 +246,9 @@ export default Vue.extend({
   },
   mounted () {
     init()
+  },
+  beforeDestroy () {
+    stop()
   }
 })
 </script>
