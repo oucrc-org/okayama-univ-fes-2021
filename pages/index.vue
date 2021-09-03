@@ -1,7 +1,28 @@
 <template>
   <div>
     <img class="h-screen w-screen object-cover" src="@/assets/img/hero.jpg" alt="岡山大学祭">
-    <div class="container max-w-screen-xl mt-24 mx-auto relative">
+    <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
+      <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/streaming.png')" />
+      <VerticalTitle text="STREAMING" colors="text-gray-200" />
+      <div class="container max-w-screen-lg mt-10 mx-auto">
+        <div class="px-5">
+          <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
+            <iframe
+              class="absolute h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/mEVC3prQz0Y?controls=0"
+              title="学祭2021 パフォーマンス"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </div>
+          <client-only>
+            <light-timeline :items="items" class="text-center" />
+          </client-only>
+        </div>
+      </div>
+    </div>
+
+    <div v-else class="container max-w-screen-xl mt-20 mx-auto relative">
       <Header title="今年の学祭について" colors="bg-themeColor text-white" />
       <VerticalTitle text="ABOUT" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-14 mx-auto">
@@ -13,7 +34,7 @@
 
     <canvas class="waveCanvas mt-4" />
     <div class="bg-themeColor">
-      <div class="container max-w-screen-xl pt-6 mx-auto relative">
+      <div class="container max-w-screen-xl mx-auto relative">
         <Header title="現在のピックアップ" colors="bg-white text-themeColor" />
         <VerticalTitle text="PICKUP" colors="text-themeLight" />
         <CenterTitle text="写真部 学祭展覧会" colors="border-white text-white" />
@@ -130,6 +151,56 @@ export default Vue.extend({
   },
   data () {
     return {
+      isStreaming: true,
+      items: [
+        {
+          tag: '10:00',
+          color: '#dcdcdc',
+          content: '校友会あいさつ'
+        },
+        {
+          tag: '10:10',
+          color: '#F04444',
+          content: '軽音部パフォーマンス'
+        },
+        {
+          type: 'star',
+          tag: '11:00',
+          color: '#F04444',
+          htmlMode: true,
+          content: 'ゲスト: 岡大太郎'
+        },
+        {
+          tag: '12:00',
+          color: '#dcdcdc',
+          content: '昼休憩'
+        },
+        {
+          tag: '13:00',
+          color: '#F04444',
+          content: '軽音部パフォーマンス'
+        },
+        {
+          tag: '14:30',
+          color: '#F04444',
+          content: '軽音部パフォーマンス'
+        },
+        {
+          tag: '15:00',
+          color: '#F04444',
+          content: '軽音部パフォーマンス'
+        },
+        {
+          tag: '16:30',
+          color: '#F04444',
+          content: '軽音部パフォーマンス'
+        },
+        {
+          tag: '17:00',
+          color: '#dcdcdc',
+          content: '閉会のあいさつ'
+        }
+      ],
       swiperOption: {
         breakpoints: {
           768: {
