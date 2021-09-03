@@ -17,6 +17,26 @@
     <!-- -->
     <div v-if="hasSNSUrl">
       <Headline title="公式SNS" colors="border-themeColor text-themeColor" />
+      <div v-if="club.twitter_url != null">
+        <a :href="club.twitter_url">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/twitter.png" alt="Twitter">
+        </a>
+      </div>
+      <div v-if="club.facebook_url != null">
+        <a :href="club.facebook_url">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/facebook.png" alt="Facebook">
+        </a>
+      </div>
+      <div v-if="club.instagram_url != null">
+        <a :href="club.instagram_url">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/instagram.png" alt="LINE">
+        </a>
+      </div>
+      <div v-if="club.line_url != null">
+        <a :href="club.line_url">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/line.png" alt="LINE">
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -50,14 +70,17 @@ export default {
   },
   computed: {
     hasSNSUrl () : boolean {
+      // @ts-ignore
+      const club = this.club
       return !(
-        this.club.twitter_url == null &&
-        this.club.facebook_url == null &&
-        this.club.instagram_url == null &&
-        this.club.line_url == null
+        club.twitter_url == null &&
+        club.facebook_url == null &&
+        club.instagram_url == null &&
+        club.line_url == null
       )
     },
-    coverUrl () {
+    coverUrl () : String {
+      // @ts-ignore
       return this.club.cover ? this.club.cover.url : null
     }
   },
