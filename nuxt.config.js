@@ -87,7 +87,7 @@ export default {
     title: '岡山大学祭2021',
     description: '【校友会主催】岡山大学祭2021の公式HPです',
     theme_color: '#0071C5',
-    background_color: '#0071C5'
+    background_color: '#FFFFFF'
   },
 
   // Google Font
