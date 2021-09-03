@@ -47,6 +47,10 @@ export default {
       ssr: false
     },
     {
+      src: '@/plugins/vue-light-timeline',
+      ssr: false
+    },
+    {
       src: '@/plugins/vue-slick',
       ssr: false
     }

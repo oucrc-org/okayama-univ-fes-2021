@@ -18,6 +18,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-light-timeline": "^1.0.3",
     "vue-slick": "^1.1.16"
   },
   "devDependencies": {
