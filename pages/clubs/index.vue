@@ -4,7 +4,7 @@
       <VerticalTitle text="CLUBS" colors="text-gray-200" class="-z-10" />
 
       <Header title="部活動・サークル紹介" colors="bg-themeColor text-white" />
-      <Warning>あああああ</Warning>
+      <Warning />
 
       <div
         v-for="clubsWithDepartment in clubsByParentDepartment"
