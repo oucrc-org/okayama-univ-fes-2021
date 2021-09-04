@@ -31,7 +31,7 @@
     <hr class="mt-16 mx-auto w-11/12">
 
     <p class="text-center mt-6 text-gray-400 tracking-widest text-sm">
-      ©️ 2021 岡山大学校友会
+      (c) 2021 岡山大学校友会
     </p>
   </div>
 </template>
