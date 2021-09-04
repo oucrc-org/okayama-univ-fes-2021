@@ -1,5 +1,5 @@
 import { ClubData } from '~/assets/js/type/club/club-data'
-import { IImage } from '~/assets/js/type/IImage'
+import IImage = oufes.IImage;
 
 export default class Club implements ClubData {
   cover?: IImage

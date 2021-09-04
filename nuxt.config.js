@@ -27,6 +27,11 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico'
       }
+    ],
+    script: [
+      {
+        src: 'js/waveCanvas.js'
+      }
     ]
   },
 
@@ -39,11 +44,11 @@ export default {
   plugins: [
     {
       src: '@/plugins/vue-awesome-swiper',
-      mode: 'client'
+      ssr: false
     },
     {
       src: '@/plugins/vue-slick',
-      mode: 'client'
+      ssr: false
     }
   ],
 
@@ -67,6 +72,20 @@ export default {
     // 'nuxt-microcms-module'
   ],
 
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+
+  // @nuxtjs/pwa Configuration: https://github.com/nuxt-community/pwa-module
+  manifest: {
+    name: '岡山大学祭2021',
+    lang: 'ja',
+    short_name: '岡大祭2021',
+    title: '岡山大学祭2021',
+    description: '【校友会主催】岡山大学祭2021の公式HPです',
+    theme_color: '#0071C5',
+    background_color: '#0071C5'
+  },
+
   // Google Font
   webfontloader: {
     google: {
@@ -74,13 +93,6 @@ export default {
     }
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    vendor: [
-      'vue-awesome-swiper',
-      'vue-slick'
-    ]
-  },
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,

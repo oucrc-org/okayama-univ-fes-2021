@@ -1,4 +1,4 @@
-import { IImage } from '~/assets/js/type/IImage'
+import IImage = oufes.IImage;
 
 export interface ClubData {
   cover?: IImage

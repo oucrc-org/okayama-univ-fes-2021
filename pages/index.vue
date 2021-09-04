@@ -33,7 +33,7 @@
       <Header title="スタンプラリー企画" colors="bg-themeColor text-white" />
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-4 sm:mt-14 mx-auto px-10">
-        <client-only>
+        <client-only placeholder="Client Only">
           <swiper :options="swiperOption">
             <swiper-slide v-for="i of 2" :key="i">
               <div
@@ -83,7 +83,7 @@
       <div class="container max-w-screen-xl pt-16 mx-auto relative">
         <Header title="イベント参加団体" colors="bg-white text-themeColor" />
         <VerticalTitle class="mt-16" text="CLUBS" colors="text-themeLight" />
-        <client-only>
+        <client-only placeholder="Client Only">
           <slick :options="slickOptions" class="slick mt-14">
             <div v-for="m of 15" :key="m" class="px-1">
               <a href="#">
@@ -118,9 +118,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CenterTitle from '~/components/templates/CenterTitle.vue'
-import Header from '~/components/layouts/Header.vue'
-import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
+import CenterTitle from '@/components/CenterTitle.vue'
+import Header from '@/components/Header.vue'
+import VerticalTitle from '@/components/VerticalTitle.vue'
 
 export default Vue.extend({
   components: {
@@ -171,15 +171,6 @@ export default Vue.extend({
           }
         ]
       }
-    }
-  },
-  head () {
-    return {
-      script: [
-        {
-          src: 'js/waveCanvas.js'
-        }
-      ]
     }
   },
   mounted () {

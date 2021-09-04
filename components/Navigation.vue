@@ -4,24 +4,36 @@
       class="fixed right-0 top-0 bg-themeColor h-full w-full sm:w-96 px-5 pt-12 z-40 transition-all duration-500"
       :class="{'transform translate-x-full': !isOpen}"
     >
-      <a
-        href="#"
-        class="inline-block bg-white font-medium rounded-xl text-themeColor text-lg tracking-wider px-5 py-3 w-60"
+      <NuxtLink
+        to="/"
+        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
+        :class="{active: $nuxt.$route.path === '/' }"
+        @click.native="isOpen = !isOpen"
       >
         ホーム
-      </a>
+      </NuxtLink>
       <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
         学長のメッセージ
       </a>
       <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
         ライブ配信
       </a>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
+      <NuxtLink
+        to="/presentation"
+        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
+        :class="{active: $nuxt.$route.path === '/presentation' }"
+        @click.native="isOpen = !isOpen"
+      >
         団体企画
-      </a>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
+      </NuxtLink>
+      <NuxtLink
+        to="/clubs"
+        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
+        :class="{active: $nuxt.$route.path === '/clubs' }"
+        @click.native="isOpen = !isOpen"
+      >
         部活動・サークル紹介
-      </a>
+      </NuxtLink>
       <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
         スタンプラリー
       </a>
@@ -95,5 +107,9 @@ export default {
 
 .navbar_transform_3 {
   @apply bg-gray-500 transform -translate-y-2 -rotate-45
+}
+
+.active {
+  @apply bg-white text-themeColor
 }
 </style>
