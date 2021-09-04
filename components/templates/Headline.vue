@@ -1,5 +1,5 @@
 <template>
-  <div class="text-2xl p-3 border-b-4 mt-16 pb-3 w-4/5 sm:w-2/3 relative z-10" :class="colors">
+  <div class="text-xl px-4 pb-1 border-b-4 mb-6 mt-12 w-5/6 sm:w-2/3 relative z-10" :class="colors">
     {{ title }}
   </div>
 </template>
