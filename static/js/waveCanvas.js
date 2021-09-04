@@ -2,6 +2,7 @@ const unit = 100
 let canvasList
 const info = {}
 let colorList
+let timeoutId
 
 /**
  * Init function.
@@ -34,7 +35,12 @@ function update () {
   }
   info.seconds = info.seconds + 0.014
   info.t = info.seconds * Math.PI
-  setTimeout(update, 35)
+  timeoutId = setTimeout(update, 35)
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function stop () {
+  clearTimeout(timeoutId)
 }
 
 /**
