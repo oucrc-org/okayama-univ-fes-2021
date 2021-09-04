@@ -4,10 +4,7 @@
       <VerticalTitle text="CLUBS" colors="text-gray-200" class="-z-10" />
 
       <Header title="部活動・サークル紹介" colors="bg-themeColor text-white" />
-      <div class="p-8 text-red-600">
-        ※本学の公認団体については、活動前後の継続的な検温や、アルコール消毒、定期的な換気等、感染症対策を講じた上で活動を行っております。
-        また、動画や写真にはコロナ禍以前に活動していた時のものを含みます。
-      </div>
+      <Warning />
 
       <div
         v-for="clubsWithDepartment in clubsByParentDepartment"
@@ -37,12 +34,14 @@ import { Context } from '@nuxt/types'
 import CenterTitle from '@/components/CenterTitle.vue'
 import Header from '@/components/Header.vue'
 import VerticalTitle from '@/components/VerticalTitle.vue'
+import Warning from '@/components/templates/Warning.vue'
 
 export default Vue.extend({
   components: {
     CenterTitle,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    Warning
   },
   async asyncData ({ app }: Context): Promise<{ clubs: { contents: oufes.IClub[] } }> {
     const response = await app.$microcms.get({
