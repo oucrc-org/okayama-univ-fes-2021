@@ -43,6 +43,10 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {
+      src: '@/plugins/axios',
+      ssr: false
+    },
+    {
       src: '@/plugins/vue-awesome-swiper',
       ssr: false
     },
@@ -72,8 +76,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://www.npmjs.com/package/nuxt-webfontloader
-    'nuxt-webfontloader'
-    // 'nuxt-microcms-module'
+    'nuxt-webfontloader',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -88,6 +92,10 @@ export default {
     description: '【校友会主催】岡山大学祭2021の公式HPです',
     theme_color: '#0071C5',
     background_color: '#FFFFFF'
+  },
+
+  env: {
+    API_KEY: process.env.API_KEY
   },
 
   // Google Font
