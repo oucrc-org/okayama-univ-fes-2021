@@ -73,7 +73,6 @@ import Vue from 'vue'
 import Header from '~/components/Header.vue'
 import HTMLLeader from '~/components/templates/HTMLLeader.vue'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
-import { ClubData } from '~/assets/js/type/club/club-data'
 import Club from '~/assets/js/type/club/club'
 import BodyWithHeader from '~/components/pages/club/_id/BodyWithHeader.vue'
 import VerticalTitle from '~/components/VerticalTitle.vue'
@@ -85,9 +84,7 @@ export default Vue.extend({
     Header,
     VerticalTitle
   },
-  data (): {
-    club: ClubData
-    } {
+  data () {
     return {
       club: new Club()
     }
@@ -110,11 +107,12 @@ export default Vue.extend({
   },
   async created () {
     const query = this.$route.query
-    if (!query.id || !query.draftKey) {
+    if (!query.id) {
       return
     }
-    const { data }: { data: ClubData } = await this.$axios.get(
-      `https://oufes2021.microcms.io/api/v1/clubs/${query.id}?draftKey=${query.draftKey}`,
+    const uri = !query.draftKey ? `https://oufes2021.microcms.io/api/v1/clubs/${query.id}` : `https://oufes2021.microcms.io/api/v1/clubs/${query.id}?draftKey=${query.draftKey}`
+    const { data }: { data: Club } = await this.$axios.get(
+      uri,
       {
         headers: { 'X-API-KEY': process.env.API_KEY }
       }
