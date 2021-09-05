@@ -15,11 +15,11 @@
     <HTMLLeader :body="club.body" class="px-6" />
 
     <!-- 活動紹介映像 -->
-    <BodyWithHeader title="活動紹介映像">
-      <div :class="$style['introduction_club_movie']">
-        <iframe :src="watchToEmbed(club.youtube_url)" allowfullscreen />
-      </div>
-    </BodyWithHeader>
+    <!--    <BodyWithHeader title="活動紹介映像">-->
+    <!--      <div :class="$style['introduction_club_movie']">-->
+    <!--        <iframe :src="watchToEmbed(club.youtube_url)" allowfullscreen />-->
+    <!--      </div>-->
+    <!--    </BodyWithHeader>-->
 
     <!-- 公式SNS -->
     <div v-if="hasSNSUrl">
@@ -126,20 +126,20 @@ export default Vue.extend({
 </script>
 
 <style module>
-.introduction_club_movie {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 75%;
-}
+/*.introduction_club_movie {*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*  height: 0;*/
+/*  padding-top: 75%;*/
+/*}*/
 
-.introduction_club_movie iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+/*.introduction_club_movie iframe {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
 
 h1 {
   @apply border-themeColor text-themeColor text-xl px-4 pb-1 border-b-4 mb-6 mt-12 w-5/6 sm:w-2/3 relative -left-6 z-10
