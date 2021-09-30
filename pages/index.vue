@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Countdown />
     <img class="h-screen w-screen object-cover" src="@/assets/img/hero.jpg" alt="岡山大学祭">
     <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
       <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/streaming.png')" />
@@ -142,12 +143,14 @@ import Vue from 'vue'
 import CenterTitle from '@/components/CenterTitle.vue'
 import Header from '@/components/Header.vue'
 import VerticalTitle from '@/components/VerticalTitle.vue'
+import Countdown from '@/components/Countdown.vue'
 
 export default Vue.extend({
   components: {
     CenterTitle,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    Countdown
   },
   data () {
     return {
