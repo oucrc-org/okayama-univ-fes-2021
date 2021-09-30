@@ -50,9 +50,11 @@ export default {
     closeCountDown () {
       // 差分を利用して、オープンの瞬間にカウントダウンを非表示にする
       // 重要: アロー関数はthisの参照先が変わるので使わないこと
-      setTimeout(function () {
-        window.location.reload()
-      }, this.milliSecondsUntilOpen)
+      if (this.enableCountDown) {
+        setTimeout(function () {
+          window.location.reload()
+        }, this.milliSecondsUntilOpen)
+      }
     },
     warnAboutEnv () {
       if (isEnvValid) {
