@@ -14,12 +14,13 @@ import dayjs from 'dayjs'
 dayjs.extend(require('dayjs/plugin/timezone'))
 dayjs.extend(require('dayjs/plugin/utc'))
 dayjs.tz.setDefault('Asia/Tokyo')
-const openDateEnv = process.env.OPEN_DATE
-const isEnvValid = dayjs(openDateEnv).isValid()
 let openDateInput = '2021-11-07 00:00:00'
+const openDateEnv = process.env.OPEN_DATE
+// nullを入れないと現在日時になってしまう
+const isEnvValid = dayjs(openDateEnv ?? null).isValid()
 // dayjsが環境変数を解釈できない場合、ハードコーディングされた日時を使う
 if (isEnvValid) {
-  openDateInput = process.env.OPEN_DATE
+  openDateInput = openDateEnv
 }
 
 export default {
