@@ -95,7 +95,8 @@ export default {
   },
 
   env: {
-    API_KEY: process.env.API_KEY
+    API_KEY: process.env.API_KEY,
+    OPEN_DATE: process.env.OPEN_DATE
   },
 
   // Google Font
