@@ -9,7 +9,7 @@
           <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
             <iframe
               class="absolute h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/mEVC3prQz0Y?controls=0"
+              src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
               title="学祭2021 パフォーマンス"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
