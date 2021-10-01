@@ -1,0 +1,28 @@
+name: "個人アカウントにプッシュ"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clone
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/smpny7/okayama-univ-fes-2021
+      - name: set remote
+        run: cd okayama-univ-fes-2021 && git remote add upstream https://github.com/oucrc-org/okayama-univ-fes-2021
+      - name: fetch
+        run: cd okayama-univ-fes-2021 && git fetch upstream
+      - name: checkout
+        run: cd okayama-univ-fes-2021 && git checkout main
+      - name: merge
+        run: cd okayama-univ-fes-2021 && git merge upstream/main
+      - name: push
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: cd okayama-univ-fes-2021 && git push https://smpny7:${PERSONAL_ACCESS_TOKEN}@github.com/smpny7/okayama-univ-fes-2021
