@@ -57,16 +57,21 @@
         <StampRallyTimeTable />
         <div class="grid grid-cols-2 gap-4 sm:mt-20">
           <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
-            <a
-              href="#"
+            <NuxtLink
+              to="stamp-rally"
               class="border-3 border-themeColor inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >スタンプラリーとは？</a>
+            >
+              スタンプラリーとは？
+            </NuxtLink>
           </div>
           <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-            <a
-              href="#"
+            <!-- TODO: ログインリンクに変更 -->
+            <NuxtLink
+              to="#"
               class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >参加する →</a>
+            >
+              参加する →
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -175,22 +180,6 @@ export default Vue.extend({
           content: '閉会のあいさつ'
         }
       ],
-      swiperOption: {
-        breakpoints: {
-          768: {
-            allowTouchMove: false,
-            pagination: false,
-            slidesPerView: 2,
-            spaceBetween: 60
-          }
-        },
-        slidesPerView: 1,
-        spaceBetween: 40,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      },
       slickOptions: {
         arrows: false,
         autoplay: true,
