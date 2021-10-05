@@ -11,6 +11,11 @@
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
         title="学長からのメッセージ"
       />
+      <AccountViewer
+        :src="src"
+        role="国立大学法人岡山大学長"
+        name="槇野博史"
+      />
       <div>
         Kotlinを称えよ<br>
         ここに話した内容のカンペが入ります。
@@ -24,13 +29,21 @@ import BodyWithHeader from '../../components/pages/club/_id/BodyWithHeader'
 import VerticalTitle from '../../components/VerticalTitle'
 import Header from '../../components/Header'
 import IframeViewer from '../../components/templates/IframeViewer'
+import AccountViewer from '../../components/templates/AccountViewer'
+import President from '../../assets/img/static/president.jpg'
 
 export default {
   components: {
     IframeViewer,
     BodyWithHeader,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    AccountViewer
+  },
+  data () {
+    return {
+      src: President
+    }
   }
 }
 </script>
