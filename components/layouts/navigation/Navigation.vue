@@ -4,47 +4,21 @@
       class="fixed right-0 top-0 bg-themeColor h-full w-full sm:w-96 px-5 pt-12 z-40 transition-all duration-500"
       :class="{'transform translate-x-full': !isOpen}"
     >
-      <NuxtLink
-        to="/"
-        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
-        :class="{active: $nuxt.$route.path === '/' }"
-        @click.native="isOpen = !isOpen"
-      >
-        ホーム
-      </NuxtLink>
-      <NuxtLink
-        to="/president-message"
-        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
-        :class="{active: $nuxt.$route.path === '/president-message' }"
-        @click.native="isOpen = !isOpen"
-      >
-        学長のメッセージ
-      </NuxtLink>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
-        ライブ配信
-      </a>
-      <NuxtLink
-        to="/presentation"
-        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
-        :class="{active: $nuxt.$route.path === '/presentation' }"
-        @click.native="isOpen = !isOpen"
-      >
-        団体企画
-      </NuxtLink>
-      <NuxtLink
-        to="/clubs"
-        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
-        :class="{active: $nuxt.$route.path === '/clubs' }"
-        @click.native="isOpen = !isOpen"
-      >
-        部活動・サークル紹介
-      </NuxtLink>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
-        スタンプラリー
-      </a>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
-        協賛企業一覧
-      </a>
+      <NavigateColumn to="/" title="ホーム" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="/president-message" title="学長のメッセージ" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="/operation-message" title="運営団体のメッセージ" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="#" title="ライブ配信" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="/presentation" title="団体企画" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="/clubs" title="部活動・サークル紹介" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="#" title="スタンプラリー" @click.native="isOpen = !isOpen" />
+
+      <NavigateColumn to="#" title="協賛企業一覧" @click.native="isOpen = !isOpen" />
 
       <div class="absolute bottom-5 bg-white h-10 w-52 rounded-full">
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>
@@ -87,8 +61,10 @@
 </template>
 
 <script>
+import NavigateColumn from './NavigateColumn'
 export default {
   name: 'Navigation',
+  components: { NavigateColumn },
   data () {
     return {
       isOpen: false
