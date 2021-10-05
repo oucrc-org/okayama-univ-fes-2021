@@ -4,16 +4,37 @@
       <Header title="スタンプラリー" colors="bg-themeColor text-white" />
 
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" class="-z-10" />
+      <Headline title="スタンプラリー規格について" colors="border-themeColor text-themeColor" />
+      <!-- TODO: 説明追加 -->
+      <p class="px-4">
+        説明準備中
+      </p>
 
-      <div class="px-6 py-6">
+      <BodyWithHeader title="豪華賞品" colors="border-themeColor text-themeColor">
         <StampRallyGrid :items="items" />
-      </div>
-      <div>
-        <Headline title="スタンプ取得について" colors="border-themeColor text-themeColor" />
+      </BodyWithHeader>
+
+      <BodyWithHeader title="スタンプ取得について" colors="border-themeColor text-themeColor">
         <!-- TODO: 説明追加 -->
         <p>説明準備中</p>
         <StampRallyTimeTable />
-      </div>
+      </BodyWithHeader>
+      <BodyWithHeader title="参加資格" colors="border-themeColor text-themeColor">
+        <!-- TODO: 説明追加 -->
+        <p class="mb-8">
+          説明準備中
+        </p>
+
+        <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
+          <!-- TODO: ログインリンクに変更 -->
+          <NuxtLink
+            to="#"
+            class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
+          >
+            参加する →
+          </NuxtLink>
+        </div>
+      </BodyWithHeader>
     </div>
   </div>
 </template>
@@ -21,15 +42,17 @@
 <script lang="ts">
 import Vue from 'vue'
 import Header from '@/components/Header.vue'
-import Headline from '~/components/templates/Headline.vue'
+import BodyWithHeader from '~/components/pages/club/_id/BodyWithHeader.vue'
 import VerticalTitle from '@/components/VerticalTitle.vue'
 import StampRallyGrid from '@/components/stamp-rally/Grid.vue'
 import StampRallyTimeTable from '@/components/stamp-rally/TimeTable.vue'
+import Headline from '~/components/templates/Headline.vue'
 
 import { IStampRallyItem } from '~/assets/js/type/IStampRally'
 export default Vue.extend({
   components: {
     Header,
+    BodyWithHeader,
     Headline,
     VerticalTitle,
     StampRallyGrid,
