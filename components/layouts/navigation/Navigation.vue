@@ -10,13 +10,13 @@
 
       <NavigateColumn to="/operation-message" title="運営団体のメッセージ" @click.native="isOpen = !isOpen" />
 
-      <NavigateColumn to="#" title="ライブ配信" @click.native="isOpen = !isOpen" />
+      <NavigateColumn to="/live" title="ライブ配信" @click.native="isOpen = !isOpen" />
 
       <NavigateColumn to="/presentation" title="団体企画" @click.native="isOpen = !isOpen" />
 
       <NavigateColumn to="/clubs" title="部活動・サークル紹介" @click.native="isOpen = !isOpen" />
 
-      <NavigateColumn to="#" title="スタンプラリー" @click.native="isOpen = !isOpen" />
+      <NavigateColumn to="/stamp-rally" title="スタンプラリー" @click.native="isOpen = !isOpen" />
 
       <div class="absolute bottom-5 bg-white h-10 w-52 rounded-full">
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>

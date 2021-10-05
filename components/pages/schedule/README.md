@@ -1,0 +1,2 @@
+OperationStageSchedule: 校友会のステージのスケジュール
+ProConcertSchedule: プロコンサートのスケジュール

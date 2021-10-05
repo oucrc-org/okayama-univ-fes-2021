@@ -42,8 +42,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
-import StampRallyGrid from '~/components/stamp-rally/Grid.vue'
-import StampRallyTimeTable from '~/components/stamp-rally/TimeTable.vue'
+import StampRallyGrid from '~/components/pages/stamp-rally/Grid.vue'
+import StampRallyTimeTable from '~/components/pages/stamp-rally/TimeTable.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import { IStampRallyItem } from '~/assets/js/type/IStampRally'
