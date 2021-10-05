@@ -31,7 +31,7 @@
               <a :href="club.twitter_url">
                 <img
                   class="inline-block text-gray-700 tracking-widest h-6"
-                  src="@/assets/img/twitter.png"
+                  src="~/assets/img/icon/twitter.png"
                   alt="Twitter"
                 >
               </a>
@@ -42,7 +42,7 @@
               <a :href="club.facebook_url">
                 <img
                   class="inline-block text-gray-700 tracking-widest h-6"
-                  src="@/assets/img/facebook.png"
+                  src="~/assets/img/icon/facebook.png"
                   alt="Facebook"
                 >
               </a>
@@ -51,14 +51,14 @@
             <!-- Instagram -->
             <div v-if="club.instagram_url != null" class="mx-auto border-solid border-2 p-4 rounded-full">
               <a :href="club.instagram_url">
-                <img class="inline-block text-gray-700 tracking-widest h-6" src="@/assets/img/instagram.png" alt="LINE">
+                <img class="inline-block text-gray-700 tracking-widest h-6" src="~/assets/img/icon/instagram.png" alt="LINE">
               </a>
             </div>
 
             <!-- LINE -->
             <div v-if="club.line_url != null" class="mx-auto border-solid border-2 p-4 rounded-full">
               <a :href="club.line_url">
-                <img class="inline-block text-gray-700 tracking-widest h-6" src="@/assets/img/line.png" alt="LINE">
+                <img class="inline-block text-gray-700 tracking-widest h-6" src="~/assets/img/icon/line.png" alt="LINE">
               </a>
             </div>
           </div>
@@ -70,12 +70,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Header from '~/components/Header.vue'
-import HTMLLeader from '~/components/templates/HTMLLeader.vue'
+import Header from '~/components/layouts/Header.vue'
+import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
 import Club from '~/assets/js/type/club/club'
-import BodyWithHeader from '~/components/pages/club/_id/BodyWithHeader.vue'
-import VerticalTitle from '~/components/VerticalTitle.vue'
+import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 
 export default Vue.extend({
   components: {

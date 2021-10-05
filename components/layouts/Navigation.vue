@@ -50,13 +50,13 @@
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>
         <div class="absolute inline-block right-5 top-1.5">
           <a href="#" class="mr-2">
-            <img class="inline-block h-6" src="@/assets/img/nav_twitter.png" alt="Twitter">
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_twitter.png" alt="Twitter">
           </a>
           <a href="#" class="mr-2">
-            <img class="inline-block h-6" src="@/assets/img/nav_facebook.png" alt="Facebook">
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_facebook.png" alt="Facebook">
           </a>
           <a href="#">
-            <img class="inline-block h-6" src="@/assets/img/nav_line.png" alt="LINE">
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_line.png" alt="LINE">
           </a>
         </div>
       </div>

@@ -4,20 +4,20 @@
       <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
         <iframe
           class="absolute h-full w-full"
-          :src="src"
+          :src="watchToEmbed(src)"
           :title="title"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         />
       </div>
-      <client-only>
-        <light-timeline :items="items" class="text-center" />
-      </client-only>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+
+import watchToEmbed from '~/assets/js/url/watch-to-embed'
+
 export default {
   props: {
     src: {
@@ -28,6 +28,9 @@ export default {
       type: String,
       default: ''
     }
+  },
+  methods: {
+    watchToEmbed
   }
 }
 </script>

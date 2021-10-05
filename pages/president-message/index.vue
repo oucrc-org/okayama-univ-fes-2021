@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import BodyWithHeader from '../../components/pages/club/_id/BodyWithHeader'
-import VerticalTitle from '../../components/VerticalTitle'
-import Header from '../../components/Header'
-import IframeViewer from '../../components/templates/IframeViewer'
-import AccountViewer from '../../components/templates/AccountViewer'
+import BodyWithHeader from '../../components/templates/header/BodyWithHeader'
+import VerticalTitle from '../../components/layouts/VerticalTitle'
+import Header from '../../components/layouts/Header'
+import IframeViewer from '../../components/templates/html/IframeViewer'
+import AccountViewer from '../../components/templates/parts/AccountViewer'
 import President from '../../assets/img/static/president.jpg'
 
 export default {
