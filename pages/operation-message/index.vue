@@ -2,19 +2,35 @@
   <div class="container max-w-screen-xl mt-24 mx-auto relative">
     <!-- ヘッダー -->
     <div class="my-5">
-      <Header title="学長メッセージ" colors="bg-themeColor text-white" />
-      <VerticalTitle text="PRESIDENT" colors="text-gray-200" />
+      <Header title="運営団体メッセージ" colors="bg-themeColor text-white" />
+      <VerticalTitle text="OPERATION" colors="text-gray-200" />
     </div>
 
-    <BodyWithHeader title="学長からのメッセージ">
+    <BodyWithHeader title="校友会からのメッセージ">
       <IframeViewer
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
-        title="学長からのメッセージ"
+        title="校友会からのメッセージ"
       />
       <AccountViewer
-        :src="src"
-        role="国立大学法人岡山大学長"
-        name="槇野 博史"
+        :src="alumni_src"
+        role="国立大学校友会 副委員長"
+        name="山口 優"
+      />
+      <div>
+        Kotlinを称えよ<br>
+        ここに話した内容のカンペが入ります。
+      </div>
+    </BodyWithHeader>
+
+    <BodyWithHeader title="学祭実行委員会からのメッセージ">
+      <IframeViewer
+        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
+        title="学祭実行委員会からのメッセージ"
+      />
+      <AccountViewer
+        :src="committee_src"
+        role="学祭実行委員会 委員長"
+        name="天野 颯"
       />
       <div>
         Kotlinを称えよ<br>
@@ -42,7 +58,8 @@ export default {
   },
   data () {
     return {
-      src: President
+      alumni_src: President,
+      committee_src: President
     }
   }
 }
