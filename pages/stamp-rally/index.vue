@@ -4,7 +4,7 @@
       <Header title="スタンプラリー" colors="bg-themeColor text-white" />
 
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" class="-z-10" />
-      <Headline title="スタンプラリー規格について" colors="border-themeColor text-themeColor" />
+      <BodyWithHeader title="スタンプラリー企画について" colors="border-themeColor text-themeColor" />
       <!-- TODO: 説明追加 -->
       <p class="px-4">
         説明準備中
@@ -41,19 +41,17 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Header from '@/components/Header.vue'
-import BodyWithHeader from '~/components/pages/club/_id/BodyWithHeader.vue'
-import VerticalTitle from '@/components/VerticalTitle.vue'
-import StampRallyGrid from '@/components/stamp-rally/Grid.vue'
-import StampRallyTimeTable from '@/components/stamp-rally/TimeTable.vue'
-import Headline from '~/components/templates/Headline.vue'
-
+import Header from '~/components/layouts/Header.vue'
+import StampRallyGrid from '~/components/stamp-rally/Grid.vue'
+import StampRallyTimeTable from '~/components/stamp-rally/TimeTable.vue'
+import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import { IStampRallyItem } from '~/assets/js/type/IStampRally'
+
 export default Vue.extend({
   components: {
     Header,
     BodyWithHeader,
-    Headline,
     VerticalTitle,
     StampRallyGrid,
     StampRallyTimeTable
