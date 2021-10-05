@@ -15,9 +15,9 @@
     <HTMLLeader :body="club.body" class="px-6" />
 
     <!-- 活動紹介映像 -->
-    <BodyWithHeader title="活動紹介映像">
+    <BodyWithHeader v-if="club.youtube_url != null" title="活動紹介映像">
       <div :class="$style['introduction_club_movie']">
-        <iframe :src="watchToEmbed(club.youtube_url)" allowfullscreen />
+        <IframeViewer :src="club.youtube_url" />
       </div>
     </BodyWithHeader>
 
@@ -31,7 +31,7 @@
               <a :href="club.twitter_url">
                 <img
                   class="inline-block text-gray-700 tracking-widest h-6"
-                  src="@/assets/img/twitter.png"
+                  src="@/assets/img/icon/twitter.png"
                   alt="Twitter"
                 >
               </a>
@@ -42,7 +42,7 @@
               <a :href="club.facebook_url">
                 <img
                   class="inline-block text-gray-700 tracking-widest h-6"
-                  src="@/assets/img/facebook.png"
+                  src="@/assets/img/icon/facebook.png"
                   alt="Facebook"
                 >
               </a>
@@ -51,14 +51,22 @@
             <!-- Instagram -->
             <div v-if="club.instagram_url != null" class="mx-auto border-solid border-2 p-4 rounded-full">
               <a :href="club.instagram_url">
-                <img class="inline-block text-gray-700 tracking-widest h-6" src="@/assets/img/instagram.png" alt="LINE">
+                <img
+                  class="inline-block text-gray-700 tracking-widest h-6"
+                  src="@/assets/img/icon/instagram.png"
+                  alt="LINE"
+                >
               </a>
             </div>
 
             <!-- LINE -->
             <div v-if="club.line_url != null" class="mx-auto border-solid border-2 p-4 rounded-full">
               <a :href="club.line_url">
-                <img class="inline-block text-gray-700 tracking-widest h-6" src="@/assets/img/line.png" alt="LINE">
+                <img
+                  class="inline-block text-gray-700 tracking-widest h-6"
+                  src="@/assets/img/icon/line.png"
+                  alt="LINE"
+                >
               </a>
             </div>
           </div>
@@ -70,16 +78,17 @@
 
 <script lang="ts">
 import { Context } from '@nuxt/types'
-import Header from '~/components/Header.vue'
-import HTMLLeader from '~/components/templates/HTMLLeader.vue'
-import watchToEmbed from '~/assets/js/url/watch-to-embed'
+import Header from '~/components/layouts/Header.vue'
+import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
 import { ClubData } from '~/assets/js/type/club/club-data'
 import Club from '~/assets/js/type/club/club'
-import BodyWithHeader from '~/components/pages/club/_id/BodyWithHeader.vue'
-import VerticalTitle from '~/components/VerticalTitle.vue'
+import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
+import IframeViewer from '~/components/templates/html/IframeViewer.vue'
 
 export default {
   components: {
+    IframeViewer,
     BodyWithHeader,
     HTMLLeader,
     Header,
@@ -125,9 +134,6 @@ export default {
       // @ts-ignore
       return this.club.cover ? this.club.cover.url : null
     }
-  },
-  methods: {
-    watchToEmbed
   }
 }
 </script>
