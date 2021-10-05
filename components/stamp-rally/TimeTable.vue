@@ -27,12 +27,32 @@
         </swiper-slide>
       </swiper>
     </client-only>
-    <div slot="pagination" class="swiper-pagination" />
+    <div slot="pagination" class="swiper-pagination flex justify-center" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'StampRallyTimeTable'
+  name: 'StampRallyTimeTable',
+  data () {
+    return {
+      swiperOption: {
+        breakpoints: {
+          768: {
+            allowTouchMove: false,
+            pagination: false,
+            slidesPerView: 2,
+            spaceBetween: 60
+          }
+        },
+        slidesPerView: 1,
+        spaceBetween: 40,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
+    }
+  }
 }
 </script>
