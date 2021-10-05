@@ -12,9 +12,14 @@
       >
         ホーム
       </NuxtLink>
-      <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
+      <NuxtLink
+        to="/president-message"
+        class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60"
+        :class="{active: $nuxt.$route.path === '/president-message' }"
+        @click.native="isOpen = !isOpen"
+      >
         学長のメッセージ
-      </a>
+      </NuxtLink>
       <a href="#" class="inline-block font-medium rounded-xl text-white text-lg tracking-wider px-5 py-3 w-60">
         ライブ配信
       </a>
