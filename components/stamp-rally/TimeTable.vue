@@ -27,7 +27,8 @@
         </swiper-slide>
       </swiper>
     </client-only>
-    <div slot="pagination" class="swiper-pagination flex justify-center" />
+
+    <div slot="pagination" class="swiper-pagination w-full flex py-4 gap-3 items-center justify-center" />
   </div>
 </template>
 
