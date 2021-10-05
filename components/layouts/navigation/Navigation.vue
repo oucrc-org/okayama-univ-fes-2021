@@ -18,8 +18,6 @@
 
       <NavigateColumn to="#" title="スタンプラリー" @click.native="isOpen = !isOpen" />
 
-      <NavigateColumn to="#" title="協賛企業一覧" @click.native="isOpen = !isOpen" />
-
       <div class="absolute bottom-5 bg-white h-10 w-52 rounded-full">
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>
         <div class="absolute inline-block right-5 top-1.5">
