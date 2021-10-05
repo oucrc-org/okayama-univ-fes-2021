@@ -31,10 +31,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
-import CenterTitle from '@/components/CenterTitle.vue'
-import Header from '@/components/Header.vue'
-import VerticalTitle from '@/components/VerticalTitle.vue'
-import Warning from '@/components/templates/Warning.vue'
+import CenterTitle from '~/components/templates/header/CenterTitle.vue'
+import Header from '~/components/layouts/Header.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
+import Warning from '~/components/pages/Warning.vue'
 
 export default Vue.extend({
   components: {

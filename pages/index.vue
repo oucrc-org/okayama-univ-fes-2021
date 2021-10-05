@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img class="h-screen w-screen object-cover" src="@/assets/img/hero.jpg" alt="岡山大学祭">
+    <img class="h-screen w-screen object-cover" src="@/assets/img/dev/hero.jpg" alt="岡山大学祭">
     <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
-      <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/streaming.png')" />
+      <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/header/streaming.png')" />
       <VerticalTitle text="STREAMING" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
@@ -85,21 +85,21 @@
           <slick :options="slickOptions" class="slick mt-14">
             <div v-for="m of 15" :key="m" class="px-1">
               <a href="#">
-                <img src="@/assets/img/uraja_logo.png" alt="uraja">
+                <img src="@/assets/img/dev/uraja_logo.png" alt="uraja">
               </a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
             <div v-for="m of 15" :key="m" class="px-1 transform translate-x-1/2">
               <a href="#">
-                <img src="@/assets/img/campus_nuts_logo.png" alt="campus_nuts">
+                <img src="@/assets/img/dev/campus_nuts_logo.png" alt="campus_nuts">
               </a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
             <div v-for="m of 15" :key="m" class="px-1">
               <a href="#">
-                <img src="@/assets/img/uraja_logo.png" alt="uraja">
+                <img src="@/assets/img/dev/uraja_logo.png" alt="uraja">
               </a>
             </div>
           </slick>
@@ -116,10 +116,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CenterTitle from '@/components/CenterTitle.vue'
-import Header from '@/components/Header.vue'
-import VerticalTitle from '@/components/VerticalTitle.vue'
 import StampRallyTimeTable from '@/components/stamp-rally/TimeTable.vue'
+import CenterTitle from '~/components/templates/header/CenterTitle.vue'
+import Header from '~/components/layouts/Header.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 
 export default Vue.extend({
   components: {

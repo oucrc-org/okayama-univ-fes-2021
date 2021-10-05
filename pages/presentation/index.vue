@@ -11,7 +11,7 @@
           <CenterTitle text="写真部 学祭展覧会" class="border-themeColor text-themeColor" />
           <NuxtLink to="#">
             <img
-              src="@/assets/img/hero.jpg"
+              src="@/assets/img/dev/hero.jpg"
               class="rounded-2xl object-cover mt-8 w-full h-44 sm:h-96 md:h-60 lg:h-72"
               alt="写真部 学祭展"
             >
@@ -22,7 +22,7 @@
           <CenterTitle text="写真部 学祭展覧会" class="border-themeColor text-themeColor" />
           <NuxtLink to="#">
             <img
-              src="@/assets/img/hero.jpg"
+              src="@/assets/img/dev/hero.jpg"
               class="rounded-2xl object-cover mt-8 w-full h-44 sm:h-96 md:h-60 lg:h-72"
               alt="写真部 学祭展"
             >
@@ -33,7 +33,7 @@
           <CenterTitle text="写真部 学祭展覧会" class="border-themeColor text-themeColor" />
           <NuxtLink to="#">
             <img
-              src="@/assets/img/hero.jpg"
+              src="@/assets/img/dev/hero.jpg"
               class="rounded-2xl object-cover mt-8 w-full h-44 sm:h-96 md:h-60 lg:h-72"
               alt="写真部 学祭展"
             >
@@ -46,15 +46,17 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CenterTitle from '@/components/CenterTitle.vue'
-import Header from '@/components/Header.vue'
-import VerticalTitle from '@/components/VerticalTitle.vue'
+import CenterTitle from '~/components/templates/header/CenterTitle.vue'
+import Header from '@/components/layouts/Header.vue'
+import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
+import Warning from '~/components/pages/Warning.vue'
 
 export default Vue.extend({
   components: {
     CenterTitle,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    Warning
   }
 })
 </script>
