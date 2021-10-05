@@ -54,47 +54,24 @@
       <Header title="スタンプラリー企画" colors="bg-themeColor text-white" />
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-4 sm:mt-14 mx-auto px-10">
-        <client-only placeholder="Client Only">
-          <swiper :options="swiperOption">
-            <swiper-slide v-for="i of 2" :key="i">
-              <div
-                class="text-center text-xl sm:text-2xl border-b-3 font-bold tracking-widest mt-8 mx-auto pb-2 relative z-10 border-themeColor text-themeColor"
-              >
-                10/30（土） ピックアップ
-              </div>
-              <table class="w-full text-center mt-1">
-                <tr v-for="n of 6" :key="n" class="border-b-2 border-gray-400">
-                  <td
-                    class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pr-1 sm:pr-5 py-2.5"
-                    :class="{'text-accentColor': n === 2}"
-                  >
-                    13:00〜14:00
-                  </td>
-                  <td
-                    class="text-center text-gray-800 text-sm sm:text-base font-medium tracking-widest pl-1 sm:pl-5 py-2.5"
-                    :class="{'text-accentColor': n === 2}"
-                  >
-                    写真部 学祭展覧会
-                  </td>
-                </tr>
-              </table>
-            </swiper-slide>
-          </swiper>
-        </client-only>
-        <div slot="pagination" class="swiper-pagination" />
-
+        <StampRallyTimeTable />
         <div class="grid grid-cols-2 gap-4 sm:mt-20">
           <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
-            <a
-              href="#"
+            <NuxtLink
+              to="stamp-rally"
               class="border-3 border-themeColor inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >スタンプラリーとは？</a>
+            >
+              スタンプラリーとは？
+            </NuxtLink>
           </div>
           <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-            <a
-              href="#"
+            <!-- TODO: ログインリンクに変更 -->
+            <NuxtLink
+              to="#"
               class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >参加する →</a>
+            >
+              参加する →
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -139,6 +116,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import StampRallyTimeTable from '@/components/pages/stamp-rally/TimeTable.vue'
 import CenterTitle from '~/components/templates/header/CenterTitle.vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
@@ -149,27 +127,12 @@ export default Vue.extend({
     OperationStageSchedule,
     CenterTitle,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    StampRallyTimeTable
   },
   data () {
     return {
       isStreaming: true,
-      swiperOption: {
-        breakpoints: {
-          768: {
-            allowTouchMove: false,
-            pagination: false,
-            slidesPerView: 2,
-            spaceBetween: 60
-          }
-        },
-        slidesPerView: 1,
-        spaceBetween: 40,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      },
       slickOptions: {
         arrows: false,
         autoplay: true,
