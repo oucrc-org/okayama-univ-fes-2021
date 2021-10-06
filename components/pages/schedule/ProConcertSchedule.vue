@@ -10,49 +10,34 @@ export default {
     return {
       items: [
         {
-          tag: '10:00',
+          tag: '16:30',
           color: '#dcdcdc',
-          content: '校友会あいさつ'
+          content: '委員長挨拶'
         },
         {
-          tag: '10:10',
+          tag: '16:40',
           color: '#F04444',
-          content: '軽音部パフォーマンス'
+          content: 'ぼる塾ステージ'
         },
         {
           type: 'star',
-          tag: '11:00',
+          tag: '17:00',
           color: '#F04444',
           htmlMode: true,
-          content: 'ゲスト: 岡大太郎'
+          content: '告知: 校友会ステージ団体'
         },
         {
-          tag: '12:00',
-          color: '#dcdcdc',
-          content: '昼休憩'
-        },
-        {
-          tag: '13:00',
+          tag: '17:05',
           color: '#F04444',
-          content: '軽音部パフォーマンス'
+          content: '四千頭身ステージ'
         },
         {
-          tag: '14:30',
+          tag: '17:20',
           color: '#F04444',
-          content: '軽音部パフォーマンス'
+          content: 'ハナコステージ'
         },
         {
-          tag: '15:00',
-          color: '#F04444',
-          content: '軽音部パフォーマンス'
-        },
-        {
-          tag: '16:30',
-          color: '#F04444',
-          content: '軽音部パフォーマンス'
-        },
-        {
-          tag: '17:00',
+          tag: '17:40',
           color: '#dcdcdc',
           content: '閉会のあいさつ'
         }
