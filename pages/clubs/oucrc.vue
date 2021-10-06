@@ -6,7 +6,7 @@
       <div class="flex justify-center py-8">
         <picture class="px-3 max-w-md">
           <source type="image/webp" :srcset="require('@/assets/img/static/oucrc-label.webp')">
-          <img v-lazy="require('@/assets/img/static/oucrc-label.png')" alt="岡山大学電子計算機研究会">
+          <img src="@/assets/img/static/oucrc-label.png" alt="岡山大学電子計算機研究会">
         </picture>
       </div>
 
@@ -43,7 +43,7 @@ export default Vue.extend({
       endpoint: 'oucrc_works',
       queries: {
         limit: 1000,
-        fields: 'id,title,category,cover,image1,image2,image3,body,creator'
+        fields: 'id,title,category,cover,youtube_video_url,image1,image2,image3,body,creator'
       }
     })
     return {
