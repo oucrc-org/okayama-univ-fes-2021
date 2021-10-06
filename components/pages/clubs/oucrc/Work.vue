@@ -19,8 +19,8 @@
         </swiper-slide>
       </swiper>
     </client-only>
-    <div slot="pagination" :class="`swiper-pagination-${work.id} h-4 flex py-4 gap-3 items-center justify-center`" />
-
+    <!-- 追加画像がないならPCで隠す -->
+    <div slot="pagination" :class="`swiper-pagination-${work.id} h-4 flex py-4 gap-3 items-center justify-center ${hasAdditionalImage ? '' : 'md:hidden'}`" />
     <div>
       <div class="text-xl font-bold">
         {{ work.title }}
@@ -68,6 +68,13 @@ export default Vue.extend({
           clickable: true
         }
       }
+    }
+  },
+  computed: {
+    hasAdditionalImage (): boolean {
+      return !(
+        this.work.image1 == null
+      )
     }
   }
 })
