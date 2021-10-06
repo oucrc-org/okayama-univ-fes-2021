@@ -20,4 +20,24 @@ declare namespace oufes {
     parent_department: IDepartment | null,
     cover: IImage | null
   }
+
+  // OUCRCの作品
+  interface IWorkCategory {
+    id: string,
+    name: string,
+    // eslint-disable-next-line camelcase
+    ordering_key: number
+  }
+
+  interface IWork {
+    id: string,
+    category: IWorkCategory,
+    title: string,
+    cover: IImage,
+    image1?: IImage,
+    image2?: IImage,
+    image3?: IImage,
+    body: string,
+    creator?: string,
+  }
 }
