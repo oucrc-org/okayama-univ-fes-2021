@@ -15,7 +15,7 @@
         :key="`works-by-category-${worksWithCategory.category.id}`"
       >
         <CenterTitle :text="worksWithCategory.category.name" colors="border-themeColor text-themeColor" />
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mx-4 my-8">
+        <div class="grid grid-cols-1 gap-4 mx-4 my-8">
           <div v-for="work in worksWithCategory.works" :key="work.id">
             <Work :work="work" />
           </div>

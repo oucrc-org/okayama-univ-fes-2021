@@ -1,42 +1,49 @@
 <template>
-  <div>
-    <a class="cursor-pointer flex flex-col gap-y-3 p-3 shadow-xl rounded-xl" @click="showModal = true">
-      <img v-if="work.cover" class="object-cover rounded-xl bg-gray-500" :src="work.cover.url" :width="work.cover.width" :height="work.cover.height">
+  <div class="p-6 flex justify-start flex-col gap-y-6 bg-white rounded-xl shadow-xl">
+    <client-only placeholder="Client Only">
+      <swiper class="flex items-center w-full overflow-hidden" :options="swiperOption">
+        <swiper-slide v-if="work.youtube_video_url" style="width: 300px;">
+          <IframeViewer :src="work.youtube_video_url" />
+        </swiper-slide>
+        <swiper-slide v-if="work.cover">
+          <WorkImage :image="work.cover" />
+        </swiper-slide>
+        <swiper-slide v-if="work.image1">
+          <WorkImage :image="work.image1" />
+        </swiper-slide>
+        <swiper-slide v-if="work.image2">
+          <WorkImage :image="work.image2" />
+        </swiper-slide>
+        <swiper-slide v-if="work.image3">
+          <WorkImage :image="work.image3" />
+        </swiper-slide>
+      </swiper>
+    </client-only>
+    <div slot="pagination" :class="`swiper-pagination-${work.id} h-4 flex py-4 gap-3 items-center justify-center`" />
+
+    <div>
       <div class="text-xl font-bold">
         {{ work.title }}
       </div>
       <div v-if="work.creator" class="text-gray-700">
         {{ work.creator }}作
       </div>
-    </a>
-    <div v-if="showModal" @close="showModal = false">
-      <!-- 半透明なオーバーレイを全面表示する。クリックで閉じる -->
-      <div class="oucrc-works-overlay fixed top-0 left-0 z-50 w-screen h-screen bg-screen flex justify-center items-center" @click="showModal = false">
-        <!-- スマホのために高さは画面と揃え、中身はスクロールさせる -->
-        <div class="max-h-screen overflow-y-scroll md:max-w-lg p-6 flex flex-col gap-y-6 bg-white rounded-xl shadow-xl">
-          <img v-if="work.cover" class="object-cover rounded-xl bg-gray-500" :src="work.cover.url" :width="work.cover.width" :height="work.cover.height">
-          <div class="text-xl font-bold">
-            {{ work.title }}
-          </div>
-          <div v-if="work.creator" class="text-gray-700">
-            {{ work.creator }}作
-          </div>
-          <div>{{ work.body }}</div>
-          <a class="curcor-pointer mx-auto block p-3 rounded-lg bg-themeColor text-white font-bold" @click="showModal = false">
-            閉じる
-          </a>
-        </div>
-      </div>
+      <div>{{ work.body }}</div>
     </div>
   </div>
 </template>
 <script lang="ts">
 // eslint-disable-next-line import/named
 import Vue, { PropType } from 'vue'
+import WorkImage from './WorkImage.vue'
 import { IWork } from '~/assets/js/type/IWork'
-
+import IframeViewer from '~/components/templates/html/IframeViewer.vue'
 export default Vue.extend({
   name: 'OucrcWork',
+  components: {
+    IframeViewer,
+    WorkImage
+  },
   props: {
     work: {
       type: Object as PropType<IWork>,
@@ -45,13 +52,23 @@ export default Vue.extend({
   },
   data () {
     return {
-      showModal: false
+      swiperOption: {
+        breakpoints: {
+          768: {
+            allowTouchMove: false,
+            pagination: false,
+            slidesPerView: 2,
+            spaceBetween: 60
+          }
+        },
+        slidesPerView: 1,
+        spaceBetween: 40,
+        pagination: {
+          el: '.swiper-pagination-' + this.work.id,
+          clickable: true
+        }
+      }
     }
   }
 })
 </script>
-<style scoped>
-.oucrc-works-overlay{
-  background-color: rgba(0,0,0,0.3);
-}
-</style>
