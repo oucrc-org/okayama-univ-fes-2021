@@ -12,6 +12,8 @@ export interface IWork {
   category: IWorkCategory,
   title: string,
   cover: IImage,
+  // eslint-disable-next-line camelcase
+  youtube_video_url?: string,
   image1?: IImage,
   image2?: IImage,
   image3?: IImage,
