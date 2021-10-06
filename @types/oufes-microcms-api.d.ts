@@ -36,9 +36,9 @@ declare namespace oufes {
     cover: IImage,
     // eslint-disable-next-line camelcase
     youtube_video_url?: string,
-    image1?: IImage,
-    image2?: IImage,
-    image3?: IImage,
+    image1: IImage | null,
+    image2: IImage | null,
+    image3: IImage | null,
     body: string,
     creator?: string,
   }
