@@ -83,24 +83,135 @@
         <VerticalTitle class="mt-16" text="CLUBS" colors="text-themeLight" />
         <client-only placeholder="Client Only">
           <slick :options="slickOptions" class="slick mt-14">
-            <div v-for="m of 15" :key="m" class="px-1">
-              <a href="#">
-                <img src="@/assets/img/dev/uraja_logo.png" alt="uraja">
-              </a>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/1.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/2.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/3.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/4.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/5.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/6.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/7.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/8.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/9.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/10.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/11.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/12.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/13.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/14.jpg" alt=""></a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
-            <div v-for="m of 15" :key="m" class="px-1 transform translate-x-1/2">
-              <a href="#">
-                <img src="@/assets/img/dev/campus_nuts_logo.png" alt="campus_nuts">
-              </a>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/15.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/16.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/17.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/18.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/19.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/20.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/21.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/22.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/23.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/24.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/25.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/26.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/27.jpg" alt=""></a>
+            </div>
+            <div class="px-1 transform translate-x-1/2">
+              <a href="#"><img src="@/assets/img/slide-icons/28.jpg" alt=""></a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
-            <div v-for="m of 15" :key="m" class="px-1">
-              <a href="#">
-                <img src="@/assets/img/dev/uraja_logo.png" alt="uraja">
-              </a>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/29.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/30.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/31.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/32.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/33.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/34.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/35.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/36.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/37.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/38.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/39.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/40.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/41.jpg" alt=""></a>
+            </div>
+            <div class="px-1">
+              <a href="#"><img src="@/assets/img/slide-icons/42.jpg" alt=""></a>
             </div>
           </slick>
         </client-only>
