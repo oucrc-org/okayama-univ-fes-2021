@@ -52,10 +52,16 @@
         </NuxtLink>
       </div>
     </BodyWithHeader>
+
+    <div class="text-center my-8">
+      <NuxtLink to="#" class="text-gray-600 underline text-sm">
+        ログアウト
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Header from '~/components/layouts/Header.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
