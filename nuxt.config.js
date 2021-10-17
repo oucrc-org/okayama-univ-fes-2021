@@ -77,7 +77,8 @@ export default {
   modules: [
     // https://www.npmjs.com/package/nuxt-webfontloader
     'nuxt-webfontloader',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -102,6 +103,22 @@ export default {
   webfontloader: {
     google: {
       families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900']
+    }
+  },
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: '/callback',
+      home: '/mypage'
+    },
+    // SSRに支障が出た場合？
+    // localStorage: false,
+    strategies: {
+      google: {
+        client_id: process.env.GOOGLE_CLIENT_ID
+      }
     }
   },
 
