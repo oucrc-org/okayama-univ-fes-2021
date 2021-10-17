@@ -12,7 +12,7 @@
       >
         <CenterTitle :text="clubsWithDepartment.department.name" colors="border-themeColor text-themeColor" />
         <div class="grid grid-cols-2 gap-4 mx-4 my-8">
-          <NuxtLink v-for="club in clubsWithDepartment.clubs" :key="`club-${club.id}`" :to="`/clubs/${club.id}`">
+          <LinkTo v-for="club in clubsWithDepartment.clubs" :key="`club-${club.id}`" :to="`/clubs/${club.id}`">
             <img
               :src="typeof club.cover === 'undefined' ? alternativeCoverImage : club.cover.url"
               :alt="`${club.name}部のカバー画像`"
@@ -21,7 +21,7 @@
             <div class="m-2 lg:text-lg xl:text-xl">
               {{ club.name }}
             </div>
-          </NuxtLink>
+          </LinkTo>
         </div>
       </div>
     </div>
@@ -35,9 +35,11 @@ import CenterTitle from '~/components/templates/header/CenterTitle.vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import Warning from '~/components/pages/Warning.vue'
+import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
 export default Vue.extend({
   components: {
+    LinkTo,
     CenterTitle,
     Header,
     VerticalTitle,
