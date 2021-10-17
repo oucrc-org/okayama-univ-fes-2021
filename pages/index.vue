@@ -57,21 +57,21 @@
         <StampRallyTimeTable />
         <div class="grid grid-cols-2 gap-4 sm:mt-20">
           <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
-            <NuxtLink
+            <LinkTo
               to="stamp-rally"
               class="border-3 border-themeColor inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
             >
               スタンプラリーとは？
-            </NuxtLink>
+            </LinkTo>
           </div>
           <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
             <!-- TODO: ログインリンクに変更 -->
-            <NuxtLink
+            <LinkTo
               to="#"
               class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
             >
               参加する →
-            </NuxtLink>
+            </LinkTo>
           </div>
         </div>
       </div>
@@ -232,9 +232,11 @@ import CenterTitle from '~/components/templates/header/CenterTitle.vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
+import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
 export default Vue.extend({
   components: {
+    LinkTo,
     OperationStageSchedule,
     CenterTitle,
     Header,
