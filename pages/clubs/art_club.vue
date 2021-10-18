@@ -1,23 +1,23 @@
 <template>
   <div class="container max-w-screen-xl mt-24 mx-auto relative">
     <section>
-      <h1 class="text-center yu-mincho font-bold text-24pt leading-loose">
+      <h1 class="text-center font-yu-mincho font-bold text-24pt leading-loose">
         美術部<br>
         オンライン美術展
       </h1>
-      <p class="text-center yu-mincho font-bold text-18pt">
+      <p class="text-center font-yu-mincho font-bold text-18pt">
         美術部では各部員が様々なジャンルの作品を制作しています。個性的な作品を是非お楽しみください。
       </p>
-      <p class="text-center yu-mincho text-14pt mt-8">
+      <p class="text-center font-yu-mincho text-14pt mt-8">
         当サイト内の作品の保存、スクリーンショット、二次利用(転載・コピー・引用)及び複製はお控えください。
       </p>
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         水彩画
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         水溶性の絵の具を使用して書いた絵のことです。<br>
         淡い色合いや透明感が最大の魅力です。
       </p>
@@ -42,10 +42,10 @@
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         アクリル画
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         アクリル樹脂の絵の具を使っています。<br>
         鮮やかな発色が特徴的です。
       </p>
@@ -60,10 +60,10 @@
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         油絵
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         つややかで透明感のある質感から重厚な雰囲気まで、表現の幅が限りなく広いところが油絵の魅力です。
       </p>
       <GalleryPicture
@@ -78,10 +78,10 @@
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         色鉛筆画
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         塗り重ねることで独特の色合いを繊細に表現することができます。
       </p>
       <GalleryPicture
@@ -103,10 +103,10 @@
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         水彩色鉛筆画
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         水彩色鉛筆は芯が水溶性の素材でできており、水を含ませると水彩画のような表現が可能です。
       </p>
       <GalleryPicture
@@ -128,10 +128,10 @@
     </section>
 
     <section class="mt-8">
-      <h2 class="ms-mincho text-22pt">
+      <h2 class="font-ms-mincho text-22pt">
         立体作品
       </h2>
-      <p class="ms-mincho text-11-5pt">
+      <p class="font-ms-mincho text-11-5pt">
         折り紙や、粘土、食品サンプルなど様々な種類があります。<br>
         実際の質感をじかに感じられるところが立体作品の魅力です。
       </p>
@@ -200,13 +200,5 @@ export default {
 
 .text-11-5pt {
   font-size: 0.9583rem;
-}
-
-.yu-mincho {
-  font-family: '游明朝体', 'Yu Mincho', YuMincho, 'ヒラギノ明朝 Pro', 'Hiragino Mincho Pro', 'Noto Serif JP', 'MS P明朝', 'MS PMincho', serif;
-}
-
-.ms-mincho {
-  font-family: 'MS 明朝', 'MS Mincho', 'Noto Serif JP', serif;
 }
 </style>
