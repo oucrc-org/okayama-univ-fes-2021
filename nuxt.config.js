@@ -30,15 +30,13 @@ export default {
     ],
     script: [
       {
-        src: 'js/waveCanvas.js'
+        src: '/js/waveCanvas.js'
       }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/css/index.css'
-  ],
+  css: ['@/assets/css/index.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
