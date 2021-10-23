@@ -171,7 +171,7 @@
 
 <script>
 // noinspection NpmUsedModulesInstalled
-import GalleryPicture from '@/components/pages/club/art_club/GalleryPicture'
+import GalleryPicture from '@/components/pages/clubs/art_club/GalleryPicture'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
