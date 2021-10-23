@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="source" :alt="title" class="max-h-screen">
+    <slot class="max-h-screen" />
     <dl class="text-center">
       <dt class="font-ms-mincho text-12pt">
         {{ title }}
@@ -11,8 +11,8 @@
       <dd class="font-ms-mincho text-10pt">
         {{ medium }}
       </dd>
-      <dd v-if="this.$slots.default" class="font-ms-mincho text-10pt border-t-2 border-black pt-1">
-        <slot />
+      <dd v-if="this.$slots.caption" class="font-ms-mincho text-10pt border-t-2 border-black pt-1">
+        <slot name="caption" />
       </dd>
     </dl>
   </div>
@@ -21,10 +21,6 @@
 <script>
 export default {
   props: {
-    source: {
-      type: String,
-      required: true
-    },
     title: {
       type: String,
       required: true
