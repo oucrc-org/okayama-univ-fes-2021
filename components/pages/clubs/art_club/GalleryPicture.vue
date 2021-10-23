@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <slot class="max-h-screen" />
+  <div class="m-4">
+    <slot />
     <dl class="text-center">
       <dt class="font-ms-mincho text-12pt">
         {{ title }}
@@ -21,6 +21,7 @@
 <script>
 export default {
   props: {
+
     title: {
       type: String,
       required: true
