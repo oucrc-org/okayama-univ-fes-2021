@@ -1,5 +1,4 @@
 declare namespace oufes {
-
   interface IDepartment {
     id: string,
     name: string,
@@ -39,7 +38,8 @@ declare namespace oufes {
     image1: IImage | null,
     image2: IImage | null,
     image3: IImage | null,
-    body: string,
-    creator?: string,
+    // eslint-disable-next-line camelcase
+    body_html: string,
+    creator?: string
   }
 }

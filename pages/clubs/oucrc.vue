@@ -43,7 +43,7 @@ export default Vue.extend({
       endpoint: 'oucrc_works',
       queries: {
         limit: 1000,
-        fields: 'id,title,category,cover,youtube_video_url,image1,image2,image3,body,creator'
+        fields: 'id,title,category,cover,youtube_video_url,image1,image2,image3,body_html,creator'
       }
     })
     return {

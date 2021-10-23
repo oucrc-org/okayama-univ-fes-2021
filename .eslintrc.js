@@ -4,12 +4,23 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: [
-  ],
+  extends: ['@nuxtjs/eslint-config-typescript', 'plugin:nuxt/recommended'],
+  plugins: [],
   // add your custom rules here
-  rules: {}
+  rules: {
+    // interface等のメンバーを定義する際、カンマで分ける
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'comma',
+          requireLast: false
+        },
+        singleline: {
+          delimiter: 'comma',
+          requireLast: false
+        }
+      }
+    ]
+  }
 }
