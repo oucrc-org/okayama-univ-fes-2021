@@ -23,13 +23,13 @@
       </p>
       <div>
         <GalleryPicture title="葵" artist="赤瀬 幸香（工・3年）" medium="透明水彩絵の具">
-          <img src="~/assets/img/dev/hero.jpg" alt="葵">
+          <img src="~/assets/img/clubs/art_club/1.jpg" alt="葵" class="max-h-screen">
           <template #caption>
             髪の毛を見てほしいです。
           </template>
         </GalleryPicture>
         <GalleryPicture title="退屈" artist="赤瀬 幸香（工・3年）" medium="透明水彩絵の具">
-          <img src="~/assets/img/dev/hero.jpg" alt="退屈">
+          <img src="~/assets/img/clubs/art_club/2.jpg" alt="退屈" class="max-h-screen">
           <template #caption>
             青、黄色系でまとめました。
           </template>
@@ -46,7 +46,7 @@
         鮮やかな発色が特徴的です。
       </p>
       <GalleryPicture title="金を継ぐ" artist="高田 ひかる（文・3年）" medium="キャンバスボード、アクリル絵の具">
-        <img src="~/assets/img/dev/hero.jpg" alt="金を継ぐ">
+        <img src="~/assets/img/clubs/art_club/3.jpg" alt="金を継ぐ" class="max-h-screen">
         <template #caption>
           傷の誇り
         </template>
@@ -61,7 +61,7 @@
         つややかで透明感のある質感から重厚な雰囲気まで、表現の幅が限りなく広いところが油絵の魅力です。
       </p>
       <GalleryPicture title="カーテンと少女" artist="富松 莉子（文・1年）" medium="油絵具">
-        <img src="~/assets/img/dev/hero.jpg" alt="カーテンと少女">
+        <img src="~/assets/img/clubs/art_club/4.jpg" alt="カーテンと少女" class="max-h-screen">
         <template #caption>
           カーテンの前に立つ少女を描きました。<br>
           揺れやしわを表現するのが楽しかったです。
@@ -77,13 +77,13 @@
         塗り重ねることで独特の色合いを繊細に表現することができます。
       </p>
       <GalleryPicture title="ルリコンゴウインコ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
-        <img src="~/assets/img/dev/hero.jpg" alt="ルリコンゴウインコ">
+        <img src="~/assets/img/clubs/art_club/5.jpg" alt="ルリコンゴウインコ" class="max-h-screen">
         <template #caption>
           10色で描いています。
         </template>
       </GalleryPicture>
       <GalleryPicture title="オオセンチコガネ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
-        <img src="~/assets/img/dev/hero.jpg" alt="オオセンチコガネ">
+        <img src="~/assets/img/clubs/art_club/6.jpg" alt="オオセンチコガネ" class="max-h-screen">
         <template #caption>
           躍動感を意識して描きました。
         </template>
@@ -98,13 +98,13 @@
         水彩色鉛筆は芯が水溶性の素材でできており、水を含ませると水彩画のような表現が可能です。
       </p>
       <GalleryPicture title="待つ" artist="高村 侑（工・2年）" medium="ペン、水彩色鉛筆">
-        <img src="~/assets/img/dev/hero.jpg" alt="待つ">
+        <img src="~/assets/img/clubs/art_club/7.jpg" alt="待つ" class="max-h-screen">
         <template #caption>
           電話ボックスを描きました。
         </template>
       </GalleryPicture>
       <GalleryPicture title="帰る" artist="高村 侑（工・2年）" medium="ペン、水彩色鉛筆">
-        <img src="~/assets/img/dev/hero.jpg" alt="帰る">
+        <img src="~/assets/img/clubs/art_club/8.jpg" alt="帰る" class="max-h-screen">
         <template #caption>
           琵琶湖を描きました。
         </template>
@@ -120,19 +120,19 @@
         実際の質感をじかに感じられるところが立体作品の魅力です。
       </p>
       <GalleryPicture title="アーモンド(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、アクリルガッシュ、合成樹脂塗料">
-        <img src="~/assets/img/dev/hero.jpg" alt="アーモンド(偽物)">
+        <img src="~/assets/img/clubs/art_club/9.jpg" alt="アーモンド(偽物)" class="max-h-screen">
       </GalleryPicture>
       <GalleryPicture title="アーモンドのキャラメリゼ(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、アクリルガッシュ、合成樹脂塗料">
-        <img src="~/assets/img/dev/hero.jpg" alt="アーモンドのキャラメリゼ(偽物)">
+        <img src="~/assets/img/clubs/art_club/10.jpg" alt="アーモンドのキャラメリゼ(偽物)" class="max-h-screen">
       </GalleryPicture>
       <GalleryPicture title="バター(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、合成樹脂塗料">
-        <img src="~/assets/img/dev/hero.jpg" alt="バター(偽物)">
+        <img src="~/assets/img/clubs/art_club/11.jpg" alt="バター(偽物)" class="max-h-screen">
       </GalleryPicture>
       <GalleryPicture title="栗の甘露煮(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、レジン液、アクリルガッシュ、合成樹脂塗料">
-        <img src="~/assets/img/dev/hero.jpg" alt="栗の甘露煮(偽物)">
+        <img src="~/assets/img/clubs/art_club/12.jpg" alt="栗の甘露煮(偽物)" class="max-h-screen">
       </GalleryPicture>
       <GalleryPicture title="煮物(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、木粉粘土、レジン液、アクリルガッシュ">
-        <img src="~/assets/img/dev/hero.jpg" alt="煮物(偽物)">
+        <img src="~/assets/img/clubs/art_club/13.jpg" alt="煮物(偽物)" class="max-h-screen">
       </GalleryPicture>
     </section>
   </div>
