@@ -1,6 +1,68 @@
 <template>
   <div>
-    <img class="h-screen w-screen object-cover" src="@/assets/img/dev/hero.jpg" alt="岡山大学祭">
+    <div class="relative overflow-hidden">
+      <img class="relative top-0 w-screen object-cover object-left" style="height: 800px"
+           src="@/assets/img/static/home/background.jpg" alt="岡山大学祭"
+      >
+      <div class="absolute top-0 left-0 right-0 h-64">
+        <img
+          class="absolute bottom-0 left-0 right-0 w-screen max-w-lg mx-auto object-cover transform scale-110 drop-position"
+          src="@/assets/img/static/home/drop.png" alt="タイトル"
+        >
+      </div>
+      <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
+        <div>
+          <h1 class="text-white text-4xl font-bold tracking-widest">
+            笑顔満祭 岡大祭
+          </h1>
+          <p class="text-center mt-3">
+            <span class="border-b-2 border-white text-white text-lg tracking-widest pb-2">
+              〜心機一転しちゃいな祭〜
+            </span>
+          </p>
+          <p class="text-center text-hashTagAccentColor tracking-widest font-bold mt-8">
+            #岡山大学祭2021
+          </p>
+        </div>
+        <div class="mt-20 sm:mt-24 px-4 sm:max-w-md mx-auto">
+          <div class="mb-6 px-8 sm:px-12 text-center">
+            <img src="@/assets/img/static/home/twitter_title.png" class="inline-block w-full max-w-xs" alt="Twitterで応援メッセージ募集中">
+          </div>
+
+          <div v-for="i in 3" class="grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg max-w-md mx-auto mb-3 px-4 pb-2 pt-3" :key="i">
+            <div>
+              <img class="rounded-full" style="max-width: 50px"
+                   src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
+                   alt="ふぉ"
+              >
+            </div>
+            <div class="col-span-4">
+              <p class="text-xs text-left tracking-wider leading-5">
+                ああああああああああああああああああああああああああああああああああああああああ
+              </p>
+              <p class="text-xs text-hashTagColor text-right font-semibold">
+                #岡山大学祭2021
+              </p>
+            </div>
+          </div>
+
+          <div class="block text-center mt-8">
+            <a href="https://twitter.com/intent/tweet?hashtags=岡山大学祭2021" target="_blank">
+              <img src="@/assets/img/static/home/twitter_support.png" class="h-12 inline-block" alt="応援する">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--      <img-->
+      <!--        class="absolute -top-16 md:top-0 left-0 right-0 md:mx-auto w-screen max-w-screen-xl object-cover object-bottom transform scale-110"-->
+      <!--        src="@/assets/img/static/home/drop.png" alt="タイトル"-->
+      <!--      >      &lt;!&ndash;style="height: 500px"&ndash;&gt;-->
+      <p>a</p>
+      <p>a</p>
+      <p>a</p>
+      <p>a</p>
+    </div>
+
     <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
       <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/header/streaming.png')" />
       <VerticalTitle text="STREAMING" colors="text-gray-200" />

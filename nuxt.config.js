@@ -21,6 +21,10 @@ export default {
         content: 'telephone=no'
       },
       {
+        name: 'Theme-Color',
+        content: '#FFFFFF'
+      },
+      {
         name: 'google-site-verification',
         content: 'iAmtfPOn9JU9DVeq1uSrxvnwpZkcOOvk62oRAEsvV78'
       }
@@ -87,15 +91,15 @@ export default {
   build: {},
 
   // @nuxtjs/pwa Configuration: https://github.com/nuxt-community/pwa-module
-  manifest: {
-    name: '岡山大学祭2021',
-    lang: 'ja',
-    short_name: '岡大祭2021',
-    title: '岡山大学祭2021',
-    description: '【校友会主催】岡山大学祭2021の公式HPです',
-    theme_color: '#0071C5',
-    background_color: '#FFFFFF'
-  },
+  // manifest: {
+  //   name: '岡山大学祭2021',
+  //   lang: 'ja',
+  //   short_name: '岡大祭2021',
+  //   title: '岡山大学祭2021',
+  //   description: '【校友会主催】岡山大学祭2021の公式HPです',
+  //   theme_color: '#0071C5',
+  //   background_color: '#FFFFFF'
+  // },
 
   env: {
     API_KEY: process.env.API_KEY
