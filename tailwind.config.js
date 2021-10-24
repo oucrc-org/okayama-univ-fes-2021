@@ -9,7 +9,9 @@ module.exports = {
       colors: {
         themeColor: '#0071C5',
         themeLight: '#1D8CDE',
-        accentColor: '#F68014'
+        accentColor: '#F68014',
+        hashTagColor: '#00A1C5',
+        hashTagAccentColor: '#FFD099'
       },
       spacing: {
         30: '7.5rem'

@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,6 +21,10 @@ export default {
       {
         name: 'format-detection',
         content: 'telephone=no'
+      },
+      {
+        name: 'Theme-Color',
+        content: '#FFFFFF'
       },
       {
         name: 'google-site-verification',
@@ -84,18 +90,25 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      })
+    ]
+  },
 
   // @nuxtjs/pwa Configuration: https://github.com/nuxt-community/pwa-module
-  manifest: {
-    name: '岡山大学祭2021',
-    lang: 'ja',
-    short_name: '岡大祭2021',
-    title: '岡山大学祭2021',
-    description: '【校友会主催】岡山大学祭2021の公式HPです',
-    theme_color: '#0071C5',
-    background_color: '#FFFFFF'
-  },
+  // manifest: {
+  //   name: '岡山大学祭2021',
+  //   lang: 'ja',
+  //   short_name: '岡大祭2021',
+  //   title: '岡山大学祭2021',
+  //   description: '【校友会主催】岡山大学祭2021の公式HPです',
+  //   theme_color: '#0071C5',
+  //   background_color: '#FFFFFF'
+  // },
 
   env: {
     API_KEY: process.env.API_KEY
