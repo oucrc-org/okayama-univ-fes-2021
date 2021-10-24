@@ -37,6 +37,7 @@
     "@nuxtjs/vercel-builder": "^0.22.1",
     "eslint": "^7.32.0",
     "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.19.1",
     "postcss": "^8.3.9",
     "webpack": "^4.46.0"
