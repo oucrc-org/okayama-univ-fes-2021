@@ -140,7 +140,7 @@
           <p class="absolute top-28 md:top-32 text-gray-800 font-medium text-3xl md:text-5xl ml-16 md:ml-44">
             学祭実行委員会
           </p>
-          <p class="mt-36 md:mt-48 md:w-10/12 text-lg tracking-wider leading-10">
+          <p class="mt-36 md:mt-48 md:w-10/12 md:text-lg tracking-wider leading-7 md:leading-10">
             今年度の岡山大学祭は、校友会と大学祭実行委員会が一丸となって企画・運営を行いました。<br>
             <br>
             前年のように特設WEBサイトに映像や部活紹介といったコンテンツを掲載するだけではなく、11月7日にはプロの芸人の方のプロコンサート、11月16・17日には岡山大学校友会の公認クラブ・サークルのパフォーマンスの生配信をステージ企画として行います。
@@ -153,7 +153,62 @@
     </div>
     <!-- ▲ 今年の学祭について -->
 
-    <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
+    <!-- ▼ バーナー -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
+      <a href="/president-message">
+        <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+      </a>
+      <a href="#">
+        <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+      </a>
+    </div>
+    <!-- ▲ バーナー -->
+
+    <!-- ▼ スタンプラリー -->
+    <canvas class="waveCanvas mt-4" />
+    <div class="bg-themeColor">
+      <div class="container max-w-screen-lg mx-auto relative">
+        <Header title="スタンプラリー" colors="bg-white text-themeColor" />
+        <VerticalTitle text="CAMPAIGN" colors="text-themeLight" />
+        <div class="relative mt-10 px-6 z-10">
+          <p class="text-white text-3xl md:text-4xl tracking-widest font-bold leading-10">
+            Nintendo Switchなど豪華賞品があたる！
+          </p>
+          <p class="text-white tracking-widest mt-4">
+            学祭の1週間毎日クイズに答えて、スタンプを集めて応募しよう！
+          </p>
+          <div
+            class="bg-white text-center mt-8 md:mt-16 mx-auto h-48 sm:h-96 w-full sm:w-2/3 rounded-3xl relative z-10"
+          >
+            画像
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-10 sm:mt-20">
+            <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
+              <LinkTo
+                to="stamp-rally"
+                class="border-3 border-white inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
+              >
+                スタンプラリーとは？
+              </LinkTo>
+            </div>
+            <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
+              <!-- TODO: ログインリンクに変更 -->
+              <LinkTo
+                to="#"
+                class="border-3 border-white bg-white inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
+              >
+                参加する →
+              </LinkTo>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas class="waveCanvas transform rotate-180" />
+    <!-- ▲ スタンプラリー -->
+
+    <!-- ▼ ライブ配信 -->
+    <div v-if="isStreaming" class="container max-w-screen-lg mt-20 mx-auto relative">
       <Header
         title="ライブ配信"
         colors="bg-red-500 text-white"
@@ -172,66 +227,12 @@
             />
           </div>
           <client-only>
-            <OperationStageSchedule />
+            <OperationStageSchedule class="max-w-screen-md mx-auto" />
           </client-only>
         </div>
       </div>
     </div>
-
-    <div v-else class="container max-w-screen-xl mt-20 mx-auto relative">
-      <Header title="今年の学祭について" colors="bg-themeColor text-white" />
-      <VerticalTitle text="ABOUT" colors="text-gray-200" />
-      <div class="container max-w-screen-lg mt-14 mx-auto">
-        <div class="w-4/5 tracking-widest leading-6 px-4">
-          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-        </div>
-      </div>
-    </div>
-
-    <canvas class="waveCanvas mt-4" />
-    <div class="bg-themeColor">
-      <div class="container max-w-screen-xl mx-auto relative">
-        <Header title="現在のピックアップ" colors="bg-white text-themeColor" />
-        <VerticalTitle text="PICKUP" colors="text-themeLight" />
-        <CenterTitle text="写真部 学祭展覧会" colors="border-white text-white" />
-        <div class="bg-white text-center mt-16 mx-auto h-48 sm:h-96 w-4/5 sm:w-2/3 rounded-3xl relative z-10">
-          画像
-        </div>
-        <div class="text-center pb-3 mt-12">
-          <a href="#" class="border-b-2 pb-2 sm:text-lg text-white">
-            その他の団体企画はこちら >
-          </a>
-        </div>
-      </div>
-    </div>
-    <canvas class="waveCanvas transform rotate-180" />
-
-    <div class="container max-w-screen-xl pt-6 mx-auto relative">
-      <Header title="スタンプラリー企画" colors="bg-themeColor text-white" />
-      <VerticalTitle text="CAMPAIGN" colors="text-gray-200" />
-      <div class="container max-w-screen-lg mt-4 sm:mt-14 mx-auto px-10">
-        <StampRallyTimeTable />
-        <div class="grid grid-cols-2 gap-4 sm:mt-20">
-          <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
-            <LinkTo
-              to="stamp-rally"
-              class="border-3 border-themeColor inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >
-              スタンプラリーとは？
-            </LinkTo>
-          </div>
-          <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-            <!-- TODO: ログインリンクに変更 -->
-            <LinkTo
-              to="#"
-              class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-            >
-              参加する →
-            </LinkTo>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- ▲ ライブ配信 -->
 
     <div class="bg-themeColor mt-20 pb-14">
       <div class="container max-w-screen-xl pt-16 mx-auto relative">
@@ -383,8 +384,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import StampRallyTimeTable from '@/components/pages/stamp-rally/TimeTable.vue'
-import CenterTitle from '~/components/templates/header/CenterTitle.vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
@@ -394,10 +393,8 @@ export default Vue.extend({
   components: {
     LinkTo,
     OperationStageSchedule,
-    CenterTitle,
     Header,
-    VerticalTitle,
-    StampRallyTimeTable
+    VerticalTitle
   },
   data () {
     return {
