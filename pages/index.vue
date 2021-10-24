@@ -1,16 +1,24 @@
 <template>
   <div>
     <div class="relative overflow-hidden">
-      <img class="relative top-0 w-screen object-cover object-left" style="height: 800px; height: 1200px"
-           src="@/assets/img/static/home/background.jpg" alt="岡山大学祭"
+      <!-- ▼ ヒーローエリア背景 -->
+      <img
+        class="relative top-0 w-screen object-cover object-left landing-background"
+        src="@/assets/img/static/home/background.jpg"
+        alt="ヒーローエリア"
       >
+      <!-- ▲ ヒーローエリア背景 -->
+
+      <!-- ▼ ヒーローエリア -->
       <div class="absolute top-0 left-0 right-0 h-64 lg:h-80">
         <img
           class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
-          src="@/assets/img/static/home/drop.png" alt="タイトル"
+          src="@/assets/img/static/home/drop.png"
+          alt="タイトル背景"
         >
       </div>
       <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
+        <!--== ▼ タイトル ==-->
         <div>
           <h1 class="text-white text-4xl lg:text-6xl font-bold tracking-widest">
             笑顔満祭 岡大祭
@@ -24,21 +32,33 @@
             #岡山大学祭2021
           </p>
         </div>
+        <!--== ▲ タイトル ==-->
+
+        <!--== ▼ Twitterで応援メッセージ募集中 ==-->
         <div class="mt-20 sm:mt-24 lg:mt-36 px-4 sm:max-w-md lg:max-w-screen-md mx-auto">
           <div class="mb-6 lg:mb-14 px-8 sm:px-12 text-center">
-            <img src="@/assets/img/static/home/twitter_title.png" class="inline-block w-full max-w-xs lg:max-w-sm"
-                 alt="Twitterで応援メッセージ募集中"
+            <img
+              src="@/assets/img/static/home/twitter_title.png"
+              class="inline-block w-full max-w-xs lg:max-w-sm"
+              alt="Twitterで応援メッセージ募集中"
             >
           </div>
 
-          <div v-for="i in 3" class="grid lg:grid-cols-2 gap-4"
-               :key="i"
+          <div
+            v-for="i in 3"
+            :key="i"
+            class="grid lg:grid-cols-2 gap-4"
           >
-            <div class="grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3">
+            <!--TODO: こちらには1~3番目の投稿を表示-->
+            <div
+              class="grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
+            >
               <div>
-                <img class="rounded-full" style="max-width: 60px"
-                     src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
-                     alt="ふぉ"
+                <img
+                  class="rounded-full"
+                  style="max-width: 60px"
+                  src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
+                  alt="ふぉ"
                 >
               </div>
               <div class="col-span-4">
@@ -51,11 +71,16 @@
               </div>
             </div>
 
-            <div class="hidden lg:grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3">
+            <!--TODO: こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
+            <div
+              class="hidden lg:grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
+            >
               <div>
-                <img class="rounded-full" style="max-width: 60px"
-                     src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
-                     alt="ふぉ"
+                <img
+                  class="rounded-full"
+                  style="max-width: 60px"
+                  src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
+                  alt="ふぉ"
                 >
               </div>
               <div class="col-span-4">
@@ -71,15 +96,69 @@
 
           <div class="block text-center mt-8 lg:mt-20">
             <a href="https://twitter.com/intent/tweet?hashtags=岡山大学祭2021" target="_blank">
-              <img src="@/assets/img/static/home/twitter_support.png" class="h-12 lg:h-16 inline-block" alt="応援する">
+              <img
+                src="@/assets/img/static/home/twitter_support.png"
+                class="h-12 lg:h-16 inline-block transition duration-300 ease-in-out transform hover:scale-105"
+                alt="応援する"
+              >
             </a>
           </div>
         </div>
+        <!--== ▲ Twitterで応援メッセージ募集中 ==-->
       </div>
     </div>
+    <!-- ▲ ヒーローエリア -->
+
+    <!-- ▼ 今年の学祭について -->
+    <div class="relative">
+      <img
+        id="about_background"
+        class="w-screen object-cover object-left"
+        src="@/assets/img/static/home/about_background.jpg"
+        alt="ヒーローエリア"
+      >
+
+      <div class="absolute top-14 left-0 right-0 max-w-screen-lg mx-auto w-full">
+        <Header
+          title="今年の学祭について"
+          colors="bg-themeColor text-white"
+        />
+        <VerticalTitle text="ABOUT" colors="text-white" />
+        <div
+          id="about_container"
+          class="bg-white float-right mt-12 w-11/12 md:w-10/12 px-8 md:px-20 py-12 relative"
+          style="background: #FFFFFFCC"
+        >
+          <img
+            src="@/assets/img/static/home/cross.png"
+            class="absolute top-16 md:top-20 left-24 md:left-48 opacity-100 w-14 md:w-20"
+            alt="CROSS"
+          >
+          <p class="absolute top-12 md:top-16 text-gray-800 font-medium text-3xl md:text-5xl">
+            校友会
+          </p>
+          <p class="absolute top-28 md:top-32 text-gray-800 font-medium text-3xl md:text-5xl ml-16 md:ml-44">
+            学祭実行委員会
+          </p>
+          <p class="mt-36 md:mt-48 md:w-10/12 text-lg tracking-wider leading-10">
+            今年度の岡山大学祭は、校友会と大学祭実行委員会が一丸となって企画・運営を行いました。<br>
+            <br>
+            前年のように特設WEBサイトに映像や部活紹介といったコンテンツを掲載するだけではなく、11月7日にはプロの芸人の方のプロコンサート、11月16・17日には岡山大学校友会の公認クラブ・サークルのパフォーマンスの生配信をステージ企画として行います。
+            また特設サイトにおいても、スタンプラリー企画やコンテンツを充実させ、皆様に楽しんでいただけるようにパワーアップしております。<br>
+            <br>
+            岡山大学生が準備したコンテンツをふんだんに披露していきますので、是非この1週間お楽しみいただければと思います。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- ▲ 今年の学祭について -->
 
     <div v-if="isStreaming" class="container max-w-screen-xl mt-20 mx-auto relative">
-      <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="require('@/assets/img/header/streaming.png')" />
+      <Header
+        title="ライブ配信"
+        colors="bg-red-500 text-white"
+        :icon-path="require('@/assets/img/header/streaming.png')"
+      />
       <VerticalTitle text="STREAMING" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
@@ -355,6 +434,7 @@ export default Vue.extend({
   },
   mounted () {
     init()
+    $('#about_background').height($('#about_container').height() as number + 260)
   },
   beforeDestroy () {
     stop()
@@ -363,6 +443,16 @@ export default Vue.extend({
 </script>
 
 <style>
+.landing-background {
+  height: 900px;
+}
+
+@media (min-width: 1024px) {
+  .landing-background {
+    height: 1200px;
+  }
+}
+
 .swiper-pagination {
   @apply mt-4 text-center static w-full
 }
