@@ -24,7 +24,8 @@
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
     "vue-light-timeline": "^1.0.3",
-    "vue-slick": "^1.1.16"
+    "vue-slick": "^1.1.16",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.8",
@@ -38,7 +39,6 @@
     "eslint": "^7.32.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.19.1",
-    "postcss": "^8.3.9",
-    "webpack": "^4.46.0"
+    "postcss": "^8.3.9"
   }
 }
