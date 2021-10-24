@@ -28,7 +28,8 @@
       <div v-if="work.creator" class="text-gray-700">
         {{ work.creator }}作
       </div>
-      <div>{{ work.body }}</div>
+      <!-- リッチテキスト -->
+      <HTMLLeader :body="work.body_html" />
     </div>
   </div>
 </template>
@@ -38,11 +39,14 @@ import Vue, { PropType } from 'vue'
 import WorkImage from './WorkImage.vue'
 import { IWork } from '~/assets/js/type/IWork'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
+import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
+
 export default Vue.extend({
   name: 'OucrcWork',
   components: {
     IframeViewer,
-    WorkImage
+    WorkImage,
+    HTMLLeader
   },
   props: {
     work: {

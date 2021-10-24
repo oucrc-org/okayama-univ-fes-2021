@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,6 +21,14 @@ export default {
       {
         name: 'format-detection',
         content: 'telephone=no'
+      },
+      {
+        name: 'Theme-Color',
+        content: '#FFFFFF'
+      },
+      {
+        name: 'google-site-verification',
+        content: 'iAmtfPOn9JU9DVeq1uSrxvnwpZkcOOvk62oRAEsvV78'
       }
     ],
     link: [
@@ -30,15 +40,13 @@ export default {
     ],
     script: [
       {
-        src: 'js/waveCanvas.js'
+        src: '/js/waveCanvas.js'
       }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/css/index.css'
-  ],
+  css: ['@/assets/css/index.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -82,18 +90,25 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      })
+    ]
+  },
 
   // @nuxtjs/pwa Configuration: https://github.com/nuxt-community/pwa-module
-  manifest: {
-    name: '岡山大学祭2021',
-    lang: 'ja',
-    short_name: '岡大祭2021',
-    title: '岡山大学祭2021',
-    description: '【校友会主催】岡山大学祭2021の公式HPです',
-    theme_color: '#0071C5',
-    background_color: '#FFFFFF'
-  },
+  // manifest: {
+  //   name: '岡山大学祭2021',
+  //   lang: 'ja',
+  //   short_name: '岡大祭2021',
+  //   title: '岡山大学祭2021',
+  //   description: '【校友会主催】岡山大学祭2021の公式HPです',
+  //   theme_color: '#0071C5',
+  //   background_color: '#FFFFFF'
+  // },
 
   env: {
     API_KEY: process.env.API_KEY
@@ -102,7 +117,7 @@ export default {
   // Google Font
   webfontloader: {
     google: {
-      families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900']
+      families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900', 'Noto+Serif+JP:200,300,400,500,600,700,900']
     }
   },
 
