@@ -19,6 +19,10 @@ export default {
       {
         name: 'format-detection',
         content: 'telephone=no'
+      },
+      {
+        name: 'google-site-verification',
+        content: 'iAmtfPOn9JU9DVeq1uSrxvnwpZkcOOvk62oRAEsvV78'
       }
     ],
     link: [
