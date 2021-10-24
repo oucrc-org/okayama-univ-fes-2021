@@ -25,7 +25,10 @@ declare namespace oufes {
     id: string,
     name: string,
     // eslint-disable-next-line camelcase
-    ordering_key: number
+    name_english: string,
+    // eslint-disable-next-line camelcase
+    ordering_key: number,
+    color: string
   }
 
   interface IWork {

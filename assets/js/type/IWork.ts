@@ -4,7 +4,10 @@ export interface IWorkCategory {
   id: string,
   name: string,
   // eslint-disable-next-line camelcase
-  ordering_key: number
+  name_english: string,
+  // eslint-disable-next-line camelcase
+  ordering_key: number,
+  color: string
 }
 
 export interface IWork {
