@@ -59,19 +59,6 @@ export default Vue.extend({
       required: false,
       default: '#0071C5'
     }
-  },
-  data () {
-    return {
-    }
-  },
-  computed: {
-    hasAdditionalImage (): boolean {
-      return !(
-        this.work.image1 == null &&
-        this.work.image2 == null &&
-        this.work.image3 == null
-      )
-    }
   }
 })
 </script>
