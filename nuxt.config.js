@@ -129,7 +129,7 @@ export default {
       home: '/mypage'
     },
     // SSRに支障が出た場合？
-    localStorage: false,
+    localStorage: true,
     strategies: {
       google: {
         client_id: process.env.GOOGLE_CLIENT_ID
