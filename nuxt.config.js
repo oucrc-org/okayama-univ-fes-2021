@@ -128,8 +128,12 @@ export default {
       callback: '/callback',
       home: '/mypage'
     },
-    // SSRに支障が出た場合？
-    localStorage: true,
+    cookie: {
+      prefix: 'auth.',
+      options: {
+        path: '/'
+      }
+    },
     strategies: {
       google: {
         client_id: process.env.GOOGLE_CLIENT_ID
