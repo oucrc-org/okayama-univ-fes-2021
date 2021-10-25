@@ -128,6 +128,7 @@ export default {
       callback: '/callback',
       home: '/mypage'
     },
+    localStorage: false,
     cookie: {
       prefix: 'auth.',
       options: {
