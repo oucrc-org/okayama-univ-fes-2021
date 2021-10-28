@@ -10,7 +10,7 @@
       />
     </div>
     <div v-else>
-      動画が設定されていません
+      開始までしばらくお待ちください。
     </div>
     <div class="text-center font-bold py-4">
       <div v-if="nextVideoDateString">
