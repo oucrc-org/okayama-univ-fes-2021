@@ -34,6 +34,13 @@
         <LinkWithArrow to="/president-message" title="学長のメッセージ" />
         <LinkWithArrow to="/operation-message" title="運営団体のメッセージ" />
       </SlideDown>
+      <LinkWithArrow to="/live" title="ライブ配信" />
+      <LinkWithArrow to="/presentation" title="団体企画" />
+      <LinkWithArrow to="/clubs" title="部活動・サークル紹介" />
+      <SlideDown label="スタンプラリー">
+        <LinkWithArrow to="/stamp-rally" title="スタンプラリーとは?" />
+        <LinkWithArrow to="#" title="参加する" />
+      </SlideDown>
     </nav>
 
     <footer class=" text-gray-400 tracking-widest text-sm">
