@@ -51,9 +51,9 @@
       :class="isOpen ? 'bg-white' : 'bg-themeColor'"
       @click="isOpen = !isOpen"
     >
-      <span class="line navbar top-4" :class="{'navbar_transform_1': isOpen}" />
-      <span class="line navbar top-6" :class="{'navbar_transform_2': isOpen}" />
-      <span class="line navbar top-8" :class="{'navbar_transform_3': isOpen}" />
+      <span class="line navigation-bar top-4" :class="{'navigation-bar_transform_1': isOpen}" />
+      <span class="line navigation-bar top-6" :class="{'navigation-bar_transform_2': isOpen}" />
+      <span class="line navigation-bar top-8" :class="{'navigation-bar_transform_3': isOpen}" />
     </div>
   </div>
 </template>
@@ -72,19 +72,19 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
+.navigation-bar {
   @apply absolute bg-white left-6 h-0.5 w-5 transition duration-300 ease-in-out
 }
 
-.navbar_transform_1 {
+.navigation-bar_transform_1 {
   @apply bg-gray-500 transform translate-y-2 rotate-45
 }
 
-.navbar_transform_2 {
+.navigation-bar_transform_2 {
   @apply hidden
 }
 
-.navbar_transform_3 {
+.navigation-bar_transform_3 {
   @apply bg-gray-500 transform -translate-y-2 -rotate-45
 }
 
