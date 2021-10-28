@@ -5,7 +5,7 @@ module.exports = {
     node: true
   },
   extends: ['@nuxtjs/eslint-config-typescript', 'plugin:nuxt/recommended'],
-  plugins: [],
+  plugins: ['prettier'],
   // add your custom rules here
   rules: {
     // interface等のメンバーを定義する際、カンマで分ける
