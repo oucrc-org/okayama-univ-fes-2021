@@ -48,7 +48,7 @@ const getTodayVideoUrl = () => {
   }
 
   return {
-    url: dateYouTubeUrl[latestVideoDateKey ?? 'default'],
+    url: latestVideoDateKey ? dateYouTubeUrl[latestVideoDateKey] : null,
     nextVideoDateString
   }
 }
