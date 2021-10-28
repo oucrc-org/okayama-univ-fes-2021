@@ -20,7 +20,7 @@ const watchToEmbed = (url?: string) => {
 
   const result = new URL(videoId, 'https://youtube.com/embed/')
   const paramsOtherThanId = new URLSearchParams(new URL(url).searchParams)
-  console.log(paramsOtherThanId.toString())
+
   paramsOtherThanId.delete('v')
   // 通常の開始時間指定（t=xx）を埋め込み用（start=xx）に書き換え
   const startTime = paramsOtherThanId.get('t')
