@@ -28,7 +28,13 @@
       </div>
     </div>
 
-    <hr class="mt-16 mx-auto w-11/12">
+    <nav class="max-w-screen-lg mx-auto w-full mt-16 flex flex-col border-t-2 border-b-2 border-gray-300 divide-y-2 divide-gray-300">
+      <LinkWithArrow to="/" title="ホーム" />
+      <SlideDown label="代表者メッセージ">
+        <LinkWithArrow to="/president-message" title="学長のメッセージ" />
+        <LinkWithArrow to="/operation-message" title="運営団体のメッセージ" />
+      </SlideDown>
+    </nav>
 
     <p class="text-center mt-6 text-gray-400 tracking-widest text-sm">
       (c) 2021 岡山大学校友会
@@ -37,8 +43,11 @@
 </template>
 
 <script>
+import LinkWithArrow from '../templates/parts/LinkWithArrow.vue'
+import SlideDown from '../templates/parts/SlideDown.vue'
 export default {
   name: 'Footer',
+  components: { SlideDown, LinkWithArrow },
   props: {
     hiddenShare: {
       type: Boolean,
