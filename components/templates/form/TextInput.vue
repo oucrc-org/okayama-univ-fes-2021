@@ -1,13 +1,13 @@
 <template>
   <div class="form-control">
-    <label class="label" :for="id">{{ label }}</label
-    ><input class="input input-bordered" :id="id" :name="id" type="text" :placeholder="placeholder" />
+    <label class="label" :for="id">{{ label }}</label>
+    <input :id="id" class="input input-bordered" :name="id" type="text" :placeholder="placeholder">
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'Textinput',
+  name: 'TextInput',
   props: {
     id: {
       type: String,
