@@ -2,7 +2,15 @@
   <div class="form-control">
     <label class="label" :for="id">{{ label }}</label>
     <select :id="id" class="select select-bordered w-full">
-      <option v-for="option in options" :key="option.id" :value="option.id">
+      <option disabled selected>
+        選択してください
+      </option>
+      <option
+        v-for="option in options"
+        :key="option.id"
+        :value="option.id"
+        :disabled="stampNumber < option.required_stamps"
+      >
         {{ option.name }}
       </option>
     </select>
@@ -28,6 +36,10 @@ export default {
     id: {
       type: String,
       default: ''
+    },
+    stampNumber: {
+      type: Number,
+      default: 0
     }
   }
 }

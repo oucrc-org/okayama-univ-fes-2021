@@ -1,7 +1,14 @@
 <template>
   <div class="form-control">
     <label class="label" :for="id">{{ label }}</label>
-    <input :id="id" class="input input-bordered" :name="id" type="text" :placeholder="placeholder">
+    <input
+      :id="id"
+      class="input input-bordered"
+      :name="id"
+      type="text"
+      :placeholder="placeholder"
+      required
+    >
   </div>
 </template>
 
