@@ -217,15 +217,7 @@
       <VerticalTitle text="STREAMING" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
-          <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
-            <iframe
-              class="absolute h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
-              title="学祭2021 パフォーマンス"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </div>
+          <DailyVideo />
           <client-only>
             <OperationStageSchedule class="max-w-screen-md mx-auto" />
           </client-only>
@@ -388,13 +380,15 @@ import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import DailyVideo from '~/components/templates/video/DailyVideo.vue'
 
 export default Vue.extend({
   components: {
     LinkTo,
     OperationStageSchedule,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    DailyVideo
   },
   data () {
     return {
