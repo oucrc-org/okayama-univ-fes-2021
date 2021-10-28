@@ -1,5 +1,26 @@
 # okayama-univ-fes-2021
 
+## 動画・ライブ配信の設定方法
+
+[date-youtube-url.ts](https://github.com/oucrc-org/okayama-univ-fes-2021/blob/main/assets/data/date-youtube-url.ts) を編集してください。
+
+```js
+const dateYouTubeUrl: Record<string, string> = {
+  // 適当に岡大の動画を入れています
+  '2021-10-28': 'https://www.youtube.com/watch?v=RfIo2QOz78I',
+  // こんな感じで時間帯ごとに切り替えられます
+  '2021-10-28 12:00': 'https://www.youtube.com/watch?v=5gMKcvKoz0Q',
+  '2021-10-28 13:30': 'https://www.youtube.com/watch?v=SYSX0GHoBEI',
+  '2021-10-28 15:10': 'https://www.youtube.com/watch?v=6dK7YwaEsVM',
+
+  // もちろん日替わりも可能です
+  '2021-11-1': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
+  '2021-11-2': 'https://www.youtube.com/watch?v=cg7skAIS7Uk'
+}
+```
+
+左が「開始時間」、右が「動画のURL」です。上のURlはダミーです。
+
 ## Commit Message
 
 | Prefix | 使うシチュエーション |
