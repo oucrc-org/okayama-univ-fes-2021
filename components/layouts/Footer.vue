@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <nav class="max-w-screen-lg mx-auto w-full mt-16 flex flex-col border-t-2 border-b-2 border-gray-300 divide-y-2 divide-gray-300">
+    <nav class="mx-auto w-full mt-16 flex flex-col border-t border-b border-gray-300 divide-y divide-gray-300">
       <LinkWithArrow to="/" title="ホーム" />
       <SlideDown label="代表者メッセージ">
         <LinkWithArrow to="/president-message" title="学長のメッセージ" />
@@ -43,10 +43,10 @@
       </SlideDown>
     </nav>
 
-    <footer class=" text-gray-400 tracking-widest text-sm">
+    <footer class="text-gray-400 tracking-widest text-sm">
       <div class="flex justify-center items-center pt-8 pb-4">
         <div class="w-6 h-6 mr-3">
-          <img src="@/assets/img/slide-icons/21.jpg">
+          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会">
         </div>
         <span>制作: 岡山大学電子計算機研究会</span>
       </div>
@@ -73,6 +73,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.collapse-plus p {
+  @apply font-normal text-sm
+}
 </style>
