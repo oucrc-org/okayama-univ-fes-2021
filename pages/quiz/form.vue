@@ -27,12 +27,16 @@ import Header from '~/components/layouts/Header.vue'
 import SubmitButton from '~/components/templates/form/SubmitButton.vue'
 import TextInput from '~/components/templates/form/TextInput.vue'
 import SelectInput from '~/components/templates/form/RadioInput.vue'
+import presentFormData from "~/assets/data/present-form-data";
 
 const baseUrl = 'https://35cc-101-141-95-93.ngrok.io'
 
 export default Vue.extend({
   components: { SelectInput, TextInput, SubmitButton, Header },
   asyncData (context: Context) {
+    // debug
+    return presentFormData
+
     const { app } = context
     return app.$axios.get(
       `${baseUrl}/api/presents`,
