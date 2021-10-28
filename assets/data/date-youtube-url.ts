@@ -6,16 +6,20 @@
  * dayjsが文字列をパースするため、厳密なISO形式にする必要はありません。
  */
 const dateYouTubeUrl: Record<string, string> = {
-  // 適当に岡大の動画を入れています
-  '2021-10-28': 'https://www.youtube.com/watch?v=RfIo2QOz78I',
-  // こんな感じで時間帯ごとに切り替えられます
-  '2021-10-28 12:00': 'https://www.youtube.com/watch?v=5gMKcvKoz0Q',
-  '2021-10-28 13:30': 'https://www.youtube.com/watch?v=SYSX0GHoBEI',
-  '2021-10-28 15:10': 'https://www.youtube.com/watch?v=6dK7YwaEsVM',
+  // 開始まではこの動画が出ます
+  '2021-1-1': 'https://www.youtube.com/watch?v=RfIo2QOz78I',
 
-  // もちろん日替わりも可能です
-  '2021-11-1': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
-  '2021-11-2': 'https://www.youtube.com/watch?v=cg7skAIS7Uk'
+  // ここにライブ配信のURLを入れます
+  '2021-11-6 9:30': 'https://www.youtube.com/watch?v=5gMKcvKoz0Q',
+
+  // ライブ終了後に出す動画
+  '2021-11-6 18:00': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
+
+  // あとは適宜変えてください
+  '2021-11-7 00:00': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
+  '2021-11-8 00:00': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
+  '2021-11-9 00:00': 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
+  '2021-11-10 00:00': 'https://www.youtube.com/watch?v=cg7skAIS7Uk'
 }
 
 export default dateYouTubeUrl
