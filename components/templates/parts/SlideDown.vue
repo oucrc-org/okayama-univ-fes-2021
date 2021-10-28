@@ -26,13 +26,22 @@ export default {
 .collapse-title {
   min-height: auto;
 }
-.collapse-content {
+.collapse:focus:not(.collapse-close) .collapse-content {
   padding: 0px;
+  padding-bottom: 0px;
 }
 /* daisyUIのプラスマークを大きくする */
-.collapse-title::after {
+.collapse-plus .collapse-title:after {
+  font-size: 1.5rem;
+  background: #0171C5;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0.75rem;
+  right: 0.7rem;
+  line-height: 1.5rem;
+  padding-left: 0.35rem;
+  color: white;
   font-weight: normal;
-  line-height: 1rem;
-  font-size: 2rem;
 }
 </style>
