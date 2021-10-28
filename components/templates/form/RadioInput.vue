@@ -1,19 +1,25 @@
 <template>
   <div class="form-control">
     <label class="label" :for="id">{{ label }}</label>
-    <select :id="id" class="select select-bordered w-full">
-      <option disabled selected>
-        選択してください
-      </option>
-      <option
-        v-for="option in options"
-        :key="option.id"
+    <div
+      v-for="option in options"
+      :id="id"
+      :key="option.id"
+      class="my-2"
+    >
+      <input
+        :id="option.id"
+        type="radio"
+        class="radio radio-secondary"
+        name="present_id"
         :value="option.id"
         :disabled="stampNumber < option.required_stamps"
+        required
       >
-        {{ option.name }}
-      </option>
-    </select>
+      <label :for="option.id" class="cursor-pointer label-text">
+        <span>{{ option.name }}</span>
+      </label>
+    </div>
   </div>
 </template>
 

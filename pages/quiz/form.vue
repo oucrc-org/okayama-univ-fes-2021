@@ -1,7 +1,11 @@
 <template>
   <div class="container mx-auto px-3 py-8">
     <Header title="応募フォーム" colors="bg-themeColor test-white" />
-    <form class="flex flex-col gap-y-6 py-8" action="" method="post">
+    <form
+      class="flex flex-col gap-y-6 py-8"
+      action="https://fb48-101-141-95-93.ngrok.io/api/present-form"
+      method="post"
+    >
       <!--suppress JSUnresolvedVariable -->
       <input type="hidden" name="google_id" :value="$auth.getToken('google')">
 
@@ -22,25 +26,36 @@ import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
 import SubmitButton from '~/components/templates/form/SubmitButton.vue'
 import TextInput from '~/components/templates/form/TextInput.vue'
-import SelectInput from '~/components/templates/form/SelectInput.vue'
+import SelectInput from '~/components/templates/form/RadioInput.vue'
+
+const baseUrl = 'https://35cc-101-141-95-93.ngrok.io'
 
 export default Vue.extend({
   components: { SelectInput, TextInput, SubmitButton, Header },
   asyncData (context: Context) {
     const { app } = context
     return app.$axios.get(
-      'https://fb48-101-141-95-93.ngrok.io/api/presents',
+      `${baseUrl}/api/presents`,
       {
         headers: {
           'Access-Token': app.$auth.getToken('google').replace('Bearer ', '')
         }
       }
-    )
-      .then((res) => {
+    ).then((presents) => {
+      return app.$axios.get(
+        `${baseUrl}/api/user`,
+        {
+          headers: {
+            'Access-Token': app.$auth.getToken('google').replace('Bearer ', '')
+          }
+        }
+      ).then((user) => {
         return {
-          presents: res.data.data
+          presents: presents.data.data,
+          stampNumber: user.data.stamps.length
         }
       })
+    })
   },
   data () {
     return {
