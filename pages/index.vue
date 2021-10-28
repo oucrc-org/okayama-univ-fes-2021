@@ -158,9 +158,9 @@
       <a href="/president-message">
         <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
       </a>
-      <LinkTo to="/schedule">
+      <a href="/schedule" target="_blank">
         <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
-      </LinkTo>
+      </a>
     </div>
     <!-- ▲ バーナー -->
 
