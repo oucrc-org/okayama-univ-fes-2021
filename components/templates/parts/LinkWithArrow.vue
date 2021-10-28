@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.collapse-content div:not(:last-child) {
+  border-width: 2px 0;
+  border-color: #fff;
+}
+</style>
