@@ -36,9 +36,18 @@
       </SlideDown>
     </nav>
 
-    <p class="text-center mt-6 text-gray-400 tracking-widest text-sm">
-      (c) 2021 岡山大学校友会
-    </p>
+    <footer class=" text-gray-400 tracking-widest text-sm">
+      <div class="flex justify-center items-center pt-8 pb-4">
+        <div class="w-6 h-6 mr-3">
+          <img src="@/assets/img/slide-icons/21.jpg">
+        </div>
+        <span>制作: 岡山大学電子計算機研究会</span>
+      </div>
+
+      <p class="text-center mt-6">
+        (c) 2021 岡山大学校友会
+      </p>
+    </footer>
   </div>
 </template>
 
