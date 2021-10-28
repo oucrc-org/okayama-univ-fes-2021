@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     googleAuthenticate () {
-      if (!this.isLoading) {
+      if (!this.isLoading && process.client) {
         this.$auth.loginWith('google')
       }
       this.isLoading = true
