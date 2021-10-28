@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* daisyUIの縦幅を調整 */
 .collapse-title {
   min-height: auto;
