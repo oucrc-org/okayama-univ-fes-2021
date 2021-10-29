@@ -1,11 +1,11 @@
 <template>
   <div class="container mx-auto px-3 py-8">
     <Header title="応募フォーム" colors="bg-themeColor test-white" />
+    <!-- 送信イベントはボタン側に移動させました -->
     <form
       class="flex flex-col gap-y-6 py-8"
       action="https://fb48-101-141-95-93.ngrok.io/api/present-form"
-      method="post"
-      @submit="checkform"
+      @submit.prevent
     >
       <!--suppress JSUnresolvedVariable  -->
       <input type="hidden" name="google_id" :value="$auth.getToken('google')">
@@ -43,7 +43,11 @@
       </div>
       <hr>
       <div class="mx-auto">
-        <SubmitButton :disabled="!agreed" label="応募" />
+        <div class="text-center py-6">
+          <button :disabled="!agreed" class="btn btn-lg btn-info" type="submit" @click="submitForm">
+            応募
+          </button>
+        </div>
         <div v-if="!agreed">
           応募には、プライバシーポリシーへの同意と注意点の確認が必要です。
         </div>
@@ -56,7 +60,6 @@
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
-import SubmitButton from '~/components/templates/form/SubmitButton.vue'
 import TextInput from '~/components/templates/form/TextInput.vue'
 import SelectInput from '~/components/templates/form/RadioInput.vue'
 import presentFormData from '~/assets/data/present-form-data'
@@ -64,7 +67,7 @@ import presentFormData from '~/assets/data/present-form-data'
 const baseUrl = 'https://35cc-101-141-95-93.ngrok.io'
 
 export default Vue.extend({
-  components: { SelectInput, TextInput, SubmitButton, Header },
+  components: { SelectInput, TextInput, Header },
   asyncData (context: Context) {
     // debug
     return presentFormData
@@ -101,8 +104,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    checkform (e: Event) {
+    submitForm (e: Event) {
       e.preventDefault()
+
+      // バリデーション必要だったらここに書いてください
+      alert('送信しました。')
     }
   }
 })
