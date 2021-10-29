@@ -14,7 +14,9 @@
         name="present_id"
         :value="option.id"
         :disabled="stampNumber < option.required_stamps"
+        :checked="value === option.id"
         required
+        @change="onChange(option.id.toString())"
       >
       <label :for="option.id" class="cursor-pointer label-text">
         <span>{{ option.name }}</span>
@@ -46,6 +48,14 @@ export default {
     stampNumber: {
       type: Number,
       default: 0
+    },
+    value: {
+      type: String,
+      default: ''
+    },
+    onChange: {
+      type: Function,
+      default: () => {}
     }
   }
 }

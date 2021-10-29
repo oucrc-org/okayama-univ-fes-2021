@@ -8,26 +8,88 @@
       @submit.prevent
     >
       <!--suppress JSUnresolvedVariable  -->
-      <input type="hidden" name="google_id" :value="$auth.getToken('google')">
-      <!--suppress JSUnresolvedVariable  -->
       <input type="hidden" name="email" :value="$auth.email">
 
       <div class="grid grid-cols-2 gap-3">
-        <TextInput name="family_name" autocomplete="family-name" label="姓" placeholder="" />
-        <TextInput name="given_name" autocomplete="given-name" label="名" placeholder="" />
+        <TextInput
+          name="family_name"
+          autocomplete="family-name"
+          label="姓"
+          placeholder=""
+          :value="family_name"
+          :on-change="(value) => family_name = value"
+        />
+        <TextInput
+          name="given_name"
+          autocomplete="given-name"
+          label="名"
+          placeholder=""
+          :value="given_name"
+          :on-change="(value) => given_name = value"
+        />
       </div>
       <div class="grid grid-cols-2 gap-3">
-        <TextInput name="family_name_kana" label="セイ" placeholder="" />
-        <TextInput name="given_name_kana" label="メイ" placeholder="" />
+        <TextInput
+          name="family_name_kana"
+          autocomplete="family-name-kana"
+          label="セイ"
+          placeholder=""
+          :value="family_name_kana"
+          :on-change="(value) => family_name_kana = value"
+        />
+        <TextInput
+          name="given_name_kana"
+          autocomplete="given-name-kana"
+          label="メイ"
+          placeholder=""
+          :value="given_name_kana"
+          :on-change="(value) => given_name_kana = value"
+        />
       </div>
 
-      <TextInput name="email" type="email" autocomplete="email" label="予備のメールアドレス" placeholder="例: XXXX@yahoo.co.jp" />
-      <TextInput name="tel" autocomplete="tel-national" type="tel" label="お電話番号" />
+      <TextInput
+        name="email"
+        type="email"
+        autocomplete="email"
+        label="予備のメールアドレス"
+        placeholder="例: XXXX@yahoo.co.jp"
+        :value="secondary_email"
+        :on-change="(value) => secondary_email = value"
+      />
+      <TextInput
+        name="tel"
+        autocomplete="tel-national"
+        type="tel"
+        label="お電話番号"
+        :value="tel"
+        :on-change="(value) => tel = value"
+      />
 
-      <TextInput name="postal_code" autocomplete="postal-code" label="郵便番号" placeholder="例: 7008530" />
-      <TextInput name="address" autocomplete="street-address" label="住所" placeholder="例: 岡山市北区〇〇" />
+      <TextInput
+        name="postal_code"
+        autocomplete="postal-code"
+        label="郵便番号"
+        placeholder="例: 7008530"
+        :value="postal_code"
+        :on-change="(value) => postal_code = value"
+      />
+      <TextInput
+        name="address"
+        autocomplete="street-address"
+        label="住所"
+        placeholder="例: 岡山市北区〇〇"
+        :value="address"
+        :on-change="(value) => address = value"
+      />
 
-      <SelectInput id="presents" label="応募するプレゼント" :options="presents" :stamp-number="stampNumber" />
+      <SelectInput
+        id="presents"
+        label="応募するプレゼント"
+        :options="presents"
+        :stamp-number="stampNumber"
+        :value="present_id"
+        :on-change="(value) => present_id = value"
+      />
 
       <div>
         <div class="flex gap-3 mb-3">
@@ -57,6 +119,7 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
@@ -100,15 +163,43 @@ export default Vue.extend({
     return {
       presents: [],
       stampNumber: 0,
-      agreed: false
+      agreed: false,
+
+      family_name: '',
+      given_name: '',
+      family_name_kana: '',
+      given_name_kana: '',
+      email: '',
+      secondary_email: '',
+      tel: '',
+      postal_code: '',
+      address: '',
+      present_id: ''
     }
   },
   methods: {
     submitForm (e: Event) {
       e.preventDefault()
 
-      // バリデーション必要だったらここに書いてください
-      alert('送信しました。')
+      this.$axios.post(`${baseUrl}/api/present-form`, {
+        family_name: this.family_name,
+        given_name: this.given_name,
+        family_name_kana: this.family_name_kana,
+        given_name_kana: this.given_name_kana,
+        email: this.$auth.email,
+        secondary_email: this.secondary_email,
+        tel: this.tel,
+        postal_code: this.postal_code,
+        address: this.address,
+        present_id: this.present_id
+      },
+      {
+        headers: {
+          'Access-Token': this.$auth.getToken('google').replace('Bearer ', '')
+        }
+      }).then((res) => {
+        alert('送信しました。')
+      })
     }
   }
 })

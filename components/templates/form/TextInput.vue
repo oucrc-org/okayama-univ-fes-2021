@@ -1,14 +1,16 @@
 <template>
   <div class="form-control">
-    <label class="label" :for="id">{{ label }}</label>
+    <label class="label" :for="name">{{ label }}</label>
     <input
       :id="name"
       :name="name"
       class="input input-bordered"
       :type="type"
+      :value="value"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
       required
+      @input="onChange($event.target.value)"
     >
   </div>
 </template>
@@ -42,8 +44,16 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    value: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    onChange: {
+      type: Function,
+      default: () => {}
     }
-
   }
 }
 </script>
