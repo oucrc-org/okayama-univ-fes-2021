@@ -4,11 +4,9 @@
     <!-- 送信イベントはボタン側に移動させました -->
     <form
       class="flex flex-col gap-y-6 py-8"
-      action="https://fb48-101-141-95-93.ngrok.io/api/present-form"
-      @submit.prevent
+      action="/quiz/form/complete"
+      method="get"
     >
-      <!--suppress JSUnresolvedVariable  -->
-      <input type="hidden" name="email" :value="$auth.email">
 
       <div class="grid grid-cols-2 gap-3">
         <TextInput
@@ -169,7 +167,6 @@ export default Vue.extend({
       given_name: '',
       family_name_kana: '',
       given_name_kana: '',
-      email: '',
       secondary_email: '',
       tel: '',
       postal_code: '',
@@ -179,14 +176,12 @@ export default Vue.extend({
   },
   methods: {
     submitForm (e: Event) {
-      e.preventDefault()
-
       this.$axios.post(`${baseUrl}/api/present-form`, {
         family_name: this.family_name,
         given_name: this.given_name,
         family_name_kana: this.family_name_kana,
         given_name_kana: this.given_name_kana,
-        email: this.$auth.email,
+        email: this.$store.state.auth.user.email,
         secondary_email: this.secondary_email,
         tel: this.tel,
         postal_code: this.postal_code,
@@ -197,8 +192,7 @@ export default Vue.extend({
         headers: {
           'Access-Token': this.$auth.getToken('google').replace('Bearer ', '')
         }
-      }).then((res) => {
-        alert('送信しました。')
+      }).then(() => {
       })
     }
   }
