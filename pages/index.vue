@@ -208,20 +208,12 @@
     <canvas class="waveCanvas transform rotate-180" />
     <!-- ▲ スタンプラリー -->
 
-    <!-- ▼ ライブ配信 -->
-    <div v-if="isStreaming" class="container max-w-screen-lg mt-20 mx-auto relative">
-      <Header
-        title="ライブ配信"
-        colors="bg-red-500 text-white"
-        :icon-path="require('@/assets/img/header/streaming.png')"
-      />
+    <!-- ▼ 動画とライブ配信 -->
+    <div class="container max-w-screen-lg mt-20 mx-auto relative">
       <VerticalTitle text="STREAMING" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
-          <DailyVideo />
-          <client-only>
-            <OperationStageSchedule class="max-w-screen-md mx-auto" />
-          </client-only>
+          <DailyLiveOrVideo />
         </div>
       </div>
     </div>
@@ -379,23 +371,20 @@
 import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import SurveyBanner from '~/components/templates/survey/SurveyBanner.vue'
-import DailyVideo from '~/components/templates/video/DailyVideo.vue'
+import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 
 export default Vue.extend({
   components: {
     LinkTo,
-    OperationStageSchedule,
     Header,
     VerticalTitle,
-    DailyVideo,
+    DailyLiveOrVideo,
     SurveyBanner
   },
   data () {
     return {
-      isStreaming: true,
       slickOptions: {
         arrows: false,
         autoplay: true,

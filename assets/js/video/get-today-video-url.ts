@@ -18,7 +18,8 @@ function sortDateStrings (dates: string[]) {
 }
 
 /**
- * 複数の動画URLに紐づいた日時と今日の日時を比較し、適切な動画URLを取得する
+ * 今日の日時から、最新のURL、生配信か否か、放送時間を取得する。
+ * isLiveは常に真偽を返し、それ以外は未定義の場合がある
  */
 const getTodayVideoUrl = () => {
   // 日時だけを配列にする
@@ -42,15 +43,21 @@ const getTodayVideoUrl = () => {
   const latestVideoDateKey = sortDateStrings(datesByTodaySorted).pop()
 
   // 次に動画が変わる時間
-  let nextVideoDateString = null
+  let nextVideoDateString: string | undefined
   if (datesAfterTodaySorted.length > 0) {
     nextVideoDateString = dayjs(datesAfterTodaySorted[0]).format('MM月DD日 HH:mm')
   }
 
-  return {
-    url: latestVideoDateKey ? dateYouTubeUrl[latestVideoDateKey] : null,
-    nextVideoDateString
+  let url: string | undefined
+  let isLive = false
+  let timeFrame: string | undefined
+  if (latestVideoDateKey) {
+    const latest = dateYouTubeUrl[latestVideoDateKey]
+    url = latest.url
+    isLive = latest.isLive ?? false
+    timeFrame = latest.timeFrame
   }
+  return { url, isLive, timeFrame, nextVideoDateString }
 }
 
 export default getTodayVideoUrl
