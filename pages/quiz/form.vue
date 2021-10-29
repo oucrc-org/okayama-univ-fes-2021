@@ -5,6 +5,7 @@
       class="flex flex-col gap-y-6 py-8"
       action="https://fb48-101-141-95-93.ngrok.io/api/present-form"
       method="post"
+      @submit="checkform"
     >
       <!--suppress JSUnresolvedVariable  -->
       <input type="hidden" name="google_id" :value="$auth.getToken('google')">
@@ -28,7 +29,25 @@
 
       <SelectInput id="presents" label="応募するプレゼント" :options="presents" :stamp-number="stampNumber" />
 
-      <SubmitButton label="応募" />
+      <div>
+        <div class="flex gap-3 mb-3">
+          <a href="#" class="btn btn-info">プライバシーポリシー</a>
+          <a href="#" class="btn btn-error">応募の際の注意点</a>
+        </div>
+        <div class="form-control inline-block">
+          <label for="agreed" class="cursor-pointer label">
+            <input v-model="agreed" type="checkbox" class="checkbox mr-3">
+            <span class="label-text">プライバシーポリシー，応募の際の注意点を確認しました</span>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="mx-auto">
+        <SubmitButton :disabled="!agreed" label="応募" />
+        <div v-if="!agreed">
+          応募には、プライバシーポリシーへの同意と注意点の確認が必要です。
+        </div>
+      </div>
     </form>
   </div>
 </template>
@@ -77,7 +96,13 @@ export default Vue.extend({
   data () {
     return {
       presents: [],
-      stampNumber: 0
+      stampNumber: 0,
+      agreed: false
+    }
+  },
+  methods: {
+    checkform (e: Event) {
+      e.preventDefault()
     }
   }
 })
