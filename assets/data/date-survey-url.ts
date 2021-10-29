@@ -6,7 +6,7 @@
  * dayjsが文字列をパースするため、厳密なISO形式にする必要はありません。
  */
 const dateSurveyUrl: Record<string, string> = {
-  '2021-11-7 00:00': 'https://forms.gle/BprtZhN6GWFo42L57',
+  '2021-10-30 00:00': 'https://forms.gle/BprtZhN6GWFo42L57',
   '2021-11-8 00:00': 'https://forms.gle/bJKr4Ube3YVJkvRW8',
   '2021-11-16 00:00': 'https://forms.gle/A4sp8cAFXwKkWFxx5',
   '2021-11-18 00:00': 'https://forms.gle/DvEy927YYvKypoxC6'
