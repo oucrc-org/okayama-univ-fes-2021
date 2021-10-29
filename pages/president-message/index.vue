@@ -40,7 +40,7 @@
     </BodyWithHeader>
     <client-only placeholder="Client Only">
       <div class="grid grid-cols-2 gap-4 mx-4 my-8">
-        <picture v-for="i in 10">
+        <picture v-for="i in 10" :key="`school-image-${i}`">
           <source :srcset="require(`@/assets/img/static/school/president${i}.webp`)" type="image/webp">
           <img :src="require(`@/assets/img/static/school/president${i}.jpg`)" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
         </picture>
