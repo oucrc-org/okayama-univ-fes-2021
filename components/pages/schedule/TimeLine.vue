@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="pagepiling">
     <section
       id="scroll-box"
       class="relative top-0 section pp-scrollable bg-themeColor hide-scroll-bar overflow-x-hidden"
@@ -121,10 +121,12 @@
 
           <hr class="bg-white">
         </div>
-        <p class="md:text-lg text-white text-center font-japanese font-light mb-10 mt-12 sm:my-28">
-          皆様のご来場お待ちしております
+
+        <p class="md:text-lg lg:text-xl text-white text-center font-japanese font-light mb-10 mt-12 sm:my-28">
+          本日はご来場いただきありがとうございます
         </p>
-        <p class="text-xs text-white text-center font-japanese font-extralight font-thin mb-3 md:mb-5 mt-20">
+
+        <p class="text-xs lg:text-sm text-white text-center font-japanese font-extralight font-thin mb-3 md:mb-5 mt-20">
           (c) 岡山大学校友会 x 学祭実行委員会
         </p>
       </div>
@@ -213,8 +215,14 @@ export default {
 .timeline {
   background: #FFFFFF;
   width: 92%;
-  margin: 36px 0 100px;
-  padding: 70px 26px 30px 30px;
+  margin: 36px 0 10px;
+  padding: 70px 26px 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    width: 100%;
+  }
 }
 
 .timeline li {

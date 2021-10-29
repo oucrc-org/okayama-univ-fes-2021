@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <TimeLine />
-  </div>
+  <TimeLine />
 </template>
 
 <script lang="ts">
 import TimeLine from '~/components/pages/schedule/TimeLine.vue'
 export default {
   components: { TimeLine }
-
 }
 </script>
 
