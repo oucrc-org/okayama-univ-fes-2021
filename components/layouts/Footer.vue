@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8 mt-20">
-    <div class="mb-16 max-w-screen-lg mx-auto">
+    <div class="mb-16 max-w-screen-sm mx-auto">
       <SurveyBanner />
     </div>
     <div v-if="!$nuxt.$route.path.match('/clubs/*')">
