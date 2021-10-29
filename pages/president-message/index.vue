@@ -40,36 +40,10 @@
     </BodyWithHeader>
     <client-only placeholder="Client Only">
       <div class="grid grid-cols-2 gap-4 mx-4 my-8">
-        <a href="#">
-          <img src="@/assets/img/static/school/president1.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president2.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president3.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president4.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president5.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president6.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president7.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president8.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president9.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
-        <a href="#">
-          <img src="@/assets/img/static/school/president10.jpg" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
-        </a>
+        <picture v-for="i in 10">
+          <source :srcset="require(`@/assets/img/static/school/president${i}.webp`)" type="image/webp">
+          <img :src="require(`@/assets/img/static/school/president${i}.jpg`)" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
+        </picture>
       </div>
     </client-only>
   </div>
