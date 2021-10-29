@@ -2,11 +2,12 @@
   <div class="form-control">
     <label class="label" :for="id">{{ label }}</label>
     <input
-      :id="id"
+      :id="name"
+      :name="name"
       class="input input-bordered"
-      :name="id"
-      type="text"
+      :type="type"
       :placeholder="placeholder"
+      :autocomplete="autocomplete"
       required
     >
   </div>
@@ -16,10 +17,21 @@
 export default {
   name: 'TextInput',
   props: {
-    id: {
+    // idはnameを使い回す
+    name: {
       type: String,
       required: true,
-      default: 'ID'
+      default: ''
+    },
+    autocomplete: {
+      type: String,
+      required: false,
+      default: 'off'
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'text'
     },
     label: {
       type: String,
@@ -28,9 +40,10 @@ export default {
     },
     placeholder: {
       type: String,
-      required: true,
-      default: '入力してください。'
+      required: false,
+      default: ''
     }
+
   }
 }
 </script>
