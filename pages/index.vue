@@ -2,20 +2,26 @@
   <div>
     <div class="relative overflow-hidden">
       <!-- ▼ ヒーローエリア背景 -->
-      <img
-        class="relative top-0 w-screen object-cover object-left landing-background"
-        src="@/assets/img/static/home/background.jpg"
-        alt="ヒーローエリア"
-      >
+      <picture>
+        <source :srcset="require('@/assets/img/static/home/background.webp')" type="image/webp">
+        <img
+          class="relative top-0 w-screen object-cover object-left landing-background"
+          src="@/assets/img/static/home/background.jpg"
+          alt="ヒーローエリア"
+        >
+      </picture>
       <!-- ▲ ヒーローエリア背景 -->
 
       <!-- ▼ ヒーローエリア -->
       <div class="absolute top-0 left-0 right-0 h-64 lg:h-80">
-        <img
-          class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
-          src="@/assets/img/static/home/drop.png"
-          alt="タイトル背景"
-        >
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/drop.webp')" type="image/webp">
+          <img
+            class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
+            src="@/assets/img/static/home/drop.png"
+            alt="タイトル背景"
+          >
+        </picture>
       </div>
       <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
         <!--== ▼ タイトル ==-->
@@ -111,12 +117,15 @@
 
     <!-- ▼ 今年の学祭について -->
     <div class="relative">
-      <img
-        id="about_background"
-        class="w-screen object-cover object-left"
-        src="@/assets/img/static/home/about_background.jpg"
-        alt="ヒーローエリア"
-      >
+      <picture>
+        <source :srcset="require('@/assets/img/static/home/about_background.webp')" type="image/webp">
+        <img
+          id="about_background"
+          class="w-screen object-cover object-left"
+          src="@/assets/img/static/home/about_background.jpg"
+          alt="ヒーローエリア"
+        >
+      </picture>
 
       <div class="absolute top-14 left-0 right-0 max-w-screen-lg mx-auto w-full">
         <Header
@@ -156,10 +165,16 @@
     <!-- ▼ バーナー -->
     <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
       <a href="/president-message">
-        <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        </picture>
       </a>
       <a href="#">
-        <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+        </picture>
       </a>
     </div>
     <!-- ▲ バーナー -->
