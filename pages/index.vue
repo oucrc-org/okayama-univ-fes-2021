@@ -170,7 +170,7 @@
           <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
         </picture>
       </a>
-      <a href="#">
+      <a href="/schedule" target="_blank">
         <picture>
           <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
           <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
