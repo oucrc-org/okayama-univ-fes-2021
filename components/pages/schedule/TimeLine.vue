@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="pagepiling">
     <section
       id="scroll-box"
       class="relative top-0 section pp-scrollable bg-themeColor hide-scroll-bar overflow-x-hidden"
@@ -72,58 +72,6 @@
           </li>
         </ul>
 
-        <div class="px-4">
-          <a
-            href="https://twitter.com/gakusai_2021_"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
-          >
-            Twitter
-            <img
-              class="absolute right-4 md:right-8 top-9 inline-block w-10"
-              src="@/assets/img/static/circle_arrow.png"
-              alt="開く"
-            >
-          </a>
-
-          <hr class="bg-white">
-
-          <a
-            href="https://www.instagram.com/gakusai_2021_"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
-          >
-            Instagram
-            <img
-              class="absolute right-4 md:right-8 top-9 inline-block w-10"
-              src="@/assets/img/static/circle_arrow.png"
-              alt="開く"
-            >
-          </a>
-
-          <hr class="bg-white">
-
-          <a
-            href="https://kmtk-256893.wixsite.com/gakusaitouzitu2021"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
-          >
-            <span class="font-japanese">学祭実行委員会</span> HP
-            <img
-              class="absolute right-4 md:right-8 top-9 inline-block w-10"
-              src="@/assets/img/static/circle_arrow.png"
-              alt="開く"
-            >
-          </a>
-
-          <hr class="bg-white">
-        </div>
-        <p class="md:text-lg text-white text-center font-japanese font-light mb-10 mt-12 sm:my-28">
-          皆様のご来場お待ちしております
-        </p>
         <p class="text-xs text-white text-center font-japanese font-extralight font-thin mb-3 md:mb-5 mt-20">
           (c) 岡山大学校友会 x 学祭実行委員会
         </p>
