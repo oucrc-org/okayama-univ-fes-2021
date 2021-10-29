@@ -72,7 +72,61 @@
           </li>
         </ul>
 
-        <p class="text-xs text-white text-center font-japanese font-extralight font-thin mb-3 md:mb-5 mt-20">
+        <div class="px-4">
+          <a
+            href="https://twitter.com/gakusai_2021_"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
+          >
+            Twitter
+            <img
+              class="absolute right-4 md:right-8 top-9 inline-block w-10"
+              src="@/assets/img/static/circle_arrow.png"
+              alt="開く"
+            >
+          </a>
+
+          <hr class="bg-white">
+
+          <a
+            href="https://www.instagram.com/gakusai_2021_"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
+          >
+            Instagram
+            <img
+              class="absolute right-4 md:right-8 top-9 inline-block w-10"
+              src="@/assets/img/static/circle_arrow.png"
+              alt="開く"
+            >
+          </a>
+
+          <hr class="bg-white">
+
+          <a
+            href="https://kmtk-256893.wixsite.com/gakusaitouzitu2021"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block px-5 md:px-10 py-10 text-white text-2xl relative font-extralight"
+          >
+            <span class="font-japanese">学祭実行委員会</span> HP
+            <img
+              class="absolute right-4 md:right-8 top-9 inline-block w-10"
+              src="@/assets/img/static/circle_arrow.png"
+              alt="開く"
+            >
+          </a>
+
+          <hr class="bg-white">
+        </div>
+
+        <p class="md:text-lg lg:text-xl text-white text-center font-japanese font-light mb-10 mt-12 sm:my-28">
+          本日はご来場いただきありがとうございます
+        </p>
+
+        <p class="text-xs lg:text-sm text-white text-center font-japanese font-extralight font-thin mb-3 md:mb-5 mt-20">
           (c) 岡山大学校友会 x 学祭実行委員会
         </p>
       </div>
@@ -161,8 +215,14 @@ export default {
 .timeline {
   background: #FFFFFF;
   width: 92%;
-  margin: 36px 0 100px;
-  padding: 70px 26px 30px 30px;
+  margin: 36px 0 10px;
+  padding: 70px 26px 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    width: 100%;
+  }
 }
 
 .timeline li {
