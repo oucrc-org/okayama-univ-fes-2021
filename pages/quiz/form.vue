@@ -35,7 +35,7 @@
           <a href="#" class="btn btn-error">応募の際の注意点</a>
         </div>
         <div class="form-control inline-block">
-          <label for="agreed" class="cursor-pointer label">
+          <label class="cursor-pointer label">
             <input v-model="agreed" type="checkbox" class="checkbox mr-3">
             <span class="label-text">プライバシーポリシー，応募の際の注意点を確認しました</span>
           </label>
