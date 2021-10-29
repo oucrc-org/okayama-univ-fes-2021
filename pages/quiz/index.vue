@@ -13,27 +13,46 @@
           {{ question.quiz }}
         </p>
         <div class="mb-4 flex flex-col gap-y-3">
-          <div v-for="{id, contents} in question.answers" :key="`answer-${id}`" class="bg-white rounded-xl shadow-xl border-2" :class="selectedAnswer === id ? 'border-blue-400' : 'border-gray-100'">
+          <div v-for="{id, contents} in question.answers" :key="`answer-${id}`" class="bg-white rounded-xl shadow-xl border-2" :class="selectedAnswerId === id ? 'border-blue-400' : 'border-gray-100'">
             <label class="cursor-pointer flex flex-row items-center px-2">
               <input
                 :id="`option-${id}`"
-                v-model="selectedAnswer"
+                v-model="selectedAnswerId"
                 type="radio"
                 name="answer"
                 :value="id"
                 class="hidden"
+                @change="selectedAnswerContent = contents"
               >
-              <img :src="id === selectedAnswer ? radioTrue : radioFalse" alt="">
+              <img :src="id === selectedAnswerId ? radioTrue : radioFalse" alt="">
               <span class="block ml-2">{{ contents }}</span>
             </label>
           </div>
         </div>
         <div class="mb-4">
           <!-- TODO: 「団体一覧から探してみよう」などとモーダルを出す daisyUI -->
-          <RoundedButton text="ヒント" class="border-themeColor bg-white text-themeColor cursor-pointer" />
+          <a href="#hint-modal">
+            <RoundedButton text="ヒント" class="border-themeColor bg-white text-themeColor cursor-pointer" />
+          </a>
+          <div id="hint-modal" class="modal">
+            <div class="modal-box">
+              <p>{{ question.hint }}</p>
+              <div class="modal-action">
+                <a href="#" class="btn">閉じる</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
-          <RoundedButton text="答え合わせ →" class="border-themeColor bg-themeColor text-white cursor-pointer" @click="showIsCorrect" />
+          <RoundedButton text="答え合わせ →" class="border-themeColor bg-themeColor text-white cursor-pointer" @click.native="showIsCorrect" />
+          <div id="wa-modal" class="modal">
+            <div class="modal-box">
+              <p>{{ selectedAnswerContent }} ではありません！</p>
+              <div class="modal-action">
+                <a href="#" class="btn">閉じる</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -91,7 +110,8 @@ export default Vue.extend({
     return {
       radioTrue: require('@/assets/img/static/form/radio-true.svg'),
       radioFalse: require('@/assets/img/static/form/radio-false.svg'),
-      selectedAnswer: -(1 << 30), // とりあえず絶対に選択肢のIDにならない値
+      selectedAnswerId: -(1 << 30), // とりあえず絶対に選択肢のIDにならない値
+      selectedAnswerContent: '',
       // TODO: 形式はAPI側に合わせる
       // 以下モック用仮データ
       question: {
@@ -101,19 +121,19 @@ export default Vue.extend({
         answers: [
           {
             id: 1,
-            contents: '解答1'
+            contents: '5人'
           },
           {
             id: 2,
-            contents: '解答2'
+            contents: '10人'
           },
           {
             id: 3,
-            contents: '解答3'
+            contents: '15人'
           },
           {
             id: 4,
-            contents: '解答4'
+            contents: '60人'
           }
         ]
       }
@@ -122,10 +142,14 @@ export default Vue.extend({
   methods: {
     checkAnswer () {
       // TODO: サーバーサイドで処理
-      return Math.random() > 0.5
+      return this.selectedAnswerId === 4
     },
     showIsCorrect () {
-      this.checkAnswer()
+      if (this.checkAnswer()) {
+        console.log('correct')
+      } else {
+        location.href = '#wa-modal'
+      }
     }
   }
 })
