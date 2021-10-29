@@ -4,7 +4,7 @@
   <!-- これにより、:focusが外れても閉じない -->
   <div :class="[{'collapse-open': isOpen},'collapse collapse-plus']">
     <div
-      class="collapse-title items-center font-semibold tracking-widest text-gray-600 p-4 max-w-screen-lg mx-auto relative"
+      class="collapse-title items-center font-semibold tracking-widest text-gray-600 p-4 max-w-screen-lg mx-auto relative cursor-pointer"
       @click="toggle"
     >
       {{ label }}
@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'SlideDown',
   props: {
