@@ -53,6 +53,15 @@
               </div>
             </div>
           </div>
+          <div id="stamp-modal" class="modal">
+            <div class="modal-box">
+              <p>スタンプを獲得しました！</p>
+              <div class="modal-action">
+                <!--suppress HtmlUnknownTarget -->
+                <a href="/mypage" class="btn">確認する</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -146,7 +155,7 @@ export default Vue.extend({
     },
     showIsCorrect () {
       if (this.checkAnswer()) {
-        console.log('correct')
+        location.href = '#stamp-modal'
       } else {
         location.href = '#wa-modal'
       }
