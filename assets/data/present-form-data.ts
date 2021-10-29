@@ -25,7 +25,7 @@ const presentFormData = new Promise((resolve) => {
       }
     ]
   })
-}).then((res) => {
+}).then((res: any) => {
   return {
     presents: res.data,
     stampNumber: 5
