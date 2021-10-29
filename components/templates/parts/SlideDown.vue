@@ -1,9 +1,11 @@
 <template>
-  <!-- daisyUIのCSSで動いているためtabindexが必要 -->
-  <!-- 詳細: https://daisyui.com/components/collapse -->
-  <div tabindex="0" class="collapse collapse-plus">
+  <!-- #96: 本来は:focusで開閉するが、:focusが外れてしまいリンクが機能しなくなる -->
+  <!-- そのため、JSでclassを付けている。daisyUIのスタイルはtransitionのために必要 -->
+  <!-- これにより、:focusが外れても閉じない -->
+  <div :class="[{'collapse-open': isOpen},'collapse collapse-plus']">
     <div
       class="collapse-title items-center font-semibold tracking-widest text-gray-600 p-4 max-w-screen-lg mx-auto relative"
+      @click="toggle"
     >
       {{ label }}
     </div>
@@ -15,15 +17,26 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   name: 'SlideDown',
   props: {
     label: {
       type: String,
       required: true
     }
+  },
+  data () {
+    return {
+      isOpen: false
+    }
+  },
+  methods: {
+    toggle () {
+      this.isOpen = !this.isOpen
+    }
   }
-}
+})
 </script>
 
 <style scoped>
