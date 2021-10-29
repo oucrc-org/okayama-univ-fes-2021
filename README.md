@@ -21,6 +21,10 @@ const dateYouTubeUrl: Record<string, string> = {
 
 左が「開始時間」、右が「動画のURL」です。上のURlはダミーです。
 
+## アンケートフォームの変更方法
+
+[date-survey-url.ts](https://github.com/oucrc-org/okayama-univ-fes-2021/blob/main/assets/data/date-survey-url.ts)を変更してください。
+
 ## Commit Message
 
 | Prefix | 使うシチュエーション |

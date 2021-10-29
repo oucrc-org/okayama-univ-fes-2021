@@ -161,6 +161,7 @@
       <a href="/schedule" target="_blank">
         <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
       </a>
+      <SurveyBanner />
     </div>
     <!-- ▲ バーナー -->
 
@@ -380,6 +381,7 @@ import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import SurveyBanner from '~/components/templates/survey/SurveyBanner.vue'
 import DailyVideo from '~/components/templates/video/DailyVideo.vue'
 
 export default Vue.extend({
@@ -388,7 +390,8 @@ export default Vue.extend({
     OperationStageSchedule,
     Header,
     VerticalTitle,
-    DailyVideo
+    DailyVideo,
+    SurveyBanner
   },
   data () {
     return {

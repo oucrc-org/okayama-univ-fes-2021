@@ -1,5 +1,8 @@
 <template>
   <div class="mb-8 mt-20">
+    <div class="mb-16 max-w-screen-sm mx-auto">
+      <SurveyBanner />
+    </div>
     <div v-if="!$nuxt.$route.path.match('/clubs/*')">
       <h2 class="text-center text-3xl text-gray-800 font-medium tracking-wider">
         SHARE ON
@@ -61,9 +64,10 @@
 <script>
 import LinkWithArrow from '../templates/parts/LinkWithArrow.vue'
 import SlideDown from '../templates/parts/SlideDown.vue'
+import SurveyBanner from '../templates/survey/SurveyBanner.vue'
 export default {
   name: 'Footer',
-  components: { SlideDown, LinkWithArrow },
+  components: { SlideDown, LinkWithArrow, SurveyBanner },
   props: {
     hiddenShare: {
       type: Boolean,
