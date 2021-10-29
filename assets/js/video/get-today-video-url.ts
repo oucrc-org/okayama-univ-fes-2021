@@ -42,22 +42,23 @@ const getTodayVideoUrl = () => {
   // 最新の日時
   const latestVideoDateKey = sortDateStrings(datesByTodaySorted).pop()
 
+  let isLive = false
+  let url, title, who, timeFrame, nextVideoDateString: string | undefined
+
   // 次に動画が変わる時間
-  let nextVideoDateString: string | undefined
   if (datesAfterTodaySorted.length > 0) {
-    nextVideoDateString = dayjs(datesAfterTodaySorted[0]).format('MM月DD日 HH:mm')
+    nextVideoDateString = dayjs(datesAfterTodaySorted[0]).format('MM月DD日 (ddd) HH:mm')
   }
 
-  let url: string | undefined
-  let isLive = false
-  let timeFrame: string | undefined
   if (latestVideoDateKey) {
     const latest = dateYouTubeUrl[latestVideoDateKey]
     url = latest.url
     isLive = latest.isLive ?? false
+    title = latest.title
+    who = latest.who
     timeFrame = latest.timeFrame
   }
-  return { url, isLive, timeFrame, nextVideoDateString }
+  return { url, isLive, title, who, timeFrame, nextVideoDateString }
 }
 
 export default getTodayVideoUrl
