@@ -42,7 +42,7 @@
       <LinkWithArrow to="/clubs" title="部活動・サークル紹介" />
       <SlideDown label="スタンプラリー">
         <LinkWithArrow to="/stamp-rally" title="スタンプラリーとは?" />
-        <LinkWithArrow to="#" title="参加する" />
+        <LinkWithArrow to="/quiz" title="参加する" />
       </SlideDown>
     </nav>
 

@@ -54,7 +54,8 @@
         <div>
           <RoundedButton
             text="答え合わせ →"
-            class="border-themeColor bg-themeColor text-white cursor-pointer"
+            class="text-white cursor-pointer"
+            :class="(selectedAnswerId < 0) ? 'bg-blue-300 border-blue-300 cursor-not-allowed': 'bg-themeColor border-themeColor'"
             @click.native="showIsCorrect"
           />
           <div id="wa-modal" class="modal">
@@ -98,10 +99,7 @@
           最終日以降、貯めたスタンプ数に応じて景品に応募することができます。
         </p>
         <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-          <!-- TODO: 応募リンクに変更 -->
-          <LinkTo to="#">
-            <RoundedButton text="応募する →" class="border-themeColor bg-themeColor text-white" />
-          </LinkTo>
+          <RoundedButton text="応募する →" disabled="true" class="border-blue-300 bg-blue-300 text-white" />
         </div>
       </BodyWithHeader>
     </section>
@@ -111,7 +109,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
-import LinkTo from '@/components/templates/nuxt/LinkTo.vue'
 import Header from '@/components/layouts/Header.vue'
 import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
@@ -121,12 +118,12 @@ const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
-    LinkTo,
     Header,
     VerticalTitle,
     BodyWithHeader,
     RoundedButton
   },
+  middleware: 'auth',
   asyncData ({ app }: Context) {
     // noinspection TypeScriptUnresolvedFunction
     return app.$axios.get(`${url}/question`, {
@@ -185,6 +182,9 @@ export default Vue.extend({
       })
     },
     showIsCorrect () {
+      if (this.selectedAnswerId < 0) {
+        return
+      }
       this.checkAnswer().then((isCorrect) => {
         location.href = isCorrect ? '#stamp-modal' : '#wa-modal'
       }).catch((err) => {

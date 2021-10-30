@@ -208,9 +208,8 @@
               </LinkTo>
             </div>
             <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-              <!-- TODO: ログインリンクに変更 -->
               <LinkTo
-                to="#"
+                to="/quiz"
                 class="border-3 border-white bg-white inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
               >
                 参加する →
