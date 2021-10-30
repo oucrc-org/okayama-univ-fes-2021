@@ -220,7 +220,7 @@ export default Vue.extend({
             'Access-Token': (this as any).$auth.getToken('google').replace('Bearer ', '')
           }
         }).then(() => {
-        location.href = '/quiz/form/complete'
+        location.href = '/quiz/form/thankyou'
       }).catch(() => {
         alert('送信に失敗しました。再度ログインの上、ご応募ください。');
         (this as any).$auth.logout('google')
