@@ -9,6 +9,7 @@
       :value="value"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
+      :readonly="readonly"
       required
       @input="onChange($event.target.value)"
     >
@@ -44,6 +45,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    readonly: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     value: {
       type: String,
