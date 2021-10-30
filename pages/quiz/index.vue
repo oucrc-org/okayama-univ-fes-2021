@@ -13,7 +13,12 @@
           {{ question.quiz }}
         </p>
         <div class="mb-4 flex flex-col gap-y-3">
-          <div v-for="{id, contents} in question.answers" :key="`answer-${id}`" class="bg-white rounded-xl shadow-xl border-2" :class="selectedAnswerId === id ? 'border-blue-400' : 'border-gray-100'">
+          <div
+            v-for="{id, contents} in question.answers"
+            :key="`answer-${id}`"
+            class="bg-white rounded-xl shadow-xl border-2"
+            :class="selectedAnswerId === id ? 'border-blue-400' : 'border-gray-100'"
+          >
             <label class="cursor-pointer flex flex-row items-center px-2">
               <input
                 :id="`option-${id}`"
@@ -30,7 +35,6 @@
           </div>
         </div>
         <div class="mb-4">
-          <!-- TODO: 「団体一覧から探してみよう」などとモーダルを出す daisyUI -->
           <a href="#hint-modal">
             <RoundedButton text="ヒント" class="border-themeColor bg-white text-themeColor cursor-pointer" />
           </a>
@@ -44,7 +48,11 @@
           </div>
         </div>
         <div>
-          <RoundedButton text="答え合わせ →" class="border-themeColor bg-themeColor text-white cursor-pointer" @click.native="showIsCorrect" />
+          <RoundedButton
+            text="答え合わせ →"
+            class="border-themeColor bg-themeColor text-white cursor-pointer"
+            @click.native="showIsCorrect"
+          />
           <div id="wa-modal" class="modal">
             <div class="modal-box">
               <p>{{ selectedAnswerContent }} ではありません！</p>
@@ -96,13 +104,16 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import Vue from 'vue'
+import { Context } from '@nuxt/types'
 import LinkTo from '@/components/templates/nuxt/LinkTo.vue'
 import Header from '@/components/layouts/Header.vue'
 import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
 import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
+
+const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
@@ -112,8 +123,20 @@ export default Vue.extend({
     BodyWithHeader,
     RoundedButton
   },
-  async asyncData () {
-    // TODO: APIから問題とスタンプのデータを取得
+  asyncData ({ app }: Context) {
+    // noinspection TypeScriptUnresolvedFunction
+    return app.$axios.get(`${url}/question`, {
+      headers: {
+        'Access-Token': app.$auth.getToken('google').replace('Bearer ', ''),
+        'Access-Control-Allow-Origin': `${url}/*`
+      }
+    }).then((res) => {
+      return { question: res.data.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      alert('問題の取得に失敗しました')
+    })
   },
   data () {
     return {
@@ -121,44 +144,46 @@ export default Vue.extend({
       radioFalse: require('@/assets/img/static/form/radio-false.svg'),
       selectedAnswerId: -(1 << 30), // とりあえず絶対に選択肢のIDにならない値
       selectedAnswerContent: '',
-      // TODO: 形式はAPI側に合わせる
-      // 以下モック用仮データ
       question: {
         id: 17,
-        quiz: '電子計算機研究会の部員数は何人でしょう？',
-        hint: 'ヒントヒントヒントヒントヒントヒントヒントヒントヒントヒントヒントヒントヒント',
-        answers: [
-          {
-            id: 1,
-            contents: '5人'
-          },
-          {
-            id: 2,
-            contents: '10人'
-          },
-          {
-            id: 3,
-            contents: '15人'
-          },
-          {
-            id: 4,
-            contents: '60人'
-          }
-        ]
+        quiz: '',
+        hint: '',
+        answers: []
       }
     }
   },
   methods: {
-    checkAnswer () {
-      // TODO: サーバーサイドで処理
-      return this.selectedAnswerId === 4
+    async checkAnswer (): Promise<boolean> {
+      interface IResponseAnswer {
+        data: {
+          success: boolean,
+          // eslint-disable-next-line camelcase
+          is_correct: boolean
+        },
+        status: number,
+        statusText: string
+      }
+
+      return await this.$axios.post(`${url}/answer`, {
+        question_id: this.question.id,
+        answer_id: this.selectedAnswerId
+      }, {
+        headers: {
+          'Access-Token': (this as any).$auth.getToken('google').replace('Bearer ', ''),
+          'Access-Control-Allow-Origin': `${url}/*`
+        }
+      }).then((res: IResponseAnswer) => {
+        return res.data.is_correct
+      })
     },
     showIsCorrect () {
-      if (this.checkAnswer()) {
-        location.href = '#stamp-modal'
-      } else {
-        location.href = '#wa-modal'
-      }
+      this.checkAnswer().then((isCorrect) => {
+        location.href = isCorrect ? '#stamp-modal' : '#wa-modal'
+      }).catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(err)
+        alert('クイズの回答が送信できませんでした')
+      })
     }
   }
 })

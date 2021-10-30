@@ -113,7 +113,8 @@ export default {
   // },
 
   env: {
-    API_KEY: process.env.API_KEY
+    API_KEY: process.env.API_KEY,
+    BACKEND_API_URL: process.env.BACKEND_API_URL
   },
 
   // Google Font
