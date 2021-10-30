@@ -75,6 +75,7 @@ export default {
     VerticalTitle,
     StampRallyGrid
   },
+  middleware: 'auth',
   data () {
     return {
       stampRallyItems

@@ -1,6 +1,8 @@
 import webpack from 'webpack'
 
 export default {
+  ssr: false,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '岡山大学祭2021 | 笑顔満祭岡大祭 〜心機一転しちゃいな祭〜',
@@ -111,7 +113,8 @@ export default {
   // },
 
   env: {
-    API_KEY: process.env.API_KEY
+    API_KEY: process.env.API_KEY,
+    BACKEND_API_URL: process.env.BACKEND_API_URL
   },
 
   // Google Font
