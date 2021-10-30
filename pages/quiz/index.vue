@@ -29,7 +29,11 @@
                 class="hidden"
                 @change="selectedAnswerContent = contents"
               >
-              <img :src="id === selectedAnswerId ? radioTrue : radioFalse" alt="">
+              <picture>
+                <source :srcset="id === selectedAnswerId ? svgRadioTrue : svgRadioFalse" type="image/svg+xml">
+                <source :srcset="id === selectedAnswerId ? webpRadioTrue : webpRadioFalse" type="image/webp">
+                <img :src="id === selectedAnswerId ? pngRadioTrue : pngRadioFalse" alt="">
+              </picture>
               <span class="block ml-2">{{ contents }}</span>
             </label>
           </div>
@@ -140,8 +144,12 @@ export default Vue.extend({
   },
   data () {
     return {
-      radioTrue: require('@/assets/img/static/form/radio-true.svg'),
-      radioFalse: require('@/assets/img/static/form/radio-false.svg'),
+      svgRadioTrue: require('@/assets/img/static/form/radio-true.svg'),
+      svgRadioFalse: require('@/assets/img/static/form/radio-false.svg'),
+      webpRadioTrue: require('@/assets/img/static/form/radio-true.webp'),
+      webpRadioFalse: require('@/assets/img/static/form/radio-false.webp'),
+      pngRadioTrue: require('@/assets/img/static/form/radio-true.png'),
+      pngRadioFalse: require('@/assets/img/static/form/radio-false.png'),
       selectedAnswerId: -(1 << 30), // とりあえず絶対に選択肢のIDにならない値
       selectedAnswerContent: '',
       question: {
