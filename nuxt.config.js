@@ -132,12 +132,6 @@ export default {
       home: '/mypage'
     },
     localStorage: false,
-    cookie: {
-      prefix: 'auth.',
-      options: {
-        path: '/'
-      }
-    },
     strategies: {
       google: {
         client_id: process.env.GOOGLE_CLIENT_ID

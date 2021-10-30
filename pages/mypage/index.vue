@@ -3,19 +3,21 @@
     <Header title="マイページ" colors="bg-themeColor text-white" />
     <VerticalTitle text="MYPAGE" colors="text-gray-200" class="-z-10" />
 
-    <BodyWithHeader title="ユーザ情報" colors="border-themeColor text-themeColor">
-      <div class="flex flex-row gap-x-4">
-        <img
-          :src="$store.state.auth.user.picture"
-          :alt="$store.state.auth.user.name"
-          class="w-16 md:w-24 rounded-full"
-        >
-        <div class="justify-center flex flex-col">
-          <span class="text-gray-500 text-xs truncate">{{ $store.state.auth.user.email }}</span>
-          <span class="text-xl">{{ $store.state.auth.user.name }}</span>
+    <no-ssr>
+      <BodyWithHeader title="ユーザ情報" colors="border-themeColor text-themeColor">
+        <div class="flex flex-row gap-x-4">
+          <img
+            :src="$store.state.auth.user.picture"
+            :alt="$store.state.auth.user.name"
+            class="w-16 md:w-24 rounded-full"
+          >
+          <div class="justify-center flex flex-col">
+            <span class="text-gray-500 text-xs truncate">{{ $store.state.auth.user.email }}</span>
+            <span class="text-xl">{{ $store.state.auth.user.name }}</span>
+          </div>
         </div>
-      </div>
-    </BodyWithHeader>
+      </BodyWithHeader>
+    </no-ssr>
 
     <span class="text-xl">AccessToken: {{ $auth.getToken('google') }}</span>
 
@@ -53,12 +55,6 @@
         </LinkTo>
       </div>
     </BodyWithHeader>
-
-    <div class="text-center my-8">
-      <LinkTo to="#" class="text-gray-600 underline text-sm">
-        ログアウト
-      </LinkTo>
-    </div>
   </div>
 </template>
 
@@ -71,6 +67,7 @@ import stampRallyItems from '~/assets/data/stamp-rally-item'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
 export default {
+  name: 'MyPage',
   components: {
     Header,
     BodyWithHeader,

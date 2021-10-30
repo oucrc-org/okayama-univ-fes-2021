@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <div class="container max-w-screen-xl mt-24 mx-auto relative">
-      <VerticalTitle text="OUCRC" colors="text-gray-200" class="-z-10" />
+  <div class="relative">
+    <div class="flex sm:justify-center pt-5 pb-4">
+      <picture class="px-3" style="width:300px;">
+        <source type="image/webp" :srcset="require('@/assets/img/static/oucrc-label.webp')">
+        <img src="@/assets/img/static/oucrc-label.png" alt="岡山大学電子計算機研究会">
+      </picture>
+    </div>
 
-      <div class="flex justify-center py-8">
-        <picture class="px-3 max-w-md">
-          <source type="image/webp" :srcset="require('@/assets/img/static/oucrc-label.webp')">
-          <img src="@/assets/img/static/oucrc-label.png" alt="岡山大学電子計算機研究会">
-        </picture>
-      </div>
-
-      <div
-        v-for="worksWithCategory in worksByCategory"
-        :key="`works-by-category-${worksWithCategory.category.id}`"
-      >
-        <CenterTitle :text="worksWithCategory.category.name" colors="border-themeColor text-themeColor" />
-        <div class="grid grid-cols-1 gap-4 mx-4 my-8">
-          <div v-for="work in worksWithCategory.works" :key="work.id">
-            <Work :work="work" />
+    <div
+      v-for="worksWithCategory in worksByCategory"
+      :key="`works-by-category-${worksWithCategory.category.id}`"
+    >
+      <div class="py-8" :style="{'background-color': worksWithCategory.category.color || '#0071C5'}">
+        <div class="container max-w-screen-xl mx-auto relative">
+          <OucrcHeader :title="worksWithCategory.category.name" :title-english="worksWithCategory.category.name_english" />
+          <div class="grid grid-cols-1 gap-4 mx-4 my-8">
+            <div v-for="work in worksWithCategory.works" :key="work.id">
+              <Work :work="work" :color="worksWithCategory.category.color" />
+            </div>
           </div>
         </div>
       </div>
@@ -28,14 +28,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
-import CenterTitle from '~/components/templates/header/CenterTitle.vue'
-import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
+import OucrcHeader from '~/components/pages/clubs/oucrc/OucrcHeader.vue'
 import Work from '~/components/pages/clubs/oucrc/Work.vue'
 
 export default Vue.extend({
   components: {
-    CenterTitle,
-    VerticalTitle,
+    OucrcHeader,
     Work
   },
   async asyncData ({ app }: Context): Promise<{ works: { contents: oufes.IWork[] } }> {
@@ -62,8 +60,10 @@ export default Vue.extend({
       const resultUnordered: { [categoryId: string]: {category: oufes.IWorkCategory, works: oufes.IWork[] } } = {}
       const defaultCategory: oufes.IWorkCategory = {
         id: 'default',
-        name: 'default',
-        ordering_key: Number.MAX_SAFE_INTEGER
+        name: 'カテゴリなし',
+        name_english: 'NO CATEGORY',
+        ordering_key: Number.MAX_SAFE_INTEGER,
+        color: '#0071C5'
       }
       for (const work of this.works.contents) {
         work.category ??= defaultCategory

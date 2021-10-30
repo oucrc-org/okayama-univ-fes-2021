@@ -24,13 +24,19 @@
         </p>
         <div class="md:grid md:grid-cols-2">
           <GalleryPicture title="葵" artist="赤瀬 幸香（工・3年）" medium="透明水彩絵の具">
-            <img src="~/assets/img/clubs/art_club/1.jpg" alt="葵" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/1.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/1.jpg" alt="葵" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               髪の毛を見てほしいです。
             </template>
           </GalleryPicture>
           <GalleryPicture title="退屈" artist="赤瀬 幸香（工・3年）" medium="透明水彩絵の具">
-            <img src="~/assets/img/clubs/art_club/2.jpg" alt="退屈" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/2.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/2.jpg" alt="退屈" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               青、黄色系でまとめました。
             </template>
@@ -48,7 +54,10 @@
         </p>
         <div>
           <GalleryPicture title="金を継ぐ" artist="高田 ひかる（文・3年）" medium="キャンバスボード、アクリル絵の具">
-            <img src="~/assets/img/clubs/art_club/3.jpg" alt="金を継ぐ" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/3.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/3.jpg" alt="金を継ぐ" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               傷の誇り
             </template>
@@ -65,7 +74,10 @@
         </p>
         <div>
           <GalleryPicture title="カーテンと少女" artist="富松 莉子（文・1年）" medium="油絵具">
-            <img src="~/assets/img/clubs/art_club/4.jpg" alt="カーテンと少女" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/4.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/4.jpg" alt="カーテンと少女" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               カーテンの前に立つ少女を描きました。<br>
               揺れやしわを表現するのが楽しかったです。
@@ -83,13 +95,19 @@
         </p>
         <div>
           <GalleryPicture title="ルリコンゴウインコ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
-            <img src="~/assets/img/clubs/art_club/5.jpg" alt="ルリコンゴウインコ" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/5.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/5.jpg" alt="ルリコンゴウインコ" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               10色で描いています。
             </template>
           </GalleryPicture>
           <GalleryPicture title="オオセンチコガネ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
-            <img src="~/assets/img/clubs/art_club/6.jpg" alt="オオセンチコガネ" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/6.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/6.jpg" alt="オオセンチコガネ" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               躍動感を意識して描きました。
             </template>
@@ -106,13 +124,19 @@
         </p>
         <div>
           <GalleryPicture title="待つ" artist="高村 侑（工・2年）" medium="ペン、水彩色鉛筆">
-            <img src="~/assets/img/clubs/art_club/7.jpg" alt="待つ" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/7.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/7.jpg" alt="待つ" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               電話ボックスを描きました。
             </template>
           </GalleryPicture>
           <GalleryPicture title="帰る" artist="高村 侑（工・2年）" medium="ペン、水彩色鉛筆">
-            <img src="~/assets/img/clubs/art_club/8.jpg" alt="帰る" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/8.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/8.jpg" alt="帰る" class="max-h-screen mx-auto">
+            </picture>
             <template #caption>
               琵琶湖を描きました。
             </template>
@@ -130,19 +154,34 @@
         </p>
         <div class="md:grid md:grid-cols-2">
           <GalleryPicture title="アーモンド(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、アクリルガッシュ、合成樹脂塗料">
-            <img src="~/assets/img/clubs/art_club/9.jpg" alt="アーモンド(偽物)" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/9.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/9.jpg" alt="アーモンド(偽物)" class="max-h-screen mx-auto">
+            </picture>
           </GalleryPicture>
           <GalleryPicture title="アーモンドのキャラメリゼ(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、アクリルガッシュ、合成樹脂塗料">
-            <img src="~/assets/img/clubs/art_club/10.jpg" alt="アーモンドのキャラメリゼ(偽物)" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/10.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/10.jpg" alt="アーモンドのキャラメリゼ(偽物)" class="max-h-screen mx-auto">
+            </picture>
           </GalleryPicture>
           <GalleryPicture title="バター(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、合成樹脂塗料">
-            <img src="~/assets/img/clubs/art_club/11.jpg" alt="バター(偽物)" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/11.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/11.jpg" alt="バター(偽物)" class="max-h-screen mx-auto">
+            </picture>
           </GalleryPicture>
           <GalleryPicture title="栗の甘露煮(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、レジン液、アクリルガッシュ、合成樹脂塗料">
-            <img src="~/assets/img/clubs/art_club/12.jpg" alt="栗の甘露煮(偽物)" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/12.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/12.jpg" alt="栗の甘露煮(偽物)" class="max-h-screen mx-auto">
+            </picture>
           </GalleryPicture>
           <GalleryPicture title="煮物(偽物)" artist="江尻 明日香（文・3年）" medium="樹脂粘土、木粉粘土、レジン液、アクリルガッシュ">
-            <img src="~/assets/img/clubs/art_club/13.jpg" alt="煮物(偽物)" class="max-h-screen mx-auto">
+            <picture>
+              <source :srcset="require('~/assets/img/clubs/art_club/13.webp')" type="image/webp">
+              <img src="~/assets/img/clubs/art_club/13.jpg" alt="煮物(偽物)" class="max-h-screen mx-auto">
+            </picture>
           </GalleryPicture>
         </div>
       </section>

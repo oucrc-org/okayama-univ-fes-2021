@@ -21,7 +21,7 @@ jobs:
       - name: checkout
         run: cd okayama-univ-fes-2021 && git checkout main
       - name: merge
-        run: cd okayama-univ-fes-2021 && git merge upstream/main
+        run: cd okayama-univ-fes-2021 && git config --local user.email "58544849+smpny7@users.noreply.github.com" && git config --local user.name "smpny7" && git merge upstream/main
       - name: push
         env:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

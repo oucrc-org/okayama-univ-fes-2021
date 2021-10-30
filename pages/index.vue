@@ -2,20 +2,26 @@
   <div>
     <div class="relative overflow-hidden">
       <!-- ▼ ヒーローエリア背景 -->
-      <img
-        class="relative top-0 w-screen object-cover object-left landing-background"
-        src="@/assets/img/static/home/background.jpg"
-        alt="ヒーローエリア"
-      >
+      <picture>
+        <source :srcset="require('@/assets/img/static/home/background.webp')" type="image/webp">
+        <img
+          class="relative top-0 w-screen object-cover object-left landing-background"
+          src="@/assets/img/static/home/background.jpg"
+          alt="ヒーローエリア"
+        >
+      </picture>
       <!-- ▲ ヒーローエリア背景 -->
 
       <!-- ▼ ヒーローエリア -->
       <div class="absolute top-0 left-0 right-0 h-64 lg:h-80">
-        <img
-          class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
-          src="@/assets/img/static/home/drop.png"
-          alt="タイトル背景"
-        >
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/drop.webp')" type="image/webp">
+          <img
+            class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
+            src="@/assets/img/static/home/drop.png"
+            alt="タイトル背景"
+          >
+        </picture>
       </div>
       <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
         <!--== ▼ タイトル ==-->
@@ -111,12 +117,15 @@
 
     <!-- ▼ 今年の学祭について -->
     <div class="relative">
-      <img
-        id="about_background"
-        class="w-screen object-cover object-left"
-        src="@/assets/img/static/home/about_background.jpg"
-        alt="ヒーローエリア"
-      >
+      <picture>
+        <source :srcset="require('@/assets/img/static/home/about_background.webp')" type="image/webp">
+        <img
+          id="about_background"
+          class="w-screen object-cover object-left"
+          src="@/assets/img/static/home/about_background.jpg"
+          alt="ヒーローエリア"
+        >
+      </picture>
 
       <div class="absolute top-14 left-0 right-0 max-w-screen-lg mx-auto w-full">
         <Header
@@ -156,11 +165,18 @@
     <!-- ▼ バーナー -->
     <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
       <a href="/president-message">
-        <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        </picture>
       </a>
-      <a href="#">
-        <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+      <a href="/schedule" target="_blank">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+        </picture>
       </a>
+      <SurveyBanner />
     </div>
     <!-- ▲ バーナー -->
 
@@ -207,28 +223,12 @@
     <canvas class="waveCanvas transform rotate-180" />
     <!-- ▲ スタンプラリー -->
 
-    <!-- ▼ ライブ配信 -->
-    <div v-if="isStreaming" class="container max-w-screen-lg mt-20 mx-auto relative">
-      <Header
-        title="ライブ配信"
-        colors="bg-red-500 text-white"
-        :icon-path="require('@/assets/img/header/streaming.png')"
-      />
+    <!-- ▼ 動画とライブ配信 -->
+    <div class="container max-w-screen-lg mt-20 mx-auto relative">
       <VerticalTitle text="STREAMING" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
-          <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
-            <iframe
-              class="absolute h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
-              title="学祭2021 パフォーマンス"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </div>
-          <client-only>
-            <OperationStageSchedule class="max-w-screen-md mx-auto" />
-          </client-only>
+          <DailyLiveOrVideo />
         </div>
       </div>
     </div>
@@ -241,134 +241,344 @@
         <client-only placeholder="Client Only">
           <slick :options="slickOptions" class="slick mt-14">
             <div class="px-1">
-              <a href="/clubs/cp246hi9g"><img src="@/assets/img/slide-icons/1.jpg" alt=""></a>
+              <a href="/clubs/cp246hi9g">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/1.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/1.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/cp246hi9g"><img src="@/assets/img/slide-icons/2.jpg" alt=""></a>
+              <a href="/clubs/cp246hi9g">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/2.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/2.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/719ljqzku9xm"><img src="@/assets/img/slide-icons/3.jpg" alt=""></a>
+              <a href="/clubs/719ljqzku9xm">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/3.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/3.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/asl0m5odm4fc"><img src="@/assets/img/slide-icons/4.jpg" alt=""></a>
+              <a href="/clubs/asl0m5odm4fc">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/4.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/4.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/awjifkqobol"><img src="@/assets/img/slide-icons/5.jpg" alt=""></a>
+              <a href="/clubs/awjifkqobol">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/5.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/5.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/gwl5jcnfoa"><img src="@/assets/img/slide-icons/6.jpg" alt=""></a>
+              <a href="/clubs/gwl5jcnfoa">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/6.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/6.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/4k4j3v2eg9"><img src="@/assets/img/slide-icons/7.jpg" alt=""></a>
+              <a href="/clubs/4k4j3v2eg9">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/7.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/7.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/bmsqwq10p"><img src="@/assets/img/slide-icons/8.jpg" alt=""></a>
+              <a href="/clubs/bmsqwq10p">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/8.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/8.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/gq9rv7wuy48"><img src="@/assets/img/slide-icons/9.jpg" alt=""></a>
+              <a href="/clubs/gq9rv7wuy48">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/9.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/9.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/keoh4k4t4pko"><img src="@/assets/img/slide-icons/10.jpg" alt=""></a>
+              <a href="/clubs/keoh4k4t4pko">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/10.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/10.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/tquq5zwppe2o"><img src="@/assets/img/slide-icons/11.jpg" alt=""></a>
+              <a href="/clubs/tquq5zwppe2o">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/11.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/11.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/aozgzc0s1"><img src="@/assets/img/slide-icons/12.jpg" alt=""></a>
+              <a href="/clubs/aozgzc0s1">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/12.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/12.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/b0d6wjplos"><img src="@/assets/img/slide-icons/13.jpg" alt=""></a>
+              <a href="/clubs/b0d6wjplos">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/13.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/13.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/4yuel4aeoiea"><img src="@/assets/img/slide-icons/14.jpg" alt=""></a>
+              <a href="/clubs/4yuel4aeoiea">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/14.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/14.jpg" alt="">
+                </picture>
+              </a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/pw4geylws2er"><img src="@/assets/img/slide-icons/15.jpg" alt=""></a>
+              <a href="/clubs/pw4geylws2er">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/15.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/15.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/wz9qlzhwi"><img src="@/assets/img/slide-icons/16.jpg" alt=""></a>
+              <a href="/clubs/wz9qlzhwi">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/16.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/16.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/x4oqbtwu94z4"><img src="@/assets/img/slide-icons/17.jpg" alt=""></a>
+              <a href="/clubs/x4oqbtwu94z4">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/17.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/17.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/4224zsobb7lh"><img src="@/assets/img/slide-icons/18.jpg" alt=""></a>
+              <a href="/clubs/4224zsobb7lh">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/18.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/18.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/l5ws7wb6aoqb"><img src="@/assets/img/slide-icons/19.jpg" alt=""></a>
+              <a href="/clubs/l5ws7wb6aoqb">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/19.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/19.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/5607x5nc5"><img src="@/assets/img/slide-icons/20.jpg" alt=""></a>
+              <a href="/clubs/5607x5nc5">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/20.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/20.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/oucrc"><img src="@/assets/img/slide-icons/21.jpg" alt=""></a>
+              <a href="/clubs/oucrc">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/21.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/21.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/b7akq2gfspdr"><img src="@/assets/img/slide-icons/22.jpg" alt=""></a>
+              <a href="/clubs/b7akq2gfspdr">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/22.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/22.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/qspzpcuww"><img src="@/assets/img/slide-icons/23.jpg" alt=""></a>
+              <a href="/clubs/qspzpcuww">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/23.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/23.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/kvdqhqbz8"><img src="@/assets/img/slide-icons/24.jpg" alt=""></a>
+              <a href="/clubs/kvdqhqbz8">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/24.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/24.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/gon27nwq23u"><img src="@/assets/img/slide-icons/25.jpg" alt=""></a>
+              <a href="/clubs/gon27nwq23u">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/25.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/25.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/j14980hruox"><img src="@/assets/img/slide-icons/26.jpg" alt=""></a>
+              <a href="/clubs/j14980hruox">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/26.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/26.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/ab6ae9e7uzbj"><img src="@/assets/img/slide-icons/27.jpg" alt=""></a>
+              <a href="/clubs/ab6ae9e7uzbj">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/27.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/27.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1 transform translate-x-1/2">
-              <a href="/clubs/n1vaij61z"><img src="@/assets/img/slide-icons/28.jpg" alt=""></a>
+              <a href="/clubs/n1vaij61z">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/28.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/28.jpg" alt="">
+                </picture>
+              </a>
             </div>
           </slick>
           <slick :options="slickOptions" class="slick">
             <div class="px-1">
-              <a href="/clubs/n3n0bcmf51p"><img src="@/assets/img/slide-icons/29.jpg" alt=""></a>
+              <a href="/clubs/n3n0bcmf51p">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/29.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/29.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/a2pgikkhm"><img src="@/assets/img/slide-icons/30.jpg" alt=""></a>
+              <a href="/clubs/a2pgikkhm">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/30.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/30.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/q9wbygjcuba"><img src="@/assets/img/slide-icons/31.jpg" alt=""></a>
+              <a href="/clubs/q9wbygjcuba">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/31.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/31.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/0n6zoq5dco"><img src="@/assets/img/slide-icons/32.jpg" alt=""></a>
+              <a href="/clubs/0n6zoq5dco">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/32.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/32.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/wv7g67bjd"><img src="@/assets/img/slide-icons/33.jpg" alt=""></a>
+              <a href="/clubs/wv7g67bjd">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/33.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/33.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/tzuqpt3d6"><img src="@/assets/img/slide-icons/34.jpg" alt=""></a>
+              <a href="/clubs/tzuqpt3d6">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/34.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/34.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/dkzjn1x902"><img src="@/assets/img/slide-icons/35.jpg" alt=""></a>
+              <a href="/clubs/dkzjn1x902">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/35.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/35.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/ts9j0cognn"><img src="@/assets/img/slide-icons/36.jpg" alt=""></a>
+              <a href="/clubs/ts9j0cognn">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/36.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/36.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/ttk4fob5yl"><img src="@/assets/img/slide-icons/37.jpg" alt=""></a>
+              <a href="/clubs/ttk4fob5yl">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/37.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/37.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/f2xayutfj"><img src="@/assets/img/slide-icons/38.jpg" alt=""></a>
+              <a href="/clubs/f2xayutfj">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/38.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/38.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/7etcembuo41"><img src="@/assets/img/slide-icons/39.jpg" alt=""></a>
+              <a href="/clubs/7etcembuo41">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/39.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/39.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/yohkqihj95"><img src="@/assets/img/slide-icons/40.jpg" alt=""></a>
+              <a href="/clubs/yohkqihj95">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/40.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/40.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/a37hxz4gbif"><img src="@/assets/img/slide-icons/41.jpg" alt=""></a>
+              <a href="/clubs/a37hxz4gbif">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/41.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/41.jpg" alt="">
+                </picture>
+              </a>
             </div>
             <div class="px-1">
-              <a href="/clubs/y26rn57fl"><img src="@/assets/img/slide-icons/42.jpg" alt=""></a>
+              <a href="/clubs/y26rn57fl">
+                <picture>
+                  <source :srcset="require('@/assets/img/slide-icons/42.webp')" type="image/webp">
+                  <img src="@/assets/img/slide-icons/42.jpg" alt="">
+                </picture>
+              </a>
             </div>
           </slick>
         </client-only>
@@ -382,23 +592,24 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import SurveyBanner from '~/components/templates/survey/SurveyBanner.vue'
+import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 
 export default Vue.extend({
   components: {
     LinkTo,
-    OperationStageSchedule,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    DailyLiveOrVideo,
+    SurveyBanner
   },
   data () {
     return {
-      isStreaming: true,
       slickOptions: {
         arrows: false,
         autoplay: true,

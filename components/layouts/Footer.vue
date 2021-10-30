@@ -1,5 +1,8 @@
 <template>
   <div class="mb-8 mt-20">
+    <div class="mb-16 max-w-screen-sm mx-auto">
+      <SurveyBanner />
+    </div>
     <div v-if="!$nuxt.$route.path.match('/clubs/*')">
       <h2 class="text-center text-3xl text-gray-800 font-medium tracking-wider">
         SHARE ON
@@ -28,17 +31,43 @@
       </div>
     </div>
 
-    <hr class="mt-16 mx-auto w-11/12">
+    <nav class="mx-auto w-full mt-16 flex flex-col border-t border-b border-gray-300 divide-y divide-gray-300">
+      <LinkWithArrow to="/" title="ホーム" />
+      <SlideDown label="代表者メッセージ">
+        <LinkWithArrow to="/president-message" title="学長のメッセージ" />
+        <LinkWithArrow to="/operation-message" title="運営団体のメッセージ" />
+      </SlideDown>
+      <LinkWithArrow to="/live" title="ライブ配信" />
+      <LinkWithArrow to="/presentation" title="団体企画" />
+      <LinkWithArrow to="/clubs" title="部活動・サークル紹介" />
+      <SlideDown label="スタンプラリー">
+        <LinkWithArrow to="/stamp-rally" title="スタンプラリーとは?" />
+        <LinkWithArrow to="#" title="参加する" />
+      </SlideDown>
+    </nav>
 
-    <p class="text-center mt-6 text-gray-400 tracking-widest text-sm">
-      (c) 2021 岡山大学校友会
-    </p>
+    <footer class="text-gray-400 tracking-widest text-sm">
+      <div class="flex justify-center items-center pt-8 pb-4">
+        <div class="w-6 h-6 mr-3">
+          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会">
+        </div>
+        <span>制作: 岡山大学電子計算機研究会</span>
+      </div>
+
+      <p class="text-center mt-6">
+        (c) 2021 岡山大学校友会
+      </p>
+    </footer>
   </div>
 </template>
 
 <script>
+import LinkWithArrow from '../templates/parts/LinkWithArrow.vue'
+import SlideDown from '../templates/parts/SlideDown.vue'
+import SurveyBanner from '../templates/survey/SurveyBanner.vue'
 export default {
   name: 'Footer',
+  components: { SlideDown, LinkWithArrow, SurveyBanner },
   props: {
     hiddenShare: {
       type: Boolean,
@@ -48,6 +77,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.collapse-plus p {
+  @apply font-normal text-sm
+}
 </style>
