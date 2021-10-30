@@ -11,7 +11,7 @@
           <TextInput
             name="family_name"
             autocomplete="family-name"
-            label="姓"
+            label="姓 *"
             placeholder=""
             :value="family_name"
             :on-change="(value) => family_name = value"
@@ -19,7 +19,7 @@
           <TextInput
             name="given_name"
             autocomplete="given-name"
-            label="名"
+            label="名 *"
             placeholder=""
             :value="given_name"
             :on-change="(value) => given_name = value"
@@ -29,7 +29,7 @@
           <TextInput
             name="family_name_kana"
             autocomplete="family-name-kana"
-            label="セイ"
+            label="セイ *"
             placeholder=""
             :value="family_name_kana"
             :on-change="(value) => family_name_kana = value"
@@ -37,7 +37,7 @@
           <TextInput
             name="given_name_kana"
             autocomplete="given-name-kana"
-            label="メイ"
+            label="メイ *"
             placeholder=""
             :value="given_name_kana"
           />
@@ -47,7 +47,7 @@
           name="email"
           type="email"
           autocomplete="email"
-          label="Gmail"
+          label="Googleのメールアドレス *"
           :value="$store.state.auth.user.email"
           :readonly="true"
           :on-change="(value) => secondary_email = value"
@@ -56,7 +56,7 @@
           name="email"
           type="email"
           autocomplete="email"
-          label="予備のメールアドレス"
+          label="予備のメールアドレス *"
           placeholder="例: XXXX@yahoo.co.jp"
           :value="secondary_email"
           :on-change="(value) => secondary_email = value"
@@ -65,7 +65,7 @@
           name="tel"
           autocomplete="tel-national"
           type="tel"
-          label="お電話番号"
+          label="お電話番号 *"
           :value="tel"
           :on-change="(value) => tel = value"
         />
@@ -73,7 +73,7 @@
         <TextInput
           name="postal_code"
           autocomplete="postal-code"
-          label="郵便番号"
+          label="郵便番号 *"
           placeholder="例: 7008530"
           :value="postal_code"
           :on-change="(value) => postal_code = value"
@@ -81,7 +81,7 @@
         <TextInput
           name="address"
           autocomplete="street-address"
-          label="住所"
+          label="住所 *"
           placeholder="例: 岡山市北区〇〇"
           :value="address"
           :on-change="(value) => address = value"

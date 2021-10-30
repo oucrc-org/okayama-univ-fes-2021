@@ -5,6 +5,7 @@
       :id="name"
       :name="name"
       class="input input-bordered"
+      :class="readonly ? 'bg-gray-200 cursor-not-allowed' : ''"
       :type="type"
       :value="value"
       :placeholder="placeholder"
