@@ -1,6 +1,6 @@
 <template>
   <div class="text-center py-6">
-    <button class="btn btn-lg btn-info" type="submit">
+    <button :disabled="disabled" class="btn btn-lg btn-info" type="submit">
       {{ label }}
     </button>
   </div>
@@ -14,6 +14,11 @@ export default {
       type: String,
       required: true,
       default: 'ラベル'
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 }
