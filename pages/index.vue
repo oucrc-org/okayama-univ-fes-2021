@@ -585,7 +585,7 @@
           </slick>
         </client-only>
         <div class="text-center pb-3 mt-12">
-          <a href="#" class="border-b-2 pb-2 sm:text-lg text-white">
+          <a href="/clubs" class="border-b-2 pb-2 sm:text-lg text-white">
             団体の紹介ページはこちら >
           </a>
         </div>
