@@ -8,23 +8,22 @@
         SHARE ON
       </h2>
       <div class="text-center w-full mt-14">
-        <a href="#" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
+        <a
+          :href="'https://twitter.com/intent/tweet?url=' + shareUrl + '&hashtags=岡山大学祭2021'"
+          class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96"
+        >
           <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/twitter.png" alt="Twitter">
           Twitter で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
-        <a href="#" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
-          <img
-            class="inline-block text-gray-700 tracking-widest h-6 mr-5"
-            src="@/assets/img/icon/facebook.png"
-            alt="Facebook"
-          >
+        <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/facebook.png" alt="Facebook">
           Facebook で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
-        <a href="#" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
+        <a :href="'http://line.me/R/msg/text/?' + shareUrl" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
           <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/line.png" alt="LINE">
           LINE で シェア
         </a>
@@ -73,12 +72,17 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  data () {
+    return {
+      shareUrl: 'https://oufes2021.com' + $nuxt.$route.path
+    }
   }
 }
 </script>
 
 <style>
 .collapse-plus p {
-  @apply font-normal text-sm
+  @apply font-normal text-sm;
 }
 </style>
