@@ -193,11 +193,14 @@
           <p class="text-white tracking-widest mt-4">
             学祭の1週間毎日クイズに答えて、スタンプを集めて応募しよう！
           </p>
-          <div
-            class="bg-white text-center mt-8 md:mt-16 mx-auto h-48 sm:h-96 w-full sm:w-2/3 rounded-3xl relative z-10"
-          >
-            画像
-          </div>
+          <picture>
+            <source :srcset="require('~/assets/img/static/home/presents.webp')" type="image/webp">
+            <img
+              src="~/assets/img/static/home/presents.jpg"
+              alt="景品一覧"
+              class="mt-8 md:mt-16 rounded-3xl mx-auto w-full sm:w-2/3"
+            >
+          </picture>
           <div class="grid grid-cols-2 gap-4 mt-10 sm:mt-20">
             <div class="col-span-2 md:col-span-1 text-center md:text-right mt-7 sm:mt-0 md:pr-3">
               <LinkTo
