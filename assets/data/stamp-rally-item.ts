@@ -1,7 +1,7 @@
-import { IStampRallyItem } from '~/assets/js/type/IStampRally'
+import IPrize from '~/assets/js/type/IPrize'
 
 // idはv-forのkeyになるのでユニークにしてください
-const stampRallyItems: IStampRallyItem[] = [
+const stampRallyItems: IPrize[] = [
   {
     id: 'nintendo-switch',
     name: 'Nintendo Switch',

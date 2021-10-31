@@ -14,7 +14,9 @@
       </BodyWithHeader>
 
       <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
-        <StampRallyGrid :items="items" />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StampRallyPrize v-for="item in items" :key="item.id" :item="item" />
+        </div>
       </BodyWithHeader>
 
       <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
@@ -40,10 +42,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
-import StampRallyGrid from '~/components/pages/stamp-rally/Grid.vue'
+import StampRallyPrize from '~/components/pages/stamp-rally/Prize.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import items from '~/assets/data/stamp-rally-item'
@@ -56,7 +58,7 @@ export default Vue.extend({
     Header,
     BodyWithHeader,
     VerticalTitle,
-    StampRallyGrid,
+    StampRallyPrize,
     RoundedButton
   },
   data () {

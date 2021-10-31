@@ -62,7 +62,7 @@
 import Header from '~/components/layouts/Header.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import StampRallyGrid from '~/components/pages/stamp-rally/Grid.vue'
+import StampRallyGrid from '~/components/pages/stamp-rally/Prize.vue'
 import stampRallyItems from '~/assets/data/stamp-rally-item'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
