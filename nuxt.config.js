@@ -79,8 +79,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa',
-    'nuxt-microcms-module'
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -138,13 +137,5 @@ export default {
         client_id: process.env.GOOGLE_CLIENT_ID
       }
     }
-  },
-
-  microcms: {
-    options: {
-      serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.API_KEY
-    },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all'
   }
 }
