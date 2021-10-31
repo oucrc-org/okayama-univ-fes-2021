@@ -68,6 +68,9 @@
         </a>
       </div>
     </client-only>
+    <BodyWithHeader title="岡山大学国際同窓会について">
+      <IframeViewer src="https://www.youtube.com/watch?v=2hI8JS6oVjA" title="国際同窓会作成動画" />
+    </BodyWithHeader>
   </div>
 </template>
 
