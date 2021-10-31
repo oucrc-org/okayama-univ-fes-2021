@@ -38,7 +38,8 @@
 // eslint-disable-next-line import/named
 import Vue, { PropType } from 'vue'
 import WorkImage from './WorkImage.vue'
-import { IWork, IWorkCategory } from '~/assets/js/type/IWork'
+import IWork from '~/assets/js/type/oucrc/IWork'
+import IWorkCategory from '~/assets/js/type/oucrc/IWorkCategory'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
 import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
 

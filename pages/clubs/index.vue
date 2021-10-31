@@ -36,10 +36,13 @@ import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import Warning from '~/components/pages/Warning.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IClub from '~/assets/js/type/club/IClub'
+import IDepartment from '~/assets/js/type/club/IDepartment'
 
-interface IResponseClubs extends oufes.IResponse {
+interface IResponseClubs extends IResponse {
   data: {
-    contents: oufes.IClub[],
+    contents: IClub[],
     totalCount: number
   }
 }
@@ -55,7 +58,7 @@ export default Vue.extend({
     VerticalTitle,
     Warning
   },
-  asyncData ({ app }: Context): Promise<{ clubs: { contents: oufes.IClub[] } }> {
+  asyncData ({ app }: Context): Promise<{ clubs: { contents: IClub[] } }> {
     return app.$axios.get(`${url}/clubs`, {
       headers: {
         'X-MICROCMS-API-KEY': apiKey
@@ -72,7 +75,7 @@ export default Vue.extend({
       return { clubs: { contents: [] } }
     })
   },
-  data (): { clubs: { contents: oufes.IClub[] } } {
+  data (): { clubs: { contents: IClub[] } } {
     return {
       clubs: {
         contents: []
@@ -80,9 +83,9 @@ export default Vue.extend({
     }
   },
   computed: {
-    clubsByParentDepartment (): Array<{ department: oufes.IDepartment, clubs: oufes.IClub[] }> {
-      const resultUnordered: { [departmentId: string]: { department: oufes.IDepartment, clubs: oufes.IClub[] } } = {}
-      const defaultDepartment: oufes.IDepartment = {
+    clubsByParentDepartment (): Array<{ department: IDepartment, clubs: IClub[] }> {
+      const resultUnordered: { [departmentId: string]: { department: IDepartment, clubs: IClub[] } } = {}
+      const defaultDepartment: IDepartment = {
         id: 'default',
         name: 'default',
         ordering_key: Number.MAX_SAFE_INTEGER

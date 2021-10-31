@@ -80,14 +80,15 @@
 import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
 import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
-import { ClubData } from '~/assets/js/type/club/club-data'
-import Club from '~/assets/js/type/club/club'
+import Club from '~/assets/js/type/club/Club'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IClub from '~/assets/js/type/club/IClub'
 
-interface IResponseClub extends oufes.IResponse {
-  data: ClubData
+interface IResponseClub extends IResponse {
+  data: IClub
 }
 
 const url = `https://${process.env.SERVICE_DOMAIN}.microcms.io/api/v1`
@@ -101,7 +102,7 @@ export default {
     Header,
     VerticalTitle
   },
-  asyncData ({ app, params, error }: Context): Promise<{ club: ClubData }> {
+  asyncData ({ app, params, error }: Context): Promise<{ club: IClub }> {
     return app.$axios.get(`${url}/clubs/${params.id}`, {
       headers: {
         'X-MICROCMS-API-KEY': apiKey
@@ -116,7 +117,7 @@ export default {
       return { club: new Club() }
     })
   },
-  data (): { club: ClubData } {
+  data (): { club: IClub } {
     return {
       club: new Club()
     }

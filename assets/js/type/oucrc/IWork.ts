@@ -1,16 +1,7 @@
-import { IImage } from './IImage'
-// OUCRCの作品
-export interface IWorkCategory {
-  id: string,
-  name: string,
-  // eslint-disable-next-line camelcase
-  name_english: string,
-  // eslint-disable-next-line camelcase
-  ordering_key: number,
-  color: string
-}
+import IImage from '~/assets/js/type/IImage'
+import IWorkCategory from '~/assets/js/type/oucrc/IWorkCategory'
 
-export interface IWork {
+export default interface IWork {
   id: string,
   category: IWorkCategory,
   title: string,

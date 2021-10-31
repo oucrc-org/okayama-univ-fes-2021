@@ -25,15 +25,18 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import OucrcHeader from '~/components/pages/clubs/oucrc/OucrcHeader.vue'
 import Work from '~/components/pages/clubs/oucrc/Work.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IWork from '~/assets/js/type/oucrc/IWork'
+import IWorkCategory from '~/assets/js/type/oucrc/IWorkCategory'
 
-interface IResponseWorks extends oufes.IResponse {
+interface IResponseWorks extends IResponse {
   data: {
-    contents: oufes.IWork[],
+    contents: IWork[],
     totalCount: number
   }
 }
@@ -46,7 +49,7 @@ export default Vue.extend({
     OucrcHeader,
     Work
   },
-  asyncData ({ app }: Context): Promise<{ works: { contents: oufes.IWork[] } }> {
+  asyncData ({ app }: Context): Promise<{ works: { contents: IWork[] } }> {
     return app.$axios.get(`${url}/oucrc_works`, {
       headers: {
         'X-MICROCMS-API-KEY': apiKey
@@ -63,7 +66,7 @@ export default Vue.extend({
       return { works: { contents: [] } }
     })
   },
-  data (): { works: { contents: oufes.IWork[] } } {
+  data (): { works: { contents: IWork[] } } {
     return {
       works: {
         contents: []
@@ -71,9 +74,9 @@ export default Vue.extend({
     }
   },
   computed: {
-    worksByCategory (): Array<{ category: oufes.IWorkCategory, works: oufes.IWork[] }> {
-      const resultUnordered: { [categoryId: string]: {category: oufes.IWorkCategory, works: oufes.IWork[] } } = {}
-      const defaultCategory: oufes.IWorkCategory = {
+    worksByCategory (): Array<{ category: IWorkCategory, works: IWork[] }> {
+      const resultUnordered: { [categoryId: string]: { category: IWorkCategory, works: IWork[] } } = {}
+      const defaultCategory: IWorkCategory = {
         id: 'default',
         name: 'カテゴリなし',
         name_english: 'NO CATEGORY',
