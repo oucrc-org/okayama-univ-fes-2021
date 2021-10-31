@@ -22,20 +22,24 @@
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>
         <div class="absolute inline-block right-5 top-1.5">
           <a :href="'https://twitter.com/intent/tweet?url=' + shareUrl + '&hashtags=岡山大学祭2021'" class="mr-2">
-            <img class="inline-block h-6" src="@/assets/img/nav/nav_twitter.png" alt="Twitter" />
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_twitter.png" alt="Twitter">
           </a>
           <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" class="mr-2">
-            <img class="inline-block h-6" src="@/assets/img/nav/nav_facebook.png" alt="Facebook" />
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_facebook.png" alt="Facebook">
           </a>
           <a :href="'http://line.me/R/msg/text/?' + shareUrl">
-            <img class="inline-block h-6" src="@/assets/img/nav/nav_line.png" alt="LINE" />
+            <img class="inline-block h-6" src="@/assets/img/nav/nav_line.png" alt="LINE">
           </a>
         </div>
       </div>
 
       <div class="absolute bottom-0 right-0 origin-bottom-right transform rotate-90 -translate-x-30 -translate-y-4" style="width: 100vh">
-        <p class="font-bold text-right text-themeLight text-6xl tracking-wider pt-12">岡山大学祭 2021</p>
-        <p class="font-bold text-right text-themeLight text-3xl tracking-wider pt-1">〜祭大級におも令和〜</p>
+        <p class="font-bold text-right text-themeLight text-6xl tracking-wider pt-12">
+          岡山大学祭 2021
+        </p>
+        <p class="font-bold text-right text-themeLight text-3xl tracking-wider pt-1">
+          〜祭大級におも令和〜
+        </p>
       </div>
     </div>
 
@@ -56,12 +60,12 @@ import NavigateColumn from './NavigateColumn'
 export default {
   name: 'Navigation',
   components: { NavigateColumn },
-  data() {
+  data () {
     return {
       shareUrl: 'https://oufes2021.com' + $nuxt.$route.path,
-      isOpen: false,
+      isOpen: false
     }
-  },
+  }
 }
 </script>
 

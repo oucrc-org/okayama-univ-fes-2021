@@ -4,25 +4,27 @@
       <SurveyBanner />
     </div>
     <div v-if="!$nuxt.$route.path.match('/clubs/*')">
-      <h2 class="text-center text-3xl text-gray-800 font-medium tracking-wider">SHARE ON</h2>
+      <h2 class="text-center text-3xl text-gray-800 font-medium tracking-wider">
+        SHARE ON
+      </h2>
       <div class="text-center w-full mt-14">
         <a
           :href="'https://twitter.com/intent/tweet?url=' + shareUrl + '&hashtags=岡山大学祭2021'"
           class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96"
         >
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/twitter.png" alt="Twitter" />
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/twitter.png" alt="Twitter">
           Twitter で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
         <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/facebook.png" alt="Facebook" />
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/facebook.png" alt="Facebook">
           Facebook で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
         <a :href="'http://line.me/R/msg/text/?' + shareUrl" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/line.png" alt="LINE" />
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/line.png" alt="LINE">
           LINE で シェア
         </a>
       </div>
@@ -46,12 +48,14 @@
     <footer class="text-gray-400 tracking-widest text-sm">
       <div class="flex justify-center items-center pt-8 pb-4">
         <div class="w-6 h-6 mr-3">
-          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会" />
+          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会">
         </div>
         <span>制作: 岡山大学電子計算機研究会</span>
       </div>
 
-      <p class="text-center mt-6">(c) 2021 岡山大学校友会</p>
+      <p class="text-center mt-6">
+        (c) 2021 岡山大学校友会
+      </p>
     </footer>
   </div>
 </template>
@@ -66,14 +70,14 @@ export default {
   props: {
     hiddenShare: {
       type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      shareUrl: 'https://oufes2021.com' + $nuxt.$route.path,
+      default: false
     }
   },
+  data () {
+    return {
+      shareUrl: 'https://oufes2021.com' + $nuxt.$route.path
+    }
+  }
 }
 </script>
 
