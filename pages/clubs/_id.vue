@@ -86,6 +86,13 @@ import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
 
+interface IResponseClub extends oufes.IResponse {
+  data: ClubData
+}
+
+const url = `https://${process.env.SERVICE_DOMAIN}.microcms.io/api/v1`
+const apiKey = process.env.API_KEY
+
 export default {
   components: {
     IframeViewer,
@@ -94,27 +101,22 @@ export default {
     Header,
     VerticalTitle
   },
-  async asyncData (context: Context) {
-    const {
-      app,
-      params,
-      error
-    } = context
-    const response: ClubData = await app.$microcms.get({
-      endpoint: `clubs/${params.id}`
+  asyncData ({ app, params, error }: Context): Promise<{ club: ClubData }> {
+    return app.$axios.get(`${url}/clubs/${params.id}`, {
+      headers: {
+        'X-MICROCMS-API-KEY': apiKey
+      }
+    }).then((res: IResponseClub) => {
+      return { club: res.data }
     }).catch(() => {
       error({
         statusCode: 404,
         message: 'お探しの部活動・サークルが見つかりませんでした。'
       })
+      return { club: new Club() }
     })
-    return {
-      club: response
-    }
   },
-  data (): {
-    club: ClubData
-    } {
+  data (): { club: ClubData } {
     return {
       club: new Club()
     }

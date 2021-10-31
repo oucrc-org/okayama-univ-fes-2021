@@ -37,6 +37,16 @@ import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import Warning from '~/components/pages/Warning.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
+interface IResponseClubs extends oufes.IResponse {
+  data: {
+    contents: oufes.IClub[],
+    totalCount: number
+  }
+}
+
+const url = `https://${process.env.SERVICE_DOMAIN}.microcms.io/api/v1`
+const apiKey = process.env.API_KEY
+
 export default Vue.extend({
   components: {
     LinkTo,
@@ -45,17 +55,22 @@ export default Vue.extend({
     VerticalTitle,
     Warning
   },
-  async asyncData ({ app }: Context): Promise<{ clubs: { contents: oufes.IClub[] } }> {
-    const response = await app.$microcms.get({
-      endpoint: 'clubs',
-      queries: {
+  asyncData ({ app }: Context): Promise<{ clubs: { contents: oufes.IClub[] } }> {
+    return app.$axios.get(`${url}/clubs`, {
+      headers: {
+        'X-MICROCMS-API-KEY': apiKey
+      },
+      params: {
         limit: 1000,
         fields: 'id,name,parent_department,cover'
       }
+    }).then((res: IResponseClubs) => {
+      return { clubs: res.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      return { clubs: { contents: [] } }
     })
-    return {
-      clubs: response
-    }
   },
   data (): { clubs: { contents: oufes.IClub[] } } {
     return {

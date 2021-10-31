@@ -1,4 +1,9 @@
 declare namespace oufes {
+  interface IResponse {
+    status: number,
+    statusText: string
+  }
+
   interface IDepartment {
     id: string,
     name: string,
