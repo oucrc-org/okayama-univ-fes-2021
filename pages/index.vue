@@ -237,7 +237,7 @@
     <!-- ▲ ライブ配信 -->
 
     <div class="bg-themeColor mt-20 pb-14">
-      <div class="container max-w-screen-xl pt-16 mx-auto relative">
+      <div class="container max-w-screen-lg pt-16 mx-auto relative">
         <Header title="イベント参加団体" colors="bg-white text-themeColor" />
         <VerticalTitle class="mt-16" text="CLUBS" colors="text-themeLight" />
         <client-only placeholder="Client Only">
@@ -624,7 +624,7 @@ export default Vue.extend({
         touchMove: false,
         cssEase: 'linear',
         slidesToShow: 8,
-        slidesToScroll: 2,
+        slidesToScroll: 1.5,
         responsive: [
           {
             breakpoint: 1024,
