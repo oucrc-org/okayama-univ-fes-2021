@@ -591,7 +591,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
@@ -642,9 +642,19 @@ export default Vue.extend({
   mounted () {
     init()
     $('#about_background').height($('#about_container').height() as number + 260)
+    this.checkIE()
   },
   beforeDestroy () {
     stop()
+  },
+  methods: {
+    checkIE () {
+      const userAgent = window.navigator.userAgent.toUpperCase()
+      if (userAgent.includes('MSIE') || userAgent.includes('TRIDENT')) {
+        // eslint-disable-next-line no-console
+        console.log('岡山大学祭2021をご覧いただきありがとうございます。\nえ、IEで正常にデザインが表示されてませんか？\nこの画面を見ているあなたならお気づきではないですか...\nそう、Chromeをインストールするのです（天の声）\n\nhttps://www.google.com/intl/ja_jp/chrome/')
+      }
+    }
   }
 })
 </script>
