@@ -1,6 +1,6 @@
-export default interface IOption {
+export default interface IDepartment {
   id: string,
   name: string,
   // eslint-disable-next-line camelcase
-  required_stamps: number
+  ordering_key: number
 }

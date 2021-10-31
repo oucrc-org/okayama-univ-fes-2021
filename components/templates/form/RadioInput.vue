@@ -28,7 +28,7 @@
 <script lang="ts">
 // eslint-disable-next-line import/named
 import { PropType } from 'vue'
-import { IOption } from '~/assets/js/type/form/IOption'
+import IOption from '~/assets/js/type/form/IOption'
 
 export default {
   props: {

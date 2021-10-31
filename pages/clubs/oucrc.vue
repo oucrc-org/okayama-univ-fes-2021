@@ -25,30 +25,48 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import OucrcHeader from '~/components/pages/clubs/oucrc/OucrcHeader.vue'
 import Work from '~/components/pages/clubs/oucrc/Work.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IWork from '~/assets/js/type/oucrc/IWork'
+import IWorkCategory from '~/assets/js/type/oucrc/IWorkCategory'
+
+interface IResponseWorks extends IResponse {
+  data: {
+    contents: IWork[],
+    totalCount: number
+  }
+}
+
+const url = `https://${process.env.SERVICE_DOMAIN}.microcms.io/api/v1`
+const apiKey = process.env.API_KEY
 
 export default Vue.extend({
   components: {
     OucrcHeader,
     Work
   },
-  async asyncData ({ app }: Context): Promise<{ works: { contents: oufes.IWork[] } }> {
-    const response = await app.$microcms.get({
-      endpoint: 'oucrc_works',
-      queries: {
+  asyncData ({ app }: Context): Promise<{ works: { contents: IWork[] } }> {
+    return app.$axios.get(`${url}/oucrc_works`, {
+      headers: {
+        'X-MICROCMS-API-KEY': apiKey
+      },
+      params: {
         limit: 1000,
         fields: 'id,title,category,cover,youtube_video_url,image1,image2,image3,body_html,creator'
       }
+    }).then((res: IResponseWorks) => {
+      return { works: res.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      return { works: { contents: [] } }
     })
-    return {
-      works: response
-    }
   },
-  data (): { works: { contents: oufes.IWork[] } } {
+  data (): { works: { contents: IWork[] } } {
     return {
       works: {
         contents: []
@@ -56,9 +74,9 @@ export default Vue.extend({
     }
   },
   computed: {
-    worksByCategory (): Array<{ category: oufes.IWorkCategory, works: oufes.IWork[] }> {
-      const resultUnordered: { [categoryId: string]: {category: oufes.IWorkCategory, works: oufes.IWork[] } } = {}
-      const defaultCategory: oufes.IWorkCategory = {
+    worksByCategory (): Array<{ category: IWorkCategory, works: IWork[] }> {
+      const resultUnordered: { [categoryId: string]: { category: IWorkCategory, works: IWork[] } } = {}
+      const defaultCategory: IWorkCategory = {
         id: 'default',
         name: 'カテゴリなし',
         name_english: 'NO CATEGORY',

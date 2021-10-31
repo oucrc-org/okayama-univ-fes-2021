@@ -73,7 +73,7 @@ import Vue from 'vue'
 import Header from '~/components/layouts/Header.vue'
 import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
-import Club from '~/assets/js/type/club/club'
+import Club from '~/assets/js/type/club/Club'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 

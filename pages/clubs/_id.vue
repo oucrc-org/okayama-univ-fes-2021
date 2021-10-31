@@ -80,11 +80,19 @@
 import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
 import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
-import { ClubData } from '~/assets/js/type/club/club-data'
-import Club from '~/assets/js/type/club/club'
+import Club from '~/assets/js/type/club/Club'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IClub from '~/assets/js/type/club/IClub'
+
+interface IResponseClub extends IResponse {
+  data: IClub
+}
+
+const url = `https://${process.env.SERVICE_DOMAIN}.microcms.io/api/v1`
+const apiKey = process.env.API_KEY
 
 export default {
   components: {
@@ -94,27 +102,22 @@ export default {
     Header,
     VerticalTitle
   },
-  async asyncData (context: Context) {
-    const {
-      app,
-      params,
-      error
-    } = context
-    const response: ClubData = await app.$microcms.get({
-      endpoint: `clubs/${params.id}`
+  asyncData ({ app, params, error }: Context): Promise<{ club: IClub }> {
+    return app.$axios.get(`${url}/clubs/${params.id}`, {
+      headers: {
+        'X-MICROCMS-API-KEY': apiKey
+      }
+    }).then((res: IResponseClub) => {
+      return { club: res.data }
     }).catch(() => {
       error({
         statusCode: 404,
         message: 'お探しの部活動・サークルが見つかりませんでした。'
       })
+      return { club: new Club() }
     })
-    return {
-      club: response
-    }
   },
-  data (): {
-    club: ClubData
-    } {
+  data (): { club: IClub } {
     return {
       club: new Club()
     }
