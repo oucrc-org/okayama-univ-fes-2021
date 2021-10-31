@@ -39,6 +39,6 @@ export default {
   border-color: #fff;
 }
 .collapse-title, .collapse-content {
-  background: white !important;
+  background: transparent !important;
 }
 </style>
