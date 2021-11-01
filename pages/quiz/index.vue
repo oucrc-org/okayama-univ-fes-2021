@@ -82,7 +82,7 @@
 
     <section>
       <BodyWithHeader title="スタンプ達成状況" colors="border-themeColor text-themeColor">
-        <!-- TODO: コンポーネント作る -->
+        <StampStatus :stamps="stamps" />
       </BodyWithHeader>
     </section>
 
@@ -160,12 +160,14 @@ import Header from '@/components/layouts/Header.vue'
 import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
 import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
-import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
+import HTMLLeader from '@/components/templates/html/HTMLLeader.vue'
+import StampStatus from '@/components/templates/stamp/StampStatus.vue'
 
 const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
+    StampStatus,
     Header,
     VerticalTitle,
     BodyWithHeader,
@@ -181,7 +183,18 @@ export default Vue.extend({
         'Access-Control-Allow-Origin': `${url}/*`
       }
     }).then((res) => {
-      return { question: res.data.data }
+      console.log(res.data)
+      return app.$axios.get(`${url}/user`, {
+        headers: {
+          'Access-Token': app.$auth.getToken('google').replace('Bearer ', ''),
+          'Access-Control-Allow-Origin': `${url}/*`
+        }
+      }).then((r) => {
+        return {
+          question: res.data.data,
+          stamps: r.data.stamps
+        }
+      })
     }).catch((err) => {
       // eslint-disable-next-line no-console
       console.error(err)
@@ -203,7 +216,8 @@ export default Vue.extend({
         quiz: '',
         hint: '',
         answers: []
-      }
+      },
+      stamps: []
     }
   },
   methods: {

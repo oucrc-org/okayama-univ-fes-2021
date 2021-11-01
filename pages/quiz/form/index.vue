@@ -175,7 +175,6 @@ export default Vue.extend({
           }
         }
       ).then((user) => {
-        console.log(user.data)
         return {
           presents: presents.data.data,
           stampNumber: user.data.stamps?.length ?? 0
