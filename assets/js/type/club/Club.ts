@@ -3,6 +3,7 @@ import IImage from '~/assets/js/type/IImage'
 import IDepartment from '~/assets/js/type/club/IDepartment'
 
 export default class Club implements IClub {
+  id: string
   name: string
   cover?: IImage
   icon?: IImage
@@ -17,8 +18,11 @@ export default class Club implements IClub {
   line_url?: string
   // eslint-disable-next-line camelcase
   twitter_url?: string
+  // eslint-disable-next-line camelcase
+  youtube_url?: string
 
   constructor () {
+    this.id = ''
     this.name = ''
   }
 }
