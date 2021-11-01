@@ -6,6 +6,7 @@
       <picture>
         <source :srcset="require('@/assets/img/static/home/background.webp')" type="image/webp">
         <img
+          id="hero_background"
           class="relative top-0 w-screen object-cover object-left landing-background"
           src="@/assets/img/static/home/background.jpg"
           alt="ヒーローエリア"
@@ -24,7 +25,7 @@
           >
         </picture>
       </div>
-      <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
+      <div id="tweet-area" class="absolute top-20 sm:top-16 left-0 right-0 text-center">
         <!--== ▼ タイトル ==-->
         <div>
           <h1 class="text-white text-4xl lg:text-6xl font-bold tracking-widest">
@@ -42,7 +43,7 @@
         <!--== ▲ タイトル ==-->
 
         <!--== ▼ Twitterで応援メッセージ募集中 ==-->
-        <div class="mt-20 sm:mt-24 lg:mt-36 px-4 sm:max-w-md lg:max-w-screen-md mx-auto">
+        <div class="mt-20 sm:mt-24 lg:mt-36 px-4 sm:max-w-lg lg:max-w-screen-lg mx-auto">
           <div class="mb-6 lg:mb-14 px-8 sm:px-12 text-center">
             <img
               src="@/assets/img/static/home/twitter_title.png"
@@ -51,50 +52,32 @@
             >
           </div>
 
-          <div
-            v-for="i in 3"
-            :key="i"
-            class="grid lg:grid-cols-2 gap-4"
-          >
-            <!--TODO: こちらには1~3番目の投稿を表示-->
-            <div
-              class="grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
-            >
+          <div class="grid lg:grid-cols-2 gap-4">
+            <!-- こちらには1~3番目の投稿を表示-->
+            <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url" class="grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105">
               <div>
-                <img
-                  class="rounded-full"
-                  style="max-width: 60px"
-                  src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
-                  alt="ふぉ"
-                >
+                <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
               </div>
               <div class="col-span-4">
-                <p class="text-xs lg:text-sm text-left tracking-wider leading-5">
-                  ああああああああああああああああああああああああああああああああああああああああ
+                <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
+                  {{ tweet.comment }}
                 </p>
-                <p class="text-xs lg:text-sm text-hashTagColor text-right font-semibold mt-3">
+                <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                   #岡山大学祭2021
                 </p>
               </div>
             </div>
 
-            <!--TODO: こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
-            <div
-              class="hidden lg:grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
-            >
+            <!-- こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
+            <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url" class="hidden lg:grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105">
               <div>
-                <img
-                  class="rounded-full"
-                  style="max-width: 60px"
-                  src="https://images.microcms-assets.io/assets/9db8326938b34b1381d6805cc5e10b04/0ed6da5cd6ec446c8de89ec6f5b9c99c/l.jpg?fm=webp"
-                  alt="ふぉ"
-                >
+                <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
               </div>
               <div class="col-span-4">
-                <p class="text-xs lg:text-sm text-left tracking-wider leading-5">
-                  ああああああああああああああああああああああああああああああああああああああああ
+                <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
+                  {{ tweet.comment }}
                 </p>
-                <p class="text-xs lg:text-sm text-hashTagColor text-right font-semibold mt-3">
+                <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                   #岡山大学祭2021
                 </p>
               </div>
@@ -103,11 +86,7 @@
 
           <div class="block text-center mt-8 lg:mt-20">
             <a href="https://twitter.com/intent/tweet?hashtags=岡山大学祭2021" target="_blank">
-              <img
-                src="@/assets/img/static/home/twitter_support.png"
-                class="h-12 lg:h-16 inline-block transition duration-300 ease-in-out transform hover:scale-105"
-                alt="応援する"
-              >
+              <img src="@/assets/img/static/home/twitter_support.png" class="h-12 lg:h-16 inline-block transition duration-300 ease-in-out transform hover:scale-105" alt="応援する">
             </a>
           </div>
         </div>
@@ -597,11 +576,23 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import SurveyBanner from '~/components/templates/survey/SurveyBanner.vue'
 import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import ITweet from '~/assets/js/type/ITweet'
+
+interface IResponseTweets extends IResponse {
+  data: {
+    success: boolean,
+    data: ITweet[]
+  }
+}
+
+const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
@@ -610,6 +601,15 @@ export default Vue.extend({
     VerticalTitle,
     DailyLiveOrVideo,
     SurveyBanner
+  },
+  asyncData ({ app }: Context): Promise<{ tweets: ITweet[] }> {
+    return app.$axios.get(`${url}/twitter`).then((res: IResponseTweets) => {
+      return { tweets: res.data.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      return { tweets: [] }
+    })
   },
   data () {
     return {
@@ -640,12 +640,14 @@ export default Vue.extend({
             }
           }
         ]
-      }
+      },
+      tweets: [] as ITweet[]
     }
   },
   mounted () {
     init()
     $('#about_background').height($('#about_container').height() as number + 260)
+    $('#hero_background').height($('#tweet-area').height() as number + 160)
     this.checkIE()
   },
   beforeDestroy () {
