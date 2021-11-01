@@ -1,37 +1,30 @@
 <template>
   <div>
-    <div class="container max-w-screen-xl mt-24 mx-auto relative md:pr-28">
+    <div class="container max-w-screen-lg mt-24 mx-auto relative md:pr-28 leading-relaxed">
       <Header title="スタンプラリー" colors="bg-themeColor text-white" />
 
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" class="-z-10" />
-      <BodyWithHeader title="スタンプラリー企画について" colors="border-themeColor text-themeColor" />
-      <!-- TODO: 説明追加 -->
-      <p class="px-4">
-        説明準備中
-      </p>
-
-      <BodyWithHeader title="豪華賞品" colors="border-themeColor text-themeColor">
-        <StampRallyGrid :items="items" />
-      </BodyWithHeader>
-
-      <BodyWithHeader title="スタンプ取得について" colors="border-themeColor text-themeColor">
-        <!-- TODO: 説明追加 -->
-        <p>説明準備中</p>
-        <StampRallyTimeTable />
-      </BodyWithHeader>
-      <BodyWithHeader title="参加資格" colors="border-themeColor text-themeColor">
-        <!-- TODO: 説明追加 -->
-        <p class="mb-8">
-          説明準備中
+      <BodyWithHeader title="スタンプラリー企画について" colors="border-themeColor text-themeColor">
+        <p>
+          8日間毎日出されるクイズに答えて、スタンプを集めましょう。
+          クイズ内容は特設サイト（本サイト）のコンテンツ内から出題されます！
+          集めたスタンプでNintendo Switchなど豪華景品獲得のチャンス！
+          何度でも回答し直せます。ぜひスタンプを集めてみてくださいね。
         </p>
+      </BodyWithHeader>
 
-        <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
-          <!-- TODO: ログインリンクに変更 -->
-          <LinkTo
-            to="#"
-            class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
-          >
-            参加する →
+      <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StampRallyPrize v-for="item in prizes" :key="item.id" :item="item" />
+        </div>
+      </BodyWithHeader>
+
+      <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
+        <ApplyNotes />
+
+        <div class="text-center">
+          <LinkTo to="/quiz">
+            <RoundedButton text="参加する →" class="border-themeColor bg-themeColor text-white" />
           </LinkTo>
         </div>
       </BodyWithHeader>
@@ -41,13 +34,25 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
-import StampRallyGrid from '~/components/pages/stamp-rally/Grid.vue'
-import StampRallyTimeTable from '~/components/pages/stamp-rally/TimeTable.vue'
+import StampRallyPrize from '~/components/pages/stamp-rally/Prize.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import items from '~/assets/data/stamp-rally-item'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IPrize from '~/assets/js/type/IPrize'
+import ApplyNotes from '@/components/pages/ApplyNotes.vue'
+
+interface IResponsePrize extends IResponse {
+  data: {
+    success: boolean,
+    data: IPrize[]
+  }
+}
+
+const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
@@ -55,12 +60,29 @@ export default Vue.extend({
     Header,
     BodyWithHeader,
     VerticalTitle,
-    StampRallyGrid,
-    StampRallyTimeTable
+    StampRallyPrize,
+    RoundedButton,
+    ApplyNotes
   },
-  data () {
+  asyncData ({
+    app,
+    error
+  }: Context) {
+    return app.$axios.get(`${url}/presents`).then((res: IResponsePrize) => {
+      console.log(res.data.data)
+      return { prizes: res.data.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      error({
+        statusCode: err.statusCode,
+        message: err.message
+      })
+    })
+  },
+  data (): { prizes: IPrize[] } {
     return {
-      items
+      prizes: []
     }
   }
 })
