@@ -25,7 +25,7 @@
       <HTMLLeader :body="presentation.messageHtml" class="px-6" />
     </BodyWithHeader>
     <!-- 団体へリンクする -->
-    <div class="text-center my-6">
+    <div class="text-center my-6 px-3">
       <RoundButton v-if="presentation.club" :to="`/clubs/${presentation.club.id}`">
         {{ presentation.club.name }}のページへ
       </RoundButton>
@@ -44,7 +44,6 @@ import IResponse from '~/assets/js/type/request/IResponse'
 import IPresentation from '~/assets/js/type/presentation/IPresentation'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
 import RoundButton from '~/components/templates/parts/RoundButton.vue'
-import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 
 interface IResponsePresentation extends IResponse {
   data: IPresentation
@@ -59,8 +58,7 @@ export default {
     HTMLLeader,
     Header,
     VerticalTitle,
-    RoundButton,
-    LinkTo
+    RoundButton
   },
   asyncData ({ app, params, error }: Context): Promise<{ presentation: IPresentation }> {
     return app.$axios.get(`${url}/presentations/${params.id}`, {
