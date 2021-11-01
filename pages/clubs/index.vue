@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container max-w-screen-xl mt-24 mx-auto relative md:pr-28">
+    <div class="container max-w-screen-lg mt-24 mx-auto relative md:pr-28">
       <VerticalTitle text="CLUBS" colors="text-gray-200" class="-z-10" />
 
       <Header title="部活動・サークル紹介" colors="bg-themeColor text-white" />
@@ -16,7 +16,7 @@
             <img
               :src="typeof club.cover === 'undefined' ? alternativeCoverImage : club.cover.url"
               :alt="`${club.name}部のカバー画像`"
-              class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
+              class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
             >
             <div class="m-2 lg:text-lg xl:text-xl">
               {{ club.name }}

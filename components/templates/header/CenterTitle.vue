@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center text-3xl border-b-4 mt-16 mx-auto pb-3 w-4/5 sm:w-2/3 relative z-10" :class="colors">
+  <div class="text-center text-3xl border-b-4 mt-8 lg:mt-16 mx-auto pb-3 w-4/5 sm:w-2/3 relative z-10" :class="colors">
     {{ text }}
   </div>
 </template>
