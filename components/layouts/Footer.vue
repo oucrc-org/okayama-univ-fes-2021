@@ -54,8 +54,8 @@
         <span>制作: 岡山大学電子計算機研究会</span>
       </div>
 
-      <p class="text-center mt-6">
-        (c) 2021 岡山大学校友会
+      <p class="text-center mt-10">
+        (c) 2021 岡山大学校友会 x 学祭実行委員会
       </p>
     </footer>
   </div>
