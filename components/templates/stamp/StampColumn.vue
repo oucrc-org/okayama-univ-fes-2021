@@ -1,11 +1,11 @@
 <template>
   <div class="flex items-center">
     <div class="avatar">
-      <div class="my-5 rounded-full w-24 h-24">
+      <div class="my-3 lg:ml-4 rounded-full w-20 h-20">
         <img :src="src" :alt="alt">
       </div>
     </div>
-    <div class="ml-8 text-base font-medium">
+    <div class="ml-6 lg:ml-10 text-lg font-medium">
       {{ name }}
     </div>
   </div>

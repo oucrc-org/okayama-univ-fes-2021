@@ -6,7 +6,7 @@
           <StampColumn
             :src="stamp.has_stamp ? stamp.image_path : require('@/assets/img/icon/grey-icon.jpg')"
             :alt="stamp.name"
-            :name="stamp.has_stamp ? stamp.name : '????'"
+            :name="stamp.has_stamp ? stamp.name : '？？？？（' + stamp.id + '日目）'"
           />
         </div>
       </div>
