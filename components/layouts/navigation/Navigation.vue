@@ -21,13 +21,13 @@
       <div class="absolute bottom-5 bg-white h-10 w-52 rounded-full">
         <span class="inline-block font-medium text-xs text-themeColor tracking-wider mt-3 ml-5">SHARE</span>
         <div class="absolute inline-block right-5 top-1.5">
-          <a :href="'https://twitter.com/intent/tweet?url=' + shareUrl + '&hashtags=岡山大学祭2021'" class="mr-2">
+          <a :href="'https://twitter.com/intent/tweet?url=' + shareUrl + '&hashtags=岡山大学祭2021'" target="_blank" class="mr-2">
             <img class="inline-block h-6" src="@/assets/img/nav/nav_twitter.png" alt="Twitter">
           </a>
-          <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" class="mr-2">
+          <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" target="_blank" class="mr-2">
             <img class="inline-block h-6" src="@/assets/img/nav/nav_facebook.png" alt="Facebook">
           </a>
-          <a :href="'http://line.me/R/msg/text/?' + shareUrl">
+          <a :href="'http://line.me/R/msg/text/?' + shareUrl" target="_blank">
             <img class="inline-block h-6" src="@/assets/img/nav/nav_line.png" alt="LINE">
           </a>
         </div>
