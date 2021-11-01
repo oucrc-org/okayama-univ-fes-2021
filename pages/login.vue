@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-8 mx-auto">
+  <div class="container max-w-screen-lg mt-8 mx-auto">
     <VerticalTitle text="LOGIN" colors="text-gray-200" class="-z-10" />
     <Header title="ログイン" colors="bg-themeColor text-white" />
     <div class="flex flex-col gap-y-16">
