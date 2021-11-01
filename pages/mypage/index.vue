@@ -43,7 +43,7 @@
     </BodyWithHeader>
 
     <BodyWithHeader title="プレゼント応募" colors="border-themeColor text-themeColor">
-      <StampRallyGrid :items="stampRallyItems" />
+      <!--      <StampRallyGrid :items="stampRallyItems" />-->
 
       <div class="mt-8 col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
         <!-- TODO: 応募リンクに変更 -->

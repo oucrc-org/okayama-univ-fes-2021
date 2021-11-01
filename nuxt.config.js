@@ -136,7 +136,7 @@ export default {
       prefix: 'auth.',
       options: {
         path: '/',
-        domain: 'okayama-univ-fes-2021.vercel.app',
+        domain: process.env.NODE_ENV === 'production' ? process.env.DOMAIN : '',
         maxAge: 60 * 30
       }
     },
