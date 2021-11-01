@@ -1,11 +1,10 @@
 <template>
   <div class="relative flex flex-col gap-y-2">
-    <img
-      v-if="item.image_path"
-      :src="item.image_path"
-      :alt="item.name"
-      class="object-cover rounded-xl bg-gray-500 h-48"
-    >
+    <picture>
+      <source :srcset="`${item.image_path}.webp`" type="image/webp">
+      <img :src="`${item.image_path}.jpg`" :alt="item.name" class="object-cover rounded-xl bg-gray-500 h-48">
+    </picture>
+
     <div class="text-xl font-bold">
       {{ item.name }}
     </div>

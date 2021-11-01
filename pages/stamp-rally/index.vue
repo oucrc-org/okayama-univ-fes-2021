@@ -74,6 +74,7 @@ export default Vue.extend({
   },
   asyncData ({ app, error }: Context) {
     return app.$axios.get(`${url}/presents`).then((res: IResponsePrize) => {
+      console.log(res.data.data)
       return { prizes: res.data.data }
     }).catch((err) => {
       // eslint-disable-next-line no-console
