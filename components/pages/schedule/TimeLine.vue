@@ -21,7 +21,7 @@
           <li class="fadein">
             <dl>
               <dt class="text-themeColor font-medium">
-                11/7（土）
+                11/7（日）
               </dt>
               <h2 class="text-themeColor text-2xl tracking-widest font-bold mt-1">
                 プロコンサート
