@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <VerticalTitle text="PERFORMANCE" colors="text-gray-200 -z-10" />
     <!-- ヘッダー -->
 
