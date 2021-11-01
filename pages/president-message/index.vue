@@ -9,6 +9,7 @@
     <BodyWithHeader title="学長からのメッセージ">
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学長からのメッセージ" />
       <AccountViewer :src="src" role="国立大学法人岡山大学長" name="槇野 博史" />
+      <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
         <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さん、こんにちは。岡山大学・学長の槇野博史です。この度は、令和3年度オンライン岡山大学祭をご覧いただき、誠にありがとうございます。<br>
@@ -44,6 +45,7 @@
     </client-only>
     <BodyWithHeader title="岡山大学国際同窓会について">
       <IframeViewer src="https://www.youtube.com/watch?v=2hI8JS6oVjA" title="国際同窓会作成動画" />
+      <p class="text-red-600">なぜかリンク切れになっています => 石原さん確認</p>
     </BodyWithHeader>
   </div>
 </template>

@@ -8,17 +8,6 @@
 
       <div class="grid md:grid-cols-2 gap-4 mx-4">
         <div>
-          <CenterTitle text="電算研 学祭展覧会" class="border-themeColor text-themeColor" />
-          <LinkTo to="/clubs/oucrc">
-            <img
-              src="@/assets/img/presentations/oucrc.jpg"
-              class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
-              alt="電算研 学祭展"
-            >
-          </LinkTo>
-        </div>
-
-        <div>
           <CenterTitle text="美術部 学祭展覧会" class="border-themeColor text-themeColor" />
           <LinkTo to="/presentation/art_club">
             <img
@@ -30,28 +19,42 @@
         </div>
 
         <div>
-          <CenterTitle text="書道部 学祭展覧会（提出待ち）" class="border-themeColor text-themeColor" />
-          <!-- TODO: 書道部のページ追加とリンク -->
-          <LinkTo to="#">
+          <CenterTitle text="電算研 学祭展覧会" class="border-themeColor text-themeColor" />
+          <LinkTo to="/clubs/oucrc">
             <img
-              src="@/assets/img/dev/hero.jpg"
-              class="shadow-xl transition-shadow  hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
-              alt="書道部 学祭展"
+              src="@/assets/img/presentations/oucrc.jpg"
+              class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
+              alt="電算研 学祭展"
             >
           </LinkTo>
         </div>
 
+        <div>
+          <CenterTitle text="書道部 学祭展覧会（提出待ち）" class="border-themeColor text-themeColor" />
+          <!-- TODO: 書道部のページ追加とリンク -->
+          <p class="text-red-600">書道部データ 11/6以降</p>
+          <!--<LinkTo to="#">-->
+          <!--<img-->
+          <!--  src="@/assets/img/dev/hero.jpg"-->
+          <!--  class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"-->
+          <!--  alt="書道部 学祭展"-->
+          <!--&gt;-->
+          <!--</LinkTo>-->
+        </div>
+
         <!-- ここからMicroCMS -->
         <div v-for="presen in presentations.contents" :key="presen.id">
-          <CenterTitle :text="presen.title" class="border-themeColor text-themeColor" />
+          <CenterTitle :text="presen.title" class="border-themeColor text-themeColor w-5/6 sm:w-11/12" />
           <LinkTo :to="`/presentation/${presen.id}`">
             <img
               :src="typeof presen.cover === 'undefined' ? alternativeCoverImage : presen.cover.url"
-              :alt="`${presen.club.name}部の企画カバー画像`"
-              class="rounded-2xl object-cover mt-8 w-full h-44 sm:h-96 md:h-60 lg:h-72"
+              :alt="`${presen.club.name}部`"
+              class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
             >
           </LinkTo>
         </div>
+
+        <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       </div>
     </div>
   </div>

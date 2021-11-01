@@ -9,6 +9,7 @@
     <BodyWithHeader title="校友会からのメッセージ">
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="校友会からのメッセージ" />
       <AccountViewer :src="alumni_src" role="国立大学校友会 総務委員長" name="山口 優" />
+      <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
         <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さんこんにちは。オンライン大学祭校友会総務委員長の山口優と申します。<br>
@@ -37,6 +38,7 @@
     <BodyWithHeader title="学祭実行委員会からのメッセージ">
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学祭実行委員会からのメッセージ" />
       <AccountViewer :src="committee_src" role="学祭実行委員会 委員長" name="天野 颯" />
+      <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
         <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さんこんにちは。大学祭実行委員会委員長の天野颯と申します。<br>

@@ -211,6 +211,7 @@
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
           <DailyLiveOrVideo />
+          <p class="text-red-600">学祭実行委員会さんからいただいた動画が入ります（11/3以降）</p>
         </div>
       </div>
     </div>

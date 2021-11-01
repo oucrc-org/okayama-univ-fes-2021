@@ -7,9 +7,10 @@
 
     <BodyWithHeader title="プロコンサート">
       <IframeViewer
-        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
+        src="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0"
         title="プロコンサート"
       />
+      <p class="text-red-600">学祭実行委員会さんに、他サイトでの埋め込みをデフォルトのONに戻していただく</p>
       <client-only>
         <div class="my-5">
           <ProConcertSchedule />
@@ -22,6 +23,7 @@
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
         title="校友会団体ステージ企画"
       />
+      <p class="text-red-600">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
           <OperationStageSchedule1 />
@@ -32,6 +34,7 @@
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
         title="校友会団体ステージ企画"
       />
+      <p class="text-red-600 mt-52">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
           <OperationStageSchedule2 />
