@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative md:pr-28">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative md:pr-28">
     <Header title="マイページ" colors="bg-themeColor text-white" />
     <VerticalTitle text="MYPAGE" colors="text-gray-200" class="-z-10" />
 
