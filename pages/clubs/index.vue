@@ -18,7 +18,7 @@
               <img
                 :src="iImageToUrl(club.cover, 432, 70, false, alternativeCoverImage)"
                 :alt="`${club.name}のカバー画像`"
-                class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
+                class="rounded-lg lg:rounded-2xl object-cover w-full h-22 sm:h-44 md:h-56 lg:h-64"
               >
             </picture>
             <div class="m-2 lg:text-lg xl:text-xl">
