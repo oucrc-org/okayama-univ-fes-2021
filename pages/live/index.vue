@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <div class="my-5">
       <Header title="ライブ配信" colors="bg-red-500 text-white" :icon-path="stream_src" />
       <VerticalTitle text="LIVE" colors="text-gray-200" />
@@ -24,7 +24,17 @@
       />
       <client-only>
         <div class="my-5">
-          <OperationStageSchedule />
+          <OperationStageSchedule1 />
+        </div>
+      </client-only>
+
+      <IframeViewer
+        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
+        title="校友会団体ステージ企画"
+      />
+      <client-only>
+        <div class="my-5">
+          <OperationStageSchedule2 />
         </div>
       </client-only>
     </BodyWithHeader>
@@ -36,14 +46,16 @@ import BodyWithHeader from '../../components/templates/header/BodyWithHeader'
 import VerticalTitle from '../../components/layouts/VerticalTitle'
 import Header from '../../components/layouts/Header'
 import IframeViewer from '../../components/templates/html/IframeViewer'
-import OperationStageSchedule from '../../components/pages/schedule/OperationStageSchedule'
+import OperationStageSchedule1 from '../../components/pages/schedule/OperationStageSchedule1'
+import OperationStageSchedule2 from '../../components/pages/schedule/OperationStageSchedule2'
 import ProConcertSchedule from '../../components/pages/schedule/ProConcertSchedule'
 import Stream from '../../assets/img/header/streaming.png'
 
 export default {
   components: {
     ProConcertSchedule,
-    OperationStageSchedule,
+    OperationStageSchedule1,
+    OperationStageSchedule2,
     IframeViewer,
     BodyWithHeader,
     Header,

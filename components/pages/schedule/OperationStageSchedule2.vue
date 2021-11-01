@@ -10,40 +10,52 @@ export default {
     return {
       items: [
         {
-          tag: '16:30',
+          tag: '18:00',
           color: '#dcdcdc',
-          content: '委員長挨拶'
+          content: '開演'
         },
         {
           type: 'star',
-          tag: '16:40',
+          tag: '18:05',
           color: '#F04444',
           htmlMode: true,
-          content: 'ぼる塾ステージ'
-        },
-        {
-          tag: '17:00',
-          color: '#F04444',
-          content: '告知: 校友会ステージ団体'
+          content: '吹奏楽団'
         },
         {
           type: 'star',
-          tag: '17:05',
+          tag: '18:30',
           color: '#F04444',
           htmlMode: true,
-          content: '四千頭身ステージ'
+          content: 'グリークラブ'
         },
         {
           type: 'star',
-          tag: '17:20',
+          tag: '18:55',
           color: '#F04444',
           htmlMode: true,
-          content: 'ハナコステージ'
+          content: 'ジャズ研究会'
         },
         {
-          tag: '17:40',
+          type: 'star',
+          tag: '19:30',
+          color: '#F04444',
+          htmlMode: true,
+          content: 'ダンス部'
+        },
+        {
+          tag: '20:05',
+          color: '#F04444',
+          content: '各企画順位発表'
+        },
+        {
+          tag: '20:15',
+          color: '#F04444',
+          content: 'グランドフィナーレ'
+        },
+        {
+          tag: '20:35',
           color: '#dcdcdc',
-          content: '閉会のあいさつ'
+          content: '閉演の挨拶'
         }
       ]
     }
