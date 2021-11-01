@@ -1,9 +1,9 @@
-import IImage from '~/assets/js/type/IImage'
-
 export default interface IPrize {
-  id: string,
+  id: number,
   name: string,
-  cover: IImage | null,
-  presentCount: number,
-  stampCount: number
+  // eslint-disable-next-line camelcase
+  image_path: string,
+  // eslint-disable-next-line camelcase
+  required_stamps: number,
+  stock: number
 }

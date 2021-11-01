@@ -1,8 +1,8 @@
 <template>
   <div class="relative flex flex-col gap-y-2">
     <img
-      v-if="item.cover"
-      :src="item.cover.url"
+      v-if="item.image_path"
+      :src="item.image_path"
       :alt="item.name"
       class="object-cover rounded-xl bg-gray-500 h-48"
     >
@@ -10,10 +10,10 @@
       {{ item.name }}
     </div>
     <div class="text-gray-700">
-      抽選{{ item.presentCount }}名
+      抽選{{ item.stock }}名
     </div>
     <div class="absolute top-2 right-2 rounded-full text-white text-xs bg-themeColor p-1">
-      スタンプ{{ item.stampCount }}コ
+      スタンプ{{ item.required_stamps }}コ
     </div>
   </div>
 </template>

@@ -15,7 +15,7 @@
 
       <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StampRallyPrize v-for="item in items" :key="item.id" :item="item" />
+          <StampRallyPrize v-for="item in prizes" :key="item.id" :item="item" />
         </div>
       </BodyWithHeader>
 
@@ -44,13 +44,24 @@
 
 <script lang='ts'>
 import Vue from 'vue'
+import { Context } from '@nuxt/types'
 import Header from '~/components/layouts/Header.vue'
 import StampRallyPrize from '~/components/pages/stamp-rally/Prize.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import items from '~/assets/data/stamp-rally-item'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
+import IResponse from '~/assets/js/type/request/IResponse'
+import IPrize from '~/assets/js/type/IPrize'
+
+interface IResponsePrize extends IResponse {
+  data: {
+    success: boolean,
+    data: IPrize[]
+  }
+}
+
+const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
@@ -61,9 +72,21 @@ export default Vue.extend({
     StampRallyPrize,
     RoundedButton
   },
-  data () {
+  asyncData ({ app, error }: Context) {
+    return app.$axios.get(`${url}/presents`).then((res: IResponsePrize) => {
+      return { prizes: res.data.data }
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err)
+      error({
+        statusCode: err.statusCode,
+        message: err.message
+      })
+    })
+  },
+  data (): { prizes: IPrize[] } {
     return {
-      items
+      prizes: []
     }
   }
 })
