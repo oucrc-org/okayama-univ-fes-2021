@@ -160,8 +160,8 @@ import Header from '@/components/layouts/Header.vue'
 import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
 import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
-import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
-import StampStatus from '~/components/templates/stamp/StampStatus.vue'
+import HTMLLeader from '@/components/templates/html/HTMLLeader.vue'
+import StampStatus from '@/components/templates/stamp/StampStatus.vue'
 
 const url = process.env.BACKEND_API_URL
 

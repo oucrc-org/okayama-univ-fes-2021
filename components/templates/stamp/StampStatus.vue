@@ -15,7 +15,8 @@
 </template>
 
 <script lang="ts">
-import PropType from 'vue'
+// eslint-disable-next-line import/named
+import { PropType } from 'vue'
 import StampColumn from '~/components/templates/stamp/StampColumn.vue'
 import IStamp from '~/assets/js/type/stamp/IStamp'
 
