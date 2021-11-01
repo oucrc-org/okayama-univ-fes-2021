@@ -16,5 +16,7 @@ export default interface IClub {
   // eslint-disable-next-line camelcase
   instagram_url?: string,
   // eslint-disable-next-line camelcase
-  line_url?: string
+  line_url?: string,
+  // eslint-disable-next-line camelcase
+  youtube_url?: string
 }

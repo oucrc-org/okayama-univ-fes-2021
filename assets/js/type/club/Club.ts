@@ -18,6 +18,8 @@ export default class Club implements IClub {
   line_url?: string
   // eslint-disable-next-line camelcase
   twitter_url?: string
+  // eslint-disable-next-line camelcase
+  youtube_url?: string
 
   constructor () {
     this.id = ''
