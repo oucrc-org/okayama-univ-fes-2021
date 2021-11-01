@@ -3,6 +3,7 @@ import IImage from '~/assets/js/type/IImage'
 import IDepartment from '~/assets/js/type/club/IDepartment'
 
 export default class Club implements IClub {
+  id: string
   name: string
   cover?: IImage
   icon?: IImage
@@ -19,6 +20,7 @@ export default class Club implements IClub {
   twitter_url?: string
 
   constructor () {
+    this.id = ''
     this.name = ''
   }
 }
