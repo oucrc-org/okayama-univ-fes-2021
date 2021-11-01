@@ -1,12 +1,15 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <!-- ヘッダー -->
     <div class="my-5">
       <Header :title="club.name" colors="bg-themeColor text-white" />
       <VerticalTitle text="ABOUT" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-14 mx-auto">
         <div class="w-4/5 tracking-widest leading-6 px-4">
-          <img class="rounded-xl" :src="coverUrl" alt="団体画像">
+          <picture>
+            <source :srcset="iImageToUrl(club.cover, 788, 75, true)" type="image/webp">
+            <img class="rounded-xl" :src="iImageToUrl(club.cover, 788, 75)" alt="団体画像">
+          </picture>
         </div>
       </div>
     </div>
@@ -86,6 +89,7 @@ import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import IframeViewer from '~/components/templates/html/IframeViewer.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import IClub from '~/assets/js/type/club/IClub'
+import iImageToUrl from '~/assets/js/url/iImageToUrl'
 
 interface IResponseClub extends IResponse {
   data: IClub
@@ -132,11 +136,10 @@ export default {
         club.instagram_url == null &&
         club.line_url == null
       )
-    },
-    coverUrl (): String {
-      // @ts-ignore
-      return this.club.cover ? this.club.cover.url : null
     }
+  },
+  methods: {
+    iImageToUrl
   }
 }
 </script>

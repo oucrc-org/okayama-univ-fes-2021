@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <!-- ヘッダー -->
     <div class="my-5">
       <Header :title="club.name" colors="bg-themeColor text-white" />

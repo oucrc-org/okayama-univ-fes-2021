@@ -13,11 +13,14 @@
         <CenterTitle :text="clubsWithDepartment.department.name" colors="border-themeColor text-themeColor" />
         <div class="grid grid-cols-2 gap-4 mx-4 my-8">
           <LinkTo v-for="club in clubsWithDepartment.clubs" :key="`club-${club.id}`" :to="`/clubs/${club.id}`">
-            <img
-              :src="typeof club.cover === 'undefined' ? alternativeCoverImage : club.cover.url"
-              :alt="`${club.name}部のカバー画像`"
-              class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
-            >
+            <picture>
+              <source :srcset="iImageToUrl(club.cover, 432, 70, true, alternativeCoverImage)" type="image/webp">
+              <img
+                :src="iImageToUrl(club.cover, 432, 70, false, alternativeCoverImage)"
+                :alt="`${club.name}のカバー画像`"
+                class="rounded-lg lg:rounded-2xl object-cover w-full h-22 sm:h-44 md:h-56 lg:h-64"
+              >
+            </picture>
             <div class="m-2 lg:text-lg xl:text-xl">
               {{ club.name }}
             </div>
@@ -39,6 +42,7 @@ import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import IClub from '~/assets/js/type/club/IClub'
 import IDepartment from '~/assets/js/type/club/IDepartment'
+import iImageToUrl from '~/assets/js/url/iImageToUrl'
 
 interface IResponseClubs extends IResponse {
   data: {
@@ -103,6 +107,9 @@ export default Vue.extend({
     alternativeCoverImage (): string {
       return require('~/assets/img/cover_alternative.png')
     }
+  },
+  methods: {
+    iImageToUrl
   }
 })
 </script>

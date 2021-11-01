@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <div class="tracking-widest px-4">
       <section>
         <h1 class="text-center font-yu-mincho font-bold text-24pt leading-loose">

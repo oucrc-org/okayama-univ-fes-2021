@@ -12,7 +12,7 @@
       :key="`works-by-category-${worksWithCategory.category.id}`"
     >
       <div class="py-8" :style="{'background-color': worksWithCategory.category.color || '#0071C5'}">
-        <div class="container max-w-screen-xl mx-auto relative">
+        <div class="container max-w-screen-lg mx-auto relative">
           <OucrcHeader :title="worksWithCategory.category.name" :title-english="worksWithCategory.category.name_english" />
           <div class="grid grid-cols-1 gap-4 mx-4 my-8">
             <div v-for="work in worksWithCategory.works" :key="work.id">

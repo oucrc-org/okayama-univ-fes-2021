@@ -4,7 +4,7 @@
       <swiper :options="swiperOption">
         <swiper-slide v-for="i of 2" :key="i">
           <div
-            class="text-center text-xl sm:text-2xl border-b-3 font-bold tracking-widest mt-8 mx-auto pb-2 relative z-10 border-themeColor text-themeColor"
+            class="text-center text-lg sm:text-2xl border-b-3 font-bold tracking-widest mt-8 mx-auto pb-2 relative z-10 border-themeColor text-themeColor"
           >
             10/30（土） ピックアップ
           </div>

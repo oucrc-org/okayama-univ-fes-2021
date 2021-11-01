@@ -1,6 +1,6 @@
 <template>
   <div class="html-leader">
-    <span :class="$style['html-leader']" v-html="body" />
+    <span :class="$style['html-leader']" v-html="fixImageRequestSize(body)" />
   </div>
 </template>
 
@@ -11,13 +11,24 @@ export default {
       type: String,
       default: ''
     }
+  },
+  methods: {
+    fixImageRequestSize (html: string): string {
+      return html.replaceAll(
+        /<img src="([^"?]+)(?:\?[^"]*)?"[^>]*>/g,
+        (_, p1) => `<picture>
+          <source srcset="${p1}?fm=webp&fit=clip&w=976&q=75" type="image/webp">
+          <img src="${p1}?fit=clip&w=976&q=75" alt="">
+        </picture>`
+      )
+    }
   }
 }
 </script>
 
 <style module>
 .html-leader img {
-  @apply block mx-auto my-5 w-full
+  @apply block mx-auto my-5 max-w-full
 }
 .html-leader h1 {
   @apply text-2xl

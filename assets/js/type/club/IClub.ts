@@ -2,6 +2,7 @@ import IImage from '~/assets/js/type/IImage'
 import IDepartment from '~/assets/js/type/club/IDepartment'
 
 export default interface IClub {
+  id: string,
   name: string,
   cover?: IImage,
   icon?: IImage,
