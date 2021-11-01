@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-16 lg:mt-24 mx-auto relative">
     <!-- ヘッダー -->
     <div class="my-5">
       <Header title="学長メッセージ" colors="bg-themeColor text-white" />
@@ -10,7 +10,7 @@
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学長からのメッセージ" />
       <AccountViewer :src="src" role="国立大学法人岡山大学長" name="槇野 博史" />
       <div class="p-1">
-        <p class="tracking-wide leading-loose text-sm my-1">
+        <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さん、こんにちは。岡山大学・学長の槇野博史です。この度は、令和3年度オンライン岡山大学祭をご覧いただき、誠にありがとうございます。<br>
           今年度も、昨年度に引き続き、新型コロナウイルス感染症の感染拡大防止の観点から、例年のように来場者を迎えて大学祭を実施することは見送ることとなり、昨年度同様にオンラインでの大学祭の開催となりました。今年度は、大学祭実行委員会と校友会が一丸となって共同で企画していますので、昨年度以上に皆様に楽しんでいただけることと思います。<br>
           実は私と私の妻は岡山大学の卒業生で子供たちを連れて学園祭を楽しんだのを懐かしく思い出しております。<br>
@@ -28,7 +28,7 @@
     <BodyWithHeader title="岡山大学について">
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="岡山大学について" />
       <div class="p-1">
-        <p class="tracking-wide leading-loose text-sm my-6 mx-5">
+        <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-10">
           岡山大学は、11学部8研究科を有し、岡山市中心部の緑豊かな広大なキャンパスで、約2万人の学生、留学生が学んでいます。２０２１年４月には、工学部と環境理工学部が統合して、新生工学部に生まれ変わりました。また、本学は、SDGsを推進しており、学内のみならず地域社会と一体になった取り組みも進めています。正課外活動を行う団体は、文化系の校友会が35団体、体育系の校友会が49団体、医療系地区等の校友会が42団体あるほか、同好会（サークル）も54団体あり、幅広い活動を行っています。詳細はこちらの公式HPをご覧ください
           <a href="https://www.okayama-u.ac.jp/tp/profile/index.html" class="text-indigo-500 underline">https://www.okayama-u.ac.jp/tp/profile/index.html</a>
         </p>

@@ -14,6 +14,7 @@ module.exports = {
         hashTagAccentColor: '#FFD099'
       },
       spacing: {
+        22: '5rem',
         30: '7.5rem'
       },
       zIndex: {

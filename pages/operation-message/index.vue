@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative">
     <!-- ヘッダー -->
     <div class="my-5">
       <Header title="運営団体メッセージ" colors="bg-themeColor text-white" />
@@ -10,7 +10,7 @@
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="校友会からのメッセージ" />
       <AccountViewer :src="alumni_src" role="国立大学校友会 総務委員長" name="山口 優" />
       <div class="p-1">
-        <p class="tracking-wide leading-loose text-sm">
+        <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さんこんにちは。オンライン大学祭校友会総務委員長の山口優と申します。<br>
           この度は、令和3年度岡山大学祭をご覧いただきありがとうございます。
           今年度の岡山大学祭は、岡山大学の校友会と大学祭実行委員会の共同での開催となりました。<br>
@@ -38,7 +38,7 @@
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学祭実行委員会からのメッセージ" />
       <AccountViewer :src="committee_src" role="学祭実行委員会 委員長" name="天野 颯" />
       <div class="p-1">
-        <p class="tracking-wide leading-loose text-sm">
+        <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さんこんにちは。大学祭実行委員会委員長の天野颯と申します。<br>
           この度は、令和3年度岡山大学祭をご覧いただきありがとうございます。今年度の大学祭は感染拡大防止のため、昨年度と同様オンラインでの開催となりました。<br>
           例年のように大学祭が対面で行うことができていれば、各団体が出店するバザー店舗や、普段の練習の成果を発揮する団体企画でのパフォーマンスなど様々な企画を計画していました。

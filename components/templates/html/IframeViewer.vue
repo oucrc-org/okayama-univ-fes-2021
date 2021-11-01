@@ -1,6 +1,6 @@
 <template>
   <div class="container max-w-screen-lg mt-10 mx-auto">
-    <div class="px-5">
+    <div class="px-2">
       <div class="relative overflow-hidden" style="padding-bottom: 56.25%">
         <iframe
           class="absolute h-full w-full"
