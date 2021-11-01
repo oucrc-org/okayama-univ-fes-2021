@@ -600,7 +600,7 @@ export default Vue.extend({
     DailyLiveOrVideo,
     SurveyBanner
   },
-  asyncData ({ app }: Context): { tweets: ITweet[] } {
+  asyncData ({ app }: Context): Promise<{ tweets: ITweet[] }> {
     return app.$axios.get(`${url}/twitter`).then((res: IResponseTweets) => {
       return { tweets: res.data.data }
     }).catch((err) => {
