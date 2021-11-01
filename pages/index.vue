@@ -5,6 +5,7 @@
       <picture>
         <source :srcset="require('@/assets/img/static/home/background.webp')" type="image/webp">
         <img
+          id="hero_background"
           class="relative top-0 w-screen object-cover object-left landing-background"
           src="@/assets/img/static/home/background.jpg"
           alt="ヒーローエリア"
@@ -23,7 +24,7 @@
           >
         </picture>
       </div>
-      <div class="absolute top-20 sm:top-16 left-0 right-0 text-center">
+      <div id="tweet-area" class="absolute top-20 sm:top-16 left-0 right-0 text-center">
         <!--== ▼ タイトル ==-->
         <div>
           <h1 class="text-white text-4xl lg:text-6xl font-bold tracking-widest">
@@ -41,7 +42,7 @@
         <!--== ▲ タイトル ==-->
 
         <!--== ▼ Twitterで応援メッセージ募集中 ==-->
-        <div class="mt-20 sm:mt-24 lg:mt-36 px-4 sm:max-w-md lg:max-w-screen-md mx-auto">
+        <div class="mt-20 sm:mt-24 lg:mt-36 px-4 sm:max-w-lg lg:max-w-screen-lg mx-auto">
           <div class="mb-6 lg:mb-14 px-8 sm:px-12 text-center">
             <img
               src="@/assets/img/static/home/twitter_title.png"
@@ -52,30 +53,30 @@
 
           <div class="grid lg:grid-cols-2 gap-4">
             <!-- こちらには1~3番目の投稿を表示-->
-            <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url" class="grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105">
+            <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url" class="grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105">
               <div>
-                <img class="rounded-full" style="max-width: 60px" :src="tweet.avatar_url" :alt="tweet.display_name">
+                <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
               </div>
               <div class="col-span-4">
-                <p class="text-xs lg:text-sm text-left tracking-wider leading-5">
+                <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
                   {{ tweet.comment }}
                 </p>
-                <p class="text-xs lg:text-sm text-hashTagColor text-right font-semibold mt-3">
+                <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                   #岡山大学祭2021
                 </p>
               </div>
             </div>
 
             <!-- こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
-            <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url" class="hidden lg:grid grid-cols-5 gap-4 bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105">
+            <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url" class="hidden lg:grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105">
               <div>
-                <img class="rounded-full" style="max-width: 60px" :src="tweet.avatar_url" :alt="tweet.display_name">
+                <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
               </div>
               <div class="col-span-4">
-                <p class="text-xs lg:text-sm text-left tracking-wider leading-5">
+                <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
                   {{ tweet.comment }}
                 </p>
-                <p class="text-xs lg:text-sm text-hashTagColor text-right font-semibold mt-3">
+                <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                   #岡山大学祭2021
                 </p>
               </div>
@@ -645,6 +646,7 @@ export default Vue.extend({
   mounted () {
     init()
     $('#about_background').height($('#about_container').height() as number + 260)
+    $('#hero_background').height($('#tweet-area').height() as number + 160)
     this.checkIE()
   },
   beforeDestroy () {
