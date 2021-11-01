@@ -118,36 +118,7 @@
 
     <section>
       <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
-        <p class="mb-3">
-          ・スタンプラリーへの参加は岡山大学生のみならず、一般の方もご参加いただけます。
-        </p>
-        <p class="mb-3">
-          ・景品応募期間は、スタンプラリー終了後の <u>11/18（木）0:00〜 11/24（水）23:59</u> までとさせていただきます。
-        </p>
-        <p class="mb-3">
-          ・当選権利はご当選者本人に限り、他人に譲渡することはできません。またオークションへの出品なども固くお断りします。
-        </p>
-        <p class="mb-3">
-          ・プレゼント送付前にアカウント連携を解除された場合は当選が無効となります。
-        </p>
-        <p class="mb-3">
-          ・応募できる商品は、スタンプ数に関わらず <u>お一人につき1商品</u> とさせていただきます。
-        </p>
-        <p class="mb-3">
-          ・必要スタンプ数に対して<u>所有スタンプ数が多いほど、当選確率が上昇</u>します。<br>（例: スタンプ5個の景品をスタンプ8個所有した状態で応募すると、当選確率は8/5倍）
-        </p>
-        <p class="mb-3">
-          ・応募者がいなかった景品に関しましては、スタンプを8つ全て集めた参加者で2次抽選を行うことがあります。
-        </p>
-        <p class="mb-3">
-          ・応募はお一人につき1回までです。別アカウントからの複数応募が判明した場合、無効とさせていただく場合があります。
-        </p>
-        <p class="mb-3">
-          ・当選は発送をもってかえさせていただきます。商品の発送は、2022年1月中を予定しています。
-        </p>
-        <p class="mb-3">
-          ・本キャンペーンは、やむを得ない事情により中止または内容が変更となる場合がございますので、あらかじめご了承ください。
-        </p>
+        <ApplyNotes />
       </BodyWithHeader>
     </section>
   </div>
@@ -162,6 +133,7 @@ import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
 import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
 import HTMLLeader from '@/components/templates/html/HTMLLeader.vue'
 import StampStatus from '@/components/templates/stamp/StampStatus.vue'
+import ApplyNotes from '@/components/pages/ApplyNotes.vue'
 
 const url = process.env.BACKEND_API_URL
 
@@ -172,7 +144,8 @@ export default Vue.extend({
     VerticalTitle,
     BodyWithHeader,
     RoundedButton,
-    HTMLLeader
+    HTMLLeader,
+    ApplyNotes
   },
   middleware: 'auth',
   asyncData ({ app }: Context) {

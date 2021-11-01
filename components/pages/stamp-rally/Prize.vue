@@ -2,16 +2,16 @@
   <div class="relative flex flex-col gap-y-2">
     <picture>
       <source :srcset="`${item.image_path}.webp`" type="image/webp">
-      <img :src="`${item.image_path}.jpg`" :alt="item.name" class="object-cover rounded-xl bg-gray-500 h-48">
+      <img :src="`${item.image_path}.jpg`" :alt="item.name" class="object-cover rounded-lg bg-gray-500 h-40">
     </picture>
 
-    <div class="text-xl font-bold">
+    <div class="text-xl font-bold w-10/12 sm:w-auto">
       {{ item.name }}
     </div>
     <div class="text-gray-700">
       抽選{{ item.stock }}名
     </div>
-    <div class="absolute top-2 right-2 rounded-full text-white text-xs bg-themeColor p-1">
+    <div class="absolute top-4 left-44 rounded-sm text-white text-xs bg-themeColor px-3 py-2">
       スタンプ{{ item.required_stamps }}コ
     </div>
   </div>
