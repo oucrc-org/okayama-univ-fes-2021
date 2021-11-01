@@ -9,8 +9,9 @@
         <p class="mt-8 mb-4 text-yellow-400 text-lg font-bold">
           Question
         </p>
+        <!-- brやuタグのためにHTMLLeaderを使用 -->
         <p class="mb-4 text-xl font-bold">
-          {{ question.quiz }}
+          <HTMLLeader :body="question.quiz" />
         </p>
         <div class="mb-4 flex flex-col gap-y-3">
           <div
@@ -113,6 +114,7 @@ import Header from '@/components/layouts/Header.vue'
 import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import BodyWithHeader from '@/components/templates/header/BodyWithHeader.vue'
 import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
+import HTMLLeader from '~/components/templates/html/HTMLLeader.vue'
 
 const url = process.env.BACKEND_API_URL
 
@@ -121,7 +123,8 @@ export default Vue.extend({
     Header,
     VerticalTitle,
     BodyWithHeader,
-    RoundedButton
+    RoundedButton,
+    HTMLLeader
   },
   middleware: 'auth',
   asyncData ({ app }: Context) {
