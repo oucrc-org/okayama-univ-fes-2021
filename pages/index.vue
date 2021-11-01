@@ -602,7 +602,6 @@ export default Vue.extend({
   },
   asyncData ({ app }: Context): { tweets: ITweet[] } {
     return app.$axios.get(`${url}/twitter`).then((res: IResponseTweets) => {
-      console.log(res.data.data)
       return { tweets: res.data.data }
     }).catch((err) => {
       // eslint-disable-next-line no-console
