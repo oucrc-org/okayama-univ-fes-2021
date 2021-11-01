@@ -6,7 +6,7 @@
       <VerticalTitle text="ABOUT" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-14 mx-auto">
         <div class="w-4/5 tracking-widest leading-6 px-4">
-          <picture>
+          <picture v-if="club.cover">
             <source :srcset="iImageToUrl(club.cover, 788, 75, true)" type="image/webp">
             <img class="rounded-xl" :src="iImageToUrl(club.cover, 788, 75)" alt="団体画像">
           </picture>

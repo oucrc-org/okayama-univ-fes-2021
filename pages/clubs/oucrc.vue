@@ -94,7 +94,7 @@ export default Vue.extend({
       return Object.values(resultUnordered).sort((a, b) => a.category.ordering_key - b.category.ordering_key)
     },
     alternativeCoverImage (): string {
-      return require('~/assets/img/cover_alternative.png')
+      return require('~/assets/img/cover_alternative.jpg')
     }
   }
 })

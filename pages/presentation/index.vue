@@ -115,7 +115,7 @@ export default Vue.extend({
   },
   computed: {
     alternativeCoverImage (): string {
-      return require('~/assets/img/cover_alternative.png')
+      return require('~/assets/img/cover_alternative.jpg')
     }
   }
 })
