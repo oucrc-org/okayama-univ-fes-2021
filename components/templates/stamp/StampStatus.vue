@@ -15,13 +15,15 @@
 </template>
 
 <script lang="ts">
+import PropType from 'vue'
 import StampColumn from '~/components/templates/stamp/StampColumn.vue'
+import IStamp from '~/assets/js/type/stamp/IStamp'
 
 export default {
   components: { StampColumn },
   props: {
     stamps: {
-      type: Array,
+      type: Array as PropType<IStamp[]>,
       // eslint-disable-next-line vue/require-valid-default-prop
       default: []
     }
