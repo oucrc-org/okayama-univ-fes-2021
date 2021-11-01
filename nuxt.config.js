@@ -132,6 +132,14 @@ export default {
       home: '/mypage'
     },
     localStorage: false,
+    cookie: {
+      prefix: 'auth.',
+      options: {
+        path: '/',
+        domain: 'okayama-univ-fes-2021.vercel.app',
+        maxAge: 60 * 30
+      }
+    },
     strategies: {
       google: {
         client_id: process.env.GOOGLE_CLIENT_ID
