@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-xl mt-24 mx-auto relative md:pr-28">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative md:pr-28">
     <Header title="今日のクイズ" colors="bg-themeColor text-white" />
 
     <VerticalTitle text="QUIZ" colors="text-gray-200" class="-z-10" />
@@ -13,7 +13,7 @@
         <p class="mb-4 text-xl font-bold">
           <HTMLLeader :body="question.quiz" />
         </p>
-        <div class="mb-4 flex flex-col gap-y-3">
+        <div class="mb-4 mt-12 flex flex-col gap-y-3">
           <div
             v-for="{id, contents} in question.answers"
             :key="`answer-${id}`"
@@ -39,7 +39,7 @@
             </label>
           </div>
         </div>
-        <div class="mb-4">
+        <div class="mb-4 mt-16 text-center">
           <a href="#hint-modal">
             <RoundedButton text="ヒント" class="border-themeColor bg-white text-themeColor cursor-pointer" />
           </a>
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="text-center">
           <RoundedButton
             text="答え合わせ →"
             class="text-white cursor-pointer"
@@ -81,14 +81,6 @@
     </section>
 
     <section>
-      <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
-        <p>
-          クイズへは正解するまで何回でも挑戦いただけます。
-        </p>
-      </BodyWithHeader>
-    </section>
-
-    <section>
       <BodyWithHeader title="スタンプ達成状況" colors="border-themeColor text-themeColor">
         <!-- TODO: コンポーネント作る -->
       </BodyWithHeader>
@@ -102,6 +94,41 @@
         <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
           <RoundedButton text="応募する →" disabled="true" class="border-blue-300 bg-blue-300 text-white" />
         </div>
+      </BodyWithHeader>
+    </section>
+
+    <section>
+      <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
+        <p class="mb-3">
+          ・スタンプラリーへの参加は岡山大学生のみならず、一般の方もご参加いただけます。
+        </p>
+        <p class="mb-3">
+          ・景品応募期間は、スタンプラリー終了後の <u>11/18（木）0:00〜 11/24（水）23:59</u> までとさせていただきます。
+        </p>
+        <p class="mb-3">
+          ・当選権利はご当選者本人に限り、他人に譲渡することはできません。またオークションへの出品なども固くお断りします。
+        </p>
+        <p class="mb-3">
+          ・プレゼント送付前にアカウント連携を解除された場合は当選が無効となります。
+        </p>
+        <p class="mb-3">
+          ・応募できる商品は、スタンプ数に関わらず <u>お一人につき1商品</u> とさせていただきます。
+        </p>
+        <p class="mb-3">
+          ・必要スタンプ数に対して<u>所有スタンプ数が多いほど、当選確率が上昇</u>します。<br>（例: スタンプ5個の景品をスタンプ8個所有した状態で応募すると、当選確率は8/5倍）
+        </p>
+        <p class="mb-3">
+          ・応募者がいなかった景品に関しましては、スタンプを8つ全て集めた参加者で2次抽選を行うことがあります。
+        </p>
+        <p class="mb-3">
+          ・応募はお一人につき1回までです。別アカウントからの複数応募が判明した場合、無効とさせていただく場合があります。
+        </p>
+        <p class="mb-3">
+          ・当選は発送をもってかえさせていただきます。商品の発送は、2022年1月中を予定しています。
+        </p>
+        <p class="mb-3">
+          ・本キャンペーンは、やむを得ない事情により中止または内容が変更となる場合がございますので、あらかじめご了承ください。
+        </p>
       </BodyWithHeader>
     </section>
   </div>
