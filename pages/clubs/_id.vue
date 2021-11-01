@@ -6,7 +6,10 @@
       <VerticalTitle text="ABOUT" colors="text-gray-200" />
       <div class="container max-w-screen-lg mt-14 mx-auto">
         <div class="w-4/5 tracking-widest leading-6 px-4">
-          <img class="rounded-xl" :src="coverUrl" alt="団体画像">
+          <picture>
+            <source :srcset="`${coverUrl}?fm=webp&fit=clip&max-w=788&q=75`" type="image/webp">
+            <img class="rounded-xl" :src="`${coverUrl}?fit=clip&max-w=788&q=75`" alt="団体画像">
+          </picture>
         </div>
       </div>
     </div>

@@ -13,11 +13,14 @@
         <CenterTitle :text="clubsWithDepartment.department.name" colors="border-themeColor text-themeColor" />
         <div class="grid grid-cols-2 gap-4 mx-4 my-8">
           <LinkTo v-for="club in clubsWithDepartment.clubs" :key="`club-${club.id}`" :to="`/clubs/${club.id}`">
-            <img
-              :src="typeof club.cover === 'undefined' ? alternativeCoverImage : club.cover.url"
-              :alt="`${club.name}部のカバー画像`"
-              class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
-            >
+            <picture>
+              <source :srcset="typeof club.cover === 'undefined' ? alternativeCoverImage : `${club.cover.url}?fm=webp&fit=clip&w=432&q=70`" type="image/webp">
+              <img
+                :src="typeof club.cover === 'undefined' ? alternativeCoverImage : `${club.cover.url}?fit=clip&w=432&q=70`"
+                :alt="`${club.name}部のカバー画像`"
+                class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72"
+              >
+            </picture>
             <div class="m-2 lg:text-lg xl:text-xl">
               {{ club.name }}
             </div>
