@@ -157,6 +157,7 @@ export default Vue.extend({
     Header,
     LinkTo
   },
+  middleware: 'auth',
   asyncData (context: Context) {
     const { app } = context
     return app.$axios.get(

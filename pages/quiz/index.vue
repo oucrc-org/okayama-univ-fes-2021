@@ -110,9 +110,7 @@
           </div>
         </div>
 
-        <div class="text-center mt-12 md:pl-3">
-          <RoundedButton text="応募する →" disabled="true" class="border-blue-300 bg-blue-300 text-white" />
-        </div>
+        <ApplyButton />
       </BodyWithHeader>
     </section>
 
@@ -134,6 +132,7 @@ import RoundedButton from '@/components/templates/parts/RoundedButton.vue'
 import HTMLLeader from '@/components/templates/html/HTMLLeader.vue'
 import StampStatus from '@/components/templates/stamp/StampStatus.vue'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
+import ApplyButton from '@/components/templates/parts/ApplyButton.vue'
 
 const url = process.env.BACKEND_API_URL
 
@@ -145,7 +144,8 @@ export default Vue.extend({
     BodyWithHeader,
     RoundedButton,
     HTMLLeader,
-    ApplyNotes
+    ApplyNotes,
+    ApplyButton
   },
   middleware: 'auth',
   asyncData ({ app }: Context) {
@@ -156,7 +156,6 @@ export default Vue.extend({
         'Access-Control-Allow-Origin': `${url}/*`
       }
     }).then((res) => {
-      console.log(res.data)
       return app.$axios.get(`${url}/user`, {
         headers: {
           'Access-Token': app.$auth.getToken('google').replace('Bearer ', ''),
