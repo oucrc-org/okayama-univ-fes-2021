@@ -5,12 +5,12 @@
       v-for="option in options"
       :id="id"
       :key="option.id"
-      class="my-2"
+      class="my-2 flex flex-row items-center"
     >
       <input
         :id="option.id"
         type="radio"
-        class="radio radio-secondary"
+        class="radio border-themeColor checked:bg-themeColor"
         name="present_id"
         :value="option.id"
         :disabled="stampNumber < option.required_stamps"
@@ -18,7 +18,11 @@
         required
         @change="onChange(option.id.toString())"
       >
-      <label :for="option.id" class="cursor-pointer label-text">
+      <label
+        :for="option.id"
+        class="cursor-pointer label-text ml-2"
+        :class="{'text-gray-400': stampNumber < option.required_stamps}"
+      >
         <span>{{ option.name }}</span>
       </label>
     </div>
@@ -55,7 +59,8 @@ export default {
     },
     onChange: {
       type: Function,
-      default: () => {}
+      default: () => {
+      }
     }
   }
 }
