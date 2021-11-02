@@ -19,7 +19,7 @@
       <p class="mt-6">
         取得スタンプ数:
         <span class="badge inline-block bg-themeColor border-themeColor">
-          {{ stampNumber }}個
+          {{ stampCount }}個
         </span>
       </p>
 
@@ -92,10 +92,19 @@ import VerticalTitle from '@/components/layouts/VerticalTitle.vue'
 import StampStatus from '@/components/templates/stamp/StampStatus.vue'
 import IResponse from '@/assets/js/type/request/IResponse'
 import IPrize from '@/assets/js/type/IPrize'
+import IStamp from '~/assets/js/type/stamp/IStamp'
 import StampRallyPrize from '@/components/pages/stamp-rally/Prize.vue'
 import ApplyButton from '@/components/templates/parts/ApplyButton.vue'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
-import IStamp from '~/assets/js/type/stamp/IStamp'
+
+interface IResponseUser extends IResponse {
+  data: {
+    success: boolean,
+    stamps: IStamp[],
+    // eslint-disable-next-line camelcase
+    answer_today_question: boolean
+  }
+}
 
 interface IResponsePrize extends IResponse {
   data: {
@@ -118,23 +127,20 @@ export default {
     ApplyButton
   },
   middleware: 'auth',
-  asyncData ({
-    app,
-    error
-  }: Context) {
+  asyncData ({ app, error }: Context) {
     // noinspection TypeScriptUnresolvedFunction
     return app.$axios.get(`${url}/user`, {
       headers: {
         'Access-Token': app.$auth.getToken('google').replace('Bearer ', ''),
         'Access-Control-Allow-Origin': `${url}/*`
       }
-    }).then((res) => {
+    }).then((res: IResponseUser) => {
       return app.$axios.get(`${url}/presents`).then((r: IResponsePrize) => {
         return {
           stamps: res.data.stamps,
           prizes: r.data.data,
           isAnsweredTodayQuestion: res.data.answer_today_question,
-          stampNumber: res.data.stamps.filter((stamp: IStamp) => stamp.has_stamp).length
+          stampCount: res.data.stamps.map(s => Number(s.has_stamp)).reduce((a, b) => a + b)
         }
       }).catch((err) => {
         error({
@@ -148,10 +154,10 @@ export default {
   },
   data () {
     return {
-      stampRallyItems: [],
-      stamps: [],
-      prizes: [],
-      isAnsweredTodayQuestion: false
+      stamps: [] as IStamp[],
+      prizes: [] as IPrize[],
+      isAnsweredTodayQuestion: false,
+      stampCount: 0
     }
   }
 }
