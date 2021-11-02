@@ -27,7 +27,9 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: ['checked']
+    }
   },
   plugins: [
     require('daisyui')

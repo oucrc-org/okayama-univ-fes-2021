@@ -13,6 +13,7 @@
             autocomplete="family-name"
             label="姓 *"
             placeholder=""
+            maxlength="80"
             :value="family_name"
             :on-change="(value) => family_name = value"
           />
@@ -21,6 +22,7 @@
             autocomplete="given-name"
             label="名 *"
             placeholder=""
+            maxlength="80"
             :value="given_name"
             :on-change="(value) => given_name = value"
           />
@@ -31,6 +33,7 @@
             autocomplete="family-name-kana"
             label="セイ *"
             placeholder=""
+            maxlength="80"
             :value="family_name_kana"
             :on-change="(value) => family_name_kana = value"
           />
@@ -39,26 +42,27 @@
             autocomplete="given-name-kana"
             label="メイ *"
             placeholder=""
+            maxlength="80"
             :value="given_name_kana"
             :on-change="(value) => given_name_kana = value"
           />
         </div>
 
         <TextInput
-          name="email"
+          name=""
           type="email"
-          autocomplete="email"
           label="Googleのメールアドレス *"
           :value="$store.state.auth.user.email"
           :readonly="true"
           :on-change="(value) => secondary_email = value"
         />
         <TextInput
-          name="email"
+          name="secondary_email"
           type="email"
           autocomplete="email"
           label="予備のメールアドレス *"
           placeholder="例: XXXX@yahoo.co.jp"
+          maxlength="80"
           :value="secondary_email"
           :on-change="(value) => secondary_email = value"
         />
@@ -67,6 +71,7 @@
           autocomplete="tel-national"
           type="tel"
           label="お電話番号 *"
+          maxlength="80"
           :value="tel"
           :on-change="(value) => tel = value"
         />
@@ -76,6 +81,7 @@
           autocomplete="postal-code"
           label="郵便番号 *"
           placeholder="例: 7008530"
+          maxlength="80"
           :value="postal_code"
           :on-change="(value) => postal_code = value"
         />
@@ -84,24 +90,35 @@
           autocomplete="street-address"
           label="住所 *"
           placeholder="例: 岡山市北区〇〇"
+          maxlength="80"
           :value="address"
           :on-change="(value) => address = value"
         />
 
         <SelectInput
           id="presents"
-          label="応募するプレゼント"
+          label="応募するプレゼント *"
           :options="presents"
           :stamp-number="stampNumber"
           :value="present_id"
           :on-change="(value) => present_id = value"
         />
 
+        <hr>
+
+        <div class="form-control inline-block">
+          <label class="cursor-pointer label justify-start">
+            <input v-model="agreed" type="checkbox" class="checkbox mr-3">
+            <span class="label-text">プライバシーポリシー・応募の際の注意点 を確認しました</span>
+          </label>
+        </div>
+
+        <div class="flex gap-3 mb-3 justify-center">
+          <a href="/privacyPolicy" class="text-gray-500 text-sm font-semibold" target="_blank">プライバシーポリシー</a>
+          <a href="#apply-notes" class="text-gray-500 text-sm font-semibold ml-4">応募の際の注意点</a>
+        </div>
+
         <div>
-          <div class="flex gap-3 mb-3">
-            <a href="/privacyPolicy" class="btn btn-info">プライバシーポリシー</a>
-            <a href="#apply-notes" class="btn btn-error">応募の際の注意点</a>
-          </div>
           <div id="apply-notes" class="modal">
             <div class="modal-box">
               <ApplyNotes />
@@ -110,22 +127,16 @@
               </div>
             </div>
           </div>
-          <div class="form-control inline-block">
-            <label class="cursor-pointer label">
-              <input v-model="agreed" type="checkbox" class="checkbox mr-3">
-              <span class="label-text">プライバシーポリシー，応募の際の注意点を確認しました</span>
-            </label>
-          </div>
         </div>
-        <hr>
         <div class="mx-auto">
-          <div class="text-center py-6">
-            <button :disabled="!agreed" class="btn btn-lg btn-info" type="submit">
-              応募
+          <div class="text-center">
+            <button :disabled="!agreed" type="submit">
+              <RoundedButton
+                text="応募"
+                class="text-white cursor-pointer"
+                :class="!agreed ? 'bg-blue-300 border-blue-300 cursor-not-allowed': 'bg-themeColor border-themeColor'"
+              />
             </button>
-          </div>
-          <div v-if="!agreed">
-            応募には、プライバシーポリシーへの同意と注意点の確認が必要です。
           </div>
         </div>
       </form>
@@ -157,6 +168,8 @@ import TextInput from '~/components/templates/form/TextInput.vue'
 import SelectInput from '~/components/templates/form/RadioInput.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import ApplyNotes from '~/components/pages/ApplyNotes.vue'
+import IStamp from '~/assets/js/type/stamp/IStamp'
+import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
 
 const baseUrl = process.env.BACKEND_API_URL
 
@@ -166,7 +179,8 @@ export default Vue.extend({
     TextInput,
     Header,
     LinkTo,
-    ApplyNotes
+    ApplyNotes,
+    RoundedButton
   },
   middleware: 'auth',
   asyncData (context: Context) {
@@ -186,7 +200,7 @@ export default Vue.extend({
       ).then((user) => {
         return {
           presents: presents.data.data,
-          stampNumber: user.data.stamps?.length ?? 0
+          stampNumber: user.data.stamps.filter((stamp: IStamp) => stamp.has_stamp).length
         }
       })
     })
