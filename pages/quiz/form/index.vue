@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-3 py-8">
+  <div class="container max-w-lg mx-auto px-3 py-8">
     <Header title="応募フォーム" colors="bg-themeColor test-white" />
     <!-- 送信イベントはボタン側に移動させました -->
     <div v-if="stampNumber > 0">
@@ -99,8 +99,16 @@
 
         <div>
           <div class="flex gap-3 mb-3">
-            <a href="#" class="btn btn-info">プライバシーポリシー</a>
-            <a href="#" class="btn btn-error">応募の際の注意点</a>
+            <a href="/privacyPolicy" class="btn btn-info">プライバシーポリシー</a>
+            <a href="#apply-notes" class="btn btn-error">応募の際の注意点</a>
+          </div>
+          <div id="apply-notes" class="modal">
+            <div class="modal-box">
+              <ApplyNotes />
+              <div class="modal-action">
+                <a href="#" class="btn btn-accent">閉じる</a>
+              </div>
+            </div>
           </div>
           <div class="form-control inline-block">
             <label class="cursor-pointer label">
@@ -148,6 +156,7 @@ import Header from '~/components/layouts/Header.vue'
 import TextInput from '~/components/templates/form/TextInput.vue'
 import SelectInput from '~/components/templates/form/RadioInput.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import ApplyNotes from '~/components/pages/ApplyNotes.vue'
 
 const baseUrl = process.env.BACKEND_API_URL
 
@@ -156,19 +165,17 @@ export default Vue.extend({
     SelectInput,
     TextInput,
     Header,
-    LinkTo
+    LinkTo,
+    ApplyNotes
   },
   middleware: 'auth',
   asyncData (context: Context) {
     const { app } = context
-    return app.$axios.get(
-      `${baseUrl}/presents`,
-      {
-        headers: {
-          'Access-Token': app.$auth.getToken('google').replace('Bearer ', '')
-        }
+    return app.$axios.get(`${baseUrl}/presents`, {
+      headers: {
+        'Access-Token': app.$auth.getToken('google').replace('Bearer ', '')
       }
-    ).then((presents) => {
+    }).then((presents) => {
       return app.$axios.get(
         `${baseUrl}/user`,
         {
@@ -220,7 +227,8 @@ export default Vue.extend({
           headers: {
             'Access-Token': (this as any).$auth.getToken('google').replace('Bearer ', '')
           }
-        }).then(() => {
+        }
+      ).then(() => {
         location.href = '/quiz/form/thankyou'
       }).catch(() => {
         alert('送信に失敗しました。再度ログインの上、ご応募ください。');

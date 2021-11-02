@@ -5,7 +5,7 @@
       v-for="option in options"
       :id="id"
       :key="option.id"
-      class="my-2"
+      class="my-2 flex flex-row items-center"
     >
       <input
         :id="option.id"
@@ -18,7 +18,7 @@
         required
         @change="onChange(option.id.toString())"
       >
-      <label :for="option.id" class="cursor-pointer label-text">
+      <label :for="option.id" class="cursor-pointer label-text ml-2">
         <span>{{ option.name }}</span>
       </label>
     </div>
