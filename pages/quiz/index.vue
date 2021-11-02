@@ -48,7 +48,7 @@
               <div class="py-5">
                 <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">ヒント</h2>
                 <div class="w-64 mx-auto">
-                  <img src="/modal/hint.jpg" alt="image">
+                  <img class="ml-2" src="/modal/hint.jpg" alt="image">
                 </div>
                 <p class="font-semibold pt-6">{{ question.hint }}</p>
                 <div class="modal-action">
