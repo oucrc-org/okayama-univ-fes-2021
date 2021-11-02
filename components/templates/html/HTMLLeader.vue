@@ -15,7 +15,7 @@ export default {
   methods: {
     fixImageRequestSize (html: string): string {
       return html.replaceAll(
-        /<img src="([^"?]+)(?:\?[^"]*)?"[^>]*>/g,
+        /<img .*?src="(.*?)\??.*?".*?>/g,
         (_, p1) => `<picture>
           <source srcset="${p1}?fm=webp&fit=clip&w=976&q=75" type="image/webp">
           <img src="${p1}?fit=clip&w=976&q=75" alt="">
