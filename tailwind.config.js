@@ -10,12 +10,19 @@ module.exports = {
         themeColor: '#0071C5',
         themeLight: '#1D8CDE',
         accentColor: '#F68014',
+        shodouBack: '#1a1a1a',
         hashTagColor: '#00A1C5',
         hashTagAccentColor: '#FFD099'
       },
+      fontFamily: {
+        hina: ['Hina Mincho', 'san-serif']
+      },
       spacing: {
         22: '5rem',
-        30: '7.5rem'
+        30: '7.5rem',
+        140: '35rem',
+        160: '40rem',
+        200: '50rem'
       },
       zIndex: {
         '-10': '-10'
