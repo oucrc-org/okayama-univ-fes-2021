@@ -10,7 +10,7 @@
         src="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0"
         title="プロコンサート"
       />
-      <p class="text-red-600">学祭実行委員会さんに、他サイトでの埋め込みをデフォルトのONに戻していただく</p>
+      <p class="text-red-600">学祭実行委員会さんに、他サイトでの埋め込みをONに戻していただく</p>
       <client-only>
         <div class="my-5">
           <ProConcertSchedule />
