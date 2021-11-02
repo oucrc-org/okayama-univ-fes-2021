@@ -43,7 +43,7 @@
     <section>
       <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StampRallyPrize v-for="item in prizes" :key="item.id" :item="item" />
+          <StampRallyPrize v-for="item in prizes" :key="item.id" :item="item" :disabled="item.required_stamps > stampCount" />
         </div>
       </BodyWithHeader>
     </section>
