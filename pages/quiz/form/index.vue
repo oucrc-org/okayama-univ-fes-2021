@@ -40,6 +40,7 @@
             label="メイ *"
             placeholder=""
             :value="given_name_kana"
+            :on-change="(value) => given_name_kana = value"
           />
         </div>
 
