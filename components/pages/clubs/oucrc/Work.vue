@@ -28,9 +28,9 @@
       </div>
     </div>
 
-    <div>
+    <div :class="$style['oucrc_work_html']">
       <!-- リッチテキスト -->
-      <HTMLLeader :body="work.body_html" />
+      <HTMLLeader :body="addClassToSoundCloudIframe(work.body_html)" />
     </div>
   </div>
 </template>
@@ -60,6 +60,39 @@ export default Vue.extend({
       required: false,
       default: '#0071C5'
     }
+  },
+  methods: {
+    addClassToSoundCloudIframe (str :string): string {
+      // 他の埋め込みに影響しないようにこうする
+      // CSSではtitle属性の内容で選択できないので、仕方なくHTMLを書き換える
+      // data属性はCSSで使える
+      return str.replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
+    }
   }
 })
 </script>
+
+<style module>
+/* MicroCMSのサンクラ埋め込み */
+.oucrc_work_html iframe[data-soundcloud] {
+  float: left;
+  max-width: calc(944px/3);
+  max-height: 300px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+/* MicroCMSの埋め込みがpを挟んでくるため
+float:leftの障害になる
+文字が書かれている場合を想定して高さを無くす */
+.oucrc_work_html iframe[data-soundcloud] + p {
+  height: 0px;
+}
+
+/* スマホでは */
+@media screen and (max-width: 768px) {
+  .oucrc_work_html iframe[data-soundcloud='true'] {
+    max-width: 100%;
+  }
+}
+</style>
