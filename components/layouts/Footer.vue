@@ -13,19 +13,23 @@
           target="_blank"
           class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96"
         >
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/twitter.png" alt="Twitter">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/twitter.png" alt="Twitter" />
           Twitter で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
-        <a :href="'http://www.facebook.com/share.php?u=' + shareUrl" target="_blank" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/facebook.png" alt="Facebook">
+        <a
+          :href="'http://www.facebook.com/share.php?u=' + shareUrl"
+          target="_blank"
+          class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96"
+        >
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/facebook.png" alt="Facebook" />
           Facebook で シェア
         </a>
       </div>
       <div class="text-center w-full mt-5">
         <a :href="'http://line.me/R/msg/text/?' + shareUrl" target="_blank" class="text-lg border border-gray-300 inline-block rounded-full py-5 w-5/6 sm:w-96">
-          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/line.png" alt="LINE">
+          <img class="inline-block text-gray-700 tracking-widest h-6 mr-5" src="@/assets/img/icon/line.png" alt="LINE" />
           LINE で シェア
         </a>
       </div>
@@ -50,9 +54,11 @@
     <footer class="text-gray-400 tracking-widest text-sm">
       <div class="flex justify-center items-center pt-8 pb-4">
         <div class="w-6 h-6 mr-3">
-          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会">
+          <img src="@/assets/img/slide-icons/21.jpg" alt="電子計算機研究会" />
         </div>
-        <span>制作: 岡山大学電子計算機研究会</span>
+        <a target="_blank" href="https://oucrc.net/">
+          制作: 岡山大学電子計算機研究会
+        </a>
       </div>
 
       <p class="text-center mt-10">
@@ -75,7 +81,7 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       shareUrl: 'https://oufes2021.com' + $nuxt.$route.path
     }
