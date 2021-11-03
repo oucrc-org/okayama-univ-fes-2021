@@ -212,6 +212,12 @@
           <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
         </picture>
       </a>
+      <a href="/presentation/win_covid">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
+        </picture>
+      </a>
       <SurveyBanner />
     </div>
     <!-- ▲ バーナー -->
