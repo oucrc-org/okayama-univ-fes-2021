@@ -4,7 +4,7 @@
     <Header title="読み込み中" colors="bg-themeColor text-white" />
     <div class="flex flex-col gap-y-16 my-16">
       <div class="mx-auto">
-        <img src="../assets/img/static/redirecting.png" width="90" />
+        <img src="@/assets/img/static/redirecting.png" width="90" />
       </div>
       <p class=" text-themeColor text-2xl text-center font-bold">
         少々お待ちください
