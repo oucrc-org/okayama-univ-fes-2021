@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '岡山大学祭2021 | 笑顔満祭岡大祭 〜心機一転しちゃいな祭〜',
+    title: '岡山大学祭2021 特設サイト | 笑顔満祭岡大祭 〜心機一転しちゃいな祭〜',
     htmlAttrs: {
       lang: 'ja'
     },
@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: ''
+        content: '岡山大学祭2021の特設サイトです。今年は「笑顔満祭岡大祭 〜心機一転しちゃいな祭〜」をテーマに、11/7（日）〜11/17（水）の期間中開催されます。岡山大学生が準備したコンテンツをふんだんに披露していきますので、是非この1週間お楽しみいただければと思います。'
       },
       {
         name: 'format-detection',
@@ -27,6 +27,40 @@ export default {
       {
         name: 'Theme-Color',
         content: '#FFFFFF'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: '岡山大学祭2021 | 笑顔満祭岡大祭 〜心機一転しちゃいな祭〜'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://oufes2021.com'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: '岡山大学祭2021'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '岡山大学祭2021の特設サイトです。今年は「笑顔満祭岡大祭 〜心機一転しちゃいな祭〜」をテーマに、11/7（日）〜11/17（水）の期間中開催されます。岡山大学生が準備したコンテンツをふんだんに披露していきますので、是非この1週間お楽しみいただければと思います。'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://raw.githubusercontent.com/smpny7/okayama-univ-fes-2021-countdown/main/ogp.jpg'
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
       },
       {
         name: 'google-site-verification',
