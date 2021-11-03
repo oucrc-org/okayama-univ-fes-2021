@@ -1,4 +1,4 @@
-export default interface IOption {
+export default interface IStamp {
   name: string,
   // eslint-disable-next-line camelcase
   image_path: string,
