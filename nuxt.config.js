@@ -121,7 +121,14 @@ export default {
     // https://www.npmjs.com/package/nuxt-webfontloader
     'nuxt-webfontloader',
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    [
+      '@nuxtjs/google-gtag',
+      {
+        id: 'G-SNX8TT1GKD',
+        debug: false
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
