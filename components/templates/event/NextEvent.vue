@@ -1,13 +1,14 @@
 <template>
-  <div class="hero bg-base-200 pb-4 pt-10 sm:py-10">
+  <div v-if="time && name" class="hero bg-base-200 pb-4 pt-10 sm:py-10">
     <div class="max-w-screen-lg px-2 sm:px-0">
       <LinkTo to="/live" class="flex-col hero-content lg:flex-row-reverse">
         <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_next_event_procon.webp')" type="image/webp">
+          <source v-if="webp" :srcset="webp" type="image/webp">
           <img
-            src="@/assets/img/static/home/burner_next_event_procon.jpg"
+            v-if="jpg"
+            :src="jpg"
             class="shadow-xl sm:max-w-lg lg:ml-8"
-            alt="学長からのメッセージ"
+            :alt="name + 'の画像'"
           >
         </picture>
         <div>
@@ -15,10 +16,10 @@
             次のイベント
           </h1>
           <p class="mb-2 font-bold text-2xl lg:text-3xl text-accentColor">
-            11/7（日）16:00 〜
+            {{ time }}
           </p>
           <p class="mb-5 text-lg lg:text-xl text-gray-700">
-            プロライブ（ハナコ、四千頭身、ぼる塾）
+            {{ name }}
           </p>
           <LinkTo
             to="/live"
@@ -33,8 +34,17 @@
 </template>
 
 <script>
+import getNextEvent from '~/assets/js/event/get-next-event'
 export default {
-
+  data () {
+    const { time, name, jpg, webp } = getNextEvent()
+    return {
+      time,
+      name,
+      webp,
+      jpg
+    }
+  }
 }
 </script>
 
