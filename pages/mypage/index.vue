@@ -19,7 +19,7 @@
       <p class="mt-6">
         取得スタンプ数:
         <span class="badge inline-block bg-themeColor border-themeColor">
-          {{ stamps.length }}個
+          {{ stampNumber }}個
         </span>
       </p>
 
@@ -95,6 +95,7 @@ import IPrize from '@/assets/js/type/IPrize'
 import StampRallyPrize from '@/components/pages/stamp-rally/Prize.vue'
 import ApplyButton from '@/components/templates/parts/ApplyButton.vue'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
+import IStamp from '~/assets/js/type/stamp/IStamp'
 
 interface IResponsePrize extends IResponse {
   data: {
@@ -132,7 +133,8 @@ export default {
         return {
           stamps: res.data.stamps,
           prizes: r.data.data,
-          isAnsweredTodayQuestion: res.data.answer_today_question
+          isAnsweredTodayQuestion: res.data.answer_today_question,
+          stampNumber: res.data.stamps.filter((stamp: IStamp) => stamp.has_stamp).length
         }
       }).catch((err) => {
         error({
