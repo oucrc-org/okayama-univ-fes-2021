@@ -56,7 +56,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://raw.githubusercontent.com/smpny7/okayama-univ-fes-2021-countdown/main/ogp.jpg'
+        content: 'https://raw.githubusercontent.com/oucrc-org/okayama-univ-fes-2021/main/assets/ogp.jpg'
       },
       {
         name: 'twitter:card',
