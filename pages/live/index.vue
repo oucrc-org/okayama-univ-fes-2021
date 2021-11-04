@@ -10,6 +10,19 @@
         src="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0"
         title="プロコンサート"
       />
+      <div class="alert mb-8 mt-6">
+        <div class="flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#0071C5" class="w-6 h-6 mx-2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <label>こちらの放送は、<span class="text-accentColor">11月7日（日）16:00〜</span> 開始します</label>
+        </div>
+      </div>
       <client-only>
         <div class="my-5">
           <ProConcertSchedule />
@@ -27,6 +40,19 @@
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
         title="校友会団体ステージ企画"
       />
+      <div class="alert mb-8 mt-6">
+        <div class="flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#0071C5" class="w-6 h-6 mx-2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <label>こちらの放送は、<span class="text-accentColor">11月16日（火）18:00〜</span> 開始します</label>
+        </div>
+      </div>
       <p class="text-red-600">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
@@ -45,6 +71,19 @@
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
         title="校友会団体ステージ企画"
       />
+      <div class="alert mb-8 mt-6">
+        <div class="flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#0071C5" class="w-6 h-6 mx-2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <label>こちらの放送は、<span class="text-accentColor">11月17日（水）18:00〜</span> 開始します</label>
+        </div>
+      </div>
       <p class="text-red-600 mt-52">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
