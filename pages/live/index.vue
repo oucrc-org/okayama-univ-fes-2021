@@ -15,6 +15,11 @@
           <ProConcertSchedule />
         </div>
       </client-only>
+      <div class="text-center mt-6">
+        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0">
+          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
+        </LinkTo>
+      </div>
     </BodyWithHeader>
 
     <BodyWithHeader title="校友会団体ステージ企画">
@@ -28,6 +33,13 @@
           <OperationStageSchedule1 />
         </div>
       </client-only>
+      <div class="text-center mt-6">
+        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0">
+          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
+        </LinkTo>
+      </div>
+
+      <div class="h-16" />
 
       <IframeViewer
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
@@ -39,6 +51,11 @@
           <OperationStageSchedule2 />
         </div>
       </client-only>
+      <div class="text-center mt-6">
+        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0">
+          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
+        </LinkTo>
+      </div>
     </BodyWithHeader>
   </div>
 </template>
@@ -52,6 +69,8 @@ import OperationStageSchedule1 from '../../components/pages/schedule/OperationSt
 import OperationStageSchedule2 from '../../components/pages/schedule/OperationStageSchedule2'
 import ProConcertSchedule from '../../components/pages/schedule/ProConcertSchedule'
 import Stream from '../../assets/img/header/streaming.png'
+import LinkTo from '@/components/templates/nuxt/LinkTo'
+import RoundedButton from '@/components/templates/parts/RoundedButton'
 
 export default {
   components: {
@@ -61,7 +80,9 @@ export default {
     IframeViewer,
     BodyWithHeader,
     Header,
-    VerticalTitle
+    VerticalTitle,
+    RoundedButton,
+    LinkTo
   },
   data () {
     return {
