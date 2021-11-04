@@ -186,5 +186,13 @@ export default {
         client_id: process.env.GOOGLE_CLIENT_ID
       }
     }
+  },
+  // ロード中のインジケーター
+  // DEMO: https://tobiasahlin.com/spinkit/
+  // 選択肢: https://nuxtjs.org/docs/configuration-glossary/configuration-loading-indicator/#built-in-indicators
+  loadingIndicator: {
+    name: 'three-bounce',
+    color: 'white',
+    background: '#0171C5'
   }
 }
