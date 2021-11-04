@@ -7,7 +7,7 @@
     </div>
 
     <BodyWithHeader title="学長からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0&cc_load_policy=1" title="学長からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?cc_load_policy=1" title="学長からのメッセージ" />
       <AccountViewer :src="src" role="国立大学法人岡山大学長" name="槇野 博史" />
       <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
@@ -27,7 +27,7 @@
     </BodyWithHeader>
 
     <BodyWithHeader title="岡山大学について">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="岡山大学について" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU" title="岡山大学について" />
       <div class="p-1">
         <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-10">
           岡山大学は、1０学部8研究科を有し、岡山市中心部の緑豊かな広大なキャンパスで、約１万３千人の学生、留学生が学んでいます。
