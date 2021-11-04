@@ -53,7 +53,7 @@
             </div>
 
             <IframeViewer
-              src="https://www.youtube-nocookie.com/embed/t4F5Q17Hksg?controls=0"
+              src="https://www.youtube-nocookie.com/embed/t4F5Q17Hksg"
               title="コロナ禍での飲食マナー 岡山大学コロナ対策応援団"
               class="mt-12"
             />
@@ -61,7 +61,7 @@
 
           <BodyWithHeader title="第二弾 押忍!!「コロナ禍での公衆衛生マナー」を紹介！">
             <IframeViewer
-              src="https://www.youtube-nocookie.com/embed/qiBzDQFn65I?controls=0"
+              src="https://www.youtube-nocookie.com/embed/qiBzDQFn65I"
               title="コロナ禍での公衆衛生マナー 岡山大学コロナ対策応援団"
               class="mt-12"
             />
@@ -69,7 +69,7 @@
 
           <BodyWithHeader title="第三弾 押忍!!「校友会クラブ 普段のコロナ対策1」を紹介！">
             <IframeViewer
-              src="https://www.youtube-nocookie.com/embed/cg7skAIS7Uk?controls=0"
+              src="https://www.youtube-nocookie.com/embed/cg7skAIS7Uk"
               title="津島キャンパス校友会クラブ 普段のコロナ対策1"
               class="mt-12"
             />
@@ -77,7 +77,7 @@
 
           <BodyWithHeader title="第四弾 押忍!!「校友会クラブ 普段のコロナ対策2」を紹介！">
             <IframeViewer
-              src="https://www.youtube-nocookie.com/embed/wNSN3fPGHsI?controls=0"
+              src="https://www.youtube-nocookie.com/embed/wNSN3fPGHsI"
               title="津島キャンパス校友会クラブ 普段のコロナ対策2"
               class="mt-12"
             />
