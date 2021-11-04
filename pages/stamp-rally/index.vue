@@ -5,6 +5,9 @@
 
       <VerticalTitle text="CAMPAIGN" colors="text-gray-200" class="-z-10" />
       <BodyWithHeader title="スタンプラリー企画について" colors="border-themeColor text-themeColor">
+        <p class="text-accentColor font-bold text-xl mb-3">
+          11月8日（月）〜11月15日（月）
+        </p>
         <p>
           8日間毎日出されるクイズに答えて、スタンプを集めましょう。
           クイズ内容は特設サイト（本サイト）のコンテンツ内から出題されます！
