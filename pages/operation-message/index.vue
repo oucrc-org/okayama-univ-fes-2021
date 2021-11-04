@@ -7,7 +7,7 @@
     </div>
 
     <BodyWithHeader title="校友会からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="校友会からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0&cc_load_policy=1" title="校友会からのメッセージ" />
       <AccountViewer :src="alumni_src" role="国立大学校友会 総務委員長" name="山口 優" />
       <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
@@ -36,7 +36,7 @@
     </BodyWithHeader>
 
     <BodyWithHeader title="学祭実行委員会からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学祭実行委員会からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0&cc_load_policy=1" title="学祭実行委員会からのメッセージ" />
       <AccountViewer :src="committee_src" role="学祭実行委員会 委員長" name="天野 颯" />
       <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
@@ -68,7 +68,8 @@ import VerticalTitle from '../../components/layouts/VerticalTitle'
 import Header from '../../components/layouts/Header'
 import IframeViewer from '../../components/templates/html/IframeViewer'
 import AccountViewer from '../../components/templates/parts/AccountViewer'
-import President from '../../assets/img/static/person/president.jpg'
+import Committee from '../../assets/img/static/person/committee.jpg'
+import Alumni from '../../assets/img/static/person/alumni.jpg'
 
 export default {
   components: {
@@ -80,8 +81,8 @@ export default {
   },
   data () {
     return {
-      alumni_src: President,
-      committee_src: President
+      alumni_src: Alumni,
+      committee_src: Committee
     }
   }
 }

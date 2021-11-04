@@ -7,7 +7,7 @@
     </div>
 
     <BodyWithHeader title="学長からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="学長からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0&cc_load_policy=1" title="学長からのメッセージ" />
       <AccountViewer :src="src" role="国立大学法人岡山大学長" name="槇野 博史" />
       <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
@@ -50,7 +50,7 @@
       <div class="grid grid-cols-2 gap-4 mx-4 my-8">
         <picture v-for="i in 10" :key="`school-image-${i}`">
           <source :srcset="require(`@/assets/img/static/school/president${i}.webp`)" type="image/webp">
-          <img :src="require(`@/assets/img/static/school/president${i}.jpg`)" alt="" class="rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
+          <img :src="require(`@/assets/img/static/school/president${i}.jpg`)" alt="" class="rounded-lg lg:rounded-2xl object-cover w-full h-24 sm:h-48 md:h-60 lg:h-72">
         </picture>
       </div>
     </client-only>
