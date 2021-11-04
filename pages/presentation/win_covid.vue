@@ -83,7 +83,7 @@
             />
           </BodyWithHeader>
 
-          <BodyWithHeader title="参考文献">
+          <BodyWithHeader title="参考">
             岡山大学応援団総部應援團（
             <a
               class="text-themeColor"
