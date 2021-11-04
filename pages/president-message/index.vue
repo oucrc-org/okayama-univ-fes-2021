@@ -41,8 +41,8 @@
           正課外活動を行う団体は、文化系の校友会が35団体、体育系の校友会が49団体、医療系地 区等の校友会が41団体あるほか、
           同好会（サークル）も54団体あり、幅広い活動を行っています。<br><br>
           ▼参考▼<br>
-          岡山大学について<a href="https://www.okayama-u.ac.jp/tp/profile/index.html" class="text-indigo-500 underline ml-3">https://www.okayama-u.ac.jp/tp/profile/index.html</a><br>
-          岡山大学×SDGｓ<a href="https://sdgs.okayama-u.ac.jp/" class="text-indigo-500 underline ml-3">https://sdgs.okayama-u.ac.jp/</a>
+          岡山大学について<a href="https://www.okayama-u.ac.jp/tp/profile/index.html" target="_blank" class="text-indigo-500 underline ml-3">https://www.okayama-u.ac.jp/tp/profile/index.html</a><br>
+          岡山大学×SDGｓ<a href="https://sdgs.okayama-u.ac.jp/" target="_blank" class="text-indigo-500 underline ml-3">https://sdgs.okayama-u.ac.jp/</a>
         </p>
       </div>
     </BodyWithHeader>
