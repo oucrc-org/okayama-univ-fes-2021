@@ -18,7 +18,7 @@
           </p>
         </div>
         <ul class="timeline">
-          <li class="fadein">
+          <li>
             <dl>
               <dt class="text-themeColor font-medium">
                 11/7（日）16:00〜
@@ -35,7 +35,7 @@
             </dl>
             <span class="border-line" />
           </li>
-          <li class="fadein">
+          <li>
             <dl>
               <dt class="text-themeColor font-medium">
                 11/8〜15
@@ -52,7 +52,7 @@
             </dl>
             <span class="border-line" />
           </li>
-          <li class="fadein">
+          <li>
             <dl>
               <dt class="text-themeColor font-medium">
                 11/16, 17（火・水）
@@ -168,21 +168,8 @@ export default {
       })
     }
 
-    function fadeInByScroll (onLeave) {
-      $(onLeave ? '.fadein-slide' : '.fadein').each(function () {
-        const targetElement = $(this).offset().top
-        const scroll = $(window).scrollTop()
-        const windowHeight = $(window).height()
-        if (scroll > targetElement - windowHeight + 500) {
-          $(this).css('opacity', '1')
-          $(this).css('transform', 'translateY(0)')
-        }
-      })
-    }
-
     $('#scroll-box').on('scroll', () => {
       ScrollTimelineAnime()// 線が伸びる関数を呼ぶ
-      fadeInByScroll(false)
     })
   }
 }
@@ -190,18 +177,6 @@ export default {
 
 <!--suppress CssUnusedSymbol -->
 <style scoped>
-.fadein {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s;
-}
-
-.fadein-slide {
-  opacity: 0;
-  transform: translateX(20px);
-  transition: all 2s;
-}
-
 .hide-scroll-bar {
   -ms-overflow-style: none;
   scrollbar-width: none;

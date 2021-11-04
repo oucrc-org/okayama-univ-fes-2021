@@ -57,7 +57,7 @@
             <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
                 <div
-                  class="grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105"
+                  class="grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105"
                 >
                   <div>
                     <img
@@ -83,7 +83,7 @@
             <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
                 <div
-                  class="hidden lg:grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
+                  class="hidden lg:grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
                 >
                   <div>
                     <img
@@ -161,7 +161,8 @@
             前年のように特設WEBサイトに映像や部活紹介といったコンテンツを掲載するだけではなく、11月7日にはプロの芸人の方のプロコンサート、11月16・17日には岡山大学校友会の公認クラブ・サークルのパフォーマンスの生配信をステージ企画として行います。
             また特設サイトにおいても、スタンプラリー企画やコンテンツを充実させ、皆様に楽しんでいただけるようにパワーアップしております。<br>
             <br>
-            岡山大学生が準備したコンテンツをふんだんに披露していきますので、是非この1週間お楽しみいただければと思います。
+            岡山大学生が準備したコンテンツをふんだんに披露していきますので、是非この1週間お楽しみいただければと思います。<br>
+            （特設WEBサイトは11月30日まで閲覧可能です）
           </p>
         </div>
       </div>

@@ -58,34 +58,6 @@
         <li>本サービスに関する規約等の変更などを通知するため</li>
       </ul>
 
-      <!--      <div-->
-      <!--        class='text-xl px-4 pb-1 border-b-4 mb-6 mt-12 w-5/6 sm:w-2/3 relative z-10 border-themeColor text-themeColor tracking-widest'>-->
-      <!--        3. 通知・公表の方法、利用中止要請の方法-->
-      <!--      </div>-->
-
-      <!--      <div-->
-      <!--        class='text-lg px-2 pb-1 border-b-2 mb-4 mt-8 w-5/6 sm:w-2/3 relative z-10 border-themeColor text-themeColor tracking-widest'>-->
-      <!--        （1）ユーザに直接入力を求めるデータ-->
-      <!--      </div>-->
-      <!--      <p>以下の利用者情報については、景品に応募する段階でユーザーに入力を求めます。</p>-->
-      <!--      <ul class='list-disc flex flex-col gap-y-3 ml-4 px-4'>-->
-      <!--        <li>景品のお届け先住所</li>-->
-      <!--        <li>景品のお届けに使用する氏名</li>-->
-      <!--        <li>景品のお届けに使用する電話番号</li>-->
-      <!--      </ul>-->
-
-      <!--      <div-->
-      <!--        class='text-lg px-2 pb-1 border-b-2 mb-4 mt-8 w-5/6 sm:w-2/3 relative z-10 border-themeColor text-themeColor tracking-widest'>-->
-      <!--        （2）通知・公表について-->
-      <!--      </div>-->
-      <!--      <p>下記のお問い合わせ窓口よりお問い合わせください。</p>-->
-
-      <!--      <div-->
-      <!--        class='text-lg px-2 pb-1 border-b-2 mb-4 mt-8 w-5/6 sm:w-2/3 relative z-10 border-themeColor text-themeColor tracking-widest'>-->
-      <!--        （3）利用中止要請について-->
-      <!--      </div>-->
-      <!--      <p>下記のお問い合わせ窓口よりお問い合わせください。なお利用者情報の収集または利用が本サービスの前提となるため、本サービスの退会をもって、当団体はその収集又は利用を停止します。</p>-->
-
       <div
         class="text-xl px-4 pb-1 border-b-4 mb-6 mt-12 w-5/6 sm:w-2/3 relative z-10 border-themeColor text-themeColor tracking-widest"
       >
@@ -141,7 +113,7 @@
         ご意見、ご質問、苦情のお申出その他利用者情報の取扱いに関するお問い合わせは、下記の窓口までお願いいたします。
       </p>
       <ul class="list-disc flex flex-col gap-y-3 ml-4 px-4">
-        <li>住所：〒700-8530 岡山市北区津島中三丁目１番１号</li>
+        <li>住所：〒700-8530 岡山市北区津島二丁目１番１号</li>
         <li>岡山大学 電子計算機研究会</li>
         <li>担当者連絡先：oucrc.master@gmail.com</li>
       </ul>
@@ -156,7 +128,6 @@
       </p>
       <p>
         【2021年10月18日制定】
-        <!--【2021年10月18日改定】-->
       </p>
     </div>
   </div>

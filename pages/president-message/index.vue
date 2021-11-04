@@ -30,8 +30,19 @@
       <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0" title="岡山大学について" />
       <div class="p-1">
         <p class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-10">
-          岡山大学は、11学部8研究科を有し、岡山市中心部の緑豊かな広大なキャンパスで、約2万人の学生、留学生が学んでいます。２０２１年４月には、工学部と環境理工学部が統合して、新生工学部に生まれ変わりました。また、本学は、SDGsを推進しており、学内のみならず地域社会と一体になった取り組みも進めています。正課外活動を行う団体は、文化系の校友会が35団体、体育系の校友会が49団体、医療系地区等の校友会が42団体あるほか、同好会（サークル）も54団体あり、幅広い活動を行っています。詳細はこちらの公式HPをご覧ください
-          <a href="https://www.okayama-u.ac.jp/tp/profile/index.html" class="text-indigo-500 underline">https://www.okayama-u.ac.jp/tp/profile/index.html</a>
+          岡山大学は、1０学部8研究科を有し、岡山市中心部の緑豊かな広大なキャンパスで、約１万３千人の学生、留学生が学んでいます。
+          ２０２１年４月には、工学部と環境理工学部が統合して、新生工学部に生まれ変わりました。<br>
+          また、本学は、SDGsを推進しており、「人類社会の持続的進化のための新たなパラダイム構築」を目的に掲げ、アジアで初めてユネスコチェアの認定を受けました。
+          さらに、イギリスの高等教育専門誌「Times Higher Education」による「THE大学インパクトランキング2021」では、
+          エントリーした5つのゴール（SDG3 すべての人に健康と福祉を、SDG9 産業と技術革新の基盤をつくろう、SDG11 住み続けられるまちづくりを、
+          SDG16 平和と公正をすべての人に、SDG17 パートナーシップで目標を達成しよう）のすべてでランクインし、
+          総合ランキングでは、国内6大学（広島大学、北海道大学、京都大学、東北大学、東京大学、筑波大学）と並んで、
+          世界トップ200位内（101-200位）、国内同列１位にランクされています。
+          正課外活動を行う団体は、文化系の校友会が35団体、体育系の校友会が49団体、医療系地 区等の校友会が41団体あるほか、
+          同好会（サークル）も54団体あり、幅広い活動を行っています。<br><br>
+          ▼参考▼<br>
+          岡山大学について<a href="https://www.okayama-u.ac.jp/tp/profile/index.html" class="text-indigo-500 underline ml-3">https://www.okayama-u.ac.jp/tp/profile/index.html</a><br>
+          岡山大学×SDGｓ<a href="https://sdgs.okayama-u.ac.jp/" class="text-indigo-500 underline ml-3">https://sdgs.okayama-u.ac.jp/</a>
         </p>
       </div>
     </BodyWithHeader>
@@ -44,8 +55,7 @@
       </div>
     </client-only>
     <BodyWithHeader title="岡山大学国際同窓会について">
-      <IframeViewer src="https://www.youtube.com/watch?v=2hI8JS6oVjA" title="国際同窓会作成動画" />
-      <p class="text-red-600">なぜかリンク切れになっています => 石原さん確認</p>
+      <IframeViewer src="https://www.youtube.com/watch?v=7XaalJR2ZAc" title="国際同窓会作成動画" />
     </BodyWithHeader>
   </div>
 </template>
