@@ -35,9 +35,19 @@
 
 <script>
 import getNextEvent from '~/assets/js/event/get-next-event'
+import LinkTo from '~/components/templates/nuxt/LinkTo'
+
 export default {
+  components: {
+    LinkTo
+  },
   data () {
-    const { time, name, jpg, webp } = getNextEvent()
+    const {
+      time,
+      name,
+      jpg,
+      webp
+    } = getNextEvent()
     return {
       time,
       name,
