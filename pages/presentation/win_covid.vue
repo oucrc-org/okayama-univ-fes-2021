@@ -24,7 +24,7 @@
               <p class="tracking-wide leading-6 lg:leading-14 lg:text-lg mx-auto my-1">
                 岡山大学応援団総部應援團による“岡山大学コロナ対策応援団”が、コロナ禍の岡山大学生へのエールとともに、新型コロナウイルス感染症対策での日常的な４つのマナーを動画で紹介！
               </p>
-              <a href="https://www.okayama-u.ac.jp/tp/profile/aboutcoronavirus.html" class="alert mt-6">
+              <a href="https://www.okayama-u.ac.jp/tp/profile/aboutcoronavirus.html" target="_blank" class="alert mt-6">
                 <div class="flex-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
