@@ -17,7 +17,7 @@ export default {
           width: 0
         },
         image: {
-          src: '../../../shodou/momiji.png',
+          src: '../../../shodou/snow.png',
           width: 100,
           height: 128
         }
