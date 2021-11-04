@@ -1,5 +1,5 @@
 <template>
-  <a :href="to">
+  <a :href="to" :target="isBlank? '_blank':false">
     <slot />
   </a>
 </template>
@@ -10,6 +10,10 @@ export default {
     to: {
       type: String,
       default: ''
+    },
+    isBlank: {
+      type: Boolean,
+      default: false
     }
   }
 }
