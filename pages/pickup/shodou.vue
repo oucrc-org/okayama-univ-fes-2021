@@ -1,20 +1,19 @@
 <template>
   <!-- TODO:2回，3回のパーティクルの設定，ヒーローエリアの写真追加，できたらアニメーション追加-->
-  <div id="app" class="bg-shodouBack">
-    <div class="h-140 md:h-200 lg:h-160 bg-gray-400 grid grid-cols-12">
-      <p>画像が流れる．</p>
-      <h1 class="font-hina text-7xl lg:text-8xl col-start-5 col-end-12 pt-48 text-right">
-        書道部
-      </h1>
+  <div id="app">
+    <div class="bg-shodoutitle">
+      <div class="h-140 md:h-200 lg:h-160 grid grid-cols-12">
+        <h1 class="text-white font-hina text-7xl lg:text-8xl col-start-5 col-end-12 pt-48 text-right">
+          書道部
+        </h1>
+      </div>
     </div>
-    <div>
+    <div class="bg-shodou1bg">
       <section class="relative">
-        <div class="grid grid-cols-12">
-          <h2 class="font-hina text-3xl lg:text-4xl text-left text-white col-start-2 col-end-5 py-12">
-            1回生
-          </h2>
-        </div>
-        <div id="momiji" class="absolute w-full h-full" />
+        <h2 class="tracking-widest font-mono text-3xl lg:text-4xl text-white mx-auto text-center py-12">
+          1回生
+        </h2>
+        <div id="momiji" class="absolute w-full h-full bottom-0" />
         <div id="work1" class="grid grid-cols-12 py-10 md:py-20">
           <div class="z-10 col-start-1 col-end-8 cursor-pointer">
             <a href="#modal1">
@@ -32,7 +31,7 @@
                 <img src="/shodou/mono2.jpg" alt="works">
               </div>
               <div class="text-center pt-10">
-                <a href="#work1" class="btnline">close</a>
+                <a href="#work1" class="btnline font-hina">閉じる</a>
               </div>
             </div>
           </div>
@@ -54,7 +53,67 @@
                 <img src="/shodou/10082.PNG" alt="works">
               </div>
               <div class="text-center pt-10">
-                <a href="#work2" class="btnline">close</a>
+                <a href="#work2" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bg-shodou2bg">
+      <section class="relative">
+        <div id="snow" class="absolute w-full h-full" />
+        <h2 class="tracking-widest font-mono font-medium text-3xl lg:text-4xl mx-auto text-center py-12 text-shodou2">
+          2、3回生
+        </h2>
+        <div id="work4" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-1 col-end-8 cursor-pointer">
+            <a href="#modal4">
+              <img src="/shodou/mono2.jpg" alt="works">
+            </a>
+          </div>
+          <p
+            class="text-shodou2 font-hina text-base md:text-lg lg:text-xl col-start-8 col-end-13 text-center pt-20 lg:pt-56"
+          >
+            小笠原 佑馬
+          </p>
+          <div id="modal4" class="modal">
+            <div class="modal-box">
+              <div>
+                <img src="/shodou/mono2.jpg" alt="works">
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work3" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div>
+      <section class="relative">
+        <div id="sakura" class="absolute w-full h-full" />
+        <h2 class="tracking-widest font-mono font-medium text-3xl lg:text-4xl mx-auto text-center text-shodou4 py-12">
+          4回生
+        </h2>
+        <div id="work3" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-1 col-end-8 cursor-pointer">
+            <a href="#modal1">
+              <img src="/shodou/mono2.jpg" alt="works">
+            </a>
+          </div>
+          <p
+            class="text-shodou4 font-hina text-base md:text-lg lg:text-xl col-start-8 col-end-13 text-center pt-20 lg:pt-56"
+          >
+            小笠原 佑馬
+          </p>
+          <div id="modal3" class="modal">
+            <div class="modal-box">
+              <div>
+                <img src="/shodou/mono2.jpg" alt="works">
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work3" class="btnline font-hina">閉じる</a>
               </div>
             </div>
           </div>
@@ -66,14 +125,18 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import particles from '~/assets/js/config/momiji.particles.config'
+import momiji from '~/assets/js/config/momiji.particles.config'
+import sakura from '~/assets/js/config/sakura.particles.config'
+import snow from '~/assets/js/config/snow.particles.config'
 
 export default Vue.extend({
   name: 'Shodou',
   mounted () {
     require('particles.js')
-    particlesJS('momiji', particles.data)
-  },
+    particlesJS('momiji', momiji.data)
+    particlesJS('sakura', sakura.data)
+    particlesJS('snow', snow.data)
+  }
 })
 </script>
 
