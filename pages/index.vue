@@ -56,9 +56,16 @@
             <!-- こちらには1~3番目の投稿を表示-->
             <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
-                <div class="grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105">
+                <div
+                  class="grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105"
+                >
                   <div>
-                    <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
+                    <img
+                      class="rounded-full w-full"
+                      style="max-width: 70px"
+                      :src="tweet.avatar_url"
+                      :alt="tweet.display_name"
+                    >
                   </div>
                   <div class="col-span-4">
                     <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
@@ -75,9 +82,16 @@
             <!-- こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
             <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
-                <div class="hidden lg:grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105">
+                <div
+                  class="hidden lg:grid grid-cols-5 gap-4 w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
+                >
                   <div>
-                    <img class="rounded-full w-full" style="max-width: 70px" :src="tweet.avatar_url" :alt="tweet.display_name">
+                    <img
+                      class="rounded-full w-full"
+                      style="max-width: 70px"
+                      :src="tweet.avatar_url"
+                      :alt="tweet.display_name"
+                    >
                   </div>
                   <div class="col-span-4">
                     <p class="text-xs lg:text-sm text-left tracking-wider leading-5 mb-8">
