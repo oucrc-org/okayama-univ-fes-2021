@@ -23,20 +23,23 @@
       />
     </div>
 
-    <div class="flex flex-col gap-y-4 font-bold py-8">
-      <div v-if="title">
-        タイトル: {{ title }}
-      </div>
-      <div v-if="who">
-        出演: {{ who }}
-      </div>
-      <div v-if="timeFrame">
-        放送時間: {{ timeFrame }}
-      </div>
-      <div v-if="nextVideoDateString">
-        次の放送: {{ nextVideoDateString }}に公開!
+    <div class="mt-6 text-left flex-col lg:flex-row-reverse">
+      <div>
+        <h1 v-if="title" class="mb-5 text-4xl font-bold" :class="isLive ? 'text-red-500' : 'text-themeColor'">
+          {{ title }}
+        </h1>
+        <p v-if="who" class="mb-2 text-gray-700 lg:text-lg">
+          出演: <b class="ml-2">{{ who }}</b>
+        </p>
+        <p v-if="timeFrame" class="mb-5 text-gray-700 lg:text-lg">
+          放送時間: <b class="ml-2">{{ timeFrame }}</b>
+        </p>
+        <div v-if="nextVideoDateString" class="mb-5 text-gray-700 lg:text-lg">
+          次の放送: <b class="ml-2">{{ nextVideoDateString }}に公開!</b>
+        </div>
       </div>
     </div>
+
     <div v-if="isLive">
       <client-only>
         <OperationStageSchedule class="max-w-screen-md mx-auto" />
@@ -68,8 +71,22 @@ export default {
     RoundButton
   },
   data () {
-    const { url, isLive, title, who, timeFrame, nextVideoDateString } = getTodayVideoUrl()
-    return { url, isLive, title, who, timeFrame, nextVideoDateString }
+    const {
+      url,
+      isLive,
+      title,
+      who,
+      timeFrame,
+      nextVideoDateString
+    } = getTodayVideoUrl()
+    return {
+      url,
+      isLive,
+      title,
+      who,
+      timeFrame,
+      nextVideoDateString
+    }
   },
   methods: {
     watchToEmbed

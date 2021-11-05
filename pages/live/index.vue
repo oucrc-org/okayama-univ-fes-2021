@@ -5,10 +5,10 @@
       <VerticalTitle text="LIVE" colors="text-gray-200" />
     </div>
 
-    <BodyWithHeader title="プロコンサート">
+    <BodyWithHeader title="プロライブ">
       <IframeViewer
-        src="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0"
-        title="プロコンサート"
+        src="https://www.youtube-nocookie.com/embed/gwjxlonn43o"
+        title="プロライブ"
       />
       <div class="alert mb-8 mt-6">
         <div class="flex-1">
@@ -29,7 +29,7 @@
         </div>
       </client-only>
       <div class="text-center mt-6">
-        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0" :is-blank="true">
+        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o" :is-blank="true">
           <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
         </LinkTo>
       </div>
@@ -37,7 +37,7 @@
 
     <BodyWithHeader title="校友会団体ステージ企画">
       <IframeViewer
-        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
+        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU"
         title="校友会団体ステージ企画"
       />
       <div class="alert mb-8 mt-6">
@@ -60,7 +60,7 @@
         </div>
       </client-only>
       <div class="text-center mt-6">
-        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0" :is-blank="true">
+        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o" :is-blank="true">
           <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
         </LinkTo>
       </div>
@@ -68,7 +68,7 @@
       <div class="h-16" />
 
       <IframeViewer
-        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?controls=0"
+        src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU"
         title="校友会団体ステージ企画"
       />
       <div class="alert mb-8 mt-6">
