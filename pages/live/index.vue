@@ -53,7 +53,6 @@
           <label>こちらの放送は、<span class="text-accentColor">11月16日（火）18:00〜</span> 開始します</label>
         </div>
       </div>
-      <p class="text-red-600">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
           <OperationStageSchedule1 />
@@ -84,7 +83,6 @@
           <label>こちらの放送は、<span class="text-accentColor">11月17日（水）18:00〜</span> 開始します</label>
         </div>
       </div>
-      <p class="text-red-600 mt-52">放送文化部さんからいただいたライブURLが入ります（11/5以降）</p>
       <client-only>
         <div class="my-5">
           <OperationStageSchedule2 />
