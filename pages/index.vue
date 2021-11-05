@@ -25,7 +25,7 @@
         <picture>
           <source :srcset="require('@/assets/img/static/home/drop.webp')" type="image/webp">
           <img
-            class="absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover transform scale-110"
+            class="fuwafuwa absolute bottom-0 left-0 right-0 w-screen max-w-lg lg:max-w-screen-lg mx-auto object-cover"
             src="@/assets/img/static/home/drop.png"
             alt="タイトル背景"
           >
@@ -60,10 +60,11 @@
 
           <div class="grid lg:grid-cols-2 gap-4">
             <!-- こちらには1~3番目の投稿を表示-->
-            <div v-for="tweet in tweets.slice(0, 3)" :key="tweet.tweet_url">
+            <div v-for="(tweet, index) in tweets.slice(0, 3)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
                 <div
-                  class="grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative transition duration-300 ease-in-out transform hover:scale-105"
+                  :id="'tweet' + index"
+                  class="transform scale-0 grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 relative"
                 >
                   <div>
                     <img
@@ -86,10 +87,11 @@
             </div>
 
             <!-- こちらには4~6番目の投稿を表示、モバイルでは非表示になる-->
-            <div v-for="tweet in tweets.slice(3, 6)" :key="tweet.tweet_url">
+            <div v-for="(tweet, index) in tweets.slice(3, 6)" :key="tweet.tweet_url">
               <a :href="tweet.tweet_url" target="_blank">
                 <div
-                  class="hidden lg:grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3 transition duration-300 ease-in-out transform hover:scale-105"
+                  :id="'tweet' + (index + 3)"
+                  class="hidden transform scale-0 lg:grid grid-cols-5 gap-4 h-full w-full bg-white rounded-xl shadow-lg mx-auto mb-3 px-4 pb-2 pt-3"
                 >
                   <div>
                     <img
@@ -155,13 +157,22 @@
             class="absolute top-20 md:top-24 left-28 md:left-52 opacity-100 w-6 md:w-12"
             alt="CROSS"
           >
-          <p class="absolute top-12 md:top-16 text-gray-800 font-medium text-3xl md:text-5xl">
+          <p
+            id="title1"
+            class="opacity-0 transform -translate-x-6 absolute top-12 md:top-16 text-gray-800 font-medium text-3xl md:text-5xl"
+          >
             校友会
           </p>
-          <p class="absolute top-28 md:top-32 text-gray-800 font-medium text-3xl md:text-5xl ml-16 md:ml-44">
+          <p
+            id="title2"
+            class="opacity-0 transform translate-x-6 absolute top-28 md:top-32 text-gray-800 font-medium text-3xl md:text-5xl ml-16 md:ml-44"
+          >
             学祭実行委員会
           </p>
-          <p class="mt-36 md:mt-48 md:w-10/12 md:text-lg tracking-wider leading-7 md:leading-10">
+          <p
+            id="message"
+            class="opacity-0 transform translate-y-6 mt-36 md:mt-48 md:w-10/12 md:text-lg tracking-wider leading-7 md:leading-10"
+          >
             今年度の岡山大学祭は、校友会と大学祭実行委員会が一丸となって企画・運営を行いました。<br>
             <br>
             前年のように特設WEBサイトに映像や部活紹介といったコンテンツを掲載するだけではなく、11月7日にはプロの芸人の方のプロコンサート、11月16・17日には岡山大学校友会の公認クラブ・サークルのパフォーマンスの生配信をステージ企画として行います。
@@ -694,6 +705,7 @@ export default Vue.extend({
     $('#hero_background').height($('#tweet-area').height() as number + 160)
     this.checkIE()
     this.displayLoading()
+    this.scrollFadeIn()
   },
   beforeDestroy () {
     stop()
@@ -718,6 +730,175 @@ export default Vue.extend({
           }, 1700)
         })
       }, 3000)
+    },
+    scrollFadeIn () {
+      const message = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#message',
+          triggerHook: 0.5,
+          reverse: false
+        })
+        .setTween('#message', {
+          css: {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(message)
+
+      const title1 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#title1',
+          triggerHook: 0.5,
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#title1', {
+          css: {
+            opacity: '1',
+            transform: 'translateX(0)'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(title1)
+
+      const title2 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#title2',
+          triggerHook: 0.5,
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#title2', {
+          css: {
+            opacity: '1',
+            transform: 'translateX(0)'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(title2)
+
+      // eslint-disable-next-line camelcase
+      const next_title = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#next_title',
+          offset: -400,
+          reverse: false
+        })
+        .setTween('#next_title span', {
+          css: {
+            transform: 'translate(0, 0)'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(next_title)
+
+      const tweet0 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet0',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet0', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet0)
+
+      const tweet1 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet1',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet1', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet1)
+
+      const tweet2 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet2',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet2', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet2)
+
+      const tweet3 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet3',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet3', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet3)
+
+      const tweet4 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet4',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet4', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet4)
+
+      const tweet5 = (this as any).$scrollmagic
+        .scene({
+          triggerElement: '#tweet5',
+          offset: -200,
+          reverse: false
+        })
+        .setTween('#tweet5', {
+          css: {
+            'animation-name': 'zoomInAnime',
+            'animation-duration': '0.8s',
+            'animation-fill-mode': 'forwards'
+          }
+        })
+        .addIndicators({ name: 'OK' });
+
+      (this as any).$scrollmagic.addScene(tweet5)
     }
   }
 })
@@ -761,5 +942,34 @@ export default Vue.extend({
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/*========= アニメーション ===============*/
+
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  transition: 1.5s ease-in-out;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg) scale(1.1);
+  }
+  50% {
+    transform:translate(0, 7px) rotate(0deg) scale(1.1);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg) scale(1.1);
+  }
+}
+
+@keyframes zoomInAnime{
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 </style>

@@ -12,8 +12,13 @@
           >
         </picture>
         <div>
-          <h1 class="mb-6 mt-6 lg:mt-0 text-3xl lg:text-5xl font-bold">
-            次のイベント
+          <h1 id="next_title" class="overflow-hidden mb-6 mt-6 lg:mt-0 text-3xl lg:text-5xl font-bold">
+            <span>次</span>
+            <span>の</span>
+            <span>イ</span>
+            <span>ベ</span>
+            <span>ン</span>
+            <span>ト</span>
           </h1>
           <p class="mb-2 font-bold text-2xl lg:text-3xl text-accentColor">
             {{ time }}
@@ -59,5 +64,33 @@ export default {
 </script>
 
 <style>
+#next_title {
+  display: flex;
+}
 
+#next_title span {
+  display: block;
+  transform: translate(0, 105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+#next_title span:nth-child(2) {
+  transition-delay: 0.03s;
+}
+
+#next_title span:nth-child(3) {
+  transition-delay: 0.06s;
+}
+
+#next_title span:nth-child(4) {
+  transition-delay: 0.09s;
+}
+
+#next_title span:nth-child(5) {
+  transition-delay: 0.12s;
+}
+
+#next_title span:nth-child(6) {
+  transition-delay: 0.15s;
+}
 </style>

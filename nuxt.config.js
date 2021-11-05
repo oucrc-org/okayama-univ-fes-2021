@@ -101,6 +101,10 @@ export default {
     {
       src: '@/plugins/vue-slick',
       ssr: false
+    },
+    {
+      src: '@/plugins/vue-scrollmagic',
+      ssr: false
     }
   ],
 
