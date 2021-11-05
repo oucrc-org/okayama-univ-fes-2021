@@ -743,8 +743,7 @@ export default Vue.extend({
             opacity: '1',
             transform: 'translateY(0)'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(message)
 
@@ -760,8 +759,7 @@ export default Vue.extend({
             opacity: '1',
             transform: 'translateX(0)'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(title1)
 
@@ -777,8 +775,7 @@ export default Vue.extend({
             opacity: '1',
             transform: 'translateX(0)'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(title2)
 
@@ -793,8 +790,7 @@ export default Vue.extend({
           css: {
             transform: 'translate(0, 0)'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(next_title)
 
@@ -810,8 +806,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet0)
 
@@ -827,8 +822,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet1)
 
@@ -844,8 +838,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet2)
 
@@ -861,8 +854,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet3)
 
@@ -878,8 +870,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet4)
 
@@ -895,8 +886,7 @@ export default Vue.extend({
             'animation-duration': '0.8s',
             'animation-fill-mode': 'forwards'
           }
-        })
-        .addIndicators({ name: 'OK' });
+        });
 
       (this as any).$scrollmagic.addScene(tweet5)
     }
@@ -953,17 +943,17 @@ export default Vue.extend({
 
 @keyframes fuwafuwa {
   0% {
-    transform:translate(0, 0) rotate(-7deg) scale(1.1);
+    transform: translate(0, 0) rotate(-7deg) scale(1.1);
   }
   50% {
-    transform:translate(0, 7px) rotate(0deg) scale(1.1);
+    transform: translate(0, 7px) rotate(0deg) scale(1.1);
   }
   100% {
-    transform:translate(0, 0) rotate(7deg) scale(1.1);
+    transform: translate(0, 0) rotate(7deg) scale(1.1);
   }
 }
 
-@keyframes zoomInAnime{
+@keyframes zoomInAnime {
   from {
     transform: scale(0);
   }
