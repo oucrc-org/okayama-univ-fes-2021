@@ -1,6 +1,12 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div>
+    <div id="splash">
+      <div id="splash_logo">
+        <video src="@/assets/video/logo.mp4" class="w-40 lg:w-60" muted autoplay playsinline />
+      </div>
+    </div>
+
     <div class="relative overflow-hidden">
       <!-- ▼ ヒーローエリア背景 -->
       <picture>
@@ -146,7 +152,7 @@
         >
           <img
             src="@/assets/img/static/home/cross.png"
-            class="absolute top-16 md:top-20 left-24 md:left-48 opacity-100 w-14 md:w-20"
+            class="absolute top-20 md:top-24 left-28 md:left-52 opacity-100 w-6 md:w-12"
             alt="CROSS"
           >
           <p class="absolute top-12 md:top-16 text-gray-800 font-medium text-3xl md:text-5xl">
@@ -687,6 +693,7 @@ export default Vue.extend({
     $('#about_background').height($('#about_container').height() as number + 260)
     $('#hero_background').height($('#tweet-area').height() as number + 160)
     this.checkIE()
+    this.displayLoading()
   },
   beforeDestroy () {
     stop()
@@ -698,6 +705,19 @@ export default Vue.extend({
         // eslint-disable-next-line no-console
         console.log('岡山大学祭2021をご覧いただきありがとうございます。\nえ、IEで正常にデザインが表示されてませんか？\nこの画面を見ているあなたならお気づきではないですか...\nそう、Chromeをインストールするのです（天の声）\n\nhttps://www.google.com/intl/ja_jp/chrome/')
       }
+    },
+    displayLoading () {
+      $('#splash').css('display', 'block')
+      setTimeout(() => {
+        $('#splash_logo').fadeIn(1000, () => {
+          setTimeout(() => {
+            $('#splash_logo').fadeOut(1000)
+          }, 1000)
+          setTimeout(() => {
+            $('#splash').fadeOut(1000)
+          }, 1700)
+        })
+      }, 3000)
     }
   }
 })
@@ -722,5 +742,24 @@ export default Vue.extend({
 /*noinspection CssUnusedSymbol*/
 .swiper-pagination-bullet {
   @apply mx-1.5
+}
+
+/*========= ローディング スクリーン ===============*/
+
+#splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: white;
+  text-align: center;
+  display: none;
+}
+
+#splash_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
