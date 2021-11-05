@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <h1 class="shodoutitle font-hina text-5xl lg:text-7xl pt-5 pb-8 pl-5 text-left">
+      <h1 class="tracking-widest shodoutitle font-hina text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
         書道部
       </h1>
     </div>
@@ -173,6 +173,197 @@
             </div>
           </div>
         </div>
+        <div id="work27" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
+            <a href="#modal27">
+              <img src="/shodou/shiomi1.jpg" alt="works">
+            </a>
+          </div>
+          <div class="col-start-8 col-end-12">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              塩見 紬
+            </p>
+          </div>
+          <div id="modal27" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/shiomi1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    漫画『ハイキュー!!』に出てくる木兎光太郎の言葉です。彼の為人を表すいい言葉だと思って選びました。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work27" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work28" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="col-start-2 col-end-6">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              半田 瑞桜
+            </p>
+          </div>
+          <div class="z-10 col-start-6 col-end-12 cursor-pointer content-center">
+            <a href="#modal28">
+              <img src="/shodou/handa1.jpg" alt="works">
+            </a>
+          </div>
+          <div id="modal28" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/handa1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    『天工開物』の一節で、5つの金属のことです。どの金属も広く扱われていることにたとえて、人間にも貴賤なく価値があるということを表しています。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work28" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work30" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
+            <a href="#modal30">
+              <img src="/shodou/yamada1.jpg" alt="works">
+            </a>
+          </div>
+          <div class="col-start-8 col-end-12">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              山田 安佳里
+            </p>
+          </div>
+          <div id="modal30" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/yamada1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    愛は何かを思いやる心を表す言葉です。とても暖かい気持ちになれるのでこの言葉を選びました。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work30" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work31" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="col-start-2 col-end-6">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              米森 美緒
+            </p>
+          </div>
+          <div class="z-10 col-start-6 col-end-12 cursor-pointer content-center">
+            <a href="#modal31">
+              <img src="/shodou/komemori1.jpg" alt="works">
+            </a>
+          </div>
+          <div id="modal31" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/komemori1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    『ハイキュー!!』という作品に出てくることばです。つらいとき、苦しいとき、逃げ出したくなったとき、“楽しい”を考えたい、。
+                    そんな想いを込めて
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work31" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work26">
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-6 cursor-pointer">
+              <a href="#modal26">
+                <img src="/shodou/kabahara1.jpg" alt="works">
+              </a>
+            </div>
+            <div class="z-10 col-start-8 col-end-12 cursor-pointer">
+              <p
+                class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+              >
+                蒲原 雄斗
+              </p>
+            </div>
+          </div>
+          <div id="modal26" class="modal">
+            <div class="modal-box content-center">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-64 w-20 col-start-3 col-end-7">
+                  <img src="/shodou/kabahara1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    精一杯書きましたので是非ご覧ください。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work26" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work32">
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-6 cursor-pointer">
+              <a href="#modal32">
+                <img src="/shodou/yoshida1.jpg" alt="works">
+              </a>
+            </div>
+            <div class="z-10 col-start-8 col-end-12 cursor-pointer">
+              <p
+                class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+              >
+                吉田 愛加里
+              </p>
+            </div>
+          </div>
+          <div id="modal32" class="modal">
+            <div class="modal-box content-center">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-64 w-20 col-start-3 col-end-7">
+                  <img src="/shodou/yoshida1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    東大の政治家・初夏である顔真卿の『裴将軍詩』という所の一説を書きました。裴将軍詩は様々な書体が組み合わさっており難しかったですが、それが同時に面白かったです。特に「縈且廻」の流れがお気に入りなので、ぜひご覧下さい。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work32" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="work6">
           <div>
             <p
@@ -185,12 +376,12 @@
             <p
               class="text-white font-hina text-base md:text-lg lg:text-xl text-center pt-5 lg:pt-10"
             >
-              「夜天」
+              「年中無休」
             </p>
             <p
               class="text-white font-hina text-base md:text-lg lg:text-xl text-center pt-3 lg:pt-5"
             >
-              夜天/ 女王蜂 より
+              四季/クリープハイプ より
             </p>
           </div>
           <div class="grid grid-cols-12 py-10 md:py-20">
@@ -254,6 +445,68 @@
               </div>
               <div class="text-center pt-10">
                 <a href="#work6" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work29" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
+            <a href="#modal29">
+              <img src="/shodou/hirai11.jpg" alt="works">
+            </a>
+          </div>
+          <div class="col-start-8 col-end-12">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              平井 海斗
+            </p>
+          </div>
+          <div id="modal29" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/hirai11.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    夜天/ 女王蜂 より
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work29" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work25" class="grid grid-cols-12 pt-10 pb-20 md:pt-20 md:pb-40">
+          <div class="col-start-2 col-end-6">
+            <p
+              class="px-5 text-white font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              江越 さくら
+            </p>
+          </div>
+          <div class="z-10 col-start-6 col-end-12 cursor-pointer content-center">
+            <a href="#modal25">
+              <img src="/shodou/egoshi1.jpg" alt="works">
+            </a>
+          </div>
+          <div id="modal25" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/egoshi1.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    この半年はコロナの流行で思うように活動できませんでした。今後は勢いよく活動したいという願いを込めました。
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work25" class="btnline font-hina">閉じる</a>
               </div>
             </div>
           </div>
@@ -354,6 +607,195 @@
             </div>
           </div>
         </div>
+        <div id="work33">
+          <div>
+            <p
+              class="text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-10 lg:pt-20"
+            >
+              河原 航太
+            </p>
+          </div>
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-12 content-center md:col-start-4 col-end-7 cursor-pointer">
+              <a href="#modal33">
+                <img src="/shodou/kawahara1.jpg" alt="works">
+              </a>
+            </div>
+          </div>
+          <div id="modal33" class="modal">
+            <div class="modal-box content-center">
+              <div>
+                <img src="/shodou/kawahara1.jpg" alt="works">
+              </div>
+              <div>
+                <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                  僕の誕生日が2月5日だったので百人一首の25首目をかな文字で書いてみました。この種は恋しい人と一種に夜を過ごしたいというような意味で僕にはそんな人はまだいませんがいつかできたらいいなーという思いで書きました。
+                </p>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work33" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work34">
+          <div>
+            <p
+              class="text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-10 lg:pt-20"
+            >
+              谷 朱里
+            </p>
+          </div>
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-12 content-center md:col-start-4 col-end-7 cursor-pointer">
+              <a href="#modal34">
+                <img src="/shodou/tani2.jpg" alt="works">
+              </a>
+            </div>
+          </div>
+          <div id="modal34" class="modal">
+            <div class="modal-box content-center">
+              <div>
+                <img src="/shodou/tani2.jpg" alt="works">
+              </div>
+              <div>
+                <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                  題名とかは特にないのですが、
+                  自分の好きな歌だったので書きました
+                </p>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work34" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work35" class="grid grid-cols-12 py-10 md:py-20">
+          <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
+            <a href="#modal35">
+              <img src="/shodou/yamamoto2.jpg" alt="works">
+            </a>
+          </div>
+          <div class="col-start-8 col-end-12">
+            <p
+              class="px-5 text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              山本 優美
+            </p>
+          </div>
+          <div id="modal35" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/yamamoto2.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    題 恋の歌より 一首
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work35" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work36" class="grid grid-cols-12 pt-10 pb-20 md:pt-20 md:pb-40">
+          <div class="col-start-2 col-end-6">
+            <p
+              class="px-5 text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+            >
+              福田 悠斗
+            </p>
+          </div>
+          <div class="z-10 col-start-6 col-end-12 cursor-pointer content-center">
+            <a href="#modal36">
+              <img src="/shodou/hukuda21.jpg" alt="works">
+            </a>
+          </div>
+          <div id="modal36" class="modal">
+            <div class="modal-box">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-40 w-28 col-start-2 col-end-7">
+                  <img src="/shodou/hukuda21.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    こいけゆりこ
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work36" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work37">
+          <div>
+            <p
+              class="text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-10 lg:pt-20"
+            >
+              福田 悠斗
+            </p>
+          </div>
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-12 content-center cursor-pointer">
+              <a href="#modal37">
+                <img src="/shodou/hukuda22.jpg" alt="works">
+              </a>
+            </div>
+          </div>
+          <div id="modal37" class="modal">
+            <div class="modal-box content-center">
+              <div>
+                <img src="/shodou/hukuda22.jpg" alt="works">
+              </div>
+              <div>
+                <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                  牛のように飲み、馬のように食べる
+                </p>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work37" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work38">
+          <div class="grid grid-cols-12 py-10 md:py-20">
+            <div class="z-10 col-start-2 col-end-6 cursor-pointer">
+              <a href="#modal38">
+                <img src="/shodou/hukuda23.jpg" alt="works">
+              </a>
+            </div>
+            <div class="z-10 col-start-6 col-end-12 cursor-pointer">
+              <p
+                class="px-5 text-shodou2 font-hina text-base md:text-lg lg:text-xl text-center pt-20 lg:pt-56"
+              >
+                福田 悠斗
+              </p>
+            </div>
+          </div>
+          <div id="modal38" class="modal">
+            <div class="modal-box content-center">
+              <div class="grid grid-cols-12 py-10 md:py-20">
+                <div class="h-56 w-20 col-start-3 col-end-7">
+                  <img src="/shodou/hukuda23.jpg" alt="works">
+                </div>
+                <div class="col-start-8 col-end-12">
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    さ行変格活用 終止形
+                  </p>
+                </div>
+              </div>
+              <div class="text-center pt-10">
+                <a href="#work38" class="btnline font-hina">閉じる</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="work14">
           <div>
             <p
@@ -444,9 +886,12 @@
     <div>
       <section class="relative">
         <div id="sakura" class="absolute w-full h-full" />
-        <h2 class="heading05 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center text-shodou4 py-12">
+        <h2 class="heading05 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center text-shodou4 pt-12">
           4回生
         </h2>
+        <h6 class="font-hina tracking-widest text-xs lg:text-sm mx-auto text-center text-shodou4 py-2">
+          卒業制作
+        </h6>
         <div id="work18" class="grid grid-cols-12 py-10 md:py-20">
           <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
             <a href="#modal18">
