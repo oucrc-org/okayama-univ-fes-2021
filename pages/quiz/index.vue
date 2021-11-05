@@ -194,7 +194,8 @@ export default Vue.extend({
     }).catch((err) => {
       // eslint-disable-next-line no-console
       console.error(err)
-      alert('問題の取得に失敗しました')
+      alert('問題の取得に失敗しました。再度ログインの上、ご応募ください。')
+      app.$auth.logout('google')
     })
   },
   data () {
@@ -249,7 +250,8 @@ export default Vue.extend({
       }).catch((err) => {
         // eslint-disable-next-line no-console
         console.error(err)
-        alert('クイズの回答が送信できませんでした')
+        alert('クイズの回答が送信できませんでした。再度ログインの上、ご応募ください。');
+        (this as any).$auth.logout('google')
       })
     }
   }
