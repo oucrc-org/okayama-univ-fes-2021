@@ -77,6 +77,18 @@
         </a>
       </div>
 
+      <p class="mt-2 text-center">
+        <a href="/sitePolicy" class="text-gray-400 text-xs font-bold">
+          サイトポリシー
+        </a>
+      </p>
+
+      <p class="mt-2 text-center">
+        <a href="/privacyPolicy" class="text-gray-400 text-xs font-bold">
+          プライバシーポリシー
+        </a>
+      </p>
+
       <p class="text-center mt-10">
         (c) 2021 岡山大学校友会 x 学祭実行委員会
       </p>
