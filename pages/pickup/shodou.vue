@@ -1105,23 +1105,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import momiji from '~/assets/js/config/momiji.particles.config'
-import sakura from '~/assets/js/config/sakura.particles.config'
-import snow from '~/assets/js/config/snow.particles.config'
 
 export default Vue.extend({
-  name: 'Shodou',
-  mounted () {
-    $(() => {
-      require('particles.js')
-      $('#momiji').height($('#momiji_container').height() as number + 1500)
-      $('#snow').height($('#snow_container').height() as number + 1500)
-      $('#sakura').height($('#sakura_container').height() as number + 1000)
-      particlesJS('momiji', momiji.data)
-      particlesJS('sakura', sakura.data)
-      particlesJS('snow', snow.data)
-    })
-  }
+  name: 'Shodou'
 })
 </script>
 
