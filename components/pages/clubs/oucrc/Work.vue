@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 flex justify-start flex-col gap-y-6 bg-white rounded-xl shadow-xl">
+  <div class="p-6 flex justify-start flex-col gap-y-6 bg-white rounded-xl shadow-xl overflow-hidden">
     <div>
       <div class="flex flex-wrap mb-3">
         <h3 class="inline text-2xl font-bold border-b-4" :style="{'border-color':color ||'#0071C5'}">
