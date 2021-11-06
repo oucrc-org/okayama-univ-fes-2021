@@ -131,7 +131,7 @@
     </BodyWithHeader>
 
     <BodyWithHeader title="学祭実行委員会からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU" title="学祭実行委員会からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/NROGUZyzgKU" title="学祭実行委員会からのメッセージ" />
       <AccountViewer :src="committee_src" role="学祭実行委員会 委員長" name="天野 颯" />
 
       <div class="text-right mb-6">
