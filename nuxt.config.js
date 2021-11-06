@@ -165,7 +165,7 @@ export default {
   // Google Font
   webfontloader: {
     google: {
-      families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900', 'Noto+Serif+JP:200,300,400,500,600,700,900']
+      families: ['Roboto:100,300,400,500,700,900', 'Noto+Sans+JP:100,300,400,500,700,900', 'Hina Mincho:100,300,400,500,700,900', 'Noto+Serif+JP:200,300,400,500,600,700,900']
     }
   },
 

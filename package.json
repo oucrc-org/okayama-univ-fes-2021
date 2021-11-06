@@ -24,6 +24,7 @@
     "nuxt": "^2.15.8",
     "nuxt-webfontloader": "^1.1.0",
     "pagepiling.js": "^1.5.6",
+    "particles.js": "^2.0.0",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
     "vue-light-timeline": "^1.0.3",

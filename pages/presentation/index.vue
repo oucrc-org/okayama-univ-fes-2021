@@ -41,16 +41,14 @@
         </div>
 
         <div>
-          <CenterTitle text="書道部 学祭展覧会（提出待ち）" class="border-themeColor text-themeColor" />
-          <!-- TODO: 書道部のページ追加とリンク -->
-          <p class="text-red-600">書道部データ 11/6以降</p>
-          <!--<LinkTo to="#">-->
-          <!--<img-->
-          <!--  src="@/assets/img/dev/hero.jpg"-->
-          <!--  class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"-->
-          <!--  alt="書道部 学祭展"-->
-          <!--&gt;-->
-          <!--</LinkTo>-->
+          <CenterTitle text="書道部 学祭展覧会" class="border-themeColor text-themeColor" />
+          <LinkTo to="/pickup/shodo">
+            <img
+              src="@/assets/img/presentations/shodo.jpg"
+              class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
+              alt="書道部 学祭展覧会"
+            >
+          </LinkTo>
         </div>
 
         <!-- ここからMicroCMS -->
