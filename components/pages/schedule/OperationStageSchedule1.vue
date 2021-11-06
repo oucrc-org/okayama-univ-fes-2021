@@ -54,7 +54,7 @@ export default {
           tag: '19:50',
           color: '#F04444',
           htmlMode: true,
-          content: '少林寺憲法部'
+          content: '少林寺拳法部'
         },
         {
           type: 'star',
