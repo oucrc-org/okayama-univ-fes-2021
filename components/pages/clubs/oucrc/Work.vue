@@ -30,7 +30,7 @@
 
     <div :class="$style['oucrc_work_html']">
       <!-- リッチテキスト -->
-      <HTMLLeader :body="addClassToSoundCloudIframe(work.body_html)" />
+      <HTMLLeader :body="addClassToIframe(work.body_html)" />
     </div>
   </div>
 </template>
@@ -61,18 +61,39 @@ export default Vue.extend({
       default: '#0071C5'
     }
   },
+  mounted () {
+    const youtubeIframes = $('iframe[data-youtube]')
+    /**
+     * YouTube埋め込みを16:9にリサイズする
+     * なんでjQueryかというと、embedlyというサービスで埋め込みをしているせいで
+     * iframeが入れ子になっており、よくあるposition: relativeと擬似要素の
+     * paddingつけるやつが使えないからです。
+     * リサイズには対応してません
+     */
+    youtubeIframes.each(function () {
+      const $this = $(this)
+      const width = $this.width()
+      $this.css({ height: (width ?? 100) * 0.5625 })
+    })
+  },
   methods: {
-    addClassToSoundCloudIframe (str :string): string {
+    addClassToIframe (str :string): string {
       // 他の埋め込みに影響しないようにこうする
       // CSSではtitle属性の内容で選択できないので、仕方なくHTMLを書き換える
       // data属性はCSSで使える
-      return str.replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
+      return str.replaceAll(/title="YouTube(.+?)"/g, 'data-youtube')
+        .replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
     }
   }
 })
 </script>
 
 <style module>
+/* MicroCMSのYouTube埋め込み */
+.oucrc_work_html iframe[data-youtube] {
+
+}
+
 /* MicroCMSのサンクラ埋め込み */
 .oucrc_work_html iframe[data-soundcloud] {
   float: left;
