@@ -7,7 +7,7 @@
     </div>
 
     <BodyWithHeader title="学長からのメッセージ">
-      <IframeViewer src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU?cc_load_policy=1" title="学長からのメッセージ" />
+      <IframeViewer src="https://www.youtube-nocookie.com/embed/SddRkcKH0NE" title="学長からのメッセージ" />
       <AccountViewer :src="src" role="国立大学法人岡山大学長" name="槇野 博史" />
       <div class="text-right mb-6">
         <div class="inline-block">
@@ -18,7 +18,6 @@
         </div>
       </div>
 
-      <p class="text-red-600">放送文化部さんからいただいた動画が入ります（11/5以降）</p>
       <div class="p-1">
         <p v-if="english" class="tracking-wide leading-6 lg:leading-10 text-sm lg:text-lg max-w-screen-md mx-auto my-1">
           皆さん、こんにちは。岡山大学・学長の槇野博史です。<br>
