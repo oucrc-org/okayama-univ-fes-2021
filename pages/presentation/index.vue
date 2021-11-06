@@ -42,7 +42,7 @@
 
         <div>
           <CenterTitle text="書道部 学祭展覧会" class="border-themeColor text-themeColor" />
-          <LinkTo to="/presentation/win_covid">
+          <LinkTo to="/pickup/shodo">
             <img
               src="@/assets/img/presentations/shodo.jpg"
               class="shadow-xl transition-shadow hover:shadow-2xl rounded-2xl object-cover mt-8 w-full"
