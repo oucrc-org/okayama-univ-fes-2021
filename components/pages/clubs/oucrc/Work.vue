@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 flex justify-start flex-col gap-y-6 bg-white rounded-xl shadow-xl">
+  <div class="p-6 flex justify-start flex-col gap-y-6 bg-white rounded-xl shadow-xl overflow-hidden">
     <div>
       <div class="flex flex-wrap mb-3">
         <h3 class="inline text-2xl font-bold border-b-4" :style="{'border-color':color ||'#0071C5'}">
@@ -30,7 +30,7 @@
 
     <div :class="$style['oucrc_work_html']">
       <!-- リッチテキスト -->
-      <HTMLLeader :body="addClassToSoundCloudIframe(work.body_html)" />
+      <HTMLLeader :body="addClassToIframe(work.body_html)" />
     </div>
   </div>
 </template>
@@ -61,18 +61,39 @@ export default Vue.extend({
       default: '#0071C5'
     }
   },
+  mounted () {
+    const youtubeIframes = $('iframe[data-youtube]')
+    /**
+     * YouTube埋め込みを16:9にリサイズする
+     * なんでjQueryかというと、embedlyというサービスで埋め込みをしているせいで
+     * iframeが入れ子になっており、よくあるposition: relativeと擬似要素の
+     * paddingつけるやつが使えないからです。
+     * リサイズには対応してません
+     */
+    youtubeIframes.each(function () {
+      const $this = $(this)
+      const width = $this.width()
+      $this.css({ height: (width ?? 100) * 0.5625 })
+    })
+  },
   methods: {
-    addClassToSoundCloudIframe (str :string): string {
+    addClassToIframe (str :string): string {
       // 他の埋め込みに影響しないようにこうする
       // CSSではtitle属性の内容で選択できないので、仕方なくHTMLを書き換える
       // data属性はCSSで使える
-      return str.replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
+      return str.replaceAll(/title="YouTube(.+?)"/g, 'data-youtube')
+        .replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
     }
   }
 })
 </script>
 
 <style module>
+/* MicroCMSのYouTube埋め込み */
+.oucrc_work_html iframe[data-youtube] {
+
+}
+
 /* MicroCMSのサンクラ埋め込み */
 .oucrc_work_html iframe[data-soundcloud] {
   float: left;
