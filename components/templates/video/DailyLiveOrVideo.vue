@@ -38,7 +38,7 @@
             <label>現在配信に問題が発生しています。詳しくは学祭実行委員会の公式Twitterをご確認ください</label>
           </div>
         </div>
-        <h1 v-if="title" class="mb-5 text-4xl font-bold" :class="isLive ? 'text-red-500' : 'text-themeColor'">
+        <h1 v-if="title" class="mb-5 text-4xl font-bold mt-20" :class="isLive ? 'text-red-500' : 'text-themeColor'">
           {{ title }}
         </h1>
         <p v-if="who" class="mb-2 text-gray-700 lg:text-lg">
