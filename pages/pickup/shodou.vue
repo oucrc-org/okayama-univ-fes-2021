@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <div>
-      <h1 class="tracking-widest shodoutitle font-hina bg-white text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
+      <h1 class="tracking-widest font-hina bg-white text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
         書道部
       </h1>
     </div>
-    <div id="background" class="bg-blue-600 fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div id="background-momiji" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div id="background-snow" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div id="background-sakura" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
     <div>
-      <section class="relative h-full">
-        <h2 class="heading03 font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
+      <section id="first-year">
+        <h2 id="heading-first" class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
           1回生
         </h2>
         <div id="momiji" class="absolute w-full h-full" />
@@ -516,8 +518,8 @@
         </div>
       </section>
     </div>
-    <div class="bg-shodou2bg">
-      <section class="relative">
+    <div>
+      <section id="second-year">
         <div id="snow" class="absolute w-full h-full" />
         <div id="snow_container">
           <h2 class="heading04 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center py-12 text-shodou2">
@@ -888,8 +890,8 @@
         </div>
       </section>
     </div>
-    <div class="bg-white">
-      <section class="relative">
+    <div>
+      <section id="fourth-year">
         <div id="sakura" class="absolute w-full h-full" />
         <div id="sakura_container">
           <h2 class="heading05 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center text-shodou4 pt-12">
@@ -1104,27 +1106,87 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import Vue from 'vue'
 import { tsParticles } from 'tsparticles'
-// eslint-disable-next-line import/named
-import { IOptions } from 'tsparticles/browser/Options/Interfaces/IOptions'
 import particleConfigMomiji from '@/assets/js/config/momiji.particles.config'
+import particleConfigSnow from '@/assets/js/config/snow.particles.config'
+import particleConfigSakura from '@/assets/js/config/sakura.particles.config'
 
 export default Vue.extend({
   name: 'Shodou',
   layout: 'Shodou',
+  data () {
+    return {
+      background: document.createElement('div'),
+      regionMomiji: document.createElement('div'),
+      regionSnow: document.createElement('div'),
+      regionSakura: document.createElement('div')
+    }
+  },
   mounted () {
-    tsParticles.load('background', particleConfigMomiji as IOptions).then((cont) => {
+    this.backgroundMomiji = document.getElementById('background-momiji')
+    this.backgroundSnow = document.getElementById('background-snow')
+    this.backgroundSakura = document.getElementById('background-sakura')
+    this.regionMomiji = document.getElementById('first-year')
+    this.regionSnow = document.getElementById('second-year')
+    this.regionSakura = document.getElementById('fourth-year')
+    tsParticles.loadFromArray('background-momiji', particleConfigMomiji, 0).then((cont) => {
       cont?.play()
     })
+    tsParticles.loadFromArray('background-snow', particleConfigSnow, 1).then((cont) => {
+      cont?.play()
+    })
+    tsParticles.loadFromArray('background-sakura', particleConfigSakura, 2).then((cont) => {
+      cont?.play()
+    })
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    tsParticles.dom().forEach((cont) => {
+      cont.destroy()
+    })
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll () {
+      const y = window.scrollY
+      const viewportY = window.pageYOffset
+      if (y < viewportY + this.regionMomiji.getBoundingClientRect().bottom) {
+        this.backgroundMomiji.style.setProperty('opacity', 1)
+        this.backgroundSnow.style.setProperty('opacity', 0)
+        this.backgroundSakura.style.setProperty('opacity', 0)
+      } else if (y < viewportY + this.regionSnow.getBoundingClientRect().bottom) {
+        this.backgroundMomiji.style.setProperty('opacity', 0)
+        this.backgroundSnow.style.setProperty('opacity', 1)
+        this.backgroundSakura.style.setProperty('opacity', 0)
+      } else {
+        this.backgroundMomiji.style.setProperty('opacity', 0)
+        this.backgroundSnow.style.setProperty('opacity', 0)
+        this.backgroundSakura.style.setProperty('opacity', 1)
+      }
+    }
   }
 })
 </script>
 
 <style scoped lang="scss">
-#background {
+#background-momiji {
   background-color: #1A1A1A;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+#background-snow {
+  background-color: #F1F1F1;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+#background-sakura {
+  background-color: #FFFFFF;
+  opacity: 0;
+  transition: opacity 1s linear;
 }
 
 .btnline {
@@ -1165,7 +1227,7 @@ export default Vue.extend({
   border-color: #1a1a1a;
 }
 
-.heading03,
+#heading-first,
 .heading04,
 .heading05 {
   display: flex;
@@ -1190,8 +1252,8 @@ export default Vue.extend({
   }
 }
 
-.heading03::before,
-.heading03::after {
+#heading-first::before,
+#heading-first::after {
   background-color: white;
 }
 
