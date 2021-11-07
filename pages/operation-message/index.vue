@@ -8,7 +8,7 @@
 
     <BodyWithHeader title="校友会からのメッセージ">
       <IframeViewer src="https://www.youtube-nocookie.com/embed/iTSoMg8GJh8" title="校友会からのメッセージ" />
-      <AccountViewer :src="alumni_src" role="国立大学校友会 総務委員長" name="山口 優" />
+      <AccountViewer :src="alumni_src" role="岡山大学校友会 総務委員長" name="山口 優" />
 
       <div class="text-right mb-6">
         <div class="inline-block">
