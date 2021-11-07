@@ -16,7 +16,7 @@
     <div v-if="url" class="relative overflow-hidden" style="padding-bottom: 56.25%">
       <iframe
         class="absolute h-full w-full"
-        :src="watchToEmbed(url)"
+        :src="embed"
         title="学祭2021 パフォーマンス"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -73,6 +73,7 @@ export default {
   data () {
     const {
       url,
+      embed,
       isLive,
       title,
       who,
@@ -81,6 +82,7 @@ export default {
     } = getTodayVideoUrl()
     return {
       url,
+      embed,
       isLive,
       title,
       who,
