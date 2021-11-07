@@ -189,7 +189,7 @@
     <NextEvent />
 
     <div class="max-w-screen-lg mx-auto">
-      <div class="alert alert-error mt-6">
+      <div class="alert alert-error mt-8">
         <div class="flex-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">
             <path
