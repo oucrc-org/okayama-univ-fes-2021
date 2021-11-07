@@ -27,7 +27,7 @@
             {{ name }}
           </p>
           <LinkTo
-            to="/live"
+            to="https://www.youtube.com/watch?v=gwjxlonn43o"
             class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"
           >
             見に行く →
