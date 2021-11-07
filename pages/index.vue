@@ -282,7 +282,7 @@
 
     <!-- ▼ 動画とライブ配信 -->
     <div class="container max-w-screen-lg mt-20 mx-auto relative">
-      <VerticalTitle text="STREAMING" colors="text-gray-200" />
+      <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />
       <div class="container max-w-screen-lg mt-10 mx-auto">
         <div class="px-5">
           <DailyLiveOrVideo />
