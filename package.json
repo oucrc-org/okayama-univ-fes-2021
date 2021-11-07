@@ -25,6 +25,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "pagepiling.js": "^1.5.6",
     "swiper": "^5.4.5",
+    "tsparticles": "^1.37.3",
     "vue-awesome-swiper": "^4.1.1",
     "vue-light-timeline": "^1.0.3",
     "vue-scrollmagic": "^1.2.0",
@@ -44,6 +45,8 @@
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.20.0",
-    "postcss": "^8.3.11"
+    "postcss": "^8.3.11",
+    "sass": "^1.43.4",
+    "sass-loader": "^10.2.0"
   }
 }

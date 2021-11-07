@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <div>
-      <h1 class="tracking-widest shodoutitle font-hina text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
+      <h1 class="tracking-widest font-hina bg-white text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
         書道部
       </h1>
     </div>
-    <div class="bg-shodou1bg">
-      <section class="relative h-full">
-        <h2 class="heading03 font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
+    <div id="background-momiji" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div id="background-snow" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div id="background-sakura" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div>
+      <section id="region-momiji">
+        <h2 id="heading-first" class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
           1回生
         </h2>
-        <div id="momiji" class="absolute w-full h-full" />
-        <div id="momiji_container">
+        <div>
           <div id="work1" class="grid grid-cols-12 py-10 md:py-20">
             <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
               <a href="#modal1">
@@ -515,10 +517,9 @@
         </div>
       </section>
     </div>
-    <div class="bg-shodou2bg">
-      <section class="relative">
-        <div id="snow" class="absolute w-full h-full" />
-        <div id="snow_container">
+    <div>
+      <section id="region-snow">
+        <div>
           <h2 class="heading04 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center py-12 text-shodou2">
             2、3回生
           </h2>
@@ -888,9 +889,8 @@
       </section>
     </div>
     <div>
-      <section class="relative">
-        <div id="sakura" class="absolute w-full h-full" />
-        <div id="sakura_container">
+      <section id="region-sakura">
+        <div>
           <h2 class="heading05 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center text-shodou4 pt-12">
             4回生
           </h2>
@@ -1103,15 +1103,97 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import Vue from 'vue'
+import { tsParticles } from 'tsparticles'
+import particleConfigMomiji from '@/assets/js/config/momiji.particles.config'
+import particleConfigSnow from '@/assets/js/config/snow.particles.config'
+import particleConfigSakura from '@/assets/js/config/sakura.particles.config'
 
 export default Vue.extend({
-  name: 'Shodou'
+  name: 'Shodou',
+  layout: 'Shodou',
+  data () {
+    return {
+      background: document.createElement('div'),
+      regionMomiji: document.createElement('div'),
+      regionSnow: document.createElement('div'),
+      regionSakura: document.createElement('div')
+    }
+  },
+  mounted () {
+    this.backgroundMomiji = document.getElementById('background-momiji')
+    this.backgroundSnow = document.getElementById('background-snow')
+    this.backgroundSakura = document.getElementById('background-sakura')
+    this.regionMomiji = document.getElementById('region-momiji')
+    this.regionSnow = document.getElementById('region-snow')
+    this.regionSakura = document.getElementById('region-sakura')
+    tsParticles.loadFromArray('background-momiji', particleConfigMomiji, 0).then((cont) => {
+      cont?.play()
+    })
+    tsParticles.loadFromArray('background-snow', particleConfigSnow, 1).then((cont) => {
+      cont?.play()
+    })
+    tsParticles.loadFromArray('background-sakura', particleConfigSakura, 2).then((cont) => {
+      cont?.play()
+    })
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    tsParticles.dom().forEach((cont) => {
+      cont.destroy()
+    })
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll () {
+      const y = window.scrollY
+      const viewportY = window.pageYOffset
+      if (y < viewportY + this.regionMomiji.getBoundingClientRect().bottom) {
+        this.backgroundMomiji.style.setProperty('opacity', 1)
+        this.backgroundSnow.style.setProperty('opacity', 0)
+        this.backgroundSakura.style.setProperty('opacity', 0)
+      } else if (y < viewportY + this.regionSnow.getBoundingClientRect().bottom) {
+        this.backgroundMomiji.style.setProperty('opacity', 0)
+        this.backgroundSnow.style.setProperty('opacity', 1)
+        this.backgroundSakura.style.setProperty('opacity', 0)
+      } else {
+        this.backgroundMomiji.style.setProperty('opacity', 0)
+        this.backgroundSnow.style.setProperty('opacity', 0)
+        this.backgroundSakura.style.setProperty('opacity', 1)
+      }
+    }
+  }
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+#background-momiji {
+  background-color: #1A1A1A;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+#background-snow {
+  background-color: #F1F1F1;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+#background-sakura {
+  background-color: #FFFFFF;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.text-shodou2 {
+  color: #51C2D5;
+}
+
+.text-shodou4 {
+  color: #E397C6;
+}
+
 .btnline {
   position: relative;
   color: #333;
@@ -1150,7 +1232,7 @@ export default Vue.extend({
   border-color: #1a1a1a;
 }
 
-.heading03,
+#heading-first,
 .heading04,
 .heading05 {
   display: flex;
@@ -1158,41 +1240,35 @@ export default Vue.extend({
   align-items: center;
   font-size: 26px;
   text-align: center;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 70px;
+    height: 3px;
+  }
+
+  &::before {
+    margin-right: 20px;
+  }
+
+  &::after {
+    margin-left: 20px;
+  }
 }
 
-.heading03::before,
-.heading03::after {
-  content: '';
-  width: 70px;
-  height: 3px;
+#heading-first::before,
+#heading-first::after {
   background-color: white;
-}
-
-.heading03::before,
-.heading04::before,
-.heading05::before {
-  margin-right: 20px;
-}
-
-.heading03::after,
-.heading04::after,
-.heading05::after {
-  margin-left: 20px;
 }
 
 .heading04::before,
 .heading04::after {
-  content: '';
-  width: 70px;
-  height: 3px;
   background-color: #51C2D5;
 }
 
 .heading05::before,
 .heading05::after {
-  content: '';
-  width: 70px;
-  height: 3px;
   background-color: #E397C6;
 }
 </style>
