@@ -43,7 +43,7 @@ const getTodayVideoUrl = () => {
   const latestVideoDateKey = sortDateStrings(datesByTodaySorted).pop()
 
   let isLive = false
-  let url, title, who, timeFrame, nextVideoDateString: string | undefined
+  let url, embed, title, who, timeFrame, nextVideoDateString: string | undefined
 
   // 次に動画が変わる時間
   if (datesAfterTodaySorted.length > 0) {
@@ -52,13 +52,14 @@ const getTodayVideoUrl = () => {
 
   if (latestVideoDateKey) {
     const latest = dateYouTubeUrl[latestVideoDateKey]
+    embed = latest.embed
     url = latest.url
     isLive = latest.isLive ?? false
     title = latest.title
     who = latest.who
     timeFrame = latest.timeFrame
   }
-  return { url, isLive, title, who, timeFrame, nextVideoDateString }
+  return { url, embed, isLive, title, who, timeFrame, nextVideoDateString }
 }
 
 export default getTodayVideoUrl
