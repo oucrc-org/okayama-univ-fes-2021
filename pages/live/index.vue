@@ -59,11 +59,11 @@
           <OperationStageSchedule1 />
         </div>
       </client-only>
-      <div class="text-center mt-6">
-        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o" :is-blank="true">
-          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
-        </LinkTo>
-      </div>
+      <!--      <div class="text-center mt-6">-->
+      <!--        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o" :is-blank="true">-->
+      <!--          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />-->
+      <!--        </LinkTo>-->
+      <!--      </div>-->
 
       <div class="h-16" />
 
@@ -90,11 +90,11 @@
           <OperationStageSchedule2 />
         </div>
       </client-only>
-      <div class="text-center mt-6">
-        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0" :is-blank="true">
-          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />
-        </LinkTo>
-      </div>
+      <!--      <div class="text-center mt-6">-->
+      <!--        <LinkTo to="https://www.youtube-nocookie.com/embed/gwjxlonn43o?controls=0" :is-blank="true">-->
+      <!--          <RoundedButton text="YouTubeで見る →" class="border-red-500 bg-red-500 text-white" />-->
+      <!--        </LinkTo>-->
+      <!--      </div>-->
     </BodyWithHeader>
   </div>
 </template>
