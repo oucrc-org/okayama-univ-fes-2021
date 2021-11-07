@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div>
-      <h1 class="tracking-widest shodoutitle font-hina text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
+      <h1 class="tracking-widest shodoutitle font-hina bg-white text-5xl lg:text-7xl pt-5 pb-5 pl-5 text-left">
         書道部
       </h1>
     </div>
-    <div class="bg-shodou1bg">
+    <div id="background" class="bg-blue-600 fixed top-0 bottom-0 left-0 right-0 -z-10" />
+    <div>
       <section class="relative h-full">
         <h2 class="heading03 font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
           1回生
@@ -887,7 +888,7 @@
         </div>
       </section>
     </div>
-    <div>
+    <div class="bg-white">
       <section class="relative">
         <div id="sakura" class="absolute w-full h-full" />
         <div id="sakura_container">
@@ -1105,13 +1106,27 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { tsParticles } from 'tsparticles'
+// eslint-disable-next-line import/named
+import { IOptions } from 'tsparticles/browser/Options/Interfaces/IOptions'
+import particleConfigMomiji from '@/assets/js/config/momiji.particles.config'
 
 export default Vue.extend({
-  name: 'Shodou'
+  name: 'Shodou',
+  layout: 'Shodou',
+  mounted () {
+    tsParticles.load('background', particleConfigMomiji as IOptions).then((cont) => {
+      cont?.play()
+    })
+  }
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+#background {
+  background-color: #1A1A1A;
+}
+
 .btnline {
   position: relative;
   color: #333;
@@ -1158,41 +1173,35 @@ export default Vue.extend({
   align-items: center;
   font-size: 26px;
   text-align: center;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 70px;
+    height: 3px;
+  }
+
+  &::before {
+    margin-right: 20px;
+  }
+
+  &::after {
+    margin-left: 20px;
+  }
 }
 
 .heading03::before,
 .heading03::after {
-  content: '';
-  width: 70px;
-  height: 3px;
   background-color: white;
-}
-
-.heading03::before,
-.heading04::before,
-.heading05::before {
-  margin-right: 20px;
-}
-
-.heading03::after,
-.heading04::after,
-.heading05::after {
-  margin-left: 20px;
 }
 
 .heading04::before,
 .heading04::after {
-  content: '';
-  width: 70px;
-  height: 3px;
   background-color: #51C2D5;
 }
 
 .heading05::before,
 .heading05::after {
-  content: '';
-  width: 70px;
-  height: 3px;
   background-color: #E397C6;
 }
 </style>
