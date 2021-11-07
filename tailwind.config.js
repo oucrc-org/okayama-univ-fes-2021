@@ -10,11 +10,6 @@ module.exports = {
         themeColor: '#0071C5',
         themeLight: '#1D8CDE',
         accentColor: '#F68014',
-        shodoutitle: '#1A1A1A',
-        shodou1bg: '#1A1A1A',
-        shodou2bg: '#F2F2F2',
-        shodou2: '#51C2D5',
-        shodou4: '#E397C6',
         hashTagColor: '#00A1C5',
         hashTagAccentColor: '#FFD099'
       },

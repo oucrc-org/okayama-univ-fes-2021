@@ -9,12 +9,11 @@
     <div id="background-snow" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
     <div id="background-sakura" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
     <div>
-      <section id="first-year">
+      <section id="region-momiji">
         <h2 id="heading-first" class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
           1回生
         </h2>
-        <div id="momiji" class="absolute w-full h-full" />
-        <div id="momiji_container">
+        <div>
           <div id="work1" class="grid grid-cols-12 py-10 md:py-20">
             <div class="z-10 col-start-2 col-end-8 cursor-pointer content-center">
               <a href="#modal1">
@@ -519,9 +518,8 @@
       </section>
     </div>
     <div>
-      <section id="second-year">
-        <div id="snow" class="absolute w-full h-full" />
-        <div id="snow_container">
+      <section id="region-snow">
+        <div>
           <h2 class="heading04 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center py-12 text-shodou2">
             2、3回生
           </h2>
@@ -891,9 +889,8 @@
       </section>
     </div>
     <div>
-      <section id="fourth-year">
-        <div id="sakura" class="absolute w-full h-full" />
-        <div id="sakura_container">
+      <section id="region-sakura">
+        <div>
           <h2 class="heading05 font-hina tracking-widest text-3xl lg:text-4xl mx-auto text-center text-shodou4 pt-12">
             4回生
           </h2>
@@ -1128,9 +1125,9 @@ export default Vue.extend({
     this.backgroundMomiji = document.getElementById('background-momiji')
     this.backgroundSnow = document.getElementById('background-snow')
     this.backgroundSakura = document.getElementById('background-sakura')
-    this.regionMomiji = document.getElementById('first-year')
-    this.regionSnow = document.getElementById('second-year')
-    this.regionSakura = document.getElementById('fourth-year')
+    this.regionMomiji = document.getElementById('region-momiji')
+    this.regionSnow = document.getElementById('region-snow')
+    this.regionSakura = document.getElementById('region-sakura')
     tsParticles.loadFromArray('background-momiji', particleConfigMomiji, 0).then((cont) => {
       cont?.play()
     })
@@ -1187,6 +1184,14 @@ export default Vue.extend({
   background-color: #FFFFFF;
   opacity: 0;
   transition: opacity 1s linear;
+}
+
+.text-shodou2 {
+  color: #51C2D5;
+}
+
+.text-shodou4 {
+  color: #E397C6;
 }
 
 .btnline {
