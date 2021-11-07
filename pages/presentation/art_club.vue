@@ -94,7 +94,7 @@
           塗り重ねることで独特の色合いを繊細に表現することができます。
         </p>
         <div>
-          <GalleryPicture title="ルリコンゴウインコ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
+          <GalleryPicture title="ルリコンゴウインコ" artist="棚倉 淳朗（工・2年）" medium="色鉛筆">
             <picture>
               <source :srcset="require('~/assets/img/clubs/art_club/5.webp')" type="image/webp">
               <img src="~/assets/img/clubs/art_club/5.jpg" alt="ルリコンゴウインコ" class="max-h-screen mx-auto">
@@ -103,7 +103,7 @@
               10色で描いています。
             </template>
           </GalleryPicture>
-          <GalleryPicture title="オオセンチコガネ" artist="棚倉 淳郎（工・2年）" medium="色鉛筆">
+          <GalleryPicture title="オオセンチコガネ" artist="棚倉 淳朗（工・2年）" medium="色鉛筆">
             <picture>
               <source :srcset="require('~/assets/img/clubs/art_club/6.webp')" type="image/webp">
               <img src="~/assets/img/clubs/art_club/6.jpg" alt="オオセンチコガネ" class="max-h-screen mx-auto">
