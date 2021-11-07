@@ -185,7 +185,22 @@
       </div>
     </div>
     <!-- ▲ 今年の学祭について -->
-    <NextEvent />
+    <!--    <NextEvent />-->
+    <div class="max-w-screen-lg mx-auto">
+      <div class="alert alert-error mt-6">
+        <div class="flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <label>現在配信に問題が発生しています。詳しくは学祭実行委員会の公式Twitterをご確認ください</label>
+        </div>
+      </div>
+    </div>
     <!-- ▼ バーナー -->
     <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
       <a href="/president-message">
@@ -264,6 +279,7 @@
         </div>
       </div>
     </div>
+
     <!-- ▲ ライブ配信 -->
 
     <div class="bg-themeColor mt-20 pb-14">
