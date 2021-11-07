@@ -76,7 +76,7 @@
                   </div>
                   <div class="col-span-4">
                     <p class="text-sm text-left tracking-wider leading-5 mb-8">
-                      {{ tweet.comment.replace(/(https?:\/\/[^\s]*)/g, '') }}
+                      {{ tweet.comment.replace(new RegExp('https://t\.co/.*$'), '') }}
                     </p>
                     <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                       #岡山大学祭2021
@@ -103,7 +103,7 @@
                   </div>
                   <div class="col-span-4">
                     <p class="text-sm text-left tracking-wider leading-5 mb-8">
-                      {{ tweet.comment.replace(/(https?:\/\/[^\s]*)/g, '') }}
+                      {{ tweet.comment.replace(new RegExp('https://t\.co/.*$'), '') }}
                     </p>
                     <p class="text-xs lg:text-sm text-hashTagColor font-semibold absolute bottom-3 right-4">
                       #岡山大学祭2021
