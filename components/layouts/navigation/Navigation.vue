@@ -38,7 +38,7 @@
           岡山大学祭 2021
         </p>
         <p class="font-bold text-right text-themeLight text-3xl tracking-wider pt-1">
-          〜祭大級におも令和〜
+          〜笑顔満祭岡大祭〜
         </p>
       </div>
     </div>
