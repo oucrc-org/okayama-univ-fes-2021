@@ -36,10 +36,11 @@
     </BodyWithHeader>
 
     <BodyWithHeader title="校友会団体ステージ企画">
-      <IframeViewer
+      <!-- TODO: 動画を差し替える -->
+      <!-- <IframeViewer
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU"
         title="校友会団体ステージ企画"
-      />
+      /> -->
       <div class="alert mb-8 mt-6">
         <div class="flex-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#0071C5" class="w-6 h-6 mx-2">
@@ -66,10 +67,11 @@
 
       <div class="h-16" />
 
-      <IframeViewer
+      <!-- TODO: 動画を差し替える -->
+      <!-- <IframeViewer
         src="https://www.youtube-nocookie.com/embed/pYrRwGE8LJU"
         title="校友会団体ステージ企画"
-      />
+      /> -->
       <div class="alert mb-8 mt-6">
         <div class="flex-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#0071C5" class="w-6 h-6 mx-2">
