@@ -185,7 +185,9 @@
       </div>
     </div>
     <!-- ▲ 今年の学祭について -->
-    <!--    <NextEvent />-->
+
+    <NextEvent />
+
     <div class="max-w-screen-lg mx-auto">
       <div class="alert alert-error mt-6">
         <div class="flex-1">
@@ -201,6 +203,7 @@
         </div>
       </div>
     </div>
+
     <!-- ▼ バーナー -->
     <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
       <a href="/president-message">
