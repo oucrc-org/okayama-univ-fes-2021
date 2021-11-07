@@ -12,14 +12,14 @@
           >
         </picture>
         <div>
-          <h1 id="next_title" class="overflow-hidden mb-6 mt-6 lg:mt-0 text-3xl lg:text-5xl font-bold">
+          <h3 id="next_title" class="overflow-hidden mb-6 mt-6 lg:mt-0 text-3xl lg:text-5xl font-bold">
             <span>次</span>
             <span>の</span>
             <span>イ</span>
             <span>ベ</span>
             <span>ン</span>
             <span>ト</span>
-          </h1>
+          </h3>
           <p class="mb-2 font-bold text-2xl lg:text-3xl text-accentColor">
             {{ time }}
           </p>
