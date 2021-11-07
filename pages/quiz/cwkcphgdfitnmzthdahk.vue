@@ -191,9 +191,7 @@ export default Vue.extend({
           stamps: r.data.stamps
         }
       })
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.error(err)
+    }).catch(() => {
       alert('問題の取得に失敗しました。再度ログインの上、ご応募ください。')
       app.$auth.logout('google')
     })
@@ -247,9 +245,7 @@ export default Vue.extend({
       }
       this.checkAnswer().then((isCorrect) => {
         location.href = isCorrect ? '#stamp-modal' : '#wa-modal'
-      }).catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error(err)
+      }).catch(() => {
         alert('クイズの回答が送信できませんでした。再度ログインの上、ご応募ください。');
         (this as any).$auth.logout('google')
       })

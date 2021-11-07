@@ -60,9 +60,7 @@ export default Vue.extend({
       }
     }).then((res: IResponseWorks) => {
       return { works: res.data }
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.error(err)
+    }).catch(() => {
       return { works: { contents: [] } }
     })
   },

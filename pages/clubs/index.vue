@@ -73,9 +73,7 @@ export default Vue.extend({
       }
     }).then((res: IResponseClubs) => {
       return { clubs: res.data }
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.error(err)
+    }).catch(() => {
       return { clubs: { contents: [] } }
     })
   },

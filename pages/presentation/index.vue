@@ -107,9 +107,7 @@ export default Vue.extend({
       }
     }).then((res: IResponsePresentations) => {
       return { presentations: res.data }
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.error(err)
+    }).catch(() => {
       return { presentations: { contents: [] } }
     })
   },
