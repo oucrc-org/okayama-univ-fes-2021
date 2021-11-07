@@ -1,7 +1,7 @@
 <template>
   <div v-if="time && name" class="hero bg-base-200 pb-4 pt-10 sm:py-10">
     <div class="max-w-screen-lg px-2 sm:px-0">
-      <LinkTo to="/live" class="flex-col hero-content lg:flex-row-reverse">
+      <LinkTo to="https://www.youtube.com/watch?v=gwjxlonn43o" class="flex-col hero-content lg:flex-row-reverse">
         <picture>
           <source v-if="webp" :srcset="webp" type="image/webp">
           <img
