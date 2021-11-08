@@ -10,7 +10,9 @@
     <div id="background-sakura" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
     <div>
       <section id="region-momiji">
-        <h2 id="heading-first" class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12">
+        <h2 id="heading-first"
+            class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12"
+        >
           1回生
         </h2>
         <div>
@@ -357,7 +359,7 @@
                   </div>
                   <div class="col-start-8 col-end-12">
                     <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
-                      東大の政治家・初夏である顔真卿の『裴将軍詩』という所の一説を書きました。裴将軍詩は様々な書体が組み合わさっており難しかったですが、それが同時に面白かったです。特に「縈且廻」の流れがお気に入りなので、ぜひご覧下さい。
+                      唐代の政治家・書家である顔真卿の『裴将軍詩』という書の一説を書きました。裴将軍詩は様々な書体が組み合わさっており難しかったですが、それが同時に面白かったです。特に「縈且廻」の流れがお気に入りなので、ぜひご覧下さい。
                     </p>
                   </div>
                 </div>
@@ -1026,6 +1028,11 @@
               <div class="modal-box">
                 <div>
                   <img src="/shodou/matui4.jpg" alt="works">
+                </div>
+                <div>
+                  <p class="font-hina text-sm md:text-lg lg:text-xl text-center pt-5">
+                    私が一番好きな曲のサビを書きました。眠れない夜に聞いてはわんわん泣いています。
+                  </p>
                 </div>
                 <div class="text-center pt-10">
                   <a href="#work24" class="btnline font-hina">閉じる</a>
