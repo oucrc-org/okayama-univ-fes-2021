@@ -66,7 +66,12 @@
 
 <script>
 export default {
-  name: 'PrivacyPolicy'
+  name: 'SitePolicy',
+  head () {
+    return {
+      title: 'サイトポリシー'
+    }
+  }
 }
 </script>
 

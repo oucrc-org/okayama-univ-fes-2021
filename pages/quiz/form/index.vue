@@ -222,6 +222,11 @@ export default Vue.extend({
       present_id: ''
     }
   },
+  head () {
+    return {
+      title: 'プレゼント応募'
+    }
+  },
   methods: {
     submitForm () {
       this.$axios.post(`${baseUrl}/present-form`,

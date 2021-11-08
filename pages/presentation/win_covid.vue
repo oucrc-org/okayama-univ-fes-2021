@@ -113,6 +113,11 @@ export default {
   components: {
     IframeViewer,
     BodyWithHeader
+  },
+  head () {
+    return {
+      title: 'コロナ対策応援団'
+    }
   }
 }
 </script>

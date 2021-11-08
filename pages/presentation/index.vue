@@ -118,6 +118,11 @@ export default Vue.extend({
       }
     }
   },
+  head () {
+    return {
+      title: '団体企画'
+    }
+  },
   computed: {
     alternativeCoverImage (): string {
       return require('~/assets/img/cover_alternative.jpg')

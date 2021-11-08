@@ -135,7 +135,12 @@
 
 <script>
 export default {
-  name: 'PrivacyPolicy'
+  name: 'PrivacyPolicy',
+  head () {
+    return {
+      title: 'プライバシーポリシー'
+    }
+  }
 }
 </script>
 

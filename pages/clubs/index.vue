@@ -84,6 +84,11 @@ export default Vue.extend({
       }
     }
   },
+  head () {
+    return {
+      title: '部活動・サークル紹介'
+    }
+  },
   computed: {
     clubsByParentDepartment (): Array<{ department: IDepartment, clubs: IClub[] }> {
       const resultUnordered: { [departmentId: string]: { department: IDepartment, clubs: IClub[] } } = {}

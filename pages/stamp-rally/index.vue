@@ -84,6 +84,11 @@ export default Vue.extend({
     return {
       prizes: []
     }
+  },
+  head () {
+    return {
+      title: 'スタンプラリー'
+    }
   }
 })
 </script>

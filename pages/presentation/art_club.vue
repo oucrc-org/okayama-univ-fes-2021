@@ -197,6 +197,11 @@ import GalleryPicture from '@/components/pages/clubs/art_club/GalleryPicture'
 export default {
   components: {
     GalleryPicture
+  },
+  head () {
+    return {
+      title: '美術部 特設サイト'
+    }
   }
 }
 </script>

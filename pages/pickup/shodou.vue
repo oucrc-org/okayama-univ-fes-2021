@@ -1128,6 +1128,11 @@ export default Vue.extend({
       regionSakura: document.createElement('div')
     }
   },
+  head () {
+    return {
+      title: '書道部 特設サイト'
+    }
+  },
   mounted () {
     this.backgroundMomiji = document.getElementById('background-momiji')
     this.backgroundSnow = document.getElementById('background-snow')

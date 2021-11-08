@@ -159,6 +159,11 @@ export default {
       isAnsweredTodayQuestion: false,
       stampCount: 0
     }
+  },
+  head () {
+    return {
+      title: 'マイページ'
+    }
   }
 }
 </script>

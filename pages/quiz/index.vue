@@ -215,6 +215,11 @@ export default Vue.extend({
       stamps: []
     }
   },
+  head () {
+    return {
+      title: '今日のクイズ'
+    }
+  },
   methods: {
     async checkAnswer (): Promise<boolean> {
       interface IResponseAnswer {

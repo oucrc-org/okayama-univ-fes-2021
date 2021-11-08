@@ -114,6 +114,11 @@ export default {
     return {
       stream_src: Stream
     }
+  },
+  head () {
+    return {
+      title: 'ライブ配信'
+    }
   }
 }
 </script>

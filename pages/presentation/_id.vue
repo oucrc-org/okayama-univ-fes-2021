@@ -80,6 +80,11 @@ export default {
       presentation: new Presentation()
     }
   },
+  head () {
+    return {
+      title: (this as any).presentation.title + ' 特設サイト'
+    }
+  },
   methods: { watchToEmbed }
 }
 </script>

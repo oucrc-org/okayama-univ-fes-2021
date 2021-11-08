@@ -154,6 +154,11 @@ export default {
       src: President,
       english: false
     }
+  },
+  head () {
+    return {
+      title: '学長のメッセージ'
+    }
   }
 }
 </script>

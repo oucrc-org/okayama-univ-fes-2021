@@ -41,6 +41,11 @@ export default {
       isLoading: false
     }
   },
+  head () {
+    return {
+      title: 'ログイン'
+    }
+  },
   methods: {
     googleAuthenticate () {
       if (!this.isLoading && process.client) {

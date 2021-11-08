@@ -22,7 +22,15 @@ import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 
 export default {
   name: 'Callback',
-  components: { Header, VerticalTitle }
+  components: {
+    Header,
+    VerticalTitle
+  },
+  head () {
+    return {
+      title: 'Callback'
+    }
+  }
 }
 </script>
 

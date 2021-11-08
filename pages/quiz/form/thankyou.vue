@@ -39,6 +39,11 @@ export default {
     Header,
     VerticalTitle,
     RoundedButton
+  },
+  head () {
+    return {
+      title: 'ご応募ありがとうございました'
+    }
   }
 }
 </script>

@@ -697,6 +697,12 @@ export default Vue.extend({
       tweets: [] as ITweet[]
     }
   },
+  head () {
+    return {
+      title: '岡山大学祭2021 特設サイト | 笑顔満祭岡大祭 〜心機一転しちゃいな祭〜',
+      titleTemplate: ''
+    }
+  },
   mounted () {
     init()
     $('#about_background').height($('#about_container').height() as number + 260)

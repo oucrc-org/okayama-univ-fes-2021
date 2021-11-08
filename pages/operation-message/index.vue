@@ -257,6 +257,11 @@ export default {
       committee_src: Committee,
       english: false
     }
+  },
+  head () {
+    return {
+      title: '運営団体のメッセージ'
+    }
   }
 }
 </script>

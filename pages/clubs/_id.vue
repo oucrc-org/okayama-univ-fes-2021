@@ -126,6 +126,11 @@ export default {
       club: new Club()
     }
   },
+  head () {
+    return {
+      title: (this as any).club.name
+    }
+  },
   computed: {
     hasSNSUrl (): boolean {
       // @ts-ignore

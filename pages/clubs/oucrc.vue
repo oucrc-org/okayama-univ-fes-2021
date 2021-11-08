@@ -71,6 +71,11 @@ export default Vue.extend({
       }
     }
   },
+  head () {
+    return {
+      title: '電子計算機研究会 特設サイト'
+    }
+  },
   computed: {
     worksByCategory (): Array<{ category: IWorkCategory, works: IWork[] }> {
       const resultUnordered: { [categoryId: string]: { category: IWorkCategory, works: IWork[] } } = {}
