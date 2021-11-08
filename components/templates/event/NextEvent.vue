@@ -1,7 +1,7 @@
 <template>
   <div v-if="time && name" class="hero bg-base-200 pb-4 pt-10 sm:py-10">
     <div class="max-w-screen-lg px-2 sm:px-0">
-      <LinkTo to="https://www.youtube.com/watch?v=gwjxlonn43o" class="flex-col hero-content lg:flex-row-reverse">
+      <LinkTo to="https://www.youtube.com/watch?v=_M-uGrHpTPw" class="flex-col hero-content lg:flex-row-reverse" :is-blank="true">
         <picture>
           <source v-if="webp" :srcset="webp" type="image/webp">
           <img
@@ -27,7 +27,8 @@
             {{ name }}
           </p>
           <LinkTo
-            to="https://www.youtube.com/watch?v=gwjxlonn43o"
+            to="https://www.youtube.com/watch?v=_M-uGrHpTPw"
+            :is-blank="true"
             class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"
           >
             見に行く →

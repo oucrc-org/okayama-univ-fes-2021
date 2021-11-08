@@ -95,12 +95,12 @@ const dateYouTubeUrl: Record<string, YouTubeData> = {
 
   // 11月16日・17日のライブ
   '2021-11-16 00:00': {
-    url: 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
-    embed: 'https://www.youtube-nocookie.com/embed/cg7skAIS7Uk',
+    url: 'https://www.youtube.com/watch?v=_M-uGrHpTPw',
+    embed: 'https://www.youtube-nocookie.com/embed/_M-uGrHpTPw',
     isLive: true,
     title: 'プロライブ',
     who: '(ここに出演者の名前を入力)',
-    timeFrame: '11/15 (月) 16:00〜1x.xx'
+    timeFrame: '11/16 (火) 18:00〜21:00'
   },
   '2021-11-17 00:00': {
     url: 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
@@ -108,7 +108,7 @@ const dateYouTubeUrl: Record<string, YouTubeData> = {
     isLive: true,
     title: 'プロライブ',
     who: '(ここに出演者の名前を入力)',
-    timeFrame: '11/16 (火) 16:00〜1x.xx'
+    timeFrame: '11/17 (水) 18:00〜21:00'
   },
 
   // 重要: 18日にundefinedに切り替えないと永遠にライブが出る
