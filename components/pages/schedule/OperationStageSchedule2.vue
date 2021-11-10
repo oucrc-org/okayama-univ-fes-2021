@@ -10,16 +10,16 @@ export default {
     return {
       items: [
         {
-          tag: '18:00',
-          color: '#dcdcdc',
-          content: '開演'
-        },
-        {
           type: 'star',
-          tag: '18:05',
+          tag: '18:00',
           color: '#F04444',
           htmlMode: true,
           content: '吹奏楽団'
+        },
+        {
+          tag: '18:25',
+          color: '#dcdcdc',
+          content: '開演の挨拶'
         },
         {
           type: 'star',
