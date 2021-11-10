@@ -32,6 +32,12 @@
           未取得
         </span>
       </p>
+
+      <div v-if="!isAnsweredTodayQuestion" class="text-center mt-12">
+        <LinkTo to="/quiz">
+          <RoundedButton text="今日のクイズに回答 →" class="border-themeColor bg-themeColor text-white" />
+        </LinkTo>
+      </div>
     </BodyWithHeader>
 
     <section>
@@ -96,6 +102,8 @@ import IStamp from '~/assets/js/type/stamp/IStamp'
 import StampRallyPrize from '@/components/pages/stamp-rally/Prize.vue'
 import ApplyButton from '@/components/templates/parts/ApplyButton.vue'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
+import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
+import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
 
 interface IResponseUser extends IResponse {
   data: {
@@ -124,7 +132,9 @@ export default {
     StampStatus,
     StampRallyPrize,
     ApplyNotes,
-    ApplyButton
+    ApplyButton,
+    LinkTo,
+    RoundedButton
   },
   middleware: 'auth',
   asyncData ({ app, error }: Context) {
