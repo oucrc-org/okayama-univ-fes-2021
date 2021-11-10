@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-screen-lg mt-24 mx-auto relative">
+  <div class="container max-w-screen-lg mt-24 mx-auto relative overflow-hidden">
     <!-- ヘッダー -->
     <div class="my-5">
       <Header :title="club.name" colors="bg-themeColor text-white" />
@@ -15,7 +15,7 @@
     </div>
 
     <!-- 何している部活なの？ -->
-    <HTMLLeader :body="club.body" class="px-6" />
+    <HTMLLeader :body="addClassToIframe(club.body)" class="px-6" />
 
     <!-- 活動紹介映像 -->
     <BodyWithHeader v-if="club.youtube_url != null" title="活動紹介映像">
@@ -106,7 +106,11 @@ export default {
     Header,
     VerticalTitle
   },
-  asyncData ({ app, params, error }: Context): Promise<{ club: IClub }> {
+  asyncData ({
+    app,
+    params,
+    error
+  }: Context): Promise<{ club: IClub }> {
     return app.$axios.get(`${url}/clubs/${params.id}`, {
       headers: {
         'X-MICROCMS-API-KEY': apiKey
@@ -143,8 +147,27 @@ export default {
       )
     }
   },
+  mounted () {
+    const youtubeIframes = $('iframe[data-youtube]')
+    /**
+     * YouTube埋め込みを16:9にリサイズする
+     * なんでjQueryかというと、embedlyというサービスで埋め込みをしているせいで
+     * iframeが入れ子になっており、よくあるposition: relativeと擬似要素の
+     * paddingつけるやつが使えないからです。
+     * リサイズには対応してません
+     */
+    youtubeIframes.each(function () {
+      const $this = $(this)
+      const width = $this.width()
+      $this.css({ height: (width ?? 100) * 0.5625 })
+    })
+  },
   methods: {
-    iImageToUrl
+    iImageToUrl,
+    addClassToIframe (str: string): string {
+      return str.replaceAll(/title="YouTube(.+?)"/g, 'data-youtube')
+        .replaceAll(/title="SoundCloud(.+?)"/g, 'data-soundcloud')
+    }
   }
 }
 </script>
