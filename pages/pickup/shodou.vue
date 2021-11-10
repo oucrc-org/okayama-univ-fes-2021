@@ -10,8 +10,9 @@
     <div id="background-sakura" class="fixed top-0 bottom-0 left-0 right-0 -z-10" />
     <div>
       <section id="region-momiji">
-        <h2 id="heading-first"
-            class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12"
+        <h2
+          id="heading-first"
+          class="font-hina tracking-widest text-3xl lg:text-4xl text-white mx-auto text-center py-12"
         >
           1回生
         </h2>
