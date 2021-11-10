@@ -98,15 +98,15 @@ const dateYouTubeUrl: Record<string, YouTubeData> = {
     url: 'https://www.youtube.com/watch?v=_M-uGrHpTPw',
     embed: 'https://www.youtube-nocookie.com/embed/_M-uGrHpTPw',
     isLive: true,
-    title: 'プロライブ',
+    title: 'ステージ企画１日目',
     who: '(ここに出演者の名前を入力)',
     timeFrame: '11/16 (火) 18:00〜21:00'
   },
   '2021-11-17 00:00': {
-    url: 'https://www.youtube.com/watch?v=cg7skAIS7Uk',
-    embed: 'https://www.youtube-nocookie.com/embed/cg7skAIS7Uk',
+    url: 'https://www.youtube.com/watch?v=bFreLCr5naI',
+    embed: 'https://www.youtube-nocookie.com/embed/bFreLCr5naI',
     isLive: true,
-    title: 'プロライブ',
+    title: 'ステージ企画２日目',
     who: '(ここに出演者の名前を入力)',
     timeFrame: '11/17 (水) 18:00〜21:00'
   },
