@@ -202,18 +202,18 @@
           <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
         </picture>
       </a>
-      <!--<a href="/presentation/win_covid">-->
-      <!--  <picture>-->
-      <!--    <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">-->
-      <!--    <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">-->
-      <!--  </picture>-->
-      <!--</a>-->
-      <a href="/presentation/rlel3o5qom">
+      <a href="/presentation/win_covid">
         <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">
+          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
         </picture>
       </a>
+      <!--<a href="/presentation/rlel3o5qom">-->
+      <!--  <picture>-->
+      <!--    <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">-->
+      <!--    <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">-->
+      <!--  </picture>-->
+      <!--</a>-->
       <SurveyBanner />
     </div>
     <!-- ▲ バーナー -->
