@@ -682,7 +682,7 @@ import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import ITweet from '~/assets/js/type/ITweet'
 import NextEvent from '~/components/templates/event/NextEvent.vue'
-import OperationStageSchedule1 from '~/components/pages/schedule/OperationStageSchedule1'
+import OperationStageSchedule1 from '~/components/pages/schedule/OperationStageSchedule1.vue'
 
 interface IResponseTweets extends IResponse {
   data: {
