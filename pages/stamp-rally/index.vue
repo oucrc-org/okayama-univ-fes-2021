@@ -26,8 +26,8 @@
         <ApplyNotes />
 
         <div class="text-center">
-          <LinkTo to="/quiz">
-            <RoundedButton text="参加する →" class="border-themeColor bg-themeColor text-white" />
+          <LinkTo to="/quiz/form">
+            <RoundedButton text="応募する →" class="border-themeColor bg-themeColor text-white" />
           </LinkTo>
         </div>
       </BodyWithHeader>

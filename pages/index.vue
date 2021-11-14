@@ -196,7 +196,7 @@
               <h1
                 class="max-w-5xl text-4.5xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"
               >
-                明日 18:00〜<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
+                今晩 18:00〜<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
               </h1>
               <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-300">
                 2日間に分けて行われる、岡山大学祭ステージ企画。<br class="hidden sm:block">
@@ -221,6 +221,61 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full">
+      <div class="relative items-center w-full px-8 py-3 mx-auto lg:py-6 max-w-screen-lg">
+        <!--<div class="alert alert-info mb-5">-->
+        <!--  <div class="flex-1">-->
+        <!--    <svg-->
+        <!--      xmlns="http://www.w3.org/2000/svg"-->
+        <!--      fill="none"-->
+        <!--      viewBox="0 0 24 24"-->
+        <!--      stroke="#0071C5"-->
+        <!--      class="flex-shrink-0 w-6 h-6 mx-2"-->
+        <!--    >-->
+        <!--      <path-->
+        <!--        stroke-linecap="round"-->
+        <!--        stroke-linejoin="round"-->
+        <!--        stroke-width="2"-->
+        <!--        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"-->
+        <!--      ></path>-->
+        <!--    </svg>-->
+        <!--    <label class="mx-3">ステージ企画（1日目）のご視聴ありがとうございました。来年度の学祭のため、アンケートにご協力ください！</label>-->
+        <!--  </div>-->
+        <!--  <div class="flex-none">-->
+        <!--    <a-->
+        <!--      href="https://forms.gle/A4sp8cAFXwKkWFxx5"-->
+        <!--      target="_blank"-->
+        <!--      class="btn btn-sm btn-primary bg-themeColor border-themeColor hover:bg-themeLight hover:border-themeLight"-->
+        <!--    >-->
+        <!--      回答-->
+        <!--    </a>-->
+        <!--  </div>-->
+        <!--</div>-->
+
+        <div class="alert">
+          <div class="flex-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#2196f3"
+              class="flex-shrink-0 w-6 h-6 mx-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <label>
+              プレゼント応募は、<b>11月22日（月）23:59</b> に終了します。忘れずご応募ください！
+            </label>
           </div>
         </div>
       </div>
@@ -288,10 +343,10 @@
             </div>
             <div class="col-span-2 md:col-span-1 text-center md:text-left md:pl-3">
               <LinkTo
-                to="/quiz"
+                to="/quiz/form"
                 class="border-3 border-white bg-white inline-block font-medium text-center text-themeColor text-lg tracking-wider rounded-full w-11/12 md:w-72 py-3 transform transition duration-300 hover:scale-105"
               >
-                参加する →
+                応募する →
               </LinkTo>
             </div>
           </div>

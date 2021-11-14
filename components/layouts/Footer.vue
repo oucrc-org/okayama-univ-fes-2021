@@ -63,7 +63,7 @@
       <SlideDown label="スタンプラリー">
         <LinkWithArrow to="/stamp-rally" title="スタンプラリーとは?" />
         <LinkWithArrow to="/mypage" title="マイページ" />
-        <LinkWithArrow to="/quiz" title="参加する" />
+        <LinkWithArrow to="/quiz/form" title="応募する" />
       </SlideDown>
     </nav>
 
@@ -78,12 +78,14 @@
       </div>
 
       <p class="mt-2 text-center">
+        <!--suppress HtmlUnknownTarget -->
         <a href="/sitePolicy" class="text-gray-400 text-xs font-bold">
           サイトポリシー
         </a>
       </p>
 
       <p class="mt-2 text-center">
+        <!--suppress HtmlUnknownTarget -->
         <a href="/privacyPolicy" class="text-gray-400 text-xs font-bold">
           プライバシーポリシー
         </a>

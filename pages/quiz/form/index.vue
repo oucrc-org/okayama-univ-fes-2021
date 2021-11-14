@@ -54,7 +54,6 @@
           label="Googleのメールアドレス *"
           :value="$store.state.auth.user.email"
           :readonly="true"
-          :on-change="(value) => secondary_email = value"
         />
         <TextInput
           name="secondary_email"
@@ -114,6 +113,7 @@
         </div>
 
         <div class="flex gap-3 mb-3 justify-center">
+          <!--suppress HtmlUnknownTarget -->
           <a href="/privacyPolicy" class="text-gray-500 text-sm font-semibold" target="_blank">プライバシーポリシー</a>
           <a href="#apply-notes" class="text-gray-500 text-sm font-semibold ml-4">応募の際の注意点</a>
         </div>
@@ -128,16 +128,14 @@
             </div>
           </div>
         </div>
-        <div class="mx-auto">
-          <div class="text-center">
-            <button :disabled="!agreed" type="submit">
-              <RoundedButton
-                text="応募"
-                class="text-white cursor-pointer"
-                :class="!agreed ? 'bg-blue-300 border-blue-300 cursor-not-allowed': 'bg-themeColor border-themeColor'"
-              />
-            </button>
-          </div>
+        <div class="text-center">
+          <button :disabled="!agreed" type="submit" class="w-full">
+            <RoundedButton
+              text="応募"
+              class="text-white cursor-pointer"
+              :class="!agreed ? 'bg-blue-300 border-blue-300 cursor-not-allowed': 'bg-themeColor border-themeColor'"
+            />
+          </button>
         </div>
       </form>
     </div>
@@ -237,8 +235,8 @@ export default Vue.extend({
           given_name_kana: this.given_name_kana,
           email: this.$store.state.auth.user.email,
           secondary_email: this.secondary_email,
-          tel: this.tel,
-          postal_code: this.postal_code,
+          tel: this.tel.replace('-', ''),
+          postal_code: this.postal_code.replace('-', ''),
           address: this.address,
           present_id: this.present_id
         },
