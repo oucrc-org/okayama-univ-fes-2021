@@ -66,7 +66,7 @@ export default {
         {
           tag: '20:35',
           color: '#dcdcdc',
-          content: '終了の挨拶'
+          content: '2日目企画のお知らせ'
         }
       ]
     }

@@ -188,6 +188,44 @@
 
     <NextEvent />
 
+    <section class="w-full">
+      <div class="relative items-center w-full px-5 pt-20 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
+        <div class="flex w-full mx-auto text-left">
+          <div class="relative inline-flex items-center mx-auto align-middle">
+            <div class="text-center">
+              <h1
+                class="max-w-5xl text-4.5xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"
+              >
+                明日 18:00〜<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
+              </h1>
+              <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-300">
+                2日間に分けて行われる、岡山大学祭ステージ企画。<br class="hidden sm:block">
+                さまざまな校友会クラブが出演し、<br class="hidden sm:block">最高のパフォーマンスをライブ配信でお届けします。
+              </p>
+
+              <client-only>
+                <div class="my-5 pr-1">
+                  <OperationStageSchedule1 />
+                </div>
+              </client-only>
+
+              <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6 sm:mt-10">
+                <div class="mb-8 mt-3 rounded-lg sm:mt-0">
+                  <LinkTo
+                    to="https://www.youtube.com/watch?v=_M-uGrHpTPw"
+                    :is-blank="true"
+                    class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"
+                  >
+                    イベント会場へ →
+                  </LinkTo>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ▼ バーナー -->
     <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
       <a href="/president-message">
@@ -644,6 +682,7 @@ import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import ITweet from '~/assets/js/type/ITweet'
 import NextEvent from '~/components/templates/event/NextEvent.vue'
+import OperationStageSchedule1 from '~/components/pages/schedule/OperationStageSchedule1'
 
 interface IResponseTweets extends IResponse {
   data: {
@@ -661,7 +700,8 @@ export default Vue.extend({
     VerticalTitle,
     DailyLiveOrVideo,
     SurveyBanner,
-    NextEvent
+    NextEvent,
+    OperationStageSchedule1
   },
   asyncData ({ app }: Context): Promise<{ tweets: ITweet[] }> {
     return app.$axios.get(`${url}/twitter`, { timeout: 10000 }).then((res: IResponseTweets) => {

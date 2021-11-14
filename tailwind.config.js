@@ -16,6 +16,9 @@ module.exports = {
       fontFamily: {
         hina: ['Hina Mincho', 'san-serif']
       },
+      fontSize: {
+        '4.5xl': '2.625rem'
+      },
       spacing: {
         22: '5rem',
         30: '7.5rem',
