@@ -119,8 +119,9 @@
         </div>
 
         <div>
-          <div id="apply-notes" class="modal">
-            <div class="modal-box">
+          <!-- iOS Safariスクロール不能を修正 -->
+          <div id="apply-notes" class="modal overflow-y-scroll h-screen bg-white">
+            <div class="modal-box absolute top-0">
               <ApplyNotes />
               <div class="modal-action">
                 <a href="#" class="btn btn-accent">閉じる</a>
