@@ -23,21 +23,21 @@
         </span>
       </p>
 
-      <p class="mt-3">
-        今日のスタンプ:
-        <span v-if="isAnsweredTodayQuestion" class="badge inline-block bg-themeColor border-themeColor">
-          取得済み
-        </span>
-        <span v-else class="badge inline-block bg-gray-400 border-gray-400">
-          未取得
-        </span>
-      </p>
+      <!--<p class="mt-3">-->
+      <!--  今日のスタンプ:-->
+      <!--  <span v-if="isAnsweredTodayQuestion" class="badge inline-block bg-themeColor border-themeColor">-->
+      <!--    取得済み-->
+      <!--  </span>-->
+      <!--  <span v-else class="badge inline-block bg-gray-400 border-gray-400">-->
+      <!--    未取得-->
+      <!--  </span>-->
+      <!--</p>-->
 
-      <div v-if="!isAnsweredTodayQuestion" class="text-center mt-12">
-        <LinkTo to="/quiz">
-          <RoundedButton text="今日のクイズに回答 →" class="border-themeColor bg-themeColor text-white" />
-        </LinkTo>
-      </div>
+      <!--<div v-if="!isAnsweredTodayQuestion" class="text-center mt-12">-->
+      <!--  <LinkTo to="/quiz">-->
+      <!--    <RoundedButton text="今日のクイズに回答 →" class="border-themeColor bg-themeColor text-white" />-->
+      <!--  </LinkTo>-->
+      <!--</div>-->
     </BodyWithHeader>
 
     <section>
@@ -49,7 +49,12 @@
     <section>
       <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StampRallyPrize v-for="item in prizes" :key="item.id" :item="item" :disabled="item.required_stamps > stampCount" />
+          <StampRallyPrize
+            v-for="item in prizes"
+            :key="item.id"
+            :item="item"
+            :disabled="item.required_stamps > stampCount"
+          />
         </div>
       </BodyWithHeader>
     </section>
@@ -73,7 +78,7 @@
               />
             </svg>
             <label>
-              <h4>プレゼント応募は、<b>11月16日</b>（スタンプラリー終了後）より開始します。</h4>
+              <h4>プレゼント応募は、<b>11月22日（月）23:59</b> に終了します。</h4>
             </label>
           </div>
         </div>
@@ -102,8 +107,6 @@ import IStamp from '~/assets/js/type/stamp/IStamp'
 import StampRallyPrize from '@/components/pages/stamp-rally/Prize.vue'
 import ApplyButton from '@/components/templates/parts/ApplyButton.vue'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
-import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
-import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
 
 interface IResponseUser extends IResponse {
   data: {
@@ -132,12 +135,13 @@ export default {
     StampStatus,
     StampRallyPrize,
     ApplyNotes,
-    ApplyButton,
-    LinkTo,
-    RoundedButton
+    ApplyButton
   },
   middleware: 'auth',
-  asyncData ({ app, error }: Context) {
+  asyncData ({
+    app,
+    error
+  }: Context) {
     // noinspection TypeScriptUnresolvedFunction
     return app.$axios.get(`${url}/user`, {
       headers: {

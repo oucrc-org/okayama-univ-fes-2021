@@ -1,6 +1,9 @@
 <template>
   <div class="text-center mt-12 md:pl-3">
-    <RoundedButton text="応募する →" :disabled="true" class="border-blue-300 bg-blue-300 text-white" />
+    <!--suppress HtmlUnknownTarget -->s
+    <a href="/quiz/form">
+      <RoundedButton text="応募する →" class="border-themeColor bg-themeColor text-white" />
+    </a>
   </div>
 </template>
 

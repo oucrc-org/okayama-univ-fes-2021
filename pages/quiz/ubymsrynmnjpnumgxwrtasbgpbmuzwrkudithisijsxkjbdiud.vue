@@ -46,13 +46,20 @@
           <div id="hint-modal" class="modal">
             <div class="modal-box">
               <div class="py-5">
-                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">ヒント</h2>
+                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">
+                  ヒント
+                </h2>
                 <div class="w-64 mx-auto">
                   <img class="ml-2" src="/modal/hint.jpg" alt="image">
                 </div>
-                <p class="font-semibold pt-6">{{ question.hint }}</p>
+                <p class="font-semibold pt-6">
+                  {{ question.hint }}
+                </p>
                 <div class="modal-action">
-                  <a href="#" class="btn block border-themeColor bg-white text-themeColor cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-blue-500 hover:text-white hover:border-themeColor font-semibold">
+                  <a
+                    href="#"
+                    class="btn block border-themeColor bg-white text-themeColor cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-blue-500 hover:text-white hover:border-themeColor font-semibold"
+                  >
                     <p class="pt-4">閉じる</p>
                   </a>
                 </div>
@@ -70,13 +77,20 @@
           <div id="wa-modal" class="modal">
             <div class="modal-box">
               <div class="py-5">
-                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">不正解です</h2>
+                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">
+                  不正解です
+                </h2>
                 <div class="w-64 mx-auto">
                   <img src="/modal/mistake.jpg" alt="image">
                 </div>
-                <p class="font-semibold pt-6">{{ selectedAnswerContent }} ではありません！</p>
+                <p class="font-semibold pt-6">
+                  {{ selectedAnswerContent }} ではありません！
+                </p>
                 <div class="modal-action">
-                  <a href="#" class="btn block border-themeColor bg-white text-themeColor cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-blue-500 hover:text-white hover:border-themeColor font-semibold">
+                  <a
+                    href="#"
+                    class="btn block border-themeColor bg-white text-themeColor cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-blue-500 hover:text-white hover:border-themeColor font-semibold"
+                  >
                     <p class="pt-4">閉じる</p>
                   </a>
                 </div>
@@ -86,14 +100,21 @@
           <div id="stamp-modal" class="modal">
             <div class="modal-box">
               <div class="py-5">
-                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">正解です</h2>
+                <h2 class="text-blue-500 text-themeColor text-2xl font-semibold tracking-widest pb-6">
+                  正解です
+                </h2>
                 <div class="w-64 mx-auto">
                   <img src="/modal/correct.jpg" alt="image">
                 </div>
-                <p class="font-semibold pt-6">スタンプを獲得しました！</p>
+                <p class="font-semibold pt-6">
+                  スタンプを獲得しました！
+                </p>
                 <div class="modal-action">
                   <!--suppress HtmlUnknownTarget -->
-                  <a href="/mypage" class="btn block border-themeColor bg-blue-500 text-white cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-white hover:text-blue-500 hover:border-themeColor font-semibold">
+                  <a
+                    href="/mypage"
+                    class="btn block border-themeColor bg-blue-500 text-white cursor-pointer mx-auto rounded-full w-64 border-solid hover:bg-white hover:text-blue-500 hover:border-themeColor font-semibold"
+                  >
                     <p class="pt-4">確認する</p>
                   </a>
                 </div>
