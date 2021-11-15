@@ -99,7 +99,7 @@ const dateYouTubeUrl: Record<string, YouTubeData> = {
     embed: 'https://www.youtube-nocookie.com/embed/_M-uGrHpTPw',
     isLive: true,
     title: 'ステージ企画１日目',
-    who: '(ここに出演者の名前を入力)',
+    who: 'チアリーダーWIZARDS・コールロータス・吟詩部・体操部・落語研究会・少林寺拳法部・ビリペル',
     timeFrame: '11/16 (火) 18:00〜21:00'
   },
   '2021-11-17 00:00': {
@@ -107,7 +107,7 @@ const dateYouTubeUrl: Record<string, YouTubeData> = {
     embed: 'https://www.youtube-nocookie.com/embed/bFreLCr5naI',
     isLive: true,
     title: 'ステージ企画２日目',
-    who: '(ここに出演者の名前を入力)',
+    who: '吹奏楽団・グリークラブ・ジャズ研究会・ダンス部',
     timeFrame: '11/17 (水) 18:00〜21:00'
   },
 
