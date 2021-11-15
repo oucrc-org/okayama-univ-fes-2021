@@ -41,25 +41,6 @@
     </BodyWithHeader>
 
     <section>
-      <BodyWithHeader title="スタンプ達成状況" colors="border-themeColor text-themeColor">
-        <StampStatus :stamps="stamps" />
-      </BodyWithHeader>
-    </section>
-
-    <section>
-      <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StampRallyPrize
-            v-for="item in prizes"
-            :key="item.id"
-            :item="item"
-            :disabled="item.required_stamps > stampCount"
-          />
-        </div>
-      </BodyWithHeader>
-    </section>
-
-    <section>
       <BodyWithHeader title="応募ページ" colors="border-themeColor text-themeColor">
         <div class="alert">
           <div class="flex-1">
@@ -84,6 +65,25 @@
         </div>
 
         <ApplyButton />
+      </BodyWithHeader>
+    </section>
+
+    <section>
+      <BodyWithHeader title="スタンプ達成状況" colors="border-themeColor text-themeColor">
+        <StampStatus :stamps="stamps" />
+      </BodyWithHeader>
+    </section>
+
+    <section>
+      <BodyWithHeader title="豪華景品" colors="border-themeColor text-themeColor">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StampRallyPrize
+            v-for="item in prizes"
+            :key="item.id"
+            :item="item"
+            :disabled="item.required_stamps > stampCount"
+          />
+        </div>
       </BodyWithHeader>
     </section>
 
