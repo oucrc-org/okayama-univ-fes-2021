@@ -62,7 +62,7 @@ import RoundButton from '../parts/RoundButton.vue'
 import getTodayVideoUrl from '~/assets/js/video/get-today-video-url'
 import watchToEmbed from '~/assets/js/url/watch-to-embed'
 import Header from '~/components/layouts/Header.vue'
-import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule1.vue'
+import OperationStageSchedule from '~/components/pages/schedule/OperationStageSchedule2.vue'
 
 export default {
   components: {

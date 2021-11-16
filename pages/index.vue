@@ -188,8 +188,6 @@
 
     <NextEvent />
 
-    <div class="h-20" />
-
     <section class="w-full">
       <div class="relative items-center w-full px-5 pt-20 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
         <div class="flex w-full mx-auto text-left">
@@ -214,7 +212,7 @@
               <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6 sm:mt-10">
                 <div class="mb-8 mt-3 rounded-lg sm:mt-0">
                   <LinkTo
-                    to="https://www.youtube.com/watch?v=_M-uGrHpTPw"
+                    to="https://www.youtube.com/watch?v=bFreLCr5naI"
                     :is-blank="true"
                     class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"
                   >
