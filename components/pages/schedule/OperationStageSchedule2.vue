@@ -44,7 +44,7 @@ export default {
         },
         {
           type: 'star',
-          tag: '19:30',
+          tag: '19:25',
           color: '#F04444',
           htmlMode: true,
           content: 'ダンス部'
