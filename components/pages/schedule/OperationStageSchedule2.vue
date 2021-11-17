@@ -37,6 +37,13 @@ export default {
         },
         {
           type: 'star',
+          tag: '19:10',
+          color: '#F04444',
+          htmlMode: true,
+          content: '合気道部'
+        },
+        {
+          type: 'star',
           tag: '19:30',
           color: '#F04444',
           htmlMode: true,
