@@ -196,7 +196,7 @@
               <h1
                 class="max-w-5xl text-4.5xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"
               >
-                今晩 18:00〜<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
+                まもなく<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
               </h1>
               <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-300">
                 2日間に分けて行われる、岡山大学祭ステージ企画。<br class="hidden sm:block">

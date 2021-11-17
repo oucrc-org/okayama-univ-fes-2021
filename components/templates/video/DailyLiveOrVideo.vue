@@ -34,9 +34,9 @@
         <p v-if="timeFrame" class="mb-5 text-gray-700 lg:text-lg">
           放送時間: <b class="ml-2">{{ timeFrame }}</b>
         </p>
-        <div v-if="nextVideoDateString" class="mb-5 text-gray-700 lg:text-lg">
-          次の放送: <b class="ml-2">{{ nextVideoDateString }}に公開!</b>
-        </div>
+        <!--<div v-if="nextVideoDateString" class="mb-5 text-gray-700 lg:text-lg">-->
+        <!--  次の放送: <b class="ml-2">{{ nextVideoDateString }}に公開!</b>-->
+        <!--</div>-->
       </div>
     </div>
 
