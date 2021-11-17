@@ -50,7 +50,7 @@ export default {
           content: 'ダンス部'
         },
         {
-          tag: '20:05',
+          tag: '20:10',
           color: '#F04444',
           content: '各企画順位発表'
         },
