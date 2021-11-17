@@ -17,13 +17,13 @@ export default {
           content: '吹奏楽団'
         },
         {
-          tag: '18:25',
+          tag: '18:20',
           color: '#dcdcdc',
           content: '開演の挨拶'
         },
         {
           type: 'star',
-          tag: '18:30',
+          tag: '18:22',
           color: '#F04444',
           htmlMode: true,
           content: 'グリークラブ'
