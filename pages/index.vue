@@ -188,43 +188,57 @@
 
     <NextEvent />
 
-    <section class="w-full">
-      <div class="relative items-center w-full px-5 pt-20 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
-        <div class="flex w-full mx-auto text-left">
-          <div class="relative inline-flex items-center mx-auto align-middle">
-            <div class="text-center">
-              <h1
-                class="max-w-5xl text-4.5xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"
-              >
-                まもなく<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます
-              </h1>
-              <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-300">
-                2日間に分けて行われる、岡山大学祭ステージ企画。<br class="hidden sm:block">
-                さまざまな校友会クラブが出演し、<br class="hidden sm:block">最高のパフォーマンスをライブ配信でお届けします。
-              </p>
-
-              <client-only>
-                <div class="my-5 pr-1">
-                  <OperationStageSchedule2 />
-                </div>
-              </client-only>
-
-              <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6 sm:mt-10">
-                <div class="mb-8 mt-3 rounded-lg sm:mt-0">
-                  <LinkTo
-                    to="https://www.youtube.com/watch?v=bFreLCr5naI"
-                    :is-blank="true"
-                    class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"
-                  >
-                    イベント会場へ →
-                  </LinkTo>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- ▼ 動画とライブ配信 -->
+    <div class="container max-w-screen-lg mt-20 mx-auto relative">
+      <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />
+      <div class="container max-w-screen-lg mt-10 mx-auto">
+        <div class="px-lg-5">
+          <DailyLiveOrVideo />
         </div>
       </div>
-    </section>
+    </div>
+    <!-- ▲ 動画とライブ配信 -->
+
+    <!--<section class="w-full">-->
+    <!--  <div class="relative items-center w-full px-5 pt-20 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">-->
+    <!--    <div class="flex w-full mx-auto text-left">-->
+    <!--      <div class="relative inline-flex items-center mx-auto align-middle">-->
+    <!--        <div class="text-center">-->
+    <!--          <h1-->
+    <!--            class="max-w-5xl text-4.5xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"-->
+    <!--          >-->
+    <!--            今晩 18:00〜<br>岡大生の全力の<br class="sm:hidden">パフォーマンスが<br>ご覧いただけます-->
+    <!--          </h1>-->
+    <!--          <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-300">-->
+    <!--            2日間に分けて行われる、岡山大学祭ステージ企画。<br class="hidden sm:block">-->
+    <!--            さまざまな校友会クラブが出演し、<br class="hidden sm:block">最高のパフォーマンスをライブ配信でお届けします。-->
+    <!--          </p>-->
+
+    <!--          <client-only>-->
+    <!--            <div class="my-5 pr-1">-->
+    <!--              <OperationStageSchedule2 />-->
+    <!--            </div>-->
+    <!--          </client-only>-->
+
+    <!--          <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6 sm:mt-10">-->
+    <!--            <div class="mb-8 mt-3 rounded-lg sm:mt-0">-->
+    <!--              <LinkTo-->
+    <!--                to="https://www.youtube.com/watch?v=bFreLCr5naI"-->
+    <!--                :is-blank="true"-->
+    <!--                class="border-3 border-themeColor bg-themeColor inline-block font-medium text-center text-white text-lg mt-4 tracking-wider rounded-full w-56 py-3 transform transition duration-300 hover:scale-105"-->
+    <!--              >-->
+    <!--                イベント会場へ →-->
+    <!--              </LinkTo>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</section>-->
+
+    <!-- TODO: 一時的 -->
+    <div class="h-20" />
 
     <section class="w-full">
       <div class="relative items-center w-full px-8 py-3 mx-auto lg:py-6 max-w-screen-lg">
@@ -244,7 +258,7 @@
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
               />
             </svg>
-            <label class="mx-3">ステージ企画（1日目）のご視聴ありがとうございました。来年度の学祭のため、アンケートにご協力ください！</label>
+            <label class="mx-3">ステージ企画（2日目）のご視聴ありがとうございました。来年度の学祭のため、アンケートにご協力ください！</label>
           </div>
           <div class="flex-none">
             <a
@@ -283,7 +297,7 @@
               target="_blank"
               class="btn btn-sm btn-primary bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 tracking-widest capitalize"
             >
-              YouTubeで観る
+              YouTubeでみる
             </a>
           </div>
         </div>
@@ -311,36 +325,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ▼ バーナー -->
-    <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
-      <a href="/president-message">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
-        </picture>
-      </a>
-      <a href="/schedule" target="_blank">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
-        </picture>
-      </a>
-      <a href="/presentation/win_covid">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
-        </picture>
-      </a>
-      <!--<a href="/presentation/rlel3o5qom">-->
-      <!--  <picture>-->
-      <!--    <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">-->
-      <!--    <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">-->
-      <!--  </picture>-->
-      <!--</a>-->
-      <SurveyBanner />
-    </div>
-    <!-- ▲ バーナー -->
 
     <!-- ▼ スタンプラリー -->
     <canvas class="waveCanvas mt-4" />
@@ -387,15 +371,45 @@
     <canvas class="waveCanvas transform rotate-180" />
     <!-- ▲ スタンプラリー -->
 
-    <!-- ▼ 動画とライブ配信 -->
-    <div class="container max-w-screen-lg mt-20 mx-auto relative">
-      <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />
-      <div class="container max-w-screen-lg mt-10 mx-auto">
-        <div class="px-5">
-          <DailyLiveOrVideo />
-        </div>
-      </div>
+    <!-- ▼ バーナー -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
+      <a href="/president-message">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        </picture>
+      </a>
+      <a href="/schedule" target="_blank">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+        </picture>
+      </a>
+      <a href="/presentation/win_covid">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
+        </picture>
+      </a>
+      <!--<a href="/presentation/rlel3o5qom">-->
+      <!--  <picture>-->
+      <!--    <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">-->
+      <!--    <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">-->
+      <!--  </picture>-->
+      <!--</a>-->
+      <SurveyBanner />
     </div>
+    <!-- ▲ バーナー -->
+
+    <!-- ▼ 動画とライブ配信 -->
+    <!--<div class="container max-w-screen-lg mt-20 mx-auto relative">-->
+    <!--  <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />-->
+    <!--  <div class="container max-w-screen-lg mt-10 mx-auto">-->
+    <!--    <div class="px-5">-->
+    <!--      <DailyLiveOrVideo />-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
     <!-- ▲ 動画とライブ配信 -->
 
     <div class="bg-themeColor mt-20 pb-14">
@@ -767,7 +781,8 @@ import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import ITweet from '~/assets/js/type/ITweet'
 import NextEvent from '~/components/templates/event/NextEvent.vue'
-import OperationStageSchedule2 from '~/components/pages/schedule/OperationStageSchedule2.vue'
+
+// import OperationStageSchedule2 from '~/components/pages/schedule/OperationStageSchedule2.vue'
 
 interface IResponseTweets extends IResponse {
   data: {
@@ -785,8 +800,8 @@ export default Vue.extend({
     VerticalTitle,
     DailyLiveOrVideo,
     SurveyBanner,
-    NextEvent,
-    OperationStageSchedule2
+    NextEvent
+    // OperationStageSchedule2
   },
   asyncData ({ app }: Context): Promise<{ tweets: ITweet[] }> {
     return app.$axios.get(`${url}/twitter`, { timeout: 10000 }).then((res: IResponseTweets) => {
