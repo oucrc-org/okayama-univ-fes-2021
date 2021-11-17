@@ -186,18 +186,7 @@
     </div>
     <!-- ▲ 今年の学祭について -->
 
-    <NextEvent />
-
-    <!-- ▼ 動画とライブ配信 -->
-    <div class="container max-w-screen-lg mt-20 mx-auto relative">
-      <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />
-      <div class="container max-w-screen-lg mt-10 mx-auto">
-        <div class="px-lg-5">
-          <DailyLiveOrVideo />
-        </div>
-      </div>
-    </div>
-    <!-- ▲ 動画とライブ配信 -->
+    <!--<NextEvent />-->
 
     <!--<section class="w-full">-->
     <!--  <div class="relative items-center w-full px-5 pt-20 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">-->
@@ -237,10 +226,37 @@
     <!--  </div>-->
     <!--</section>-->
 
-    <!-- TODO: 一時的 -->
-    <div class="h-20" />
+    <!-- ▼ バーナー -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mt-sm-20 mx-auto px-8">
+      <a href="/president-message">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
+        </picture>
+      </a>
+      <a href="/schedule" target="_blank">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
+        </picture>
+      </a>
+      <a href="/presentation/win_covid">
+        <picture>
+          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
+          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
+        </picture>
+      </a>
+      <!--<a href="/presentation/rlel3o5qom">-->
+      <!--  <picture>-->
+      <!--    <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">-->
+      <!--    <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">-->
+      <!--  </picture>-->
+      <!--</a>-->
+      <SurveyBanner />
+    </div>
+    <!-- ▲ バーナー -->
 
-    <section class="w-full">
+    <section class="w-full mt-8">
       <div class="relative items-center w-full px-8 py-3 mx-auto lg:py-6 max-w-screen-lg">
         <div class="alert alert-info mb-5">
           <div class="flex-1">
@@ -258,7 +274,7 @@
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
               />
             </svg>
-            <label class="mx-3">ステージ企画（2日目）のご視聴ありがとうございました。来年度の学祭のため、アンケートにご協力ください！</label>
+            <label class="mx-3">ステージ企画のご視聴ありがとうございました。来年度の学祭のため、アンケートにご協力ください！</label>
           </div>
           <div class="flex-none">
             <a
@@ -371,45 +387,35 @@
     <canvas class="waveCanvas transform rotate-180" />
     <!-- ▲ スタンプラリー -->
 
-    <!-- ▼ バーナー -->
-    <div class="grid md:grid-cols-2 gap-6 max-w-screen-lg mt-12 mx-auto px-8">
-      <a href="/president-message">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_message.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_message.jpg" alt="学長からのメッセージ">
-        </picture>
-      </a>
-      <a href="/schedule" target="_blank">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_timeline.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_timeline.jpg" alt="学祭スケジュールはこちら">
-        </picture>
-      </a>
-      <a href="/presentation/win_covid">
-        <picture>
-          <source :srcset="require('@/assets/img/static/home/burner_win_covid.webp')" type="image/webp">
-          <img src="@/assets/img/static/home/burner_win_covid.jpg" alt="岡山大学コロナ対策応援団">
-        </picture>
-      </a>
-      <!--<a href="/presentation/rlel3o5qom">-->
-      <!--  <picture>-->
-      <!--    <source :srcset="require('@/assets/img/static/home/burner_theater_performance.webp')" type="image/webp">-->
-      <!--    <img src="@/assets/img/static/home/burner_theater_performance.jpg" alt="岡山大学演劇部 2020年秋公演『くるり、くるり、めくる』">-->
-      <!--  </picture>-->
-      <!--</a>-->
-      <SurveyBanner />
-    </div>
-    <!-- ▲ バーナー -->
-
     <!-- ▼ 動画とライブ配信 -->
-    <!--<div class="container max-w-screen-lg mt-20 mx-auto relative">-->
-    <!--  <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />-->
-    <!--  <div class="container max-w-screen-lg mt-10 mx-auto">-->
-    <!--    <div class="px-5">-->
-    <!--      <DailyLiveOrVideo />-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
+    <div class="container max-w-screen-lg mt-20 mx-auto relative">
+      <VerticalTitle text="STREAMING" colors="text-gray-200 -z-10" />
+      <div class="container max-w-screen-lg mt-10 mx-auto">
+        <div class="px-lg-5">
+          <div class="text-white mb-6">
+            <Header
+              title="ライブ配信"
+              colors="bg-red-500"
+              :icon-path="require('@/assets/img/header/streaming.png')"
+            />
+          </div>
+
+          <p class="text-center mb-20 mt-40 px-6">
+            全日程のライブ配信は終了いたしました。ご視聴いただきありがとうございました。
+          </p>
+          <div class="text-center">
+            <RoundButton
+              href="https://www.youtube.com/channel/UCxznqY3mWr_EEQ-FDXA0IEA/videos"
+              target="_blank"
+              colors="bg-red-500"
+              class="mt-20"
+            >
+              アーカイブはこちら →
+            </RoundButton>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ▲ 動画とライブ配信 -->
 
     <div class="bg-themeColor mt-20 pb-14">
@@ -777,12 +783,9 @@ import Header from '~/components/layouts/Header.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
 import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
 import SurveyBanner from '~/components/templates/survey/SurveyBanner.vue'
-import DailyLiveOrVideo from '~/components/templates/video/DailyLiveOrVideo.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import ITweet from '~/assets/js/type/ITweet'
-import NextEvent from '~/components/templates/event/NextEvent.vue'
-
-// import OperationStageSchedule2 from '~/components/pages/schedule/OperationStageSchedule2.vue'
+import RoundButton from '~/components/templates/parts/RoundButton.vue'
 
 interface IResponseTweets extends IResponse {
   data: {
@@ -798,10 +801,8 @@ export default Vue.extend({
     LinkTo,
     Header,
     VerticalTitle,
-    DailyLiveOrVideo,
     SurveyBanner,
-    NextEvent
-    // OperationStageSchedule2
+    RoundButton
   },
   asyncData ({ app }: Context): Promise<{ tweets: ITweet[] }> {
     return app.$axios.get(`${url}/twitter`, { timeout: 10000 }).then((res: IResponseTweets) => {
