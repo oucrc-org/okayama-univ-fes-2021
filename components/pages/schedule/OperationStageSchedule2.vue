@@ -30,7 +30,7 @@ export default {
         },
         {
           type: 'star',
-          tag: '18:55',
+          tag: '18:50',
           color: '#F04444',
           htmlMode: true,
           content: 'ジャズ研究会'
