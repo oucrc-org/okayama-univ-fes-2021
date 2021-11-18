@@ -304,16 +304,15 @@
               />
             </svg>
             <label>
-              ステージ企画（1日目）のアーカイブがご視聴いただけます
+              ステージ企画のアーカイブがご視聴いただけます
             </label>
           </div>
           <div class="flex-none">
             <a
-              href="https://www.youtube.com/watch?v=_M-uGrHpTPw"
-              target="_blank"
+              href="/live"
               class="btn btn-sm btn-primary bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400 tracking-widest capitalize"
             >
-              YouTubeでみる
+              視聴する
             </a>
           </div>
         </div>
