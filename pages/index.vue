@@ -278,7 +278,7 @@
           </div>
           <div class="flex-none">
             <a
-              href="https://forms.gle/A4sp8cAFXwKkWFxx5"
+              href="https://forms.gle/DvEy927YYvKypoxC6"
               target="_blank"
               class="btn btn-sm btn-primary bg-themeColor border-themeColor hover:bg-themeLight hover:border-themeLight tracking-widest"
             >
