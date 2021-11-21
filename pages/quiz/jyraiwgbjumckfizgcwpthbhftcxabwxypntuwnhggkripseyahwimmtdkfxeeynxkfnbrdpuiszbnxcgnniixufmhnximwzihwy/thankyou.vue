@@ -4,7 +4,7 @@
     <Header title="応募完了" colors="bg-themeColor text-white" />
     <div class="flex flex-col gap-y-16 my-5">
       <div class="mx-auto">
-        <img src="~/assets/img/static/done.png" width="170" />
+        <img src="~/assets/img/static/done.png" width="170" alt="応募完了">
       </div>
       <div class="text-themeColor text-center text-2xl font-bold">
         応募が完了しました！
@@ -19,6 +19,7 @@
           <RoundedButton text="トップに戻る →" class="border-themeColor text-white bg-themeColor cursor-pointer" />
         </p>
       </a>
+      <!--suppress HtmlUnknownTarget -->
       <a href="/quiz/form">
         <p>
           <RoundedButton text="修正する" class="border-themeColor bg-white text-themeColor cursor-pointer" />

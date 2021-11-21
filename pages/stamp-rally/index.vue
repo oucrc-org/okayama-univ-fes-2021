@@ -25,11 +25,7 @@
       <BodyWithHeader title="注意事項" colors="border-themeColor text-themeColor">
         <ApplyNotes />
 
-        <div class="text-center">
-          <LinkTo to="/quiz/form">
-            <RoundedButton text="応募する →" class="border-themeColor bg-themeColor text-white" />
-          </LinkTo>
-        </div>
+        <ApplyButton />
       </BodyWithHeader>
     </div>
   </div>
@@ -42,11 +38,10 @@ import Header from '~/components/layouts/Header.vue'
 import StampRallyPrize from '~/components/pages/stamp-rally/Prize.vue'
 import BodyWithHeader from '~/components/templates/header/BodyWithHeader.vue'
 import VerticalTitle from '~/components/layouts/VerticalTitle.vue'
-import LinkTo from '~/components/templates/nuxt/LinkTo.vue'
-import RoundedButton from '~/components/templates/parts/RoundedButton.vue'
 import IResponse from '~/assets/js/type/request/IResponse'
 import IPrize from '~/assets/js/type/IPrize'
 import ApplyNotes from '@/components/pages/ApplyNotes.vue'
+import ApplyButton from '~/components/templates/parts/ApplyButton.vue'
 
 interface IResponsePrize extends IResponse {
   data: {
@@ -59,13 +54,12 @@ const url = process.env.BACKEND_API_URL
 
 export default Vue.extend({
   components: {
-    LinkTo,
     Header,
     BodyWithHeader,
     VerticalTitle,
     StampRallyPrize,
-    RoundedButton,
-    ApplyNotes
+    ApplyNotes,
+    ApplyButton
   },
   asyncData ({
     app,
