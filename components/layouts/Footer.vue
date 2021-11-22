@@ -63,7 +63,6 @@
       <SlideDown label="スタンプラリー">
         <LinkWithArrow to="/stamp-rally" title="スタンプラリーとは?" />
         <LinkWithArrow to="/mypage" title="マイページ" />
-        <LinkWithArrow to="/quiz/form" title="応募する" />
       </SlideDown>
     </nav>
 
